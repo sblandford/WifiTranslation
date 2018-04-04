@@ -12,14 +12,6 @@ def getSvnRevisionNr() {
 }
 
 android {
-    signingConfigs {
-        WifiXlation {
-            keyAlias 'wifitranslation'
-            keyPassword 'avyakt'
-            storeFile file('/home/simonb/BK Google Drive/Synced/Translation/APK Keys/wifitranslation.jks')
-            storePassword 'avyakt'
-        }
-    }
     compileSdkVersion 26
     buildToolsVersion '27.0.3'
     defaultConfig {
