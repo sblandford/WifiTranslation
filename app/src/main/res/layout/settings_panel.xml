@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:stretchColumns="1"
+    android:padding="10sp"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_height="wrap_content"
+
+            android:layout_column="1"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="@string/gain_controls_title" />
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:text="@string/gain_controls_max_gain_db_title" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SeekBar
+            android:id="@+id/gain_controls_max_gain_db_seekBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1" />
+
+        <TextView
+            android:id="@+id/gain_controls_max_gain_db_textview"
+            android:layout_width="50sp"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:fontFamily="monospace"
+            android:gravity="end"
+            android:text="00.00" />
+        <TextView
+            android:layout_width="20sp"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:layout_column="3"
+            android:text="dB" />
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:text="@string/gain_controls_hold_time" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SeekBar
+            android:id="@+id/gain_controls_hold_time_seekBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1" />
+
+        <TextView
+            android:id="@+id/gain_controls_hold_time_textview"
+            android:layout_width="50sp"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:fontFamily="monospace"
+            android:gravity="end"
+            android:text="00.00" />
+        <TextView
+           android:layout_width="20sp"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:layout_column="3"
+            android:text="s" />
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:text="@string/gain_controls_increase_db_per_second" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SeekBar
+            android:id="@+id/gain_controls_increase_db_per_second_seekBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1" />
+
+        <TextView
+            android:id="@+id/gain_controls_increase_db_per_second_textview"
+            android:layout_width="50sp"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:fontFamily="monospace"
+            android:gravity="end"
+            android:text="0.000" />
+        <TextView
+            android:layout_width="20sp"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:layout_column="3"
+            android:text="dB" />
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_height="wrap_content"
+
+            android:layout_column="1"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="@string/network_controls_title" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_height="wrap_content"
+
+            android:layout_column="1"
+            android:text="@string/network_controls_packet_redundancy" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SeekBar
+            android:id="@+id/network_controls_network_redundancy_seekbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1" />
+
+        <TextView
+            android:id="@+id/network_controls_network_redundancy_textview"
+            android:layout_width="50sp"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:fontFamily="monospace"
+            android:gravity="end"
+            android:text="0" />
+        <TextView
+            android:layout_width="20sp"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:layout_column="3"
+            android:text="x" />
+    </TableRow>
+
+
+</TableLayout>

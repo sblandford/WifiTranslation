@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/options_tx_switch"
+        android:checkable="true"
+        android:title="@string/options_switch_TX"
+        />
+    <item android:id="@+id/options_tx_relay"
+        android:checkable="true"
+        android:title="@string/options_relay_TX"
+        />
+    <item android:id="@+id/options_settings"
+        android:title="@string/options_settings"
+        />
+    <item android:id="@+id/options_about"
+        android:title="@string/options_about"
+        />
+</menu>
