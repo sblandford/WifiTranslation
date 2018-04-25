@@ -1,7 +1,7 @@
 # WifiTranslation
 Simultaneous audio translation over Wifi.
 
-Created in Android Studio 3.1.
+Created in Android Studio 3.1. Available on GooglePlay https://play.google.com/store/apps/details?id=eu.bkwsu.webcast.wifitranslation
 
 Broadcast voice via multicast to many delegates over WiFi. Up to 10 channels are supported with relay facility, which enables a translator to simultaneously hear another channel. The AMR-WB codec is used for efficient use of network bandwidth.
 
