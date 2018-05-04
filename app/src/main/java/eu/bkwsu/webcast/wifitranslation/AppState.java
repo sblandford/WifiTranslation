@@ -316,4 +316,8 @@ final class AppState  {
             }
         }
     }
+
+    //Merge Hub status into state
+
+
 }

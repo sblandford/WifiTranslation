@@ -42,7 +42,7 @@ import static android.content.Context.AUDIO_SERVICE;
 //socat UDP4-RECVFROM:1234,ip-add-membership=228.227.227.225:0.0.0.0,fork -
 
 //To send UUID from bash terminal to allow access
-//echo -n "42b06595-6d85-4334-946a-6dbd4c2cfe7f" | socat - UDP:228.227.226.225:1234
+//echo -n "rx42b06595-6d85-4334-946a-6dbd4c2cfe7f" | socat - UDP:228.227.227.225:1234
 
 
 public class TranslationRX {

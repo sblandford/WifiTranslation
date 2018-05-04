@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
     private static TranslationRX translationRx;
     private static TranslationTX translationTx;
     private static ManagementRX managementRX;
+    private static HubComms hubComms;
 
     //How long to stay waiting while playing for new valid packets
     private static int RX_WAIT_TIMEOUT_MIN;
@@ -117,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
         translationRx = new TranslationRX(prop);
         translationTx = new TranslationTX(prop);
         managementRX = new ManagementRX(prop);
+        hubComms = new HubComms(prop);
 
         super.onCreate(savedInstanceState);
 
@@ -230,6 +232,7 @@ public class MainActivity extends AppCompatActivity {
 
         displayUpdateThreadStart();
         actionStateThreadStart();
+        hubComms.broadcastStart();
         //managementRX.action(ManagementRX.Command.START); TEST TEST
         canDoMulticast();
     }
@@ -374,7 +377,12 @@ public class MainActivity extends AppCompatActivity {
 
         //Read through the channels and display them. Assigning ids as we go.
         for(Map.Entry<Integer, AppState.Chan> pair : new TreeMap<>(desiredState.channelMap).entrySet()) {
-            int newId = generateViewId();
+            int newId;
+            if (Build.VERSION.SDK_INT >= 17) {
+                newId = generateViewId();
+            } else {
+                newId = Tools.generateViewId();
+            }
             AppState.Chan chan = pair.getValue();
             MenuItem nm = menu.add(R.id.channel_selector_group, newId, Menu.FLAG_APPEND_TO_GROUP, chan.name);
             nm.setCheckable(true);
