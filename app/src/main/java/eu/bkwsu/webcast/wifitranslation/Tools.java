@@ -16,10 +16,13 @@ import android.os.Build;
 import android.view.View;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.nio.ByteBuffer;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static android.content.Context.AUDIO_SERVICE;
+import static android.content.Context.WIFI_SERVICE;
 import static eu.bkwsu.webcast.wifitranslation.MainActivity.context;
 
 public final class Tools {
@@ -38,12 +41,37 @@ public final class Tools {
         ((WifiManager)context.getSystemService(Context.WIFI_SERVICE)).setWifiEnabled(on);
     }
     public synchronized  static boolean isWifiOn () {
+
+        final int WIFI_AP_STATE_ENABLED   = 13;
+
         Context context = MainActivity.context;
+
+        //Detect if Hotspot is enabled if possible
+        final WifiManager wifiManager = (WifiManager)context.getSystemService(Context.WIFI_SERVICE);
+        try {
+            Method method = (wifiManager.getClass().getDeclaredMethod("getWifiApState"));
+            method.setAccessible(true);
+            try {
+                int actualState = (Integer) method.invoke(wifiManager, (Object[]) null);
+                if (actualState == WIFI_AP_STATE_ENABLED) {
+                    return true;
+                }
+            } catch (InvocationTargetException e) {
+                // Pass
+            } catch (IllegalAccessException e) {
+                // Pass
+            }
+        } catch (NoSuchMethodException e) {
+            // Pass
+        }
+
+        //Otherwise detect if normal Wifi is enabled
         int ip_address = ((WifiManager)context.getSystemService(Context.WIFI_SERVICE)).getConnectionInfo().getIpAddress();
         return (((WifiManager)context.getSystemService(Context.WIFI_SERVICE)).isWifiEnabled() && (ip_address != 0));
     }
     public synchronized  static String showWifiInfo () {
         Context context = MainActivity.context;
+
         int ip_address = ((WifiManager)context.getSystemService(Context.WIFI_SERVICE)).getConnectionInfo().getIpAddress();
         return "IP: " + ip_address + ", " + ((WifiManager)context.getSystemService(Context.WIFI_SERVICE)).getConnectionInfo().toString();
     }

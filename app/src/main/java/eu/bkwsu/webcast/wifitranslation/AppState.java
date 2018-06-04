@@ -65,6 +65,7 @@ final class AppState  {
     public volatile boolean stateInitialised = false;
     public volatile boolean headphones = false;
     public volatile boolean appIsVisible = true;
+    public volatile boolean wifiOn = false;
 
     private SharedPreferences prefs = null;
     private TranslationTX translationTx = null;
@@ -173,6 +174,9 @@ final class AppState  {
             return false;
         }
         if (appIsVisible != compareWith.appIsVisible) {
+            return false;
+        }
+        if (wifiOn != compareWith.wifiOn) {
             return false;
         }
         if (!channelMap.equals(compareWith.channelMap)) {
@@ -306,6 +310,7 @@ final class AppState  {
         targetState.rxValid = rxValid;
         targetState.headphones = headphones;
         targetState.appIsVisible = appIsVisible;
+        targetState.wifiOn = wifiOn;
         //Copy over existing only for affected properties
         for(Map.Entry<Integer, Chan> thisPair : channelMap.entrySet()) {
             Chan thisChan = thisPair.getValue();

@@ -534,11 +534,10 @@ public class MainActivity extends AppCompatActivity {
 
     //The "button" is the main button to start/stop/mute things
     private void setButton (AppState state) {
-        final boolean isWifiOn = Tools.isWifiOn();
         Log.d(TAG, "Setting button state for txMode:" + state.txMode + ", mute:" +
                 state.mute + ", rxBusy:" + state.rxBusy + ", rxValid :" +
-                state.rxValid + ", wifi : " + isWifiOn);
-        if (!isWifiOn) {
+                state.rxValid + ", wifi : " + state.wifiOn);
+        if (!state.wifiOn) {
             setMainButtonColorText(Color.LTGRAY, getString(R.string.status_no_wifi));
             return;
         }
@@ -848,6 +847,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
+                //Record Wifi state
+                activeState.wifiOn = Tools.isWifiOn();
                 //Record headphone state
                 activeState.headphones = Tools.phones_check();
                 //Act on headphone state
