@@ -1,16 +1,5 @@
 apply plugin: 'com.android.application'
 
-def getSvnRevisionNr() {
-    description 'Get SVN revision number.'
-    new ByteArrayOutputStream().withStream { os ->
-        def result = exec {
-            executable = 'svnversion'
-            standardOutput = os
-        }
-        return '"' + os.toString().trim() + '"'
-    }
-}
-
 android {
     compileSdkVersion 26
     buildToolsVersion '27.0.3'
@@ -18,19 +7,17 @@ android {
         applicationId "eu.bkwsu.webcast.wifitranslation"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 2
-        versionName "0.2"
+        versionCode 4
+        versionName "0.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         debug {
             minifyEnabled false
-            buildConfigField("String", "SVN_REVISION", getSvnRevisionNr())
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField("String", "SVN_REVISION", getSvnRevisionNr())
         }
     }
 }

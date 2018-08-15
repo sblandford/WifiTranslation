@@ -4,10 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-import java.util.prefs.AbstractPreferences;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -53,7 +52,7 @@ final class AppState  {
     public volatile boolean happening = false;
     public volatile boolean headphonesMandatory = false;
     public volatile boolean channelsManaged = false;
-    public volatile Map<Integer, Chan> channelMap = new HashMap<>();
+    public volatile Map<Integer, Chan> channelMap = new ConcurrentHashMap<>();
 
     //*****************************************
     //***** Non-persistent reported state *****

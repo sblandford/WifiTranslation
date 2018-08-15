@@ -12,9 +12,9 @@ import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
 import java.net.SocketTimeoutException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by simonb on 08/02/18.
@@ -38,7 +38,7 @@ public class ManagementRX {
 
     //private static volatile JSONArray newChannelList;
     private static volatile boolean headphonesMandatory = false;
-    public static volatile Map<Integer, AppState.Chan> channelMap = new HashMap<>();
+    public static volatile Map<Integer, AppState.Chan> channelMap = new ConcurrentHashMap();
 
     public enum Command {
         START, STOP, SLEEP
@@ -86,7 +86,7 @@ public class ManagementRX {
                                     if (packetLength < MAX_PACKET_SIZE) {
                                         try {
                                             Boolean headphonesMandatory;
-                                            Map<Integer, AppState.Chan> newChannelMap = new HashMap<>();
+                                            Map<Integer, AppState.Chan> newChannelMap = new ConcurrentHashMap<>();
 
                                             JSONObject mgtObj = new JSONObject(packetBuff.toString());
                                             headphonesMandatory = mgtObj.getBoolean("headphonesMandatory");
@@ -176,7 +176,7 @@ public class ManagementRX {
     public static synchronized void fetchManagement(AppState state) {
         state.headphonesMandatory = headphonesMandatory;
         if (channelMap != null) {
-            state.channelMap = new HashMap<>(channelMap);
+            state.channelMap = new ConcurrentHashMap<>(channelMap);
         }
     }
     

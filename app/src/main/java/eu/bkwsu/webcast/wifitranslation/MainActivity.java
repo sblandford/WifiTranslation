@@ -34,9 +34,6 @@ import android.widget.TextView;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.TreeMap;
@@ -352,8 +349,8 @@ public class MainActivity extends AppCompatActivity {
                 aboutAlert.setView(aboutPanelLayout);
                 AlertDialog aboutDialog = aboutAlert.create();
                 aboutDialog.show();
-                TextView svnVersionTextView = aboutPanelLayout.findViewById(R.id.about_svn_revision);
-                svnVersionTextView.setText("SVN revision: " + BuildConfig.SVN_REVISION);
+                TextView versionTextView = aboutPanelLayout.findViewById(R.id.about_version);
+                versionTextView.setText("Version: " + BuildConfig.VERSION_NAME);
                 break;
         }
         return true;
