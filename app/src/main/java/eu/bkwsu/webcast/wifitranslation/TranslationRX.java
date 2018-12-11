@@ -634,13 +634,7 @@ public class TranslationRX {
         audioManager = (AudioManager) context.getSystemService(AUDIO_SERVICE);
         audioManager.setMode(AudioManager.MODE_IN_CALL);
 
-        //No speakerphone if headphones in
-        audioManager.setSpeakerphoneOn(!Tools.phones_check());
-
-        if (Tools.blueToothScoOnly()) {
-            audioManager.startBluetoothSco();
-            audioManager.setBluetoothScoOn(true);
-        }
+        Tools.phones_mode_set();
 
         Log.i(TAG, "Setting up audio track");
         audioTrack = new AudioTrack(AudioManager.STREAM_VOICE_CALL,

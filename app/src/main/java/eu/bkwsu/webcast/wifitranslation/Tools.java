@@ -13,6 +13,7 @@ import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
 import android.net.wifi.WifiManager;
 import android.os.Build;
+import android.util.Log;
 import android.view.View;
 
 import java.lang.reflect.Field;
@@ -151,6 +152,10 @@ public final class Tools {
                 AudioDeviceInfo device = devices[i];
                 int deviceType = device.getType();
                 if (deviceType == AudioDeviceInfo.TYPE_WIRED_HEADPHONES
+                        || deviceType == AudioDeviceInfo.TYPE_USB_HEADSET
+                        || deviceType == AudioDeviceInfo.TYPE_WIRED_HEADSET
+                        || deviceType == AudioDeviceInfo.TYPE_AUX_LINE
+                        || deviceType == AudioDeviceInfo.TYPE_LINE_ANALOG
                         || deviceType == AudioDeviceInfo.TYPE_BLUETOOTH_A2DP
                         || deviceType == AudioDeviceInfo.TYPE_BLUETOOTH_SCO) {
                     return deviceType;
@@ -158,6 +163,17 @@ public final class Tools {
             }
         }
         return -1;
+    }
+
+    public synchronized static void phones_mode_set () {
+        audioManager = (AudioManager) context.getSystemService(AUDIO_SERVICE);
+        //No speakerphone if headphones in
+        audioManager.setSpeakerphoneOn(!phones_check());
+
+        if (blueToothScoOnly()) {
+            audioManager.startBluetoothSco();
+            audioManager.setBluetoothScoOn(true);
+        }
     }
 
     // For debugging purposes

@@ -848,7 +848,10 @@ public class MainActivity extends AppCompatActivity {
                 activeState.wifiOn = Tools.isWifiOn();
                 //Record headphone state
                 activeState.headphones = Tools.phones_check();
-                //Act on headphone state
+                //Act on headphone state change
+                if ((stateSnapshot.headphones != activeState.headphones) && !activeState.txMode) {
+                    Tools.phones_mode_set();
+                }
                 if ((stateSnapshot.headphones != activeState.headphones)
                         || (stateSnapshot.rxValid != activeState.rxValid)
                         || (stateSnapshot.txMode != activeState.txMode)
