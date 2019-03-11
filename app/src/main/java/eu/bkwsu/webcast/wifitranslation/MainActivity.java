@@ -271,6 +271,9 @@ public class MainActivity extends AppCompatActivity {
                 desiredState.txMode = !desiredState.txMode;
                 item.setChecked(desiredState.txMode);
                 Log.d(TAG, "txMode set to " + desiredState.txMode);
+                if (desiredState.relayMode) {
+                    nudge_relay_channel ();
+                }
                 break;
             case R.id.options_tx_relay:
                 desiredState.relayMode = !desiredState.relayMode;
@@ -393,7 +396,7 @@ public class MainActivity extends AppCompatActivity {
         }
         menu.setGroupCheckable(R.id.channel_selector_group, true, true);
         menu.findItem(getChannelDisplayId(currentChannel)).setChecked(true);
-        if (desiredState.relayMode && !ALLOW_LOOPBACK) {
+        if (desiredState.relayMode && desiredState.txMode && !ALLOW_LOOPBACK) {
             menu.findItem(getChannelDisplayId(otherChannel)).setEnabled(false);
         }
     }
@@ -792,6 +795,18 @@ public class MainActivity extends AppCompatActivity {
                         translationTx.setNetworkPacketRedundancy(stateSnapshot.networkPacketRedundancy);
                     }
 
+                    //Stop to restart on channel change
+                    if (stateSnapshot.txMode) {
+                        if ((desiredState.selectedRelayChannel != activeState.selectedRelayChannel) && stateSnapshot.relayMode) {
+                            translationRx.action(TranslationRX.Command.STOP);
+                            translationRx.action(TranslationRX.Command.START);
+                        }
+                    } else {
+                        if ((desiredState.selectedMainChannel != activeState.selectedMainChannel)) {
+                            translationRx.action(TranslationRX.Command.STOP);
+                            translationRx.action(TranslationRX.Command.START);
+                        }
+                    }
                 }
 
                 //Perform action based on RX/TX state if RX needs to be active
