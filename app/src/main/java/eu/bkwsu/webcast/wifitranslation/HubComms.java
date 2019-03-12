@@ -182,7 +182,7 @@ public class HubComms {
                         Log.d(TAG, "Active state thread interrupted");
                     }
                 }
-                //If we hostname-based fetch failed then try looking for broadcast of IP instead
+                //If the hostname-based fetch failed then try looking for broadcast of IP instead
                 if ((pollCount == 0) && hubByHostname) {
                     broadcastStart ();
                 }
