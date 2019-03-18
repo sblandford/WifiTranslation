@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -23,7 +26,9 @@ final class AppState  {
         public String name;
         public int viewId;
         public boolean busy;
+        public boolean open;
         public boolean valid;
+        public List<String> allowedIds = new ArrayList<>();
     }
 
     //*****************************************
@@ -76,17 +81,32 @@ final class AppState  {
     public AppState() {
 
     }
-    public AppState(Context context, String prefDef, TranslationTX translationTxObj, int channels) {
+    public AppState(Context context, String prefDef, TranslationTX translationTxObj, int max_channels) {
         prefs = context.getSharedPreferences(prefDef, MODE_PRIVATE);
         translationTx = translationTxObj;
 
-        for (int i =0; i < channels; i++) {
+        for (int i =0; i < max_channels; i++) {
             Chan chan = new Chan();
             chan.name = String.format("%s%4d", context.getString(R.string.channel_text), i + 1);
             chan.viewId = -1;
             chan.busy = false;
             chan.valid = false;
+            chan.allowedIds.add("-");
             channelMap.put(i, chan);
+        }
+    }
+
+    public void fetchChannelMap () {
+        if (HubComms.getChannelMap() != null) {
+            Map<Integer, Chan> newChannelMap = new HashMap<>(HubComms.getChannelMap());
+            //Copy old ViewIds to received channel map
+            for(Map.Entry<Integer, Chan> thisPair : newChannelMap.entrySet()) {
+                Chan targetChan = thisPair.getValue();
+                Chan thisChan = channelMap.get(thisPair.getKey().intValue());
+                targetChan.viewId = thisChan.viewId;
+            }
+            channelMap = null;
+            channelMap = newChannelMap;
         }
     }
 
@@ -283,24 +303,17 @@ final class AppState  {
         targetState.happening = happening;
         targetState.headphonesMandatory = headphonesMandatory;
         targetState.channelsManaged = channelsManaged;
-        //Copy over
+        //Copy valid and busy states back
         for(Map.Entry<Integer, Chan> thisPair : channelMap.entrySet()) {
             Chan thisChan = thisPair.getValue();
             Chan targetChan = targetState.channelMap.get(thisPair.getKey().intValue());
-            if (targetChan == null) {
-                targetState.channelMap.put(thisPair.getKey().intValue(), thisPair.getValue());
-                targetChan = targetState.channelMap.get(thisPair.getKey().intValue());
-            }
-            targetChan.name = thisChan.name;
-            targetChan.viewId = thisChan.viewId;
-        }
-        //Remove excess entries
-        for(Map.Entry<Integer, Chan> thatPair : targetState.channelMap.entrySet()) {
-            Chan thisChan = channelMap.get(targetState.channelMap.get(thatPair.getKey().intValue()));
-            if (thisChan == null) {
-                targetState.channelMap.remove(targetState.channelMap.get(thatPair.getKey().intValue()));
+            if (targetChan != null) {
+                thisChan.busy = targetChan.busy;
+                thisChan.valid = targetChan.valid;
             }
         }
+        targetState.channelMap = null;
+        targetState.channelMap = new HashMap<>(channelMap);
     }
     public void copyReportedTo (AppState targetState) {
         targetState.mainChannelFree = mainChannelFree;

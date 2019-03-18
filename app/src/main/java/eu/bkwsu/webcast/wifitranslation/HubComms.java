@@ -2,6 +2,7 @@ package eu.bkwsu.webcast.wifitranslation;
 
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
@@ -16,17 +17,28 @@ import java.net.InetAddress;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.nio.charset.Charset;
+import java.util.Map;
 import java.util.Properties;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static java.lang.Integer.parseInt;
 
 public class HubComms {
     private static final String TAG = "HubComms";
 
-    private static boolean hubIpRun = false;
-    private static boolean hubPollRun = false;
-    private static boolean hubByHostname = false;
-    private static String hubIp = "";
+    private static volatile boolean hubIpRun = false;
+    private static volatile boolean hubFound = false;
+    private static volatile boolean hubPollRun = false;
+    private static volatile boolean hubByHostname = false;
+    private static volatile String hubWanProtocol = "http";
+    private static volatile String hubLanProtocol = "http";
+    private static volatile String hubProtocol = "http";
+    private static volatile String hubHostName = "";
+    private static volatile String hubIp = "";
+    private static volatile int hubWebPort = 0;
+    private static volatile int hubPortIndex = 0;
 
     private static int HUB_BROADCAST_LENGTH_MAX;
     private static int HUB_BROADCAST_LENGTH_MIN;
@@ -34,26 +46,28 @@ public class HubComms {
     private static String HUB_HOSTNAME;
     private static int HUB_POLL_ATTEMPTS;
     private static int HUB_POLL_INTERVAL_MILLISECONDS;
-    private static String HUB_PROTOCOL;
+    private static int HUB_BROADCAST_TIMEOUT_MILLISECONDS;
     private static String HUB_STAT_PATH;
-    private static int HUB_STAT_PORT;
+    private static String HUB_STAT_PORTS[];
     private static int PACKET_BUFFER_SIZE;
 
+    private static volatile  Map<Integer, AppState.Chan> latestChannelMap;
+
     public HubComms (Properties prop) {
-        HUB_BROADCAST_LENGTH_MAX = Integer.parseInt(prop.getProperty("HUB_BROADCAST_LENGTH_MAX"));
-        HUB_BROADCAST_LENGTH_MIN = Integer.parseInt(prop.getProperty("HUB_BROADCAST_LENGTH_MIN"));
-        HUB_BROADCAST_PORT = Integer.parseInt(prop.getProperty("HUB_BROADCAST_PORT"));
+        HUB_BROADCAST_LENGTH_MAX = parseInt(prop.getProperty("HUB_BROADCAST_LENGTH_MAX"));
+        HUB_BROADCAST_LENGTH_MIN = parseInt(prop.getProperty("HUB_BROADCAST_LENGTH_MIN"));
+        HUB_BROADCAST_PORT = parseInt(prop.getProperty("HUB_BROADCAST_PORT"));
         HUB_HOSTNAME = prop.getProperty("HUB_HOSTNAME");
-        HUB_POLL_ATTEMPTS = Integer.parseInt(prop.getProperty("HUB_POLL_ATTEMPTS"));
-        HUB_POLL_INTERVAL_MILLISECONDS = Integer.parseInt(prop.getProperty("HUB_POLL_INTERVAL_MILLISECONDS"));
-        HUB_PROTOCOL = prop.getProperty("HUB_PROTOCOL");
+        HUB_POLL_ATTEMPTS = parseInt(prop.getProperty("HUB_POLL_ATTEMPTS"));
+        HUB_POLL_INTERVAL_MILLISECONDS = parseInt(prop.getProperty("HUB_POLL_INTERVAL_MILLISECONDS"));
+        HUB_BROADCAST_TIMEOUT_MILLISECONDS = parseInt(prop.getProperty("HUB_BROADCAST_TIMEOUT_MILLISECONDS"));
         HUB_STAT_PATH = prop.getProperty("HUB_STAT_PATH");
-        HUB_STAT_PORT = Integer.parseInt(prop.getProperty("HUB_STAT_PORT"));
-        PACKET_BUFFER_SIZE = Integer.parseInt(prop.getProperty("RX_PACKET_BUFFER_SIZE"));
+        HUB_STAT_PORTS = prop.getProperty("HUB_STAT_PORTS").split(",");
+        PACKET_BUFFER_SIZE = parseInt(prop.getProperty("RX_PACKET_BUFFER_SIZE"));
     }
 
 
-    //The Hub will send a broadcast packet every few seconds to signal its IP address
+    //The Hub will send a broadcast packet every few seconds to signal its WAN Protocol, LAN Protocol, Hostname, IP address, HTTP port
     //If there is no local DNS set up then the Hub IP address can be possibly obtained this way
     private static Thread broadcastRxThread = null;
     private static void mainBroadcastRxThread () {
@@ -64,19 +78,6 @@ public class HubComms {
                 int packetLength;
                 try {
                     byte[] packetBuff = new byte[PACKET_BUFFER_SIZE];
-
-                    if (!hubByHostname) {
-                        try {
-                            InetAddress address = InetAddress.getByName(HUB_HOSTNAME);
-                            hubIp = address.getHostAddress();
-                            Log.i(TAG, "Hub IP address detected by name resolution : " + hubIp);
-                            hubIpRun = false;
-                            hubByHostname = true;
-                            pollHubStart();
-                        } catch (UnknownHostException e) {
-                            Log.i(TAG, "Unable to resolve Hub by name : " + HUB_HOSTNAME);
-                        }
-                    }
 
                     //Keep a socket open to listen to all the UDP trafic that is destined for this port
                     sock = new DatagramSocket(HUB_BROADCAST_PORT, InetAddress.getByName("0.0.0.0"));
@@ -91,12 +92,35 @@ public class HubComms {
                             Log.d(TAG, "Broadcast packet received with length : " + packetLength);
 
                             String hubMsg[] = new String(packetBuff, 0, packetLength, Charset.forName("US-ASCII")).split(" ");
-                            if (hubMsg.length == 2) {
-                                hubIp = hubMsg[1];
-                                Log.i(TAG, "Hub IP address detected from broadcast : " + hubIp);
+                            if (hubMsg.length == 5) {
+                                if (hubMsg[0].matches("^https?$")) {
+                                    hubWanProtocol = hubMsg[0];
+                                } else {
+                                    Log.w(TAG,"Unable to parse broadcast parameter: Hub WAN Protocol : " + hubMsg[0]);
+                                }
+                                if (hubMsg[1].matches("^https?$")) {
+                                    hubLanProtocol = hubMsg[1];
+                                } else {
+                                    Log.w(TAG,"Unable to parse broadcast parameter: Hub LAN Protocol : " + hubMsg[1]);
+                                }
+                                hubHostName = hubMsg[2];
+                                if (hubMsg[3].matches("^([0-9]{1,3}\\.){3}[0-9]{1,3}$")) {
+                                    hubIp = hubMsg[3];
+                                } else {
+                                    Log.w(TAG,"Unable to parse broadcast parameter: Hub IP : " + hubMsg[3]);
+                                }
+                                if (hubMsg[4].matches("^[0-9]{1,5}$") && (parseInt(hubMsg[4]) <= 65535)) {
+                                    hubWebPort = parseInt(hubMsg[4]);
+                                } else {
+                                    Log.w(TAG,"Unable to parse broadcast parameter: Hub Web port : " + hubMsg[4]);
+                                }
+                                Log.i(TAG, "Hub information detected from broadcast : WAN Proto : " + hubWanProtocol +
+                                        ", LAN Proto : " + hubLanProtocol + ", Hostname : " + hubHostName +
+                                        ", IP : " + hubIp + ", Web Port : " + Integer.toString(hubWebPort));
                                 //Mission accomplished so stop
+                                hubProtocol = hubLanProtocol;
                                 hubIpRun = false;
-                                pollHubStart ();
+                                hubFound = true;
                             }
                         }
                     }
@@ -136,55 +160,68 @@ public class HubComms {
             @Override
             public void run() {
                 int pollCount = HUB_POLL_ATTEMPTS;
+                boolean triedAllPorts = false;
                 HttpURLConnection urlConnection = null;
-                
+                long startTime = System.currentTimeMillis();
+
+                try {
+                    InetAddress address = InetAddress.getByName(HUB_HOSTNAME);
+                    hubIp = address.getHostAddress();
+                    Log.i(TAG, "Hub IP address detected by name resolution : " + hubIp);
+                } catch (UnknownHostException e) {
+                    Log.i(TAG, "Unable to resolve Hub by name : " + HUB_HOSTNAME);
+                    // Don't even try it if name doesn't resolve
+                    triedAllPorts = true;
+                }
+
                 while (hubPollRun && (pollCount > 0)) {
 
-                    StringBuilder result = new StringBuilder();
-
-                    try {
-                        URL url = new URL(((hubByHostname)?HUB_PROTOCOL + "://" + HUB_HOSTNAME:"http://" + hubIp)+ ":" + HUB_STAT_PORT + "/" + HUB_STAT_PATH);
-                        urlConnection = (HttpURLConnection) url.openConnection();
-                        InputStream in = new BufferedInputStream(urlConnection.getInputStream());
-
-                        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-
-                        String line;
-                        while ((line = reader.readLine()) != null) {
-                            result.append(line);
-                        }
+                    if (fetchJson(hubProtocol, hubHostName, hubIp, hubWebPort)) {
+                        // Successful poll of hub
                         pollCount = HUB_POLL_ATTEMPTS;
-
-                        Pattern pattern = Pattern.compile("\\((.*)\\)");
-                        Matcher matcher = pattern.matcher(result);
-                        if (matcher.find())
-                        {
-                            //https://stackoverflow.com/questions/9605913/how-to-parse-json-in-android?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
-                            Log.i(TAG, matcher.group(1));
-                            JSONObject jObject = new JSONObject(matcher.group(1));
-                            //JSONObject jObject0 = jObject.getJSONObject("0");
-                            //Log.i(TAG,jObject0.toString());
+                        if (!hubFound) {
+                            Log.i(TAG, "Successfully polled hub");
                         }
-
-                    }catch( Exception e) {
-                        Log.d(TAG,"Attempt " + (HUB_POLL_ATTEMPTS - pollCount) + ": Failed to read " + HUB_PROTOCOL + "://" + HUB_HOSTNAME + ":" + HUB_STAT_PORT + "/" + HUB_STAT_PATH);
-                        pollCount--;
-                    } finally {
-                        if (urlConnection != null) {
-                            urlConnection.disconnect();
+                        hubFound = true;
+                        //Sleep for a bit
+                        try {
+                            Thread.sleep(HUB_POLL_INTERVAL_MILLISECONDS);
+                        } catch (InterruptedException e) {
+                            Log.d(TAG, "Active state thread interrupted");
+                        }
+                    } else {
+                        // If we haven't received a broadcast message from the Hub
+                        // then keep trying different protocol and port combinations
+                        if (!hubFound && !triedAllPorts) {
+                            String portText = (HUB_STAT_PORTS[hubPortIndex++]);
+                            String portClue = portText.substring(portText.length() - 1);
+                            hubProtocol = ("3".equals(portClue))?"https":"http";
+                            hubWebPort = Integer.parseInt(portText);
+                            if (hubPortIndex >= HUB_STAT_PORTS.length) {
+                                triedAllPorts = true;
+                            }
+                            Log.i(TAG, "Trying to find Hub : WAN Proto : " + hubWanProtocol +
+                                    ", LAN Proto : " + hubProtocol + ", Hostname : " + hubHostName +
+                                    ", IP : " + hubIp + ", Web Port : " + Integer.toString(hubWebPort));
+                        } else {
+                            // Wait for timeout if hub still not found
+                            while ((!hubFound) && ((System.currentTimeMillis() - startTime) < HUB_BROADCAST_TIMEOUT_MILLISECONDS)) {
+                                try {
+                                    //Wait a second
+                                    Thread.sleep(1000);
+                                } catch (InterruptedException e) {
+                                    Log.d(TAG, "Active state thread interrupted");
+                                }
+                            }
+                            pollCount--;
+                            Log.d(TAG, "Hub attempts left : " + pollCount);
+                            // Lost hub. Give up.
+                            if (pollCount <= 0) {
+                                hubPollRun = false;
+                                Log.i(TAG, "Hub polling stopped");
+                            }
                         }
                     }
-
-                    //Sleep for a bit
-                    try {
-                        Thread.sleep(HUB_POLL_INTERVAL_MILLISECONDS);
-                    } catch (InterruptedException e) {
-                        Log.d(TAG, "Active state thread interrupted");
-                    }
-                }
-                //If the hostname-based fetch failed then try looking for broadcast of IP instead
-                if ((pollCount == 0) && hubByHostname) {
-                    broadcastStart ();
                 }
             }
         };
@@ -196,6 +233,9 @@ public class HubComms {
         if (pollHubThread.getState() == Thread.State.NEW) {
             Log.d(TAG, "Starting pollHub Thread");
             hubPollRun = true;
+            hubProtocol = "http";
+            hubHostName = HUB_HOSTNAME;
+            hubWebPort = Integer.parseInt(HUB_STAT_PORTS[hubPortIndex]);
             pollHubThread.start();
         }
     }
@@ -213,5 +253,122 @@ public class HubComms {
             Log.d(TAG, "Thread already stopped so not stopping");
         }
     }
-    
+
+    private static boolean fetchJson (String protocol, String hostname, String ip, int port) {
+        HttpURLConnection urlConnection = null;
+        InputStream in = null;
+        StringBuilder result = new StringBuilder();
+        boolean success = true;
+
+        //Return if no valid IP address
+        if (!ip.matches("^([0-9]{1,3}\\.){3}[0-9]{1,3}$")) {
+            return false;
+        }
+
+        String urlText = protocol + "://" + ("https".equals(protocol)?hostname:ip) + ":" + port + "/" + HUB_STAT_PATH;
+
+        try {
+            URL url = new URL(urlText);
+            urlConnection = (HttpURLConnection) url.openConnection();
+            in = new BufferedInputStream(urlConnection.getInputStream());
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+
+            String line;
+            while ((line = reader.readLine()) != null) {
+                result.append(line);
+            }
+
+            Pattern pattern = Pattern.compile("\\((.*)\\)");
+            Matcher matcher = pattern.matcher(result);
+            if (matcher.find())
+            {
+                Log.i(TAG, matcher.group(1));
+                success = parseJson(matcher.group(1));
+                //https://stackoverflow.com/questions/9605913/how-to-parse-json-in-android?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
+                JSONObject jObject = new JSONObject(matcher.group(1));
+                Log.i(TAG, "Number of channels : " + jObject.length());
+                JSONObject jObject0 = jObject.getJSONObject("0");
+                Log.i(TAG,jObject0.toString());
+            } else {
+                success = false;
+            }
+
+        }catch( Exception e) {
+            Log.d(TAG,"Failed to read from : " + urlText);
+            success = false;
+        } finally {
+            if (in != null) {
+                try {
+                    in.close();
+                } catch ( Exception e) {
+                    Log.w(TAG, "Unable to close JSON input stream");
+                }
+            }
+            if (urlConnection != null) {
+                urlConnection.disconnect();
+            }
+
+        }
+
+        return success;
+    }
+
+    private static boolean parseJson (String json) {
+        int numChans;
+        Map<Integer, AppState.Chan> channelMap = new ConcurrentHashMap<>();
+
+        try {
+            Log.d(TAG, json);
+            JSONObject jObject = new JSONObject(json);
+            numChans = jObject.length();
+            Log.d(TAG, "Number of channels : " + numChans);
+            for (int i = 0; i < numChans; i++) {
+                AppState.Chan channel = new AppState.Chan();
+                if (jObject.has(Integer.toString(i))) {
+                    JSONObject jObjectChannel = jObject.getJSONObject(Integer.toString(i));
+                    channel.viewId = -1;
+                    if (jObjectChannel.has("busy")) {
+                        channel.busy = jObjectChannel.getBoolean("busy");
+                    } else {
+                        channel.busy = true; // Assume the worst if channel status not found
+                    }
+                    if (jObjectChannel.has("valid")) {
+                        channel.valid = jObjectChannel.getBoolean("valid");
+                    } else {
+                        channel.valid = false;
+                    }
+                    if (jObjectChannel.has("open")) {
+                        channel.open = jObjectChannel.getBoolean("open");
+                    } else {
+                        channel.open = false;
+                    }
+                    if (jObjectChannel.has("name")) {
+                        channel.name = jObjectChannel.getString("name");
+                    } else {
+                        channel.name = String.format("%s%4d", "? ", i + 1); // Indicate distaste at not being able to get channel name
+                    }
+                    if (jObjectChannel.has("allowedIds")) {
+                        JSONArray allowedIdsJson = jObjectChannel.getJSONArray("allowedIds");
+                        for (int j=0; j < allowedIdsJson.length(); j++) {
+                            channel.allowedIds.add(allowedIdsJson.getString(j));
+                        }
+                    }
+                    channelMap.put(i, channel);
+                } else {
+                    throw new NoSuchFieldException ("Not found expected channel number in JSON : " + i);
+                }
+            }
+            latestChannelMap = channelMap;
+        } catch ( Exception e) {
+            Log.e(TAG, "Unable to parse Hub stat JSON : " + e.getMessage());
+            return false;
+        }
+        return true;
+    }
+
+    static Map<Integer, AppState.Chan> getChannelMap() {
+        return latestChannelMap;
+    }
 }

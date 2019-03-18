@@ -51,7 +51,7 @@ public class TranslationTX {
     private static String MIME;
     private static String CODEC_NAME;
     private static int CHANNELCONFIG;
-    private static int CHANNELS;
+    private static int AUDIO_CHANNELS;
     private static int AUDIO_ENCODING_FORMAT;
     //Audio buffer size: intended number of samples (1 sample = 2 bytes)
     private static int AUDIO_BUFF_SIZE;
@@ -162,7 +162,7 @@ public class TranslationTX {
         BITRATE = Integer.parseInt(prop.getProperty("AMR_BITRATE"));
         MIME = prop.getProperty("MIME");
         CODEC_NAME = prop.getProperty("TX_CODEC_NAME");
-        CHANNELS = Integer.parseInt(prop.getProperty("AUDIO_CHANNELS"));
+        AUDIO_CHANNELS = Integer.parseInt(prop.getProperty("AUDIO_CHANNELS"));
         CHANNELCONFIG = Tools.getAudioFormatIntProp(prop.getProperty("TX_CHANNELCONFIG"));
         AUDIO_ENCODING_FORMAT = Tools.getAudioFormatIntProp(prop.getProperty("AUDIO_ENCODING_FORMAT"));
         AUDIO_BUFF_SIZE = AudioRecord.getMinBufferSize(SAMPLERATE, CHANNELCONFIG , AUDIO_ENCODING_FORMAT);
@@ -226,7 +226,7 @@ public class TranslationTX {
         catch (IOException e) {
             throw new IllegalStateException("IOException " + e.toString());
         }
-        MediaFormat format = MediaFormat.createAudioFormat(MIME, SAMPLERATE, CHANNELS);
+        MediaFormat format = MediaFormat.createAudioFormat(MIME, SAMPLERATE, AUDIO_CHANNELS);
         format.setInteger(MediaFormat.KEY_BIT_RATE, BITRATE);
         format.setInteger(MediaFormat.KEY_MAX_INPUT_SIZE, AUDIO_BUFF_SIZE);
         codec.configure(format, null, null, MediaCodec.CONFIGURE_FLAG_ENCODE);

@@ -42,6 +42,7 @@ import static android.view.View.generateViewId;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static String WAKELOCK_TAG;
     private static final String TAG = "MultTrsltnMainActivity";
     private static int BUILD_VERSION = Build.VERSION.SDK_INT;
     private static final int REQUEST_CODE = 0x2932;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     private static int DISPLAY_THREAD_MS;
     private static int ACTION_THREAD_MS;
     private static boolean ALLOW_LOOPBACK;
-    private static int CHANNELS;
+    private static int MAX_CHANNELS;
 
     //Global variables
     public static Context context;
@@ -89,14 +90,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        powerManager = (PowerManager) getSystemService(POWER_SERVICE);
-        wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
 
         try {
             //load the properties file
             prop.load(getAssets().open("app.properties"));
-
-
         } catch (IOException ex) {
             throw new IllegalStateException("IOException " + ex.toString());
         }
@@ -105,7 +102,11 @@ public class MainActivity extends AppCompatActivity {
         ACTION_THREAD_MS = Integer.parseInt(prop.getProperty("ACTION_THREAD_MS"));
         ALLOW_LOOPBACK = Boolean.parseBoolean(prop.getProperty("ALLOW_LOOPBACK"));
         RX_WAIT_TIMEOUT_MIN = Integer.parseInt(prop.getProperty("RX_WAIT_TIMEOUT_MIN"));
-        CHANNELS = Integer.parseInt(prop.getProperty("CHANNELS"));
+        MAX_CHANNELS = Integer.parseInt(prop.getProperty("MAX_CHANNELS"));
+        WAKELOCK_TAG = prop.getProperty("WAKELOCK_TAG");
+
+        powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+        wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, WAKELOCK_TAG);
 
 
         context = this;
@@ -145,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Restore preferences
-        desiredState = new AppState(this, PREF_DEF, translationTx, CHANNELS);
+        desiredState = new AppState(this, PREF_DEF, translationTx, MAX_CHANNELS);
         desiredState.readPrefs();
         desiredState.writePrefs();
         uuid = desiredState.uuid;
@@ -229,6 +230,7 @@ public class MainActivity extends AppCompatActivity {
 
         displayUpdateThreadStart();
         actionStateThreadStart();
+        HubComms.pollHubStart();
         hubComms.broadcastStart();
         //managementRX.action(ManagementRX.Command.START); TEST TEST
         canDoMulticast();
@@ -693,6 +695,7 @@ public class MainActivity extends AppCompatActivity {
                     desiredState.happening = false;
                 }
 
+                desiredState.fetchChannelMap();
                 desiredState.copyDesiredTo(stateSnapshot);
                 activeState.copyReportedTo(stateSnapshot);
                 if (!stateSnapshot.desiredEquals(activeState) || !activeState.stateInitialised) {
@@ -926,6 +929,7 @@ public class MainActivity extends AppCompatActivity {
     private void actionStateThreadStart() {
         actionStateThread.start();
     }
+
 
     private void setscreenOn (final boolean screenOn) {
 

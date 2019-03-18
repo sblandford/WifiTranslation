@@ -60,7 +60,7 @@ public class TranslationRX {
     private static String MIME;
     private static String CODEC_NAME;
     private static int CHANNELCONFIG;
-    private static int CHANNELS;
+    private static int AUDIO_CHANNELS;
     private static int AUDIO_ENCODING_FORMAT;
     //Set audio buffer size to twice the minimum
     private static int AUDIO_BUFF_SIZE;
@@ -141,7 +141,7 @@ public class TranslationRX {
         SAMPLERATE = Integer.parseInt(prop.getProperty("SAMPLERATE"));
         MIME = prop.getProperty("MIME");
         CODEC_NAME = prop.getProperty("RX_CODEC_NAME");
-        CHANNELS = Integer.parseInt(prop.getProperty("AUDIO_CHANNELS"));
+        AUDIO_CHANNELS = Integer.parseInt(prop.getProperty("AUDIO_CHANNELS"));
         CHANNELCONFIG = Tools.getAudioFormatIntProp(prop.getProperty("RX_CHANNELCONFIG"));
         AUDIO_ENCODING_FORMAT = Tools.getAudioFormatIntProp(prop.getProperty("AUDIO_ENCODING_FORMAT"));
         AUDIO_BUFF_SIZE = AudioTrack.getMinBufferSize(SAMPLERATE, CHANNELCONFIG, AUDIO_ENCODING_FORMAT);
@@ -557,7 +557,7 @@ public class TranslationRX {
             throw new IllegalStateException("IOException " + e.toString());
         }
 
-        format = MediaFormat.createAudioFormat(MIME, SAMPLERATE, CHANNELS);
+        format = MediaFormat.createAudioFormat(MIME, SAMPLERATE, AUDIO_CHANNELS);
         format.setInteger(MediaFormat.KEY_MAX_INPUT_SIZE, AUDIO_BUFF_SIZE);
 
         Log.d(TAG, "Configuring audio codec");
