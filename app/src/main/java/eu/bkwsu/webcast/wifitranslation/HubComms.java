@@ -131,6 +131,9 @@ public class HubComms {
         };
     }
     static void broadcastStart () {
+        if (hubFound) {
+            return;
+        }
         if (broadcastRxThread == null || (broadcastRxThread.getState() == Thread.State.TERMINATED)) {
             mainBroadcastRxThread();
         }

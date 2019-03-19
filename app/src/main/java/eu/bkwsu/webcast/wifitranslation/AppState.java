@@ -66,6 +66,7 @@ final class AppState  {
     public volatile boolean relayChannelFree = false;
     public volatile boolean rxBusy = true;
     public volatile boolean rxValid = false;
+    public volatile boolean rxMulticastMode = true;
     public volatile boolean stateInitialised = false;
     public volatile boolean headphones = false;
     public volatile boolean appIsVisible = true;
@@ -98,6 +99,7 @@ final class AppState  {
 
     public void fetchChannelMap () {
         if (HubComms.getChannelMap() != null) {
+            channelsManaged = true;
             Map<Integer, Chan> newChannelMap = new HashMap<>(HubComms.getChannelMap());
             //Copy old ViewIds to received channel map
             for(Map.Entry<Integer, Chan> thisPair : newChannelMap.entrySet()) {
@@ -107,6 +109,8 @@ final class AppState  {
             }
             channelMap = null;
             channelMap = newChannelMap;
+        } else {
+            channelsManaged = false;
         }
     }
 
@@ -189,6 +193,9 @@ final class AppState  {
         if (rxValid != compareWith.rxValid) {
             return false;
         }
+        if (rxMulticastMode != compareWith.rxMulticastMode) {
+            return false;
+        }
         if (headphones != compareWith.headphones) {
             return false;
         }
@@ -202,13 +209,15 @@ final class AppState  {
             return false;
         }
         //Deep compare
-        for(Map.Entry<Integer, Chan> thisPair : channelMap.entrySet()) {
-            Chan thisChan = thisPair.getValue();
-            Chan thatChan = compareWith.channelMap.get(thisPair.getKey().intValue());
-            if ((thatChan == null) ||
-                    (thisChan.valid != thatChan.valid) ||
-                    (thisChan.busy != thatChan.busy)) {
-                return false;
+        if (!channelsManaged) {
+            for (Map.Entry<Integer, Chan> thisPair : channelMap.entrySet()) {
+                Chan thisChan = thisPair.getValue();
+                Chan thatChan = compareWith.channelMap.get(thisPair.getKey().intValue());
+                if ((thatChan == null) ||
+                        (thisChan.valid != thatChan.valid) ||
+                        (thisChan.busy != thatChan.busy)) {
+                    return false;
+                }
             }
         }
         return true;
@@ -303,13 +312,15 @@ final class AppState  {
         targetState.happening = happening;
         targetState.headphonesMandatory = headphonesMandatory;
         targetState.channelsManaged = channelsManaged;
-        //Copy valid and busy states back
-        for(Map.Entry<Integer, Chan> thisPair : channelMap.entrySet()) {
-            Chan thisChan = thisPair.getValue();
-            Chan targetChan = targetState.channelMap.get(thisPair.getKey().intValue());
-            if (targetChan != null) {
-                thisChan.busy = targetChan.busy;
-                thisChan.valid = targetChan.valid;
+        //Copy valid and busy states back unless managed
+        if (!channelsManaged) {
+            for (Map.Entry<Integer, Chan> thisPair : channelMap.entrySet()) {
+                Chan thisChan = thisPair.getValue();
+                Chan targetChan = targetState.channelMap.get(thisPair.getKey().intValue());
+                if (targetChan != null) {
+                    thisChan.busy = targetChan.busy;
+                    thisChan.valid = targetChan.valid;
+                }
             }
         }
         targetState.channelMap = null;
@@ -320,16 +331,19 @@ final class AppState  {
         targetState.relayChannelFree = relayChannelFree;
         targetState.rxBusy = rxBusy;
         targetState.rxValid = rxValid;
+        targetState.rxMulticastMode = rxMulticastMode;
         targetState.headphones = headphones;
         targetState.appIsVisible = appIsVisible;
         targetState.wifiOn = wifiOn;
         //Copy over existing only for affected properties
-        for(Map.Entry<Integer, Chan> thisPair : channelMap.entrySet()) {
-            Chan thisChan = thisPair.getValue();
-            Chan targetChan = targetState.channelMap.get(thisPair.getKey().intValue());
-            if (targetChan != null) {
-                targetChan.valid = thisChan.valid;
-                targetChan.busy = thisChan.busy;
+        if (!channelsManaged && !targetState.channelsManaged && channelMap != null) {
+            for (Map.Entry<Integer, Chan> thisPair : channelMap.entrySet()) {
+                Chan thisChan = thisPair.getValue();
+                Chan targetChan = targetState.channelMap.get(thisPair.getKey().intValue());
+                if (targetChan != null) {
+                    targetChan.valid = thisChan.valid;
+                    targetChan.busy = thisChan.busy;
+                }
             }
         }
     }

@@ -106,7 +106,7 @@ public class TranslationRX {
     }
 
     public enum Command {
-        START, START_NO_UUID_SEND, TEST, STOP
+        START, START_NO_UUID_SEND, START_RTSP, TEST, STOP
     }
 
 
@@ -823,6 +823,10 @@ public class TranslationRX {
         Log.d(TAG, "Selecting Channel : " + (channel + 1));
     }
 
+    public static synchronized int getChannel() {
+        return channel;
+    }
+
     public static synchronized String getRxThreadStatus() {
         Thread.State playOutThreadState, rxThreadState;
         String response = "";
@@ -860,7 +864,7 @@ public class TranslationRX {
         }
     }
 
-    public static void action(Command action) {
+    public static void action(Command action, boolean multicastMode) {
         boolean sendUuid = false;
         
         actionWait();
