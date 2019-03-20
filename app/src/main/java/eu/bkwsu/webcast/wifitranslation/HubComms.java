@@ -354,6 +354,7 @@ public class HubComms {
                     }
                     if (jObjectChannel.has("allowedIds")) {
                         JSONArray allowedIdsJson = jObjectChannel.getJSONArray("allowedIds");
+                        channel.allowedIds.clear();
                         for (int j=0; j < allowedIdsJson.length(); j++) {
                             channel.allowedIds.add(allowedIdsJson.getString(j));
                         }

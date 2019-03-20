@@ -45,6 +45,11 @@ import static android.content.Context.AUDIO_SERVICE;
 //echo -n "rx42b06595-6d85-4334-946a-6dbd4c2cfe7f" | socat - UDP:228.227.227.225:1234
 
 
+// RTSP Player info
+// https://android--examples.blogspot.com/2017/08/android-play-audio-from-url-http.html
+// https://developer.android.com/reference/android/media/MediaPlayer#setDataSource(java.lang.String)
+
+
 public class TranslationRX {
     private static final String TAG = "TranslationRX";
 

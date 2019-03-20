@@ -206,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
                         } else {
                             //Only start transmitting if channel is free and mic permissions OK
                             if (micPermission) {
-                                if (!activeState.rxBusy){
+                                if (activeState.txEnabled){
                                     desiredState.happening = true;
                                     Log.d(TAG, "TX requested");
                                 }
@@ -255,7 +255,7 @@ public class MainActivity extends AppCompatActivity {
         //Can only change TX mode if in standby
         //If in RX mode then only if channel is free
         tx.setEnabled(! desiredState.happening &&
-                (desiredState.txMode || ! activeState.rxBusy));
+                (desiredState.txMode || activeState.txEnabled));
 
         tx.setChecked(desiredState.txMode);
         relay.setChecked(desiredState.relayMode);
@@ -391,8 +391,9 @@ public class MainActivity extends AppCompatActivity {
             MenuItem nm = menu.add(R.id.channel_selector_group, newId, Menu.FLAG_APPEND_TO_GROUP, chan.name);
             nm.setCheckable(true);
             //If the channels are managed then enable/disable according to channel state
-            if ((desiredState.channelsManaged) &&
-                    (!desiredState.txMode && !chan.valid)) {
+            if (desiredState.channelsManaged &&
+                    !desiredState.txMode && !chan.valid &&
+                    !chan.allowedIds.contains(uuid) && !chan.open) {
                     nm.setEnabled(false);
             }
             chan.viewId = newId;
@@ -540,7 +541,7 @@ public class MainActivity extends AppCompatActivity {
     private void setButton (AppState state) {
         Log.d(TAG, "Setting button state for txMode:" + state.txMode + ", mute:" +
                 state.mute + ", rxBusy:" + state.rxBusy + ", rxValid :" +
-                state.rxValid + ", wifi : " + state.wifiOn);
+                state.rxValid + ", txEnabled : " + state.txEnabled + ", wifi : " + state.wifiOn);
         if (!state.wifiOn) {
             setMainButtonColorText(Color.LTGRAY, getString(R.string.status_no_wifi));
             return;
@@ -553,10 +554,10 @@ public class MainActivity extends AppCompatActivity {
                     setMainButtonColorText(Color.RED, getString(R.string.status_mute));
                 }
             } else {
-                if (state.rxBusy) {
-                    setMainButtonColorText(Color.LTGRAY, getString(R.string.status_unavailable));
-                } else {
+                if (state.txEnabled) {
                     setMainButtonColorText(Color.GREEN, getString(R.string.status_tx_start));
+                } else {
+                    setMainButtonColorText(Color.LTGRAY, getString(R.string.status_unavailable));
                 }
             }
         } else {
@@ -850,11 +851,11 @@ public class MainActivity extends AppCompatActivity {
                             case UNAVAILABLE:
                                 // If not "happening" then RX was only a test and should be stopped
                                 translationRx.action(TranslationRX.Command.STOP,activeState.rxMulticastMode);
-                                Log.d(TAG, "Completed RX test : RXBusy : " + rxBusy + ", RXValid : " + rxValid + ", Multicast mode : " + activeState.rxMulticastMode);
                                 // If Management reports activity, but test reports not none then assume that multicast is not working
-                                if (activeState.channelMap.get(TranslationRX.getChannel()).busy && !rxBusy && (--mutlicastTestCount < 0)) {
+                                if (activeState.channelsManaged && activeState.channelMap.get(TranslationRX.getChannel()).busy && !rxBusy && (--mutlicastTestCount < 0)) {
                                     activeState.rxMulticastMode = false;
                                 }
+                                Log.d(TAG, "Completed RX test : RXBusy : " + rxBusy + ", RXValid : " + rxValid + ", Multicast mode : " + activeState.rxMulticastMode);
                                 break;
                         }
                     }
@@ -872,11 +873,20 @@ public class MainActivity extends AppCompatActivity {
                 }
                 // If in managed mode then hub overrides busy state detected by receiver
                 if (activeState.channelsManaged) {
-                    activeState.rxBusy = activeState.channelMap.get(TranslationRX.getChannel()).busy || rxBusy;
-                    activeState.rxValid = activeState.channelMap.get(TranslationRX.getChannel()).valid || rxValid;
+                    AppState.Chan chan = activeState.channelMap.get(TranslationRX.getChannel());
+                    activeState.rxBusy = chan.busy || rxBusy;
+                    activeState.rxValid = chan.valid || rxValid;
+                    // Only allow transmit if multicast is working and we are in the list of UUIDs allowed to or the channel is open
+                    if ((chan.allowedIds.contains(uuid) || chan.open) && activeState.rxMulticastMode) {
+                        activeState.txEnabled = !activeState.rxBusy;
+                    } else {
+                        // Not allowed
+                        activeState.txEnabled = false;
+                    }
                 } else {
                     activeState.rxBusy = rxBusy;
                     activeState.rxValid = rxValid;
+                    activeState.txEnabled = !rxBusy;
                 }
 
                 //Record Wifi state
