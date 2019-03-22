@@ -520,7 +520,6 @@ public class MainActivity extends AppCompatActivity {
                     Log.d(TAG, "Display status interrupted");
                 }
 
-                // TODO Threads do not resume on application wake up
                 //Pause if requested
                 synchronized (mPauseLock) {
                     while (mPaused) {
@@ -928,7 +927,6 @@ public class MainActivity extends AppCompatActivity {
                     synchronized (mPauseLock) {
                         mPaused = true;
                     }
-                // TODO Does not wake up
                 } else if (stateSnapshot.appIsVisible) {
                     // Does nothing if already running
                     HubComms.pollHubStart();
