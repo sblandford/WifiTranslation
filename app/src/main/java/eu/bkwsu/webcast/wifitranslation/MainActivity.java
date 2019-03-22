@@ -520,6 +520,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.d(TAG, "Display status interrupted");
                 }
 
+                // TODO Threads do not resume on application wake up
                 //Pause if requested
                 synchronized (mPauseLock) {
                     while (mPaused) {
@@ -927,6 +928,7 @@ public class MainActivity extends AppCompatActivity {
                     synchronized (mPauseLock) {
                         mPaused = true;
                     }
+                // TODO Does not wake up
                 } else if (stateSnapshot.appIsVisible) {
                     // Does nothing if already running
                     HubComms.pollHubStart();
@@ -935,12 +937,6 @@ public class MainActivity extends AppCompatActivity {
 
                 stateSnapshot.copyDesiredTo(activeState);
                 activeState.stateInitialised = true;
-                //Sleep for a bit
-                try {
-                    Thread.sleep(ACTION_THREAD_MS);
-                } catch (InterruptedException e) {
-                    Log.d(TAG, "Active state thread interrupted");
-                }
 
                 //Pause if requested
                 synchronized (mPauseLock) {
@@ -952,11 +948,22 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 }
+                //Sleep for a bit
+                try {
+                    Thread.sleep(ACTION_THREAD_MS);
+                } catch (InterruptedException e) {
+                    Log.d(TAG, "Active state thread interrupted");
+                }
             }
         }
     };
     private void actionStateThreadStart() {
-        actionStateThread.start();
+        if (actionStateThread.getState() == Thread.State.NEW) {
+            Log.d(TAG, "Starting main action thread");
+            actionStateThread.start();
+        } else {
+            Log.d(TAG, "Not starting main action thread which is in state : " + actionStateThread.getState());
+        }
     }
 
 
@@ -1098,6 +1105,16 @@ public class MainActivity extends AppCompatActivity {
         if (activeState != null) {
             activeState.appIsVisible = false;
         }
+        // Wait for threads to be shut down
+        Log.i(TAG, "Waiting to enter lost-focus mode");
+        while (!mPaused) {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Log.d(TAG, "Wait for pause thread interrupted");
+            }
+        }
+        Log.i(TAG, "Entering lost-focus mode");
         super.onPause();
     }
 }

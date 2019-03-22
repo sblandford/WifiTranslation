@@ -14,6 +14,8 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.HttpURLConnection;
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
+import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.UnknownHostException;
 import java.nio.charset.Charset;
@@ -39,14 +41,17 @@ public class HubComms {
     private static volatile String hubIp = "";
     private static volatile int hubWebPort = 0;
     private static volatile int hubPortIndex = 0;
+    private static volatile boolean triedAllPorts = false;
 
     private static int HUB_BROADCAST_LENGTH_MAX;
     private static int HUB_BROADCAST_LENGTH_MIN;
     private static int HUB_BROADCAST_PORT;
+    private static int HUB_BROADCAST_TIMEOUT;
     private static String HUB_HOSTNAME;
-    private static int HUB_POLL_ATTEMPTS;
+    private static int HUB_POLL_REQUEST_TIMEOUT;
+    private static int HUB_POLL_LOSS_COUNT;
     private static int HUB_POLL_INTERVAL_MILLISECONDS;
-    private static int HUB_BROADCAST_TIMEOUT_MILLISECONDS;
+    private static int HUB_POLL_RETRY_INTERVAL_MILLISECONDS;
     private static String HUB_STAT_PATH;
     private static String HUB_STAT_PORTS[];
     private static int PACKET_BUFFER_SIZE;
@@ -56,11 +61,13 @@ public class HubComms {
     public HubComms (Properties prop) {
         HUB_BROADCAST_LENGTH_MAX = parseInt(prop.getProperty("HUB_BROADCAST_LENGTH_MAX"));
         HUB_BROADCAST_LENGTH_MIN = parseInt(prop.getProperty("HUB_BROADCAST_LENGTH_MIN"));
+        HUB_BROADCAST_TIMEOUT = parseInt(prop.getProperty("HUB_BROADCAST_TIMEOUT"));
         HUB_BROADCAST_PORT = parseInt(prop.getProperty("HUB_BROADCAST_PORT"));
         HUB_HOSTNAME = prop.getProperty("HUB_HOSTNAME");
-        HUB_POLL_ATTEMPTS = parseInt(prop.getProperty("HUB_POLL_ATTEMPTS"));
+        HUB_POLL_REQUEST_TIMEOUT = parseInt(prop.getProperty("HUB_POLL_REQUEST_TIMEOUT"));
+        HUB_POLL_LOSS_COUNT = parseInt(prop.getProperty("HUB_POLL_LOSS_COUNT"));
         HUB_POLL_INTERVAL_MILLISECONDS = parseInt(prop.getProperty("HUB_POLL_INTERVAL_MILLISECONDS"));
-        HUB_BROADCAST_TIMEOUT_MILLISECONDS = parseInt(prop.getProperty("HUB_BROADCAST_TIMEOUT_MILLISECONDS"));
+        HUB_POLL_RETRY_INTERVAL_MILLISECONDS = parseInt(prop.getProperty("HUB_POLL_RETRY_INTERVAL_MILLISECONDS"));
         HUB_STAT_PATH = prop.getProperty("HUB_STAT_PATH");
         HUB_STAT_PORTS = prop.getProperty("HUB_STAT_PORTS").split(",");
         PACKET_BUFFER_SIZE = parseInt(prop.getProperty("RX_PACKET_BUFFER_SIZE"));
@@ -80,11 +87,15 @@ public class HubComms {
                     byte[] packetBuff = new byte[PACKET_BUFFER_SIZE];
 
                     //Keep a socket open to listen to all the UDP trafic that is destined for this port
-                    sock = new DatagramSocket(HUB_BROADCAST_PORT, InetAddress.getByName("0.0.0.0"));
+                    sock = new DatagramSocket(null);
+                    sock.setReuseAddress(true);
+                    sock.setBroadcast(true);
+                    sock.bind(new InetSocketAddress(HUB_BROADCAST_PORT));
                     sock.setBroadcast(true);
 
                     while(hubIpRun) {
                         DatagramPacket pack = new DatagramPacket(packetBuff, PACKET_BUFFER_SIZE);
+                        sock.setSoTimeout(HUB_BROADCAST_TIMEOUT);
                         sock.receive(pack);
                         packetLength = pack.getLength();
 
@@ -124,6 +135,8 @@ public class HubComms {
                             }
                         }
                     }
+                } catch (SocketTimeoutException e) {
+                    Log.d(TAG, "Hub broadcast time out");
                 } catch (IOException e) {
                     throw new IllegalStateException("IOException " + e.toString());
                 }
@@ -162,69 +175,79 @@ public class HubComms {
         pollHubThread = new Thread() {
             @Override
             public void run() {
-                int pollCount = HUB_POLL_ATTEMPTS;
-                boolean triedAllPorts = false;
                 HttpURLConnection urlConnection = null;
-                long startTime = System.currentTimeMillis();
 
-                try {
-                    InetAddress address = InetAddress.getByName(HUB_HOSTNAME);
-                    hubIp = address.getHostAddress();
-                    Log.i(TAG, "Hub IP address detected by name resolution : " + hubIp);
-                } catch (UnknownHostException e) {
-                    Log.i(TAG, "Unable to resolve Hub by name : " + HUB_HOSTNAME);
-                    // Don't even try it if name doesn't resolve
-                    triedAllPorts = true;
-                }
+                while (hubPollRun) {
+                    long startTime = System.currentTimeMillis();
+                    int pollLossCounter = HUB_POLL_LOSS_COUNT;
 
-                while (hubPollRun && (pollCount > 0)) {
+                    try {
+                        InetAddress address = InetAddress.getByName(HUB_HOSTNAME);
+                        hubIp = address.getHostAddress();
+                        Log.i(TAG, "Hub IP address detected by name resolution : " + hubIp);
+                    } catch (UnknownHostException e) {
+                        Log.i(TAG, "Unable to resolve Hub by name : " + HUB_HOSTNAME);
+                        // Don't even try it if name doesn't resolve
+                        triedAllPorts = true;
+                    }
+                    hubPortIndex = 0;
 
-                    if (fetchJson(hubProtocol, hubHostName, hubIp, hubWebPort)) {
-                        // Successful poll of hub
-                        pollCount = HUB_POLL_ATTEMPTS;
-                        if (!hubFound) {
-                            Log.i(TAG, "Successfully polled hub");
+                    while (hubPollRun && (hubFound || !triedAllPorts)) {
+                        if (fetchJson(hubProtocol, hubHostName, hubIp, hubWebPort)) {
+                            // Successful poll of hub
+                            if (!hubFound) {
+                                Log.i(TAG, "Successfully polled hub");
+                            }
+                            hubFound = true;
+                            pollLossCounter = HUB_POLL_LOSS_COUNT;
+                            //Sleep for a bit before re-polling
+                            try {
+                                Thread.sleep(HUB_POLL_INTERVAL_MILLISECONDS);
+                            } catch (InterruptedException e) {
+                                Log.d(TAG, "Active state thread interrupted");
+                            }
+                        } else {
+                            // If we haven't received a broadcast message from the Hub
+                            // then keep trying different protocol and port combinations
+                            if (!hubFound && !triedAllPorts) {
+                                String portText = (HUB_STAT_PORTS[hubPortIndex++]);
+                                String portClue = portText.substring(portText.length() - 1);
+                                hubProtocol = ("3".equals(portClue)) ? "https" : "http";
+                                hubWebPort = Integer.parseInt(portText);
+                                if (hubPortIndex >= HUB_STAT_PORTS.length) {
+                                    triedAllPorts = true;
+                                }
+                                Log.i(TAG, "Trying to find Hub : WAN Proto : " + hubWanProtocol +
+                                        ", LAN Proto : " + hubProtocol + ", Hostname : " + hubHostName +
+                                        ", IP : " + hubIp + ", Web Port : " + Integer.toString(hubWebPort));
+                            }
+                            if (triedAllPorts) {
+                                // Poll was unsuccessful. Count down before giving up and re-searching
+                                if (--pollLossCounter < 0) {
+                                    Log.d(TAG, "Hub poll unsuccessfull, attempts left : " + pollLossCounter);
+                                    hubFound = false;
+                                }
+                            }
+                            try {
+                                //Wait a second
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                Log.d(TAG, "Active state thread interrupted");
+                            }
                         }
-                        hubFound = true;
-                        //Sleep for a bit
+
+                    }
+                    // Wait for timeout if hub still not found
+                    startTime = System.currentTimeMillis();
+                    while (hubPollRun && (!hubFound) && ((System.currentTimeMillis() - startTime) < HUB_POLL_RETRY_INTERVAL_MILLISECONDS)) {
                         try {
-                            Thread.sleep(HUB_POLL_INTERVAL_MILLISECONDS);
+                            //Wait a second
+                            Thread.sleep(1000);
                         } catch (InterruptedException e) {
                             Log.d(TAG, "Active state thread interrupted");
                         }
-                    } else {
-                        // If we haven't received a broadcast message from the Hub
-                        // then keep trying different protocol and port combinations
-                        if (!hubFound && !triedAllPorts) {
-                            String portText = (HUB_STAT_PORTS[hubPortIndex++]);
-                            String portClue = portText.substring(portText.length() - 1);
-                            hubProtocol = ("3".equals(portClue))?"https":"http";
-                            hubWebPort = Integer.parseInt(portText);
-                            if (hubPortIndex >= HUB_STAT_PORTS.length) {
-                                triedAllPorts = true;
-                            }
-                            Log.i(TAG, "Trying to find Hub : WAN Proto : " + hubWanProtocol +
-                                    ", LAN Proto : " + hubProtocol + ", Hostname : " + hubHostName +
-                                    ", IP : " + hubIp + ", Web Port : " + Integer.toString(hubWebPort));
-                        } else {
-                            // Wait for timeout if hub still not found
-                            while ((!hubFound) && ((System.currentTimeMillis() - startTime) < HUB_BROADCAST_TIMEOUT_MILLISECONDS)) {
-                                try {
-                                    //Wait a second
-                                    Thread.sleep(1000);
-                                } catch (InterruptedException e) {
-                                    Log.d(TAG, "Active state thread interrupted");
-                                }
-                            }
-                            pollCount--;
-                            Log.d(TAG, "Hub attempts left : " + pollCount);
-                            // Lost hub. Give up.
-                            if (pollCount <= 0) {
-                                hubPollRun = false;
-                                Log.i(TAG, "Hub polling stopped");
-                            }
-                        }
                     }
+                    Log.i(TAG, "Restarting search for for Hub");
                 }
             }
         };
@@ -238,7 +261,9 @@ public class HubComms {
             hubPollRun = true;
             hubProtocol = "http";
             hubHostName = HUB_HOSTNAME;
-            hubWebPort = Integer.parseInt(HUB_STAT_PORTS[hubPortIndex]);
+            if (!triedAllPorts) {
+                hubWebPort = Integer.parseInt(HUB_STAT_PORTS[hubPortIndex]);
+            }
             pollHubThread.start();
         }
     }
@@ -273,6 +298,7 @@ public class HubComms {
         try {
             URL url = new URL(urlText);
             urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setConnectTimeout(HUB_POLL_REQUEST_TIMEOUT);
             in = new BufferedInputStream(urlConnection.getInputStream());
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
@@ -298,7 +324,7 @@ public class HubComms {
                 success = false;
             }
 
-        }catch( Exception e) {
+        } catch( Exception e) {
             Log.d(TAG,"Failed to read from : " + urlText);
             success = false;
         } finally {

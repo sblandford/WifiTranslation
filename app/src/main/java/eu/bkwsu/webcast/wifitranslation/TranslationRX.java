@@ -869,6 +869,7 @@ public class TranslationRX {
         }
     }
 
+    // TODO implement RTSP  mode
     public static void action(Command action, boolean multicastMode) {
         boolean sendUuid = false;
         
