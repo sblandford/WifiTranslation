@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -73,6 +72,8 @@ final class AppState  {
     public volatile boolean appIsVisible = true;
     public volatile boolean wifiOn = false;
 
+    private Context context;
+    private int maxChannels;
     private SharedPreferences prefs = null;
     private TranslationTX translationTx = null;
 
@@ -83,34 +84,43 @@ final class AppState  {
     public AppState() {
 
     }
-    public AppState(Context context, String prefDef, TranslationTX translationTxObj, int max_channels) {
+    public AppState(Context initContext, String prefDef, TranslationTX translationTxObj, int initMaxChannels) {
+        maxChannels = initMaxChannels;
+        context = initContext;
         prefs = context.getSharedPreferences(prefDef, MODE_PRIVATE);
         translationTx = translationTxObj;
 
-        for (int i =0; i < max_channels; i++) {
+        channelMap = defaultChannels();
+    }
+
+    public Map<Integer, Chan> defaultChannels () {
+        Map<Integer, Chan> defaultChannelMap = new ConcurrentHashMap<>();
+
+        for (int i =0; i < maxChannels; i++) {
             Chan chan = new Chan();
             chan.name = String.format("%s%4d", context.getString(R.string.channel_text), i + 1);
             chan.viewId = -1;
             chan.busy = false;
             chan.valid = false;
             chan.allowedIds.add("-");
-            channelMap.put(i, chan);
+            defaultChannelMap.put(i, chan);
         }
+        return defaultChannelMap;
     }
 
     public void fetchChannelMap () {
         if (HubComms.getChannelMap() != null) {
             channelsManaged = true;
-            Map<Integer, Chan> newChannelMap = new HashMap<>(HubComms.getChannelMap());
+            Map<Integer, Chan> newChannelMap = new ConcurrentHashMap<>(HubComms.getChannelMap());
             //Copy old ViewIds to received channel map
             for(Map.Entry<Integer, Chan> thisPair : newChannelMap.entrySet()) {
                 Chan targetChan = thisPair.getValue();
                 Chan thisChan = channelMap.get(thisPair.getKey().intValue());
                 targetChan.viewId = thisChan.viewId;
             }
-            channelMap = null;
             channelMap = newChannelMap;
         } else {
+            channelMap = defaultChannels();
             channelsManaged = false;
         }
     }
@@ -169,13 +179,15 @@ final class AppState  {
             return false;
         }
         //Deeper compare
-        for(Map.Entry<Integer, Chan> thisPair : channelMap.entrySet()) {
-            Chan thisChan = thisPair.getValue();
-            Chan thatChan = compareWith.channelMap.get(thisPair.getKey().intValue());
-            if ((thatChan == null) ||
-                    (!thisChan.name.equals(thatChan.name)) ||
-                    (thisChan.viewId != thatChan.viewId)) {
-                return false;
+        if (channelMap != null) {
+            for (Map.Entry<Integer, Chan> thisPair : channelMap.entrySet()) {
+                Chan thisChan = thisPair.getValue();
+                Chan thatChan = compareWith.channelMap.get(thisPair.getKey().intValue());
+                if ((thatChan == null) ||
+                        (!thisChan.name.equals(thatChan.name)) ||
+                        (thisChan.viewId != thatChan.viewId)) {
+                    return false;
+                }
             }
         }
         return true;
@@ -213,7 +225,7 @@ final class AppState  {
             return false;
         }
         //Deep compare
-        if (!channelsManaged) {
+        if (!channelsManaged && (channelMap != null)) {
             for (Map.Entry<Integer, Chan> thisPair : channelMap.entrySet()) {
                 Chan thisChan = thisPair.getValue();
                 Chan thatChan = compareWith.channelMap.get(thisPair.getKey().intValue());
@@ -328,7 +340,7 @@ final class AppState  {
             }
         }
         targetState.channelMap = null;
-        targetState.channelMap = new HashMap<>(channelMap);
+        targetState.channelMap = new ConcurrentHashMap<>(channelMap);
     }
     public void copyReportedTo (AppState targetState) {
         targetState.mainChannelFree = mainChannelFree;

@@ -177,9 +177,13 @@ public class HubComms {
             public void run() {
                 HttpURLConnection urlConnection = null;
 
+
+
                 while (hubPollRun) {
-                    long startTime = System.currentTimeMillis();
+                    long startTime;
                     int pollLossCounter = HUB_POLL_LOSS_COUNT;
+                    hubPortIndex = 0;
+                    triedAllPorts = false;
 
                     try {
                         InetAddress address = InetAddress.getByName(HUB_HOSTNAME);
@@ -190,7 +194,7 @@ public class HubComms {
                         // Don't even try it if name doesn't resolve
                         triedAllPorts = true;
                     }
-                    hubPortIndex = 0;
+
 
                     while (hubPollRun && (hubFound || !triedAllPorts)) {
                         if (fetchJson(hubProtocol, hubHostName, hubIp, hubWebPort)) {
@@ -199,6 +203,7 @@ public class HubComms {
                                 Log.i(TAG, "Successfully polled hub");
                             }
                             hubFound = true;
+                            triedAllPorts = true;
                             pollLossCounter = HUB_POLL_LOSS_COUNT;
                             //Sleep for a bit before re-polling
                             try {
@@ -224,8 +229,10 @@ public class HubComms {
                             if (triedAllPorts) {
                                 // Poll was unsuccessful. Count down before giving up and re-searching
                                 if (--pollLossCounter < 0) {
-                                    Log.d(TAG, "Hub poll unsuccessfull, attempts left : " + pollLossCounter);
                                     hubFound = false;
+                                    latestChannelMap = null;
+                                } else {
+                                    Log.d(TAG, "Hub poll unsuccessfull, attempts left : " + pollLossCounter);
                                 }
                             }
                             try {
@@ -247,7 +254,9 @@ public class HubComms {
                             Log.d(TAG, "Active state thread interrupted");
                         }
                     }
-                    Log.i(TAG, "Restarting search for for Hub");
+                    if (hubPollRun) {
+                        Log.i(TAG, "Restarting search for for Hub");
+                    }
                 }
             }
         };
@@ -298,7 +307,11 @@ public class HubComms {
         try {
             URL url = new URL(urlText);
             urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setRequestMethod("GET");
+            urlConnection.setRequestProperty("Content-length", "0");
+            urlConnection.setAllowUserInteraction(false);
             urlConnection.setConnectTimeout(HUB_POLL_REQUEST_TIMEOUT);
+            urlConnection.setReadTimeout(HUB_POLL_REQUEST_TIMEOUT);
             in = new BufferedInputStream(urlConnection.getInputStream());
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
@@ -328,6 +341,13 @@ public class HubComms {
             Log.d(TAG,"Failed to read from : " + urlText);
             success = false;
         } finally {
+            if (urlConnection != null) {
+                try {
+                    urlConnection.disconnect();
+                } catch (Exception e) {
+                    Log.w(TAG, "Unable to close JSON input connection");
+                }
+            }
             if (in != null) {
                 try {
                     in.close();
@@ -335,10 +355,6 @@ public class HubComms {
                     Log.w(TAG, "Unable to close JSON input stream");
                 }
             }
-            if (urlConnection != null) {
-                urlConnection.disconnect();
-            }
-
         }
 
         return success;
@@ -401,4 +417,6 @@ public class HubComms {
     static Map<Integer, AppState.Chan> getChannelMap() {
         return latestChannelMap;
     }
+
+    static String getHostIp () { return hubIp;}
 }

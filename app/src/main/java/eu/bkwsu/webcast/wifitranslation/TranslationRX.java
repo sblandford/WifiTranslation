@@ -1,6 +1,7 @@
 package eu.bkwsu.webcast.wifitranslation;
 
 import android.content.Context;
+import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.AudioTrack;
 
@@ -20,6 +21,7 @@ import java.util.concurrent.TimeUnit;
 
 import android.media.MediaCodec;
 import android.media.MediaFormat;
+import android.media.MediaPlayer;
 import android.util.Log;
 
 import static android.content.Context.AUDIO_SERVICE;
@@ -59,6 +61,7 @@ public class TranslationRX {
     private static int MUTLICAST_UUID_MS;
     private static int MUTLICAST_UUID_JITTER_MS;
     private static int MULTICAST_TIMEOUT;
+    private static int RTSP_PORT;
     private static int MAX_MULTICAST_TIMEOUTS_BEFORE_KICK;
     private static int PACKET_BUFFER_SIZE;
     private static int SAMPLERATE;
@@ -117,6 +120,8 @@ public class TranslationRX {
 
     private static Context context;
 
+    private static MediaPlayer mPlayer;
+
     private static ByteBuffer rtpPacket;
     private static BlockingQueue rtpQueue, amrQueue, pcmQueue;
     private static boolean queueFilled = false;
@@ -141,6 +146,7 @@ public class TranslationRX {
         MUTLICAST_UUID_OFFSET = Integer.parseInt(prop.getProperty("MUTLICAST_UUID_OFFSET"));
         MUTLICAST_UUID_MS = Integer.parseInt(prop.getProperty("RX_MUTLICAST_UUID_MS"));
         MUTLICAST_UUID_JITTER_MS = Integer.parseInt(prop.getProperty("RX_MUTLICAST_UUID_JITTER_MS"));
+        RTSP_PORT = Integer.parseInt(prop.getProperty("RTSP_PORT"));
         MAX_MULTICAST_TIMEOUTS_BEFORE_KICK = Integer.parseInt(prop.getProperty("RX_MAX_MULTICAST_TIMEOUTS_BEFORE_KICK"));
         PACKET_BUFFER_SIZE = Integer.parseInt(prop.getProperty("RX_PACKET_BUFFER_SIZE"));
         SAMPLERATE = Integer.parseInt(prop.getProperty("SAMPLERATE"));
@@ -808,18 +814,62 @@ public class TranslationRX {
             } else {
                 Log.d(TAG, "rx thread not yet defined so not stopping");
             }
-            if (uuidThread != null) {
-                final Thread.State uuidThreadState = uuidThread.getState();
-                Log.d(TAG, "Stopping UUID thread from state : " + uuidThreadState);
-                try {
-                    uuidThread.join(THREAD_TIMEOUT);
-                } catch (InterruptedException e) {
-                    Log.w(TAG, "UUID thread termination failed");
-                }
-                Log.d(TAG, "Stopped UUID thread");
-            } else {
-                Log.d(TAG, "UUID thread not yet defined so not stopping");
+            stopUuid();
+        }
+    }
+    private static void stopUuid() {
+        if (uuidThread != null) {
+            final Thread.State uuidThreadState = uuidThread.getState();
+            Log.d(TAG, "Stopping UUID thread from state : " + uuidThreadState);
+            try {
+                uuidThread.join(THREAD_TIMEOUT);
+            } catch (InterruptedException e) {
+                Log.w(TAG, "UUID thread termination failed");
             }
+            Log.d(TAG, "Stopped UUID thread");
+        } else {
+            Log.d(TAG, "UUID thread not yet defined so not stopping");
+        }
+    }
+
+    private static void rxRtspStart (boolean sendUuid) {
+        String url = "rtsp://" + HubComms.getHostIp() + ":" + RTSP_PORT + "/" + String.format("%02d", channel);
+
+        if (sendUuid) {
+            if ((uuidThread == null) || (uuidThread.getState() == Thread.State.TERMINATED)) {
+                newUuidThread();
+            }
+            if ((uuidThread.getState() == Thread.State.NEW)) {
+                rxRun = true;
+                setChannelIp();
+                Log.d(TAG, "Starting UUID thread from state: " + uuidThread.getState());
+                uuidThread.start();
+            } else {
+                Log.e(TAG, "UUID thread is not runnable");
+            }
+        }
+
+
+        mPlayer = new MediaPlayer();
+        try {
+            mPlayer.setAudioStreamType(AudioManager.STREAM_VOICE_CALL);
+            mPlayer.setDataSource(url);
+            mPlayer.prepare();
+            mPlayer.start();
+        } catch (IOException e) {
+            Log.e(TAG, "Unable to find stream : " + url);
+        }
+
+    }
+    private static void rxRtspStop () {
+        if (rxRun) {
+            rxRun = false;
+            stopUuid();
+        }
+        if (mPlayer != null) {
+            mPlayer.stop();
+            mPlayer.release();
+            mPlayer = null;
         }
     }
         
@@ -885,12 +935,17 @@ public class TranslationRX {
                 }
                 Log.d(TAG, "Starting RX with audio");
                 audioOn = true;
-                rxStart(sendUuid);
+                if (multicastMode || !sendUuid) {
+                    rxStart(sendUuid);
+                } else {
+                        rxRtspStart(sendUuid);
+                }
                 break;
             case STOP:
                 //Signal stop in progress
                 state = Status.STOPPING;
                 rxStop();
+                rxRtspStop();
                 state = Status.STOPPED;
                 break;
             case TEST:

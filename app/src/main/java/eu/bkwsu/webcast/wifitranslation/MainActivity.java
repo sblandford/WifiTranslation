@@ -923,9 +923,13 @@ public class MainActivity extends AppCompatActivity {
                     // Stop any Hub comms
                     HubComms.pollHubStop();
                     hubComms.broadcastStop();
-                    //Throw on the breaks
+                    //Throw on the breaks unless we have woken back up
                     synchronized (mPauseLock) {
-                        mPaused = true;
+                        if (!activeState.appIsVisible) {
+                            mPaused = true;
+                        } else {
+                            Log.i(TAG, "Sleep cancelled");
+                        }
                     }
                 } else if (stateSnapshot.appIsVisible) {
                     // Does nothing if already running
@@ -1089,10 +1093,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         Log.i(TAG, "Waking up");
-        if (activeState != null) {
-            activeState.appIsVisible = true;
-        }
+
         synchronized (mPauseLock) {
+            if (activeState != null) {
+                activeState.appIsVisible = true;
+            }
             mPaused = false;
             mPauseLock.notifyAll();
         }
