@@ -6,6 +6,9 @@ import android.media.AudioManager;
 import android.media.AudioTrack;
 
 import java.io.IOException;
+import java.net.DatagramSocket;
+import java.net.InetSocketAddress;
+import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
@@ -120,8 +123,6 @@ public class TranslationRX {
 
     private static Context context;
 
-    private static MediaPlayer mPlayer;
-
     private static ByteBuffer rtpPacket;
     private static BlockingQueue rtpQueue, amrQueue, pcmQueue;
     private static boolean queueFilled = false;
@@ -136,6 +137,7 @@ public class TranslationRX {
     private static InetAddress multicastIpAddress, multicastUuidIpAddress;
 
     private static Status state = Status.STOPPED;
+    private static boolean multicastMode = true;
 
     public TranslationRX (Properties prop) {
         context = MainActivity.context;
@@ -192,29 +194,43 @@ public class TranslationRX {
                 byte[] packetBuff = new byte[PACKET_BUFFER_SIZE];
                 int packetLength, payLoadType, tocId, rtpSequenceNumber, rtpSequenceNumberPrevious = 0;
                 int inLogCounter = LOGFREQ;
-                MulticastSocket sock;
-
+                MulticastSocket mSock = null;
+                DatagramSocket uSock = null;
+                boolean localMulticastMode;
 
                 Log.d(TAG, "RX Thread started");
                 state = Status.STARTING;
+
 
                 android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_URGENT_AUDIO);
 
                 while (rxRun) {
                     if (Tools.isWifiOn()) {
+                        localMulticastMode = multicastMode;
                         try {
-                            sock = new MulticastSocket(MULTICAST_PORT);
-                            sock.joinGroup(multicastIpAddress);
-                            sock.setSoTimeout(MULTICAST_TIMEOUT);
+                            if (localMulticastMode) {
+                                mSock = new MulticastSocket(MULTICAST_PORT);
+                                mSock.joinGroup(multicastIpAddress);
+                                mSock.setSoTimeout(MULTICAST_TIMEOUT);
+                            } else {
+                                uSock = new DatagramSocket(null);
+                                uSock.setReuseAddress(true);
+                                uSock.bind(new InetSocketAddress(MULTICAST_PORT));
+                                uSock.setSoTimeout(MULTICAST_TIMEOUT);
+                            }
 
                             //Main RX loop
-                            for (int timeOutCount = 0; (timeOutCount < MAX_MULTICAST_TIMEOUTS_BEFORE_KICK) && rxRun; ) {
+                            for (int timeOutCount = 0; (timeOutCount < MAX_MULTICAST_TIMEOUTS_BEFORE_KICK) && rxRun && (localMulticastMode == multicastMode); ) {
                                 try {
                                     DatagramPacket pack = new DatagramPacket(packetBuff, PACKET_BUFFER_SIZE);
 
                                     Tools.acquireWifiHighPerfLock();
-                                    Tools.acquireMulticastLock();
-                                    sock.receive(pack);
+                                    if (localMulticastMode) {
+                                        Tools.acquireMulticastLock();
+                                        mSock.receive(pack);
+                                    } else  {
+                                        uSock.receive(pack);
+                                    }
                                     packetLength = pack.getLength();
 
                                     if (--inLogCounter <= 0) {
@@ -276,11 +292,15 @@ public class TranslationRX {
                                 }
                             }
                             if (rxRun) {
-                                Log.w(TAG, "Multicast reset after " + MAX_MULTICAST_TIMEOUTS_BEFORE_KICK + " timeouts");
+                                Log.w(TAG, ((localMulticastMode)?"Multicast":"Unicast") + " reset after " + MAX_MULTICAST_TIMEOUTS_BEFORE_KICK + " timeouts");
                             } else {
                                 Log.d(TAG, "RX Thread ending");
                             }
-                            sock.close();
+                            if (localMulticastMode) {
+                                mSock.close();
+                            } else {
+                                uSock.close();
+                            }
                         } catch (IOException e) {
                             Log.e(TAG,"IOException " + e.toString());
                         }
@@ -295,7 +315,7 @@ public class TranslationRX {
                         }
                     }
                  }
-                Tools.releaseMulticastLock();
+                 Tools.releaseMulticastLock();
             }
         };
     }
@@ -648,6 +668,7 @@ public class TranslationRX {
         Tools.phones_mode_set();
 
         Log.i(TAG, "Setting up audio track");
+        // TODO AudioManager.STREAM_VOICE_CALL is deprecated. Update to new approach
         audioTrack = new AudioTrack(AudioManager.STREAM_VOICE_CALL,
                 SAMPLERATE, CHANNELCONFIG,
                 AUDIO_ENCODING_FORMAT, AUDIO_BUFF_SIZE,
@@ -832,58 +853,6 @@ public class TranslationRX {
         }
     }
 
-    private static void rxRtspStart (boolean sendUuid) {
-        String url = "rtsp://" + HubComms.getHostIp() + ":" + RTSP_PORT + "/" + String.format("%02d", channel);
-
-        rxRun = true;
-        if (sendUuid) {
-            if ((uuidThread == null) || (uuidThread.getState() == Thread.State.TERMINATED)) {
-                newUuidThread();
-            }
-            if ((uuidThread.getState() == Thread.State.NEW)) {
-                rxRun = true;
-                setChannelIp();
-                Log.d(TAG, "Starting UUID thread from state: " + uuidThread.getState());
-                uuidThread.start();
-            } else {
-                Log.e(TAG, "UUID thread is not runnable");
-            }
-        }
-
-        if (mPlayer == null) {
-            mPlayer = new MediaPlayer();
-            try {
-                //mPlayer.setAudioStreamType(AudioManager.STREAM_VOICE_CALL);
-                mPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                    @Override
-                    public void onPrepared(MediaPlayer mp) {
-                        mPlayer.start();
-                    }
-                });
-                //mPlayer.setDataSource("http://icecast.bkwsu.eu/radio-eyesee.mp3");
-                Log.d(TAG, "Starting stream : " + url);
-                mPlayer.setDataSource(url);
-                mPlayer.prepareAsync();
-            } catch (IOException e) {
-                Log.e(TAG, "Unable to find stream : " + url);
-            }
-        }
-
-    }
-
-
-    private static void rxRtspStop () {
-        if (rxRun) {
-            rxRun = false;
-            stopUuid();
-        }
-        /* if (mPlayer != null) {
-            mPlayer.stop();
-            mPlayer.release();
-            mPlayer = null;
-        }*/
-    }
-        
     public static synchronized void channelSelect(int setChannel) {
         channel = setChannel;
         Log.d(TAG, "Selecting Channel : " + (channel + 1));
@@ -931,11 +900,12 @@ public class TranslationRX {
     }
 
     // TODO implement RTSP  mode
-    public static void action(Command action, boolean multicastMode) {
+    public static void action(Command action, boolean newMulticastMode) {
         boolean sendUuid = false;
         
         actionWait();
         setActionLock(true);
+        multicastMode = newMulticastMode;
         switch(action) {
             case START:
                 //Intentional drop through
@@ -946,17 +916,12 @@ public class TranslationRX {
                 }
                 Log.d(TAG, "Starting RX with audio");
                 audioOn = true;
-                if (multicastMode || !sendUuid) {
-                    rxStart(sendUuid);
-                } else {
-                        rxRtspStart(sendUuid);
-                }
+                rxStart(sendUuid);
                 break;
             case STOP:
                 //Signal stop in progress
                 state = Status.STOPPING;
                 rxStop();
-                rxRtspStop();
                 state = Status.STOPPED;
                 break;
             case TEST:
