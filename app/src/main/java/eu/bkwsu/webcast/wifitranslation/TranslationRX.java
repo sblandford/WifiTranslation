@@ -835,6 +835,7 @@ public class TranslationRX {
     private static void rxRtspStart (boolean sendUuid) {
         String url = "rtsp://" + HubComms.getHostIp() + ":" + RTSP_PORT + "/" + String.format("%02d", channel);
 
+        rxRun = true;
         if (sendUuid) {
             if ((uuidThread == null) || (uuidThread.getState() == Thread.State.TERMINATED)) {
                 newUuidThread();
@@ -849,28 +850,38 @@ public class TranslationRX {
             }
         }
 
-
-        mPlayer = new MediaPlayer();
-        try {
-            mPlayer.setAudioStreamType(AudioManager.STREAM_VOICE_CALL);
-            mPlayer.setDataSource(url);
-            mPlayer.prepare();
-            mPlayer.start();
-        } catch (IOException e) {
-            Log.e(TAG, "Unable to find stream : " + url);
+        if (mPlayer == null) {
+            mPlayer = new MediaPlayer();
+            try {
+                //mPlayer.setAudioStreamType(AudioManager.STREAM_VOICE_CALL);
+                mPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                    @Override
+                    public void onPrepared(MediaPlayer mp) {
+                        mPlayer.start();
+                    }
+                });
+                //mPlayer.setDataSource("http://icecast.bkwsu.eu/radio-eyesee.mp3");
+                Log.d(TAG, "Starting stream : " + url);
+                mPlayer.setDataSource(url);
+                mPlayer.prepareAsync();
+            } catch (IOException e) {
+                Log.e(TAG, "Unable to find stream : " + url);
+            }
         }
 
     }
+
+
     private static void rxRtspStop () {
         if (rxRun) {
             rxRun = false;
             stopUuid();
         }
-        if (mPlayer != null) {
+        /* if (mPlayer != null) {
             mPlayer.stop();
             mPlayer.release();
             mPlayer = null;
-        }
+        }*/
     }
         
     public static synchronized void channelSelect(int setChannel) {
