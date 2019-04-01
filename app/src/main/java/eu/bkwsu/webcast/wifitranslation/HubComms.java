@@ -27,7 +27,7 @@ import java.util.regex.Pattern;
 
 import static java.lang.Integer.parseInt;
 
-public class HubComms {
+final class HubComms {
     private static final String TAG = "HubComms";
 
     private static volatile boolean hubIpRun = false;

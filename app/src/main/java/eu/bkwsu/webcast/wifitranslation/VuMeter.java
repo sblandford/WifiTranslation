@@ -12,7 +12,7 @@ import android.view.SurfaceView;
  * Created by simonb on 25/09/17.
  */
 
-public class VuMeter {
+final class VuMeter {
     private static final float DB_RANGE = 35.0f;
     private static final float RED_RANGE = 2.0f;
     private static final float AMBER_RANGE = 8.0f;

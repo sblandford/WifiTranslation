@@ -38,7 +38,7 @@ a=fmtp:97 octet-align=1
  */
 
 
-public class TranslationTX {
+final class TranslationTX {
     private static final String TAG = "TranslationTX";
 
     private static int MULTICAST_PORT;

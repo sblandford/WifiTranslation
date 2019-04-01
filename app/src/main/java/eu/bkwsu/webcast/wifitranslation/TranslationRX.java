@@ -55,7 +55,7 @@ import static android.content.Context.AUDIO_SERVICE;
 // https://developer.android.com/reference/android/media/MediaPlayer#setDataSource(java.lang.String)
 
 
-public class TranslationRX {
+final class TranslationRX {
     private static final String TAG = "TranslationRX";
 
     private static int MULTICAST_PORT;
@@ -64,7 +64,6 @@ public class TranslationRX {
     private static int MUTLICAST_UUID_MS;
     private static int MUTLICAST_UUID_JITTER_MS;
     private static int MULTICAST_TIMEOUT;
-    private static int RTSP_PORT;
     private static int MAX_MULTICAST_TIMEOUTS_BEFORE_KICK;
     private static int PACKET_BUFFER_SIZE;
     private static int SAMPLERATE;
@@ -139,8 +138,11 @@ public class TranslationRX {
     private static Status state = Status.STOPPED;
     private static boolean multicastMode = true;
 
-    public TranslationRX (Properties prop) {
+    private static Properties prop;
+
+    public TranslationRX (Properties propObj) {
         context = MainActivity.context;
+        prop = propObj;
 
         MULTICAST_PORT = Integer.parseInt(prop.getProperty("MULTICAST_PORT"));
         MUTLICAST_IP_BASE = prop.getProperty("MUTLICAST_IP_BASE");
@@ -148,7 +150,6 @@ public class TranslationRX {
         MUTLICAST_UUID_OFFSET = Integer.parseInt(prop.getProperty("MUTLICAST_UUID_OFFSET"));
         MUTLICAST_UUID_MS = Integer.parseInt(prop.getProperty("RX_MUTLICAST_UUID_MS"));
         MUTLICAST_UUID_JITTER_MS = Integer.parseInt(prop.getProperty("RX_MUTLICAST_UUID_JITTER_MS"));
-        RTSP_PORT = Integer.parseInt(prop.getProperty("RTSP_PORT"));
         MAX_MULTICAST_TIMEOUTS_BEFORE_KICK = Integer.parseInt(prop.getProperty("RX_MAX_MULTICAST_TIMEOUTS_BEFORE_KICK"));
         PACKET_BUFFER_SIZE = Integer.parseInt(prop.getProperty("RX_PACKET_BUFFER_SIZE"));
         SAMPLERATE = Integer.parseInt(prop.getProperty("SAMPLERATE"));
@@ -205,8 +206,14 @@ public class TranslationRX {
                 android.os.Process.setThreadPriority(android.os.Process.THREAD_PRIORITY_URGENT_AUDIO);
 
                 while (rxRun) {
+                    RtspComms rtspSession = null;
+
                     if (Tools.isWifiOn()) {
                         localMulticastMode = multicastMode;
+
+                        if (!localMulticastMode) {
+                            rtspSession = new RtspComms(prop, channel);
+                        }
                         try {
                             if (localMulticastMode) {
                                 mSock = new MulticastSocket(MULTICAST_PORT);
@@ -314,8 +321,11 @@ public class TranslationRX {
 
                         }
                     }
-                 }
-                 Tools.releaseMulticastLock();
+                    if (rtspSession != null) {
+                        rtspSession.rtspClose();
+                    }
+                }
+                Tools.releaseMulticastLock();
             }
         };
     }

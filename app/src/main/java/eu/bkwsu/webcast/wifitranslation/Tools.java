@@ -26,7 +26,7 @@ import static android.content.Context.AUDIO_SERVICE;
 import static android.content.Context.WIFI_SERVICE;
 import static eu.bkwsu.webcast.wifitranslation.MainActivity.context;
 
-public final class Tools {
+final class Tools {
     private static WifiManager.WifiLock mWifiHighPerfLock;
     private static WifiManager.MulticastLock mMulticastLock;
 

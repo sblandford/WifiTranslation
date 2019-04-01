@@ -20,7 +20,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * Created by simonb on 08/02/18.
  */
 
-public class ManagementRX {
+class ManagementRX {
     private static final String TAG = "ManagementRX";
     private static Context context;
 
