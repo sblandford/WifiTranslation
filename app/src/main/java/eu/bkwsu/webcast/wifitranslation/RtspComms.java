@@ -18,6 +18,7 @@ final class RtspComms {
 
     private static int RTSP_PORT;
     private static int RTSP_MAX_RESPONSE_LENGTH;
+    private static int RTSP_REQUEST_TIMEOUT;
     
     private final static String RTSP_VER = " RTSP/1.0";
     private final static String RTSP_USER_AGENT = " WifiTranslationHub";
@@ -38,7 +39,8 @@ final class RtspComms {
 
         RTSP_PORT = Integer.parseInt(prop.getProperty("RTSP_PORT"));
         RTSP_MAX_RESPONSE_LENGTH = Integer.parseInt(prop.getProperty("RTSP_MAX_RESPONSE_LENGTH"));
-        
+        RTSP_REQUEST_TIMEOUT = Integer.parseInt(prop.getProperty("RTSP_REQUEST_TIMEOUT"));
+
         String hubIp = HubComms.getHostIp();
         rtspUrl = "rtsp://" + hubIp + ":" + RTSP_PORT + "/" + String.format("%02d", selectedChannel);
         try {
@@ -50,6 +52,7 @@ final class RtspComms {
 
         try {
             sock = new Socket(ip, RTSP_PORT);
+            sock.setSoTimeout(RTSP_REQUEST_TIMEOUT);
 
             oos = new DataOutputStream(sock.getOutputStream());
             ois = new BufferedReader(new InputStreamReader(sock.getInputStream()));
@@ -62,8 +65,16 @@ final class RtspComms {
 
         if (options()) {
             Log.i(TAG, "Options look OK");
+        } else {
+            return;
         }
-
+        cSeq++;
+        if (describe()) {
+            Log.i(TAG, "Describe looks OK");
+        } else {
+            return;
+        }
+        cSeq++;
         
     }
 
@@ -95,17 +106,14 @@ final class RtspComms {
         String msg = "OPTIONS " + rtspUrl + RTSP_VER + "\r\nCSeq: " + cSeq + "\r\nUser-Agent: " + RTSP_USER_AGENT + "\r\n\r\n";
         String response = sendReceive(msg);
 
-        if (response == null) {
-            return false;
-        }
-        response = response.replace("\n", "").replace("\r","");
-
-        return (response.matches(".*DESCRIBE.*") &&
-                response.matches(".*SETUP.*") &&
-                response.matches(".*TEARDOWN.*") &&
-                response.matches(".*PLAY.*"));
+        return keyWordCheck(response, new String[] {"DESCRIBE", "SETUP", "TEARDOWN", "PLAY", "Cseq.*" + cSeq});
     }
-    
+    private boolean describe () {
+        String msg = "DESCRIBE " + rtspUrl + RTSP_VER + "\r\nAccept: application/sdp\r\nCSeq: " + cSeq + "\r\nUser-Agent: " + RTSP_USER_AGENT + "\r\n\r\n";
+        String response = sendReceive(msg);
+
+        return keyWordCheck(response, new String[] {"m=audio 0 RTP/AVP 97", "a=rtpmap:97 AMR-WB", "Cseq.*" + cSeq});
+    }
     
     private String sendReceive (String msg) {
         String response = null;
@@ -117,7 +125,25 @@ final class RtspComms {
             return null;
         }
         try {
-            for (String line = ois.readLine(); line != null && !line.equals(""); line = ois.readLine()) {
+            int contentLength = 0;
+            int charCount = 0;
+            boolean inContent = false;
+            //for (String line = ois.readLine(); ((line != null) && (!inContent)); line = ois.readLine()) {
+            do {
+                String line = ois.readLine();
+                if (line == null) {
+                    break;
+                }
+                if (line.matches("Content-Length:.*")) {
+                    contentLength = Integer.parseInt(line.replaceAll("[^0-9]", ""));
+                }
+                if ("".equals(line)) {
+                    inContent = true;
+                    continue;
+                }
+                if (inContent) {
+                    charCount += line.length() + 2; // The extra 2 is for line feed /n/r
+                }
                 if (response == null) {
                     response = new String(line);
                 } else {
@@ -127,12 +153,28 @@ final class RtspComms {
                     Log.e(TAG, "Length of RTSP response of length " + response.length() + " exceeded limit of : " + RTSP_MAX_RESPONSE_LENGTH);
                     return null;
                 }
-            }
+            } while (!inContent || (charCount < contentLength));
         } catch (IOException e) {
             Log.e(TAG, "Unable to receive RTSP message in response to : " + msg);
             return null;
         }
         return response;
     }
-    
+
+    // Check for list of keywords in response. All must be present.
+    private boolean keyWordCheck (String response, String[] keywords) {
+        if (response == null) {
+            return false;
+        }
+
+        response = response.replace("\n", "").replace("\r","");
+
+        for (String keyword: keywords) {
+            if (!response.matches(".*" + keyword + ".*")) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
