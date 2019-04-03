@@ -212,7 +212,11 @@ final class TranslationRX {
                         localMulticastMode = multicastMode;
 
                         if (!localMulticastMode) {
-                            rtspSession = new RtspComms(prop, channel);
+                            rtspSession = new RtspComms(prop);
+                            if (!rtspSession.startSession(channel)) {
+                                //Revert to multicast mode if RTSP can't be established
+                                localMulticastMode = true;
+                            }
                         }
                         try {
                             if (localMulticastMode) {
@@ -222,7 +226,7 @@ final class TranslationRX {
                             } else {
                                 uSock = new DatagramSocket(null);
                                 uSock.setReuseAddress(true);
-                                uSock.bind(new InetSocketAddress(MULTICAST_PORT));
+                                uSock.bind(new InetSocketAddress(rtspSession.getRtspClientPort()));
                                 uSock.setSoTimeout(MULTICAST_TIMEOUT);
                             }
 

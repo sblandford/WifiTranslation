@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetAddress;
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Properties;
@@ -29,26 +30,34 @@ final class RtspComms {
     private static String rtspUrl;
     private static InetAddress ip = null;
     private static Socket sock;
+    private static int rtspClientPort = 0;
+    private static int rtcpServerPort = 0;
+    private static String rtspSessionId = null;
     DataOutputStream oos = null;
     BufferedReader ois = null;
 
     private static int cSeq = 1;
-    private static String sessionId;
+    private static boolean playing = false;
 
-    public RtspComms (Properties prop, int selectedChannel) {
+    public RtspComms (Properties prop) {
 
         RTSP_PORT = Integer.parseInt(prop.getProperty("RTSP_PORT"));
         RTSP_MAX_RESPONSE_LENGTH = Integer.parseInt(prop.getProperty("RTSP_MAX_RESPONSE_LENGTH"));
         RTSP_REQUEST_TIMEOUT = Integer.parseInt(prop.getProperty("RTSP_REQUEST_TIMEOUT"));
 
+    }
+
+    public boolean startSession (int selectedChannel) {
         String hubIp = HubComms.getHostIp();
-        rtspUrl = "rtsp://" + hubIp + ":" + RTSP_PORT + "/" + String.format("%02d", selectedChannel);
+
+        channel = selectedChannel;
+
+        rtspUrl = "rtsp://" + hubIp + ":" + RTSP_PORT + "/" + String.format("%02d", channel);
         try {
             ip = InetAddress.getByName(hubIp);
         } catch (UnknownHostException e) {
             Log.e(TAG, "Unable to find host : " + hubIp);
         }
-        channel = selectedChannel;
 
         try {
             sock = new Socket(ip, RTSP_PORT);
@@ -60,25 +69,52 @@ final class RtspComms {
 
         } catch (IOException e) {
             Log.e(TAG, "Unable to establish socket to " + hubIp + ", port " + RTSP_PORT + " : " + e.getMessage());
-            return;
+            return false;
         }
 
         if (options()) {
-            Log.i(TAG, "Options look OK");
+            Log.i(TAG, "Options OK");
         } else {
-            return;
+            return false;
         }
         cSeq++;
         if (describe()) {
-            Log.i(TAG, "Describe looks OK");
+            Log.i(TAG, "Describe OK");
         } else {
-            return;
+            return false;
         }
         cSeq++;
-        
+        if (setup()) {
+            Log.i(TAG, "Setup OK with RTSP Client port : " + rtspClientPort + ", RTCP Server port : " + rtcpServerPort + ", Session ID : " + rtspSessionId);
+        } else {
+            return false;
+        }
+        cSeq++;
+        if (play()) {
+            Log.i(TAG, "Play OK");
+            playing = true;
+        } else {
+            return false;
+        }
+        return true;
+    }
+
+
+    public int getRtspClientPort () {
+        return rtspClientPort;
+    }
+    public int getRtcpServerPort () {
+        return rtcpServerPort;
+    }
+    public String getRtspSessionId () {
+        return rtspSessionId;
     }
 
     public void rtspClose() {
+        if (playing) {
+            cSeq++;
+            tearDown();
+        }
         if (ois != null) {
             try {
                 ois.close();
@@ -113,6 +149,53 @@ final class RtspComms {
         String response = sendReceive(msg);
 
         return keyWordCheck(response, new String[] {"m=audio 0 RTP/AVP 97", "a=rtpmap:97 AMR-WB", "Cseq.*" + cSeq});
+    }
+    private boolean setup () {
+        if (findRtspClientPort()) {
+            String msg = "SETUP " + rtspUrl + RTSP_VER + "\r\nTransport: RTP/AVP/UDP;unicast;client_port=" + rtspClientPort + "-" + (rtspClientPort + 1) + "\r\nCSeq: " + cSeq + "\r\nUser-Agent: " + RTSP_USER_AGENT + "\r\n\r\n";
+            String response = sendReceive(msg);
+            if (!keyWordCheck(response, new String[] {"Transport: RTP/AVP/UDP;unicast", "Session:\\s*[0-9a-f]+", "server_port=[0-9]+-[0-9]+", "Cseq.*" + cSeq})) {
+                Log.e(TAG, "Incorrect response to RTSP SETUP request");
+                return false;
+            }
+            response = response.replace("\n", "|").replace("\r","");
+            //Previous key word check should ensure that the result of replacefirst makes sense here
+            rtspSessionId = response.replaceFirst(".*Session:\\s*([0-9a-f]+).*", "$1");
+            rtcpServerPort = Integer.parseInt(response.replaceFirst(".*server_port=[0-9]+-([0-9]+).*", "$1"));
+        } else {
+            return false;
+        }
+        return true;
+    }
+    private boolean play () {
+        String msg = "PLAY " + rtspUrl + RTSP_VER + "\r\nRange: npt=0.000-\r\nCSeq: " + cSeq + "\r\nUser-Agent: " + RTSP_USER_AGENT + "\r\nSession: " + rtspSessionId + "\r\n\r\n";
+        String response = sendReceive(msg);
+
+        return keyWordCheck(response, new String[] {"RTP-Info: requestPath=", "Session:\\s*" + rtspSessionId, "Cseq.*" + cSeq});
+    }
+    private void tearDown () {
+        String msg = "TEARDOWN " + rtspUrl + RTSP_VER + "\r\nRange: npt=0.000-\r\nCSeq: " + cSeq + "\r\nUser-Agent: " + RTSP_USER_AGENT + "\r\nSession: " + rtspSessionId + "\r\n\r\n";
+        String response = sendReceive(msg);
+
+        if (keyWordCheck(response, new String[] {"Cseq.*" + cSeq})) {
+            Log.i(TAG, "Successful RTSP Teardown request");
+        } else {
+            Log.w(TAG, "RTSP Teardown request unsuccessfull");
+        }
+
+    }
+
+    private boolean findRtspClientPort () {
+        ServerSocket s = null;
+        try {
+            s = new ServerSocket(0);
+            rtspClientPort = s.getLocalPort();
+            s.close();
+        } catch (IOException e) {
+            Log.e(TAG, "Unable to get local client port for RTSP SETUP request");
+            return false;
+        }
+        return true;
     }
     
     private String sendReceive (String msg) {
@@ -167,7 +250,7 @@ final class RtspComms {
             return false;
         }
 
-        response = response.replace("\n", "").replace("\r","");
+        response = response.replace("\n", "|").replace("\r","");
 
         for (String keyword: keywords) {
             if (!response.matches(".*" + keyword + ".*")) {
@@ -176,5 +259,4 @@ final class RtspComms {
         }
         return true;
     }
-
 }
