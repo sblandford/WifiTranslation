@@ -8,7 +8,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
@@ -20,31 +23,37 @@ final class RtspComms {
     private static int RTSP_PORT;
     private static int RTSP_MAX_RESPONSE_LENGTH;
     private static int RTSP_REQUEST_TIMEOUT;
-    
+    private static int RTP_UDP_TIMEOUT;
+    private static int RTCP_INTERVAL_MILLISECONDS;
+
     private final static String RTSP_VER = " RTSP/1.0";
     private final static String RTSP_USER_AGENT = " WifiTranslationHub";
 
     
 
-    private static int channel;
-    private static String rtspUrl;
-    private static InetAddress ip = null;
-    private static Socket sock;
-    private static int rtspClientPort = 0;
-    private static int rtcpServerPort = 0;
-    private static String rtspSessionId = null;
+    private int channel;
+    private String rtspUrl;
+    private InetAddress ip = null;
+    private Socket sock;
+    private int rtspClientPort = 0;
+    private int rtcpClientPort = 0;
+    private int rtcpServerPort = 0;
+    private int rtspServerPort = 0;
+    private String rtspSessionId = null;
     DataOutputStream oos = null;
     BufferedReader ois = null;
 
-    private static int cSeq = 1;
-    private static boolean playing = false;
+    private int cSeq = 1;
+    private boolean playing = false;
+    private boolean rtspRun = true;
 
     public RtspComms (Properties prop) {
 
         RTSP_PORT = Integer.parseInt(prop.getProperty("RTSP_PORT"));
         RTSP_MAX_RESPONSE_LENGTH = Integer.parseInt(prop.getProperty("RTSP_MAX_RESPONSE_LENGTH"));
         RTSP_REQUEST_TIMEOUT = Integer.parseInt(prop.getProperty("RTSP_REQUEST_TIMEOUT"));
-
+        RTP_UDP_TIMEOUT = Integer.parseInt(prop.getProperty("RTP_UDP_TIMEOUT"));
+        RTCP_INTERVAL_MILLISECONDS = Integer.parseInt(prop.getProperty("RTCP_INTERVAL_MILLISECONDS"));
     }
 
     public boolean startSession (int selectedChannel) {
@@ -96,6 +105,8 @@ final class RtspComms {
         } else {
             return false;
         }
+        punchNat();
+        rtcpThreadStart();
         return true;
     }
 
@@ -112,6 +123,7 @@ final class RtspComms {
 
     public void rtspClose() {
         if (playing) {
+            rtcpThreadStop();
             cSeq++;
             tearDown();
         }
@@ -152,7 +164,7 @@ final class RtspComms {
     }
     private boolean setup () {
         if (findRtspClientPort()) {
-            String msg = "SETUP " + rtspUrl + RTSP_VER + "\r\nTransport: RTP/AVP/UDP;unicast;client_port=" + rtspClientPort + "-" + (rtspClientPort + 1) + "\r\nCSeq: " + cSeq + "\r\nUser-Agent: " + RTSP_USER_AGENT + "\r\n\r\n";
+            String msg = "SETUP " + rtspUrl + RTSP_VER + "\r\nTransport: RTP/AVP/UDP;unicast;client_port=" + rtspClientPort + "-" + rtcpClientPort + "\r\nCSeq: " + cSeq + "\r\nUser-Agent: " + RTSP_USER_AGENT + "\r\n\r\n";
             String response = sendReceive(msg);
             if (!keyWordCheck(response, new String[] {"Transport: RTP/AVP/UDP;unicast", "Session:\\s*[0-9a-f]+", "server_port=[0-9]+-[0-9]+", "Cseq.*" + cSeq})) {
                 Log.e(TAG, "Incorrect response to RTSP SETUP request");
@@ -162,6 +174,7 @@ final class RtspComms {
             //Previous key word check should ensure that the result of replacefirst makes sense here
             rtspSessionId = response.replaceFirst(".*Session:\\s*([0-9a-f]+).*", "$1");
             rtcpServerPort = Integer.parseInt(response.replaceFirst(".*server_port=[0-9]+-([0-9]+).*", "$1"));
+            rtspServerPort = Integer.parseInt(response.replaceFirst(".*server_port=([0-9]+)-[0-9]+.*", "$1"));
         } else {
             return false;
         }
@@ -185,11 +198,90 @@ final class RtspComms {
 
     }
 
+    //Send regular RTCP dummy pings to keep stream alive
+    private Thread rtcpThread = null;
+    private void mainrtcpThread () {
+        rtcpThread = new Thread() {
+            @Override
+            public void run() {
+                DatagramSocket rtcpSock = null;
+                DatagramPacket rtcpPacket = new DatagramPacket(new String("Ping").getBytes(), "Ping".length(), ip, rtcpServerPort);
+                try {
+                    rtcpSock = new DatagramSocket(null);
+                    rtcpSock.setReuseAddress(true);
+                    rtcpSock.setSoTimeout(RTP_UDP_TIMEOUT);
+                    rtcpSock.bind(new InetSocketAddress(rtcpClientPort));
+                } catch (IOException e) {
+                    Log.w(TAG, "Unable to open RTCP : " + rtcpClientPort + " to Server Port : " + rtcpServerPort);
+                    rtspRun = false;
+                }
+                while (rtspRun) {
+                    try {
+                        rtcpSock.send(rtcpPacket);
+                        rtcpSock.close();
+                    } catch (IOException e) {
+                        Log.w(TAG, "Unable to send RTCP : " + rtcpClientPort + " to : " + rtcpServerPort);
+                    }
+                    //Sleep for a bit before re-sending in seconds
+                    for (int i=0; i < RTCP_INTERVAL_MILLISECONDS  && rtspRun; i += 1000) {
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            Log.d(TAG, "Active state thread interrupted");
+                        }
+                    }
+                }
+            }
+        };
+    }
+    void rtcpThreadStart () {
+        if (rtcpThread == null || (rtcpThread.getState() == Thread.State.TERMINATED)) {
+            mainrtcpThread();
+        }
+        if (rtcpThread.getState() == Thread.State.NEW) {
+            Log.d(TAG, "Starting pollHub Thread");
+            rtspRun = true;
+            rtcpThread.start();
+        }
+    }
+    void rtcpThreadStop () {
+        if (rtspRun && (rtcpThread != null)) {
+            Log.d(TAG, "Stopping RTCP Thread");
+            rtspRun = false;
+            try {
+                rtcpThread.join();
+            } catch (InterruptedException e) {
+                Log.d(TAG, "Thread already dead while waiting");
+            }
+        } else {
+            Log.d(TAG, "Thread already stopped so not stopping");
+        }
+    }
+
+    //Send a UDP packet from the RTP receiving port to the server to
+    //attempt to establish a NAT pathway
+    private void punchNat () {
+        DatagramSocket punchSock;
+        DatagramPacket punchPacket = new DatagramPacket(new String("Punch").getBytes(), "Punch".length(), ip, rtspServerPort);
+        try {
+            punchSock = new DatagramSocket(null);
+            punchSock.setReuseAddress(true);
+            punchSock.setSoTimeout(RTP_UDP_TIMEOUT);
+            punchSock.bind(new InetSocketAddress(rtspClientPort));
+            punchSock.send(punchPacket);
+            punchSock.close();
+        } catch (IOException e) {
+            Log.w(TAG, "Unable to attempt NAT punch from RTSP Client port : " + rtspClientPort + " to Server Port : " + rtspServerPort);
+        }
+    }
+
+
     private boolean findRtspClientPort () {
         ServerSocket s = null;
         try {
             s = new ServerSocket(0);
             rtspClientPort = s.getLocalPort();
+            rtcpClientPort = rtspClientPort + 1;
             s.close();
         } catch (IOException e) {
             Log.e(TAG, "Unable to get local client port for RTSP SETUP request");

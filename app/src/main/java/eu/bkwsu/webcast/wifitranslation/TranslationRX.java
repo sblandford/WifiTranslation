@@ -224,6 +224,7 @@ final class TranslationRX {
                                 mSock.joinGroup(multicastIpAddress);
                                 mSock.setSoTimeout(MULTICAST_TIMEOUT);
                             } else {
+                                // TODO send/receive ports must be set up to punch through NAT
                                 uSock = new DatagramSocket(null);
                                 uSock.setReuseAddress(true);
                                 uSock.bind(new InetSocketAddress(rtspSession.getRtspClientPort()));
