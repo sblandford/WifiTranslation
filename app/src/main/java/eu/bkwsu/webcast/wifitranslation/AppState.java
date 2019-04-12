@@ -67,6 +67,8 @@ final class AppState  {
     public volatile boolean rxValid = false;
     public volatile boolean txEnabled = false;
     public volatile boolean rxMulticastMode = true;
+    public volatile boolean rxMulticastOk = true;
+    public volatile boolean rxRtspOk = true;
     public volatile boolean stateInitialised = false;
     public volatile boolean headphones = false;
     public volatile boolean appIsVisible = true;
@@ -212,6 +214,12 @@ final class AppState  {
         if (rxMulticastMode != compareWith.rxMulticastMode) {
             return false;
         }
+        if (rxMulticastOk != compareWith.rxMulticastOk) {
+            return false;
+        }
+        if (rxRtspOk != compareWith.rxRtspOk) {
+            return false;
+        }
         if (headphones != compareWith.headphones) {
             return false;
         }
@@ -349,6 +357,8 @@ final class AppState  {
         targetState.rxValid = rxValid;
         targetState.txEnabled = txEnabled;
         targetState.rxMulticastMode = rxMulticastMode;
+        targetState.rxMulticastOk = rxMulticastOk;
+        targetState.rxRtspOk = rxRtspOk;
         targetState.headphones = headphones;
         targetState.appIsVisible = appIsVisible;
         targetState.wifiOn = wifiOn;

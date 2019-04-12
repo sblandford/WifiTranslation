@@ -726,7 +726,7 @@ public class MainActivity extends AppCompatActivity {
 
                     if ((stateSnapshot.happening != activeState.happening)
                             && stateSnapshot.happening) {
-                        translationRx.action(TranslationRX.Command.STOP,activeState.rxMulticastMode);
+                        translationRx.action(TranslationRX.Command.STOP);
                     }
                     if (!stateSnapshot.txMode || !stateSnapshot.relayMode || !stateSnapshot.happening) {
                         translationRx.channelSelect(stateSnapshot.selectedMainChannel);
@@ -736,16 +736,16 @@ public class MainActivity extends AppCompatActivity {
                     if ((stateSnapshot.happening != activeState.happening)
                             && stateSnapshot.happening) {
                         if (stateSnapshot.relayMode) {
-                            translationRx.action(TranslationRX.Command.START_NO_UUID_SEND,activeState.rxMulticastMode);
+                            translationRx.action(TranslationRX.Command.START_NO_UUID_SEND);
                         } else {
-                            translationRx.action(TranslationRX.Command.START,activeState.rxMulticastMode);
+                            translationRx.action(TranslationRX.Command.START);
                         }
                     }
                     translationTx.channelSelect(stateSnapshot.selectedMainChannel);
 
                     if ((stateSnapshot.txMode != activeState.txMode) || !activeState.stateInitialised) {
                         //Stop everything
-                        translationRx.action(TranslationRX.Command.STOP,activeState.rxMulticastMode);
+                        translationRx.action(TranslationRX.Command.STOP);
                         translationTx.action(TranslationTX.Command.STOP);
                     }
                     if (stateSnapshot.happening != activeState.happening) {
@@ -765,24 +765,24 @@ public class MainActivity extends AppCompatActivity {
                                         }
                                     }
                                     if (micPermission) {
-                                        translationRx.action(TranslationRX.Command.STOP,activeState.rxMulticastMode);
+                                        translationRx.action(TranslationRX.Command.STOP);
                                         translationTx.action(TranslationTX.Command.START);
                                         if (stateSnapshot.relayMode) {
-                                            translationRx.action(TranslationRX.Command.START_NO_UUID_SEND,activeState.rxMulticastMode);
+                                            translationRx.action(TranslationRX.Command.START_NO_UUID_SEND);
                                         }
                                     }
                                 }
                             } else {
                                 translationTx.action(TranslationTX.Command.STOP);
-                                translationRx.action(TranslationRX.Command.STOP,activeState.rxMulticastMode);
-                                translationRx.action(TranslationRX.Command.START,activeState.rxMulticastMode);
+                                translationRx.action(TranslationRX.Command.STOP);
+                                translationRx.action(TranslationRX.Command.START);
                             }
                         } else {
                             //Stop function
                             if (stateSnapshot.txMode) {
                                 translationTx.action(TranslationTX.Command.STOP);
                             } else {
-                                translationRx.action(TranslationRX.Command.STOP,activeState.rxMulticastMode);
+                                translationRx.action(TranslationRX.Command.STOP);
                             }
                         }
                     }
@@ -807,13 +807,13 @@ public class MainActivity extends AppCompatActivity {
                     //Stop to restart on channel change
                     if (stateSnapshot.txMode) {
                         if ((desiredState.selectedRelayChannel != activeState.selectedRelayChannel) && stateSnapshot.relayMode) {
-                            translationRx.action(TranslationRX.Command.STOP,activeState.rxMulticastMode);
-                            translationRx.action(TranslationRX.Command.START,activeState.rxMulticastMode);
+                            translationRx.action(TranslationRX.Command.STOP);
+                            translationRx.action(TranslationRX.Command.START);
                         }
                     } else {
                         if ((desiredState.selectedMainChannel != activeState.selectedMainChannel)) {
-                            translationRx.action(TranslationRX.Command.STOP,activeState.rxMulticastMode);
-                            translationRx.action(TranslationRX.Command.START,activeState.rxMulticastMode);
+                            translationRx.action(TranslationRX.Command.STOP);
+                            translationRx.action(TranslationRX.Command.START);
                         }
                     }
                 }
@@ -822,9 +822,17 @@ public class MainActivity extends AppCompatActivity {
                 if (!stateSnapshot.txMode || !stateSnapshot.happening || stateSnapshot.relayMode) {
                     switch(rxState) {
                         case STOPPED:
-                            //Always (re-)start testing when stopped and idle
-                            if (!stateSnapshot.happening) {
-                                translationRx.action(TranslationRX.Command.TEST,activeState.rxMulticastMode);
+                            //Always (re-)start testing when stopped and unmanaged
+                            //If managed then try all options to confirm expected result
+                            // TODO: In managed mode, when channel is busy, try multicast, RTSP then give up
+                            if (activeState.channelsManaged || (activeState.channelMap.get(TranslationRX.getChannel()).busy)) {
+
+                            }
+                            if (!stateSnapshot.happening &&
+                                    (!activeState.channelsManaged || (activeState.channelMap.get(TranslationRX.getChannel()).busy &&
+                                    (activeState.rxMulticastOk || activeState.rxRtspOk)))
+                            ) {
+                                translationRx.action(TranslationRX.Command.TEST);
                                 Log.d(TAG, "Starting RX test");
                             }
                             break;
@@ -850,7 +858,7 @@ public class MainActivity extends AppCompatActivity {
                             case RUNNING:
                             case UNAVAILABLE:
                                 // If not "happening" then RX was only a test and should be stopped
-                                translationRx.action(TranslationRX.Command.STOP,activeState.rxMulticastMode);
+                                translationRx.action(TranslationRX.Command.STOP);
                                 // If Management reports activity, but test reports not none then assume that multicast is not working
                                 if (activeState.channelsManaged && activeState.channelMap.get(TranslationRX.getChannel()).busy && !rxBusy && (--mutlicastTestCount < 0)) {
                                     activeState.rxMulticastMode = false;
@@ -919,7 +927,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!stateSnapshot.appIsVisible && !stateSnapshot.happening) {
                     Log.i(TAG, "Going to sleep");
                     //Stop any RX test
-                    translationRx.action(TranslationRX.Command.STOP,activeState.rxMulticastMode);
+                    translationRx.action(TranslationRX.Command.STOP);
                     // Stop any Hub comms
                     HubComms.pollHubStop();
                     hubComms.broadcastStop();

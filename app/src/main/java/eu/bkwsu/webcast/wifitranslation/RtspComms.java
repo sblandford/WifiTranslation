@@ -24,7 +24,10 @@ final class RtspComms {
     private static int RTSP_MAX_RESPONSE_LENGTH;
     private static int RTSP_REQUEST_TIMEOUT;
     private static int RTP_UDP_TIMEOUT;
+    private static int RTP_PUNCH_NAT_COUNT;
+    private static int RTP_PUNCH_NAT_INTERVAL_MILLISECONDS;
     private static int RTCP_INTERVAL_MILLISECONDS;
+
 
     private final static String RTSP_VER = " RTSP/1.0";
     private final static String RTSP_USER_AGENT = " WifiTranslationHub";
@@ -38,7 +41,7 @@ final class RtspComms {
     private int rtspClientPort = 0;
     private int rtcpClientPort = 0;
     private int rtcpServerPort = 0;
-    private int rtspServerPort = 0;
+    private int rtpServerPort = 0;
     private String rtspSessionId = null;
     DataOutputStream oos = null;
     BufferedReader ois = null;
@@ -53,6 +56,8 @@ final class RtspComms {
         RTSP_MAX_RESPONSE_LENGTH = Integer.parseInt(prop.getProperty("RTSP_MAX_RESPONSE_LENGTH"));
         RTSP_REQUEST_TIMEOUT = Integer.parseInt(prop.getProperty("RTSP_REQUEST_TIMEOUT"));
         RTP_UDP_TIMEOUT = Integer.parseInt(prop.getProperty("RTP_UDP_TIMEOUT"));
+        RTP_PUNCH_NAT_COUNT = Integer.parseInt(prop.getProperty("RTP_PUNCH_NAT_COUNT"));
+        RTP_PUNCH_NAT_INTERVAL_MILLISECONDS = Integer.parseInt(prop.getProperty("RTP_PUNCH_NAT_INTERVAL_MILLISECONDS"));
         RTCP_INTERVAL_MILLISECONDS = Integer.parseInt(prop.getProperty("RTCP_INTERVAL_MILLISECONDS"));
     }
 
@@ -174,7 +179,7 @@ final class RtspComms {
             //Previous key word check should ensure that the result of replacefirst makes sense here
             rtspSessionId = response.replaceFirst(".*Session:\\s*([0-9a-f]+).*", "$1");
             rtcpServerPort = Integer.parseInt(response.replaceFirst(".*server_port=[0-9]+-([0-9]+).*", "$1"));
-            rtspServerPort = Integer.parseInt(response.replaceFirst(".*server_port=([0-9]+)-[0-9]+.*", "$1"));
+            rtpServerPort = Integer.parseInt(response.replaceFirst(".*server_port=([0-9]+)-[0-9]+.*", "$1"));
         } else {
             return false;
         }
@@ -262,16 +267,23 @@ final class RtspComms {
     //attempt to establish a NAT pathway
     private void punchNat () {
         DatagramSocket punchSock;
-        DatagramPacket punchPacket = new DatagramPacket(new String("Punch").getBytes(), "Punch".length(), ip, rtspServerPort);
+        DatagramPacket punchPacket = new DatagramPacket(new String("Punch").getBytes(), "Punch".length(), ip, rtpServerPort);
         try {
             punchSock = new DatagramSocket(null);
             punchSock.setReuseAddress(true);
             punchSock.setSoTimeout(RTP_UDP_TIMEOUT);
             punchSock.bind(new InetSocketAddress(rtspClientPort));
-            punchSock.send(punchPacket);
+            for (int i=0; i < RTP_PUNCH_NAT_COUNT; i++) {
+                try {
+                    Thread.sleep(RTP_PUNCH_NAT_INTERVAL_MILLISECONDS);
+                } catch (InterruptedException e) {
+                    Log.d(TAG, "Punch NAT interrupted");
+                }
+                punchSock.send(punchPacket);
+            }
             punchSock.close();
         } catch (IOException e) {
-            Log.w(TAG, "Unable to attempt NAT punch from RTSP Client port : " + rtspClientPort + " to Server Port : " + rtspServerPort);
+            Log.w(TAG, "Unable to attempt NAT punch from RTSP Client port : " + rtspClientPort + " to Server Port : " + rtpServerPort);
         }
     }
 

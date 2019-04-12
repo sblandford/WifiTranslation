@@ -214,8 +214,9 @@ final class TranslationRX {
                         if (!localMulticastMode) {
                             rtspSession = new RtspComms(prop);
                             if (!rtspSession.startSession(channel)) {
-                                //Revert to multicast mode if RTSP can't be established
-                                localMulticastMode = true;
+                                //Quit if RTSP session can't be established
+                                state = Status.WAITING;
+                                break;
                             }
                         }
                         try {
@@ -224,7 +225,6 @@ final class TranslationRX {
                                 mSock.joinGroup(multicastIpAddress);
                                 mSock.setSoTimeout(MULTICAST_TIMEOUT);
                             } else {
-                                // TODO send/receive ports must be set up to punch through NAT
                                 uSock = new DatagramSocket(null);
                                 uSock.setReuseAddress(true);
                                 uSock.bind(new InetSocketAddress(rtspSession.getRtspClientPort()));
@@ -915,12 +915,11 @@ final class TranslationRX {
     }
 
     // TODO implement RTSP  mode
-    public static void action(Command action, boolean newMulticastMode) {
+    public static void action(Command action) {
         boolean sendUuid = false;
         
         actionWait();
         setActionLock(true);
-        multicastMode = newMulticastMode;
         switch(action) {
             case START:
                 //Intentional drop through
@@ -954,4 +953,9 @@ final class TranslationRX {
     public static synchronized Status state() {
         return state;
     }
+
+    public static synchronized void setMulticastMode(boolean newMulticastMode) {
+        multicastMode = newMulticastMode;
+    }
+    public static synchronized boolean getMulticastMode() { return multicastMode; }
 }
