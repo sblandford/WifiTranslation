@@ -918,9 +918,17 @@ public class MainActivity extends AppCompatActivity {
                 // If in managed mode then only test once
                 if (activeState.channelsManaged) {
                     AppState.Chan chan = activeState.channelMap.get(TranslationRX.getChannel());
-                    if (!rxTestsCompleted) {
-                        activeState.rxBusy = rxBusy;
-                        activeState.rxValid = rxValid;
+                    // If Hub can't see it. We can't see it.
+                    if (!chan.busy) {
+                        activeState.rxBusy = false;
+                        activeState.rxValid = false;
+                        rxTestsStarted = false;
+                    } else {
+                        // Register result of completed confirmation tests
+                        if (!rxTestsCompleted) {
+                            activeState.rxBusy = rxBusy;
+                            activeState.rxValid = rxValid;
+                        }
                     }
                     // We have a result now
                     if (rxBusy) {
