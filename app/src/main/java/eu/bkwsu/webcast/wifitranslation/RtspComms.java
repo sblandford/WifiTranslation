@@ -6,8 +6,6 @@ import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
@@ -17,20 +15,22 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Properties;
 
+
+
 final class RtspComms {
-    private static final String TAG = "RtspComms";
+    private final String TAG = "RtspComms";
 
-    private static int RTSP_PORT;
-    private static int RTSP_MAX_RESPONSE_LENGTH;
-    private static int RTSP_REQUEST_TIMEOUT;
-    private static int RTP_UDP_TIMEOUT;
-    private static int RTP_PUNCH_NAT_COUNT;
-    private static int RTP_PUNCH_NAT_INTERVAL_MILLISECONDS;
-    private static int RTCP_INTERVAL_MILLISECONDS;
+    private int RTSP_PORT;
+    private int RTSP_MAX_RESPONSE_LENGTH;
+    private int RTSP_REQUEST_TIMEOUT;
+    private int RTP_UDP_TIMEOUT;
+    private int RTP_PUNCH_NAT_COUNT;
+    private int RTP_PUNCH_NAT_INTERVAL_MILLISECONDS;
+    private int RTCP_INTERVAL_MILLISECONDS;
 
 
-    private final static String RTSP_VER = " RTSP/1.0";
-    private final static String RTSP_USER_AGENT = " WifiTranslationHub";
+    private final String RTSP_VER = " RTSP/1.0";
+    private final String RTSP_USER_AGENT = " WifiTranslationHub";
 
     
 
@@ -43,8 +43,8 @@ final class RtspComms {
     private int rtcpServerPort = 0;
     private int rtpServerPort = 0;
     private String rtspSessionId = null;
-    DataOutputStream oos = null;
-    BufferedReader ois = null;
+    private DataOutputStream oos = null;
+    private BufferedReader ois = null;
 
     private int cSeq = 1;
     private boolean playing = false;
@@ -223,10 +223,10 @@ final class RtspComms {
                 while (rtspRun) {
                     try {
                         rtcpSock.send(rtcpPacket);
-                        rtcpSock.close();
                     } catch (IOException e) {
                         Log.w(TAG, "Unable to send RTCP : " + rtcpClientPort + " to : " + rtcpServerPort);
                     }
+
                     //Sleep for a bit before re-sending in seconds
                     for (int i=0; i < RTCP_INTERVAL_MILLISECONDS  && rtspRun; i += 1000) {
                         try {
@@ -235,6 +235,9 @@ final class RtspComms {
                             Log.d(TAG, "Active state thread interrupted");
                         }
                     }
+                }
+                if (rtcpSock != null) {
+                    rtcpSock.close();
                 }
             }
         };
@@ -263,11 +266,19 @@ final class RtspComms {
         }
     }
 
+    public DatagramPacket punchPacket () {
+        byte[] dummyPacket = TranslationTX.dummyRtpPacket();
+        int dummyPacketLength = TranslationTX.dummyRtpPacketLength();
+        DatagramPacket punchPacket = new DatagramPacket(dummyPacket, dummyPacketLength, ip, rtpServerPort);
+
+        return punchPacket;
+    }
+
     //Send a UDP packet from the RTP receiving port to the server to
     //attempt to establish a NAT pathway
     private void punchNat () {
         DatagramSocket punchSock;
-        DatagramPacket punchPacket = new DatagramPacket(new String("Punch").getBytes(), "Punch".length(), ip, rtpServerPort);
+
         try {
             punchSock = new DatagramSocket(null);
             punchSock.setReuseAddress(true);
@@ -279,7 +290,7 @@ final class RtspComms {
                 } catch (InterruptedException e) {
                     Log.d(TAG, "Punch NAT interrupted");
                 }
-                punchSock.send(punchPacket);
+                punchSock.send(punchPacket());
             }
             punchSock.close();
         } catch (IOException e) {

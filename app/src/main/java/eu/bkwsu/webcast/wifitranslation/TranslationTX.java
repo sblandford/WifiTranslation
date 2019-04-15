@@ -692,4 +692,11 @@ final class TranslationTX {
     }
 
     public static synchronized void mute(boolean setMute) { mute = setMute; }
+
+    public static byte[] dummyRtpPacket () {
+        return RTP_HEADER_TEMPLATE;
+    }
+    public static int dummyRtpPacketLength () {
+        return RTP_HEADER_TEMPLATE.length;
+    }
 }

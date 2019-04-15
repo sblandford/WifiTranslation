@@ -248,6 +248,11 @@ final class TranslationRX {
                                     if (--inLogCounter <= 0) {
                                         Log.d(TAG, LOGFREQ + "th Sample read packet bytes : " + packetLength);
                                         inLogCounter = LOGFREQ;
+                                        // Send Dumy RTP packet to prevent any NAT traversal timeout
+                                        if (!localMulticastMode) {
+                                            uSock.send(rtspSession.punchPacket());
+
+                                        }
                                     }
 
                                     //Pick off information from RTP header
