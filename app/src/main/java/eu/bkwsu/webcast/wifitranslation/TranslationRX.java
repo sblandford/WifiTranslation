@@ -61,6 +61,7 @@ final class TranslationRX {
     private static int MULTICAST_PORT;
     private static String MUTLICAST_IP_BASE;
     private static int MUTLICAST_UUID_OFFSET;
+    private static int MUTLICAST_MANAGEMENT_OFFSET;
     private static int MUTLICAST_UUID_MS;
     private static int MUTLICAST_UUID_JITTER_MS;
     private static int MULTICAST_TIMEOUT;
@@ -134,6 +135,7 @@ final class TranslationRX {
 
     private static int channel = -1;
     private static InetAddress multicastIpAddress, multicastUuidIpAddress;
+    private static boolean channelsManaged = false;
 
     private static Status state = Status.STOPPED;
     private static boolean multicastMode = true;
@@ -148,6 +150,7 @@ final class TranslationRX {
         MUTLICAST_IP_BASE = prop.getProperty("MUTLICAST_IP_BASE");
         MULTICAST_TIMEOUT = Integer.parseInt(prop.getProperty("RX_MULTICAST_TIMEOUT"));
         MUTLICAST_UUID_OFFSET = Integer.parseInt(prop.getProperty("MUTLICAST_UUID_OFFSET"));
+        MUTLICAST_MANAGEMENT_OFFSET = Integer.parseInt(prop.getProperty("MUTLICAST_MANAGEMENT_OFFSET"));
         MUTLICAST_UUID_MS = Integer.parseInt(prop.getProperty("RX_MUTLICAST_UUID_MS"));
         MUTLICAST_UUID_JITTER_MS = Integer.parseInt(prop.getProperty("RX_MUTLICAST_UUID_JITTER_MS"));
         MAX_MULTICAST_TIMEOUTS_BEFORE_KICK = Integer.parseInt(prop.getProperty("RX_MAX_MULTICAST_TIMEOUTS_BEFORE_KICK"));
@@ -723,7 +726,7 @@ final class TranslationRX {
         }
         ipBaseAddressBytes = multicastIpAddress.getAddress();
 
-        ipBaseAddressInt = ByteBuffer.wrap(ipBaseAddressBytes).getInt() + channel;
+        ipBaseAddressInt = ByteBuffer.wrap(ipBaseAddressBytes).getInt() + channel + ((channelsManaged)?MUTLICAST_MANAGEMENT_OFFSET:0);
         ipUuidBaseAddressInt = ByteBuffer.wrap(ipBaseAddressBytes).getInt() + channel + MUTLICAST_UUID_OFFSET;
 
         ipBaseAddressBytes = ByteBuffer.allocate(4).putInt(ipBaseAddressInt).array();
@@ -963,4 +966,7 @@ final class TranslationRX {
         multicastMode = newMulticastMode;
     }
     public static synchronized boolean getMulticastMode() { return multicastMode; }
+    public static synchronized void setChannelsManaged(boolean newchannelsMangaged) {
+        channelsManaged = newchannelsMangaged;
+    }
 }

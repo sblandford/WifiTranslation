@@ -600,7 +600,7 @@ public class MainActivity extends AppCompatActivity {
     private void setMainChanText (int selectedChannel) {
         final TextView chanText = (TextView)findViewById(R.id.text_channel);;
         final AppState.Chan chan = desiredState.channelMap.get(selectedChannel);
-        final String selectedChannelText = chan.name;
+        final String selectedChannelText = (chan == null)?"error":chan.name;
         runOnUiThread(new Runnable() {
             public void run() {
                 chanText.setText(selectedChannelText);
@@ -690,7 +690,7 @@ public class MainActivity extends AppCompatActivity {
             boolean rxValid = false;
 
             long rxLastGoodTime = System.currentTimeMillis();
-            int mutlicastTestCount = MULTICAST_TEST_COUNT;
+            int multicastTestCount = MULTICAST_TEST_COUNT;
 
             //Keep an eye on changes
             while (!Thread.currentThread().isInterrupted()) {
@@ -707,7 +707,14 @@ public class MainActivity extends AppCompatActivity {
                 desiredState.fetchChannelMap();
                 desiredState.copyDesiredTo(stateSnapshot);
                 activeState.copyReportedTo(stateSnapshot);
+                if (stateSnapshot.channelsManaged != activeState.channelsManaged) {
+                    translationRx.setChannelsManaged(desiredState.channelsManaged);
+                    translationTx.setChannelsManaged(desiredState.channelsManaged);
+                    rxTestsStarted = false;
+                }
                 if (!stateSnapshot.desiredEquals(activeState) || !activeState.stateInitialised) {
+
+
 
                     if (stateSnapshot.happening != activeState.happening) {
                         if (stateSnapshot.happening) {
@@ -830,6 +837,7 @@ public class MainActivity extends AppCompatActivity {
                 // If not started RX tests then we haven't finished them either
                 if (!rxTestsStarted) {
                     rxTestsCompleted = false;
+                    multicastTestCount = MULTICAST_TEST_COUNT;
                 }
 
                 //Perform action based on RX/TX state if RX needs to be active
@@ -839,18 +847,22 @@ public class MainActivity extends AppCompatActivity {
                             boolean doTest = false;
                             // If in a managed state then try multicast then RTSP to confirm busy state
                             if (activeState.channelsManaged) {
-                                if (activeState.channelMap.get(TranslationRX.getChannel()).busy) {
+                                if ((TranslationRX.getChannel() < activeState.channelMap.size()) && activeState.channelMap.get(TranslationRX.getChannel()).busy) {
                                     if (!stateSnapshot.happening) {
                                         if (!rxTestsStarted) {
                                             // Start multicast check
+                                            Log.i(TAG, "Testing multicast RX");
                                             translationRx.setMulticastMode(true);
                                             doTest = true;
                                         } else {
+                                            // TODO Mutlicast test always fails
                                             if (!rxTestsCompleted) {
                                                 // If done multicast then try RTSP
                                                 if (translationRx.getMulticastMode()) {
-                                                    translationRx.setMulticastMode(false);
-                                                    Log.i(TAG, "Re-testing with RTSP");
+                                                    if (--multicastTestCount < 0) {
+                                                        translationRx.setMulticastMode(false);
+                                                        Log.i(TAG, "Re-testing RX with RTSP");
+                                                    }
                                                     doTest = true;
                                                 } else {
                                                     rxTestsCompleted = true;
@@ -910,13 +922,14 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 // Change in channel state reported by Hub triggers retest
-                if ((activeState.channelMap.get(TranslationRX.getChannel()).busy != stateSnapshot.channelMap.get(TranslationRX.getChannel()).busy) ||
+                if ((TranslationRX.getChannel() >= activeState.channelMap.size()) || (TranslationRX.getChannel() >= stateSnapshot.channelMap.size()) ||
+                        (activeState.channelMap.get(TranslationRX.getChannel()).busy != stateSnapshot.channelMap.get(TranslationRX.getChannel()).busy) ||
                         (activeState.channelMap.get(TranslationRX.getChannel()).valid != stateSnapshot.channelMap.get(TranslationRX.getChannel()).valid)){
                     rxTestsStarted = false;
                 }
 
                 // If in managed mode then only test once
-                if (activeState.channelsManaged) {
+                if (activeState.channelsManaged && (TranslationRX.getChannel() < activeState.channelMap.size())) {
                     AppState.Chan chan = activeState.channelMap.get(TranslationRX.getChannel());
                     // If Hub can't see it. We can't see it.
                     if (!chan.busy) {

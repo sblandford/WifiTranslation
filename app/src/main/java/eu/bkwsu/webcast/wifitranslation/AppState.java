@@ -93,6 +93,7 @@ final class AppState  {
         translationTx = translationTxObj;
 
         channelMap = defaultChannels();
+        clipChannelToMapSize();
     }
 
     public Map<Integer, Chan> defaultChannels () {
@@ -124,6 +125,17 @@ final class AppState  {
         } else {
             channelMap = defaultChannels();
             channelsManaged = false;
+        }
+        clipChannelToMapSize();
+    }
+
+    private void clipChannelToMapSize () {
+        // Reset to first channel if new channel range is less than selected channel
+        if (selectedMainChannel >= channelMap.size()) {
+            selectedMainChannel = 0;
+        }
+        if (selectedRelayChannel >= channelMap.size()) {
+            selectedRelayChannel = 0;
         }
     }
 

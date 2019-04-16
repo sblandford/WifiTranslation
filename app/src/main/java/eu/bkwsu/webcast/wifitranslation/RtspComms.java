@@ -32,7 +32,12 @@ final class RtspComms {
     private final String RTSP_VER = " RTSP/1.0";
     private final String RTSP_USER_AGENT = " WifiTranslationHub";
 
-    
+    private static final byte[] RTCP_HEADER_TEMPLATE = new byte[]{
+            //For explanation see http://www.networksorcery.com/enp/protocol/rtcp.htm
+            (byte)0x80, // Version, padding, report count = 0
+            (byte)0xC9, // Receiver report
+            0x00, 0x00, // Packet length in 32 bit words - 1 = 0
+    };
 
     private int channel;
     private String rtspUrl;
@@ -210,7 +215,7 @@ final class RtspComms {
             @Override
             public void run() {
                 DatagramSocket rtcpSock = null;
-                DatagramPacket rtcpPacket = new DatagramPacket(new String("Ping").getBytes(), "Ping".length(), ip, rtcpServerPort);
+                DatagramPacket rtcpPacket = new DatagramPacket(RTCP_HEADER_TEMPLATE, RTCP_HEADER_TEMPLATE.length, ip, rtcpServerPort);
                 try {
                     rtcpSock = new DatagramSocket(null);
                     rtcpSock.setReuseAddress(true);

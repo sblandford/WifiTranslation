@@ -44,6 +44,7 @@ final class TranslationTX {
     private static int MULTICAST_PORT;
     private static String MUTLICAST_IP_BASE;
     private static int MUTLICAST_UUID_OFFSET;
+    private static int MUTLICAST_MANAGEMENT_OFFSET;
     private static int MULTICAST_TIMEOUT;
     private static int PACKET_BUFFER_SIZE;
     private static int SAMPLERATE;
@@ -136,6 +137,7 @@ final class TranslationTX {
 
     private static int channel = -1;
     private static InetAddress multicastIpAddress, multicastUuidIpAddress;
+    private static boolean channelsManaged = false;
 
     private static Status state = Status.STOPPED;
     private static boolean mute = false;
@@ -157,6 +159,7 @@ final class TranslationTX {
         MUTLICAST_IP_BASE = prop.getProperty("MUTLICAST_IP_BASE");
         MULTICAST_TIMEOUT = Integer.parseInt(prop.getProperty("TX_MULTICAST_TIMEOUT"));
         MUTLICAST_UUID_OFFSET = Integer.parseInt(prop.getProperty("MUTLICAST_UUID_OFFSET"));
+        MUTLICAST_MANAGEMENT_OFFSET = Integer.parseInt(prop.getProperty("MUTLICAST_MANAGEMENT_OFFSET"));
         PACKET_BUFFER_SIZE = Integer.parseInt(prop.getProperty("TX_PACKET_BUFFER_SIZE"));
         SAMPLERATE = Integer.parseInt(prop.getProperty("SAMPLERATE"));
         BITRATE = Integer.parseInt(prop.getProperty("AMR_BITRATE"));
@@ -507,7 +510,7 @@ final class TranslationTX {
         }
         ipBaseAddressBytes = multicastIpAddress.getAddress();
 
-        ipBaseAddressInt = ByteBuffer.wrap(ipBaseAddressBytes).getInt() + channel;
+        ipBaseAddressInt = ByteBuffer.wrap(ipBaseAddressBytes).getInt() + channel + ((channelsManaged)?MUTLICAST_MANAGEMENT_OFFSET:0);
         ipUuidBaseAddressInt = ByteBuffer.wrap(ipBaseAddressBytes).getInt() + channel + MUTLICAST_UUID_OFFSET;
 
         ipBaseAddressBytes = ByteBuffer.allocate(4).putInt(ipBaseAddressInt).array();
@@ -699,4 +702,8 @@ final class TranslationTX {
     public static int dummyRtpPacketLength () {
         return RTP_HEADER_TEMPLATE.length;
     }
+    public static synchronized void setChannelsManaged(boolean newchannelsMangaged) {
+        channelsManaged = newchannelsMangaged;
+    }
+
 }
