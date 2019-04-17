@@ -243,7 +243,6 @@ final class TranslationRX {
                                     if (localMulticastMode) {
                                         Tools.acquireMulticastLock();
                                         mSock.receive(pack);
-                                        Log.d(TAG, "-----------RECIEVED A MUTLICAST RX PACKET---------");
                                     } else  {
                                         uSock.receive(pack);
                                     }
