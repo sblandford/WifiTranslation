@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
     private static int ACTION_THREAD_MS;
     private static boolean ALLOW_LOOPBACK;
     private static int MAX_CHANNELS;
-    private static int MULTICAST_TEST_COUNT;
 
     //Global variables
     public static Context context;
@@ -105,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
         RX_WAIT_TIMEOUT_MIN = Integer.parseInt(prop.getProperty("RX_WAIT_TIMEOUT_MIN"));
         MAX_CHANNELS = Integer.parseInt(prop.getProperty("MAX_CHANNELS"));
         WAKELOCK_TAG = prop.getProperty("WAKELOCK_TAG");
-        MULTICAST_TEST_COUNT = Integer.parseInt(prop.getProperty("MULTICAST_TEST_COUNT"));
 
         powerManager = (PowerManager) getSystemService(POWER_SERVICE);
         wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, WAKELOCK_TAG);
@@ -684,14 +682,13 @@ public class MainActivity extends AppCompatActivity {
             desiredState.copyDesiredTo(activeState);
             TranslationRX.Status rxState;
             TranslationTX.Status txState;
-            boolean rxTestsStarted = false;
-            boolean rxTestsCompleted = false;
             boolean rxTestedBusy = false;
             boolean rxTestedValid = false;
             boolean rxTestMulticastMode = true;
+            boolean rxTestComplete = false;
+            boolean rxReTest = false;
 
             long rxLastGoodTime = System.currentTimeMillis();
-            int multicastTestCount = MULTICAST_TEST_COUNT;
 
             //Keep an eye on changes
             while (!Thread.currentThread().isInterrupted()) {
@@ -711,11 +708,9 @@ public class MainActivity extends AppCompatActivity {
                 if (stateSnapshot.channelsManaged != activeState.channelsManaged) {
                     translationRx.setChannelsManaged(desiredState.channelsManaged);
                     translationTx.setChannelsManaged(desiredState.channelsManaged);
-                    rxTestsStarted = false;
+                    rxReTest = true;
                 }
                 if (!stateSnapshot.desiredEquals(activeState) || !activeState.stateInitialised) {
-
-
 
                     if (stateSnapshot.happening != activeState.happening) {
                         if (stateSnapshot.happening) {
@@ -738,18 +733,9 @@ public class MainActivity extends AppCompatActivity {
                     if ((stateSnapshot.happening != activeState.happening)
                             && stateSnapshot.happening) {
                         translationRx.action(TranslationRX.Command.STOP);
-                        Log.d(TAG, "Restarting RX tests due to happening state change");
-                        rxTestsStarted = false;
                     }
                     if (!stateSnapshot.txMode || !stateSnapshot.relayMode || !stateSnapshot.happening) {
                         translationRx.channelSelect(stateSnapshot.selectedMainChannel);
-                    } else {
-                        translationRx.channelSelect(stateSnapshot.selectedRelayChannel);
-                        Log.d(TAG, "Restarting RX tests due to NO TX/RX, relay or channel change");
-                    }
-                    if (stateSnapshot.relayMode != activeState.relayMode) {
-                        Log.d(TAG, "Restarting RX tests due relay mode change");
-                        rxTestsStarted = false;
                     }
                     if ((stateSnapshot.happening != activeState.happening)
                             && stateSnapshot.happening) {
@@ -765,8 +751,6 @@ public class MainActivity extends AppCompatActivity {
                         //Stop everything
                         translationRx.action(TranslationRX.Command.STOP);
                         translationTx.action(TranslationTX.Command.STOP);
-                        Log.d(TAG, "Restarting RX tests due to change in TX mode");
-                        rxTestsStarted = false;
                     }
                     if (stateSnapshot.happening != activeState.happening) {
                         if (stateSnapshot.happening) {
@@ -798,8 +782,6 @@ public class MainActivity extends AppCompatActivity {
                                 translationRx.action(TranslationRX.Command.START);
                             }
                         } else {
-                            rxTestsStarted = false;
-                            Log.d(TAG, "Restarting RX tests due to change in run mode");
                             //Stop function
                             if (stateSnapshot.txMode) {
                                 translationTx.action(TranslationTX.Command.STOP);
@@ -829,22 +811,17 @@ public class MainActivity extends AppCompatActivity {
                     //Stop to restart on channel change
                     if (stateSnapshot.txMode) {
                         if ((desiredState.selectedRelayChannel != activeState.selectedRelayChannel) && stateSnapshot.relayMode) {
-                            rxTestsStarted = false;
                             translationRx.action(TranslationRX.Command.STOP);
                             translationRx.action(TranslationRX.Command.START);
+                            rxReTest = true;
                         }
                     } else {
                         if ((desiredState.selectedMainChannel != activeState.selectedMainChannel)) {
-                            rxTestsStarted = false;
                             translationRx.action(TranslationRX.Command.STOP);
                             translationRx.action(TranslationRX.Command.START);
+                            rxReTest = true;
                         }
                     }
-                }
-                // If not started RX tests then we haven't finished them either
-                if (!rxTestsStarted) {
-                    rxTestsCompleted = false;
-                    multicastTestCount = MULTICAST_TEST_COUNT;
                 }
 
                 //Perform action based on RX/TX state if RX needs to be active
@@ -856,35 +833,29 @@ public class MainActivity extends AppCompatActivity {
                             if (activeState.channelsManaged) {
                                 if ((TranslationRX.getChannel() < activeState.channelMap.size()) && activeState.channelMap.get(TranslationRX.getChannel()).busy) {
                                     if (!stateSnapshot.happening) {
-                                        if (!rxTestsStarted) {
-                                            // Start multicast check
-                                            Log.i(TAG, "Testing multicast RX");
-                                            rxTestMulticastMode = true;
-                                            doTest = true;
+                                        // Find working mode, first try multicast then try RTSP
+                                        if (!stateSnapshot.rxMulticastTested) {
+                                            if (!stateSnapshot.rxMulticastOk && !stateSnapshot.rxRtspOk) {
+                                                rxTestMulticastMode = true;
+                                                doTest = true;
+                                            }
                                         } else {
-                                            // TODO Mutlicast test always fails
-                                            if (!rxTestsCompleted) {
-                                                // If done multicast then try RTSP
-                                                if (rxTestMulticastMode) {
-                                                    if (--multicastTestCount < 0) {
-                                                        rxTestMulticastMode = false;
-                                                        Log.i(TAG, "Re-testing RX with RTSP");
-                                                    }
-                                                    doTest = true;
-                                                } else {
-                                                    rxTestsCompleted = true;
-                                                }
+                                            if (!stateSnapshot.rxRtspTested && !stateSnapshot.rxRtspOk && !stateSnapshot.rxMulticastOk) {
+                                                rxTestMulticastMode = false;
+                                                doTest = true;
                                             }
                                         }
-                                        translationRx.setMulticastMode(rxTestMulticastMode);
                                     }
                                 }
                             } else {
+                                rxTestMulticastMode = true;
                                 doTest = true;
                             }
                             // Test channel
                             if (doTest) {
+                                translationRx.setMulticastMode(rxTestMulticastMode);
                                 translationRx.action(TranslationRX.Command.TEST);
+                                rxTestComplete = false;
                                 Log.d(TAG, "Starting RX test with multicast mode : " + rxTestMulticastMode);
                             }
                             break;
@@ -911,8 +882,10 @@ public class MainActivity extends AppCompatActivity {
                             case UNAVAILABLE:
                                 // If not "happening" then RX was only a test and should be stopped
                                 translationRx.action(TranslationRX.Command.STOP);
-                                rxTestsStarted = true;
                                 Log.d(TAG, "Completed RX test : RXBusy : " + rxTestedBusy + ", RXValid : " + rxTestedValid + ", Multicast mode : " + rxTestMulticastMode);
+                                if (stateSnapshot.channelsManaged) {
+                                    rxTestComplete = true;
+                                }
                                 break;
                         }
                     }
@@ -929,33 +902,37 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-                // Change in channel state reported by Hub triggers retest
-                if ((TranslationRX.getChannel() >= activeState.channelMap.size()) || (TranslationRX.getChannel() >= stateSnapshot.channelMap.size()) ||
-                        (activeState.channelMap.get(TranslationRX.getChannel()).busy != stateSnapshot.channelMap.get(TranslationRX.getChannel()).busy) ||
-                        (activeState.channelMap.get(TranslationRX.getChannel()).valid != stateSnapshot.channelMap.get(TranslationRX.getChannel()).valid)){
-                    rxTestsStarted = false;
-                }
-
                 // If in managed mode then only test once
-                if (activeState.channelsManaged && (TranslationRX.getChannel() < activeState.channelMap.size())) {
-                    AppState.Chan chan = activeState.channelMap.get(TranslationRX.getChannel());
+                if (stateSnapshot.channelsManaged && (TranslationRX.getChannel() < stateSnapshot.channelMap.size())) {
+                    AppState.Chan chan = stateSnapshot.channelMap.get(TranslationRX.getChannel());
                     // If Hub can't see it. We can't see it.
                     if (!chan.busy) {
                         activeState.rxBusy = false;
                         activeState.rxValid = false;
-                        rxTestsStarted = false;
+                        rxReTest = true;
                     } else {
-                        // Register result of completed confirmation tests
-                        if (!rxTestsCompleted) {
-                            activeState.rxBusy = rxTestedBusy;
-                            activeState.rxValid = rxTestedValid;
-                            activeState.rxMulticastMode = rxTestMulticastMode;
+                        // Process result
+                        if (rxTestComplete) {
+                            if (rxTestMulticastMode) {
+                                if (rxTestedBusy) {
+                                    activeState.rxMulticastOk = true;
+                                    activeState.rxBusy = rxTestedBusy;
+                                    activeState.rxValid = rxTestedValid;
+                                } else {
+                                    // Multicast failed so try RTSP
+                                    activeState.rxMulticastMode = false;
+                                }
+                                activeState.rxMulticastTested = true;
+                            } else {
+                                if (rxTestedBusy) {
+                                    activeState.rxRtspOk = true;
+                                }
+                                activeState.rxRtspTested = true;
+                                activeState.rxBusy = rxTestedBusy;
+                                activeState.rxValid = rxTestedValid;                            }
                         }
                     }
-                    // We have a result now
-                    if (rxTestedBusy) {
-                        rxTestsCompleted = true;
-                    }
+
                     // Only allow transmit if multicast is working and we are in the list of UUIDs allowed to or the channel is open
                     if ((chan.allowedIds.contains(uuid) || chan.open) && activeState.rxMulticastMode) {
                         activeState.txEnabled = !activeState.rxBusy;
@@ -963,11 +940,23 @@ public class MainActivity extends AppCompatActivity {
                         // Not allowed
                         activeState.txEnabled = false;
                     }
+
+                    // Organise retest if pending
+                    if (rxReTest && rxTestComplete) {
+                        Log.d(TAG, "Triggering TX retest");
+                        activeState.rxMulticastOk = false;
+                        activeState.rxMulticastTested = false;
+                        activeState.rxRtspOk = false;
+                        activeState.rxRtspTested = false;
+                        rxReTest = false;
+                    }
                 } else {
                     activeState.rxBusy = rxTestedBusy;
                     activeState.rxValid = rxTestedValid;
                     activeState.txEnabled = !rxTestedBusy;
                 }
+
+
 
                 //Record Wifi state
                 activeState.wifiOn = Tools.isWifiOn();

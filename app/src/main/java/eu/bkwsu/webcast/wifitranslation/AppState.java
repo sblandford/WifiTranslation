@@ -67,8 +67,10 @@ final class AppState  {
     public volatile boolean rxValid = false;
     public volatile boolean txEnabled = false;
     public volatile boolean rxMulticastMode = true;
-    public volatile boolean rxMulticastOk = true;
-    public volatile boolean rxRtspOk = true;
+    public volatile boolean rxMulticastOk = false;
+    public volatile boolean rxMulticastTested = false;
+    public volatile boolean rxRtspOk = false;
+    public volatile boolean rxRtspTested = false;
     public volatile boolean stateInitialised = false;
     public volatile boolean headphones = false;
     public volatile boolean appIsVisible = true;
@@ -119,7 +121,11 @@ final class AppState  {
             for(Map.Entry<Integer, Chan> thisPair : newChannelMap.entrySet()) {
                 Chan targetChan = thisPair.getValue();
                 Chan thisChan = channelMap.get(thisPair.getKey().intValue());
-                targetChan.viewId = thisChan.viewId;
+                if ((thisChan != null) && (targetChan != null)){
+                    targetChan.viewId = thisChan.viewId;
+                } else {
+                    targetChan.viewId = -1;
+                }
             }
             channelMap = newChannelMap;
         } else {
@@ -229,7 +235,13 @@ final class AppState  {
         if (rxMulticastOk != compareWith.rxMulticastOk) {
             return false;
         }
+        if (rxMulticastTested != compareWith.rxMulticastTested) {
+            return false;
+        }
         if (rxRtspOk != compareWith.rxRtspOk) {
+            return false;
+        }
+        if (rxRtspTested != compareWith.rxRtspTested) {
             return false;
         }
         if (headphones != compareWith.headphones) {
@@ -370,7 +382,9 @@ final class AppState  {
         targetState.txEnabled = txEnabled;
         targetState.rxMulticastMode = rxMulticastMode;
         targetState.rxMulticastOk = rxMulticastOk;
+        targetState.rxMulticastTested = rxMulticastTested;
         targetState.rxRtspOk = rxRtspOk;
+        targetState.rxRtspTested = rxRtspTested;
         targetState.headphones = headphones;
         targetState.appIsVisible = appIsVisible;
         targetState.wifiOn = wifiOn;
