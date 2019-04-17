@@ -1,5 +1,6 @@
 package eu.bkwsu.webcast.wifitranslation;
 
+import android.content.Context;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -370,7 +371,7 @@ final class HubComms {
             numChans = jObject.length();
             Log.d(TAG, "Number of channels : " + numChans);
             for (int i = 0; i < numChans; i++) {
-                AppState.Chan channel = new AppState.Chan();
+                AppState.Chan channel = AppState.defaultChannel(i);
                 if (jObject.has(Integer.toString(i))) {
                     JSONObject jObjectChannel = jObject.getJSONObject(Integer.toString(i));
                     channel.viewId = -1;
@@ -381,18 +382,12 @@ final class HubComms {
                     }
                     if (jObjectChannel.has("valid")) {
                         channel.valid = jObjectChannel.getBoolean("valid");
-                    } else {
-                        channel.valid = false;
                     }
                     if (jObjectChannel.has("open")) {
                         channel.open = jObjectChannel.getBoolean("open");
-                    } else {
-                        channel.open = false;
                     }
                     if (jObjectChannel.has("name")) {
                         channel.name = jObjectChannel.getString("name");
-                    } else {
-                        channel.name = String.format("%s%4d", "? ", i + 1); // Indicate distaste at not being able to get channel name
                     }
                     if (jObjectChannel.has("allowedIds")) {
                         JSONArray allowedIdsJson = jObjectChannel.getJSONArray("allowedIds");

@@ -598,7 +598,7 @@ public class MainActivity extends AppCompatActivity {
     private void setMainChanText (int selectedChannel) {
         final TextView chanText = (TextView)findViewById(R.id.text_channel);;
         final AppState.Chan chan = desiredState.channelMap.get(selectedChannel);
-        final String selectedChannelText = (chan == null)?"error":chan.name;
+        final String selectedChannelText = (chan == null)?"----":chan.name;
         runOnUiThread(new Runnable() {
             public void run() {
                 chanText.setText(selectedChannelText);

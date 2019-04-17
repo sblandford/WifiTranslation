@@ -76,7 +76,7 @@ final class AppState  {
     public volatile boolean appIsVisible = true;
     public volatile boolean wifiOn = false;
 
-    private Context context;
+    private static Context context;
     private int maxChannels;
     private SharedPreferences prefs = null;
     private TranslationTX translationTx = null;
@@ -98,19 +98,24 @@ final class AppState  {
         clipChannelToMapSize();
     }
 
+
+
     public Map<Integer, Chan> defaultChannels () {
         Map<Integer, Chan> defaultChannelMap = new ConcurrentHashMap<>();
 
         for (int i =0; i < maxChannels; i++) {
-            Chan chan = new Chan();
-            chan.name = String.format("%s%4d", context.getString(R.string.channel_text), i + 1);
-            chan.viewId = -1;
-            chan.busy = false;
-            chan.valid = false;
-            chan.allowedIds.add("-");
-            defaultChannelMap.put(i, chan);
+            defaultChannelMap.put(i, defaultChannel(i));
         }
         return defaultChannelMap;
+    }
+    public static AppState.Chan defaultChannel(int chanNum) {
+        AppState.Chan chan = new AppState.Chan();
+        chan.name = String.format("%s%4d", MainActivity.context.getString(R.string.channel_text), chanNum + 1);
+        chan.viewId = -1;
+        chan.busy = false;
+        chan.valid = false;
+        chan.allowedIds.add("-");
+        return chan;
     }
 
     public void fetchChannelMap () {
