@@ -243,6 +243,7 @@ final class TranslationRX {
                                     if (localMulticastMode) {
                                         Tools.acquireMulticastLock();
                                         mSock.receive(pack);
+                                        Log.d(TAG, "-----------RECIEVED A MUTLICAST RX PACKET---------");
                                     } else  {
                                         uSock.receive(pack);
                                     }
@@ -303,9 +304,9 @@ final class TranslationRX {
                                     timeOutCount = 0;
                                 } catch (SocketTimeoutException e) {
                                     state = Status.WAITING;
+                                    timeOutCount++;
                                     if (audioOn) {
                                         Log.w(TAG, "Timeout waiting for packet");
-                                        timeOutCount++;
                                     } else {
                                         Log.d(TAG, "Wait");
                                     }
