@@ -876,16 +876,16 @@ final class TranslationRX {
         }
     }
 
-    public static synchronized void channelSelect(int setChannel) {
+    static synchronized void channelSelect(int setChannel) {
         channel = setChannel;
         Log.d(TAG, "Selecting Channel : " + (channel + 1));
     }
 
-    public static synchronized int getChannel() {
+    static synchronized int getChannel() {
         return channel;
     }
 
-    public static synchronized String getRxThreadStatus() {
+    static synchronized String getRxThreadStatus() {
         Thread.State playOutThreadState, rxThreadState;
         String response = "";
 
@@ -922,8 +922,7 @@ final class TranslationRX {
         }
     }
 
-    // TODO implement RTSP  mode
-    public static void action(Command action) {
+    static void action(Command action) {
         boolean sendUuid = false;
         
         actionWait();
@@ -958,15 +957,15 @@ final class TranslationRX {
         setActionLock(false);
     }
 
-    public static synchronized Status state() {
+    static synchronized Status state() {
         return state;
     }
 
-    public static synchronized void setMulticastMode(boolean newMulticastMode) {
+    static synchronized void setMulticastMode(boolean newMulticastMode) {
         multicastMode = newMulticastMode;
     }
-    public static synchronized boolean getMulticastMode() { return multicastMode; }
-    public static synchronized void setChannelsManaged(boolean newchannelsMangaged) {
+    static synchronized boolean getMulticastMode() { return multicastMode; }
+    static synchronized void setChannelsManaged(boolean newchannelsMangaged) {
         channelsManaged = newchannelsMangaged;
     }
 }

@@ -122,7 +122,7 @@ final class TranslationTX {
         STOPPED, STARTING, RUNNING, MUTED
     }
 
-    public enum Command {
+    enum Command {
         START, STOP
     }
 
@@ -151,7 +151,7 @@ final class TranslationTX {
     private static boolean permissions_wait;
 
 
-    public TranslationTX (Properties prop) {
+    TranslationTX (Properties prop) {
         context = MainActivity.context;
 
         //Set from properties
@@ -591,7 +591,7 @@ final class TranslationTX {
     }
 
 
-    public static void action (Command action) {
+    static void action (Command action) {
         actionWait();
         setActionLock(true);
         switch(action) {
@@ -605,21 +605,21 @@ final class TranslationTX {
         setActionLock(false);
     }
 
-    public static synchronized void channelSelect(int setChannel) {
+    static synchronized void channelSelect(int setChannel) {
         channel = setChannel;
         Log.d(TAG, "Selecting Channel : " + (channel + 1));
     }
 
-    public static synchronized float getMaxGainDb() {
+    static synchronized float getMaxGainDb() {
         return maxGainDb;
     }
-    public static synchronized float getMaxGainDbMin() {
+    static synchronized float getMaxGainDbMin() {
         return 0.0f;
     }
-    public static synchronized float getMaxGainDbMax() {
+    static synchronized float getMaxGainDbMax() {
         return MAX_GAIN_DB_LIMIT;
     }
-    public static synchronized void setMaxGainDb(float maxGainDbSet) {
+    static synchronized void setMaxGainDb(float maxGainDbSet) {
         if (maxGainDbSet < 0 ) {
             Log.w(TAG, "maxGainDb set to lower limit of 0, was : " + maxGainDbSet);
             maxGainDbSet = 0.0f;
@@ -632,16 +632,16 @@ final class TranslationTX {
         calc_gain_params();
     }
 
-    public static synchronized float getIncreaseDbPerSecond() {
+    static synchronized float getIncreaseDbPerSecond() {
         return increaseDbPerSecond;
     }
-    public static synchronized float getIncreaseDbPerSecondMin() {
+    static synchronized float getIncreaseDbPerSecondMin() {
         return INCREASE_DB_PER_SECOND_LIMIT_LOW;
     }
-    public static synchronized float getIncreaseDbPerSecondMax() {
+    static synchronized float getIncreaseDbPerSecondMax() {
         return INCREASE_DB_PER_SECOND_LIMIT_HIGH;
     }
-    public static synchronized void setIncreaseDbPerSecond(float increaseDbPerSecondSet) {
+    static synchronized void setIncreaseDbPerSecond(float increaseDbPerSecondSet) {
         if (increaseDbPerSecondSet < INCREASE_DB_PER_SECOND_LIMIT_LOW ) {
             Log.w(TAG, "increaseDbPerSecond set to lower limit of " + INCREASE_DB_PER_SECOND_LIMIT_LOW + ", was : " + increaseDbPerSecondSet);
             increaseDbPerSecondSet = INCREASE_DB_PER_SECOND_LIMIT_LOW;
@@ -654,16 +654,16 @@ final class TranslationTX {
         calc_gain_params();
     }
 
-    public static synchronized float getHoldTimeSeconds() {
+    static synchronized float getHoldTimeSeconds() {
         return holdTimeSeconds;
     }
-    public static synchronized float getHoldTimeSecondsMin() {
+    static synchronized float getHoldTimeSecondsMin() {
         return HOLD_TIME_SECONDS_LIMIT_LOW;
     }
-    public static synchronized float getHoldTimeSecondsMax() {
+    static synchronized float getHoldTimeSecondsMax() {
         return HOLD_TIME_SECONDS_LIMIT_HIGH;
     }
-    public static synchronized void setHoldTimeSeconds(float holdTimeSecondsSet) {
+    static synchronized void setHoldTimeSeconds(float holdTimeSecondsSet) {
         if (holdTimeSecondsSet < HOLD_TIME_SECONDS_LIMIT_LOW ) {
             Log.w(TAG, "holdTimeSeconds set to lower limit of " + HOLD_TIME_SECONDS_LIMIT_LOW + ", was : " + holdTimeSecondsSet);
             holdTimeSecondsSet = HOLD_TIME_SECONDS_LIMIT_LOW;
@@ -676,7 +676,7 @@ final class TranslationTX {
         calc_gain_params();
     }
 
-    public static synchronized void setNetworkPacketRedundancy(int networkPacketRedundancySet) {
+    static synchronized void setNetworkPacketRedundancy(int networkPacketRedundancySet) {
         if (networkPacketRedundancySet < 1) {
             Log.w(TAG, "networkPacketRedundancy set to lower limit of 1");
             networkPacketRedundancySet = 1;
@@ -687,22 +687,22 @@ final class TranslationTX {
         }
         networkPacketRedundancy = networkPacketRedundancySet;
     }
-    public static synchronized int getNetworkPacketRedundancy() { return networkPacketRedundancy; }
-    public static synchronized int getNetworkRedundancyMax () { return MAX_NETWORK_PACKET_REDUNDANCY; }
+    static synchronized int getNetworkPacketRedundancy() { return networkPacketRedundancy; }
+    static synchronized int getNetworkRedundancyMax () { return MAX_NETWORK_PACKET_REDUNDANCY; }
 
-    public static synchronized Status state() {
+    static synchronized Status state() {
         return state;
     }
 
-    public static synchronized void mute(boolean setMute) { mute = setMute; }
+    static synchronized void mute(boolean setMute) { mute = setMute; }
 
-    public static byte[] dummyRtpPacket () {
+    static byte[] dummyRtpPacket () {
         return RTP_HEADER_TEMPLATE;
     }
-    public static int dummyRtpPacketLength () {
+    static int dummyRtpPacketLength () {
         return RTP_HEADER_TEMPLATE.length;
     }
-    public static synchronized void setChannelsManaged(boolean newchannelsMangaged) {
+    static synchronized void setChannelsManaged(boolean newchannelsMangaged) {
         channelsManaged = newchannelsMangaged;
     }
 

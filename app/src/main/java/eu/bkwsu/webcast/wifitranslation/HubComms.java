@@ -59,7 +59,7 @@ final class HubComms {
 
     private static volatile  Map<Integer, AppState.Chan> latestChannelMap;
 
-    public HubComms (Properties prop) {
+    HubComms (Properties prop) {
         HUB_BROADCAST_LENGTH_MAX = parseInt(prop.getProperty("HUB_BROADCAST_LENGTH_MAX"));
         HUB_BROADCAST_LENGTH_MIN = parseInt(prop.getProperty("HUB_BROADCAST_LENGTH_MIN"));
         HUB_BROADCAST_TIMEOUT = parseInt(prop.getProperty("HUB_BROADCAST_TIMEOUT"));
@@ -262,6 +262,7 @@ final class HubComms {
             }
         };
     }
+    // TODO Doesn't detect Hub after app already started
     static void pollHubStart () {
         if (pollHubThread == null || (pollHubThread.getState() == Thread.State.TERMINATED)) {
             mainPollHubThread();

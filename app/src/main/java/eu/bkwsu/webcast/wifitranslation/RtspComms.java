@@ -55,7 +55,7 @@ final class RtspComms {
     private boolean playing = false;
     private boolean rtspRun = true;
 
-    public RtspComms (Properties prop) {
+    RtspComms (Properties prop) {
 
         RTSP_PORT = Integer.parseInt(prop.getProperty("RTSP_PORT"));
         RTSP_MAX_RESPONSE_LENGTH = Integer.parseInt(prop.getProperty("RTSP_MAX_RESPONSE_LENGTH"));
@@ -66,7 +66,7 @@ final class RtspComms {
         RTCP_INTERVAL_MILLISECONDS = Integer.parseInt(prop.getProperty("RTCP_INTERVAL_MILLISECONDS"));
     }
 
-    public boolean startSession (int selectedChannel) {
+    boolean startSession (int selectedChannel) {
         String hubIp = HubComms.getHostIp();
 
         channel = selectedChannel;
@@ -121,17 +121,17 @@ final class RtspComms {
     }
 
 
-    public int getRtspClientPort () {
+    int getRtspClientPort () {
         return rtspClientPort;
     }
-    public int getRtcpServerPort () {
+    int getRtcpServerPort () {
         return rtcpServerPort;
     }
-    public String getRtspSessionId () {
+    String getRtspSessionId () {
         return rtspSessionId;
     }
 
-    public void rtspClose() {
+    void rtspClose() {
         if (playing) {
             rtcpThreadStop();
             cSeq++;
@@ -271,7 +271,7 @@ final class RtspComms {
         }
     }
 
-    public DatagramPacket punchPacket () {
+    DatagramPacket punchPacket () {
         byte[] dummyPacket = TranslationTX.dummyRtpPacket();
         int dummyPacketLength = TranslationTX.dummyRtpPacketLength();
         DatagramPacket punchPacket = new DatagramPacket(dummyPacket, dummyPacketLength, ip, rtpServerPort);

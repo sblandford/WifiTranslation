@@ -19,11 +19,11 @@ final class VuMeter {
 
     private static SurfaceHolder holder;
 
-    public VuMeter(SurfaceHolder surfaceHolder) {
+    VuMeter(SurfaceHolder surfaceHolder) {
         holder = surfaceHolder;
     }
 
-    public static void init () {
+    static void init () {
         if (holder != null) {
             Canvas canvas = holder.lockCanvas();
             canvas.drawColor(Color.LTGRAY);
@@ -31,7 +31,7 @@ final class VuMeter {
         }
     }
 
-    public static void draw (float peakLevel) {
+    static void draw (float peakLevel) {
         float levelDb, meterPosition;
 
         if (holder != null) {

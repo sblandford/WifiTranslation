@@ -38,13 +38,13 @@ class ManagementRX {
 
     //private static volatile JSONArray newChannelList;
     private static volatile boolean headphonesMandatory = false;
-    public static volatile Map<Integer, AppState.Chan> channelMap = new ConcurrentHashMap();
+    static volatile Map<Integer, AppState.Chan> channelMap = new ConcurrentHashMap();
 
-    public enum Command {
+    enum Command {
         START, STOP, SLEEP
     }
 
-    public ManagementRX (Properties prop) {
+    ManagementRX (Properties prop) {
         context = MainActivity.context;
 
         ACTION_WAIT_TIMEOUT = Integer.parseInt(prop.getProperty("ACTION_WAIT_TIMEOUT"));
@@ -173,7 +173,7 @@ class ManagementRX {
         actionLock = state;
     }
 
-    public static synchronized void fetchManagement(AppState state) {
+    static synchronized void fetchManagement(AppState state) {
         state.headphonesMandatory = headphonesMandatory;
         if (channelMap != null) {
             state.channelMap = new ConcurrentHashMap<>(channelMap);
@@ -190,7 +190,7 @@ class ManagementRX {
         }
     }
 
-    public static void action (Command action) {
+    static void action (Command action) {
         actionWait();
         setActionLock(true);
         switch(action) {

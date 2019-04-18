@@ -30,18 +30,18 @@ final class Tools {
     private static WifiManager.WifiLock mWifiHighPerfLock;
     private static WifiManager.MulticastLock mMulticastLock;
 
-    public static boolean multicastLocked = false;
-    public static boolean wifiModeFullHighPerf = false;
+    static boolean multicastLocked = false;
+    static boolean wifiModeFullHighPerf = false;
 
     private static AudioManager audioManager;
 
     private Tools(){}
 
-    public synchronized static void setWifiOn (boolean on) {
+    synchronized static void setWifiOn (boolean on) {
         Context context = MainActivity.context;
         ((WifiManager)context.getSystemService(Context.WIFI_SERVICE)).setWifiEnabled(on);
     }
-    public synchronized  static boolean isWifiOn () {
+    synchronized  static boolean isWifiOn () {
 
         final int WIFI_AP_STATE_ENABLED   = 13;
 
@@ -70,7 +70,7 @@ final class Tools {
         int ip_address = ((WifiManager)context.getSystemService(Context.WIFI_SERVICE)).getConnectionInfo().getIpAddress();
         return (((WifiManager)context.getSystemService(Context.WIFI_SERVICE)).isWifiEnabled() && (ip_address != 0));
     }
-    public synchronized  static String showWifiInfo () {
+    synchronized  static String showWifiInfo () {
         Context context = MainActivity.context;
 
         int ip_address = ((WifiManager)context.getSystemService(Context.WIFI_SERVICE)).getConnectionInfo().getIpAddress();
@@ -78,7 +78,7 @@ final class Tools {
     }
 
 
-    public synchronized  static void acquireWifiHighPerfLock() {
+    synchronized  static void acquireWifiHighPerfLock() {
         Context context = MainActivity.context;
         if (mWifiHighPerfLock == null) {
             mWifiHighPerfLock = ((WifiManager)context.getSystemService(Context.WIFI_SERVICE))
@@ -88,14 +88,14 @@ final class Tools {
         wifiModeFullHighPerf = true;
     }
 
-    public synchronized  static boolean isHighPerfLock() {
+    synchronized  static boolean isHighPerfLock() {
         if (mWifiHighPerfLock != null) {
             return mWifiHighPerfLock.isHeld();
         }
         return false;
     }
 
-    public synchronized static void releaseWifiHighPerfLock() {
+    synchronized static void releaseWifiHighPerfLock() {
         if (mWifiHighPerfLock != null) {
             mWifiHighPerfLock.release();
             mWifiHighPerfLock = null;
@@ -103,7 +103,7 @@ final class Tools {
         wifiModeFullHighPerf = false;
     }
 
-    public synchronized static void acquireMulticastLock(){
+    synchronized static void acquireMulticastLock(){
         Context context = MainActivity.context;
         if(mMulticastLock == null){
             WifiManager wifi = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
@@ -114,14 +114,14 @@ final class Tools {
         multicastLocked = true;
     }
 
-    public synchronized static boolean isMulticastLock(){
+    synchronized static boolean isMulticastLock(){
         if(mMulticastLock != null){
             return mMulticastLock.isHeld();
         }
         return false;
     }
 
-    public synchronized static void releaseMulticastLock(){
+    synchronized static void releaseMulticastLock(){
         if(mMulticastLock != null){
             mMulticastLock.release();
             mMulticastLock = null;
@@ -129,15 +129,15 @@ final class Tools {
         multicastLocked = false;
     }
 
-    public synchronized static boolean blueToothScoOnly () {
+    synchronized static boolean blueToothScoOnly () {
         return (phones_type() == AudioDeviceInfo.TYPE_BLUETOOTH_SCO);
     }
 
-    public synchronized static boolean phones_check () {
+    synchronized static boolean phones_check () {
         return (phones_type() != -1);
     }
 
-    public synchronized static int phones_type () {
+    synchronized static int phones_type () {
         audioManager = (AudioManager) context.getSystemService(AUDIO_SERVICE);
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             if (audioManager.isWiredHeadsetOn()) {
@@ -165,7 +165,7 @@ final class Tools {
         return -1;
     }
 
-    public synchronized static void phones_mode_set () {
+    synchronized static void phones_mode_set () {
         audioManager = (AudioManager) context.getSystemService(AUDIO_SERVICE);
         //No speakerphone if headphones in
         audioManager.setSpeakerphoneOn(!phones_check());
@@ -178,7 +178,7 @@ final class Tools {
 
     // For debugging purposes
     private final static char[] hexArray = "0123456789ABCDEF".toCharArray();
-    public static String bytesToHex(byte[] bytes, int length) {
+    static String bytesToHex(byte[] bytes, int length) {
         char[] hexChars = new char[length * 4];
         for ( int j = 0; j < length; j++ ) {
             int v = bytes[j] & 0xFF;
@@ -189,7 +189,7 @@ final class Tools {
         }
         return new String(hexChars);
     }
-    public static String bytesToHex(ByteBuffer bytes) {
+    static String bytesToHex(ByteBuffer bytes) {
         String hexChars = "";
 
         for ( int j = 0; j < bytes.position() ; j++ ) {
@@ -199,7 +199,7 @@ final class Tools {
         return hexChars;
     }
 
-    public static int getAudioFormatIntProp (String propertyName) {
+    static int getAudioFormatIntProp (String propertyName) {
         try {
             Class cls = Class.forName("android.media.AudioFormat");
             try {
@@ -236,7 +236,7 @@ final class Tools {
      *
      * @return a generated ID value
      */
-    public static int generateViewId() {
+    static int generateViewId() {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
             return generateUniqueViewId();
         } else {

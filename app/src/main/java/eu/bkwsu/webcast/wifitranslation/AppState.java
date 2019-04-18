@@ -21,60 +21,60 @@ final class AppState  {
     private static final String TAG = "AppState";
     private static final int PREFS_THREAD_PERIOD_MS = 2000;
 
-    public static class Chan {
-        public String name;
-        public int viewId;
-        public boolean busy;
-        public boolean open;
-        public boolean valid;
-        public List<String> allowedIds = new ArrayList<>();
+    static class Chan {
+        String name;
+        int viewId;
+        boolean busy;
+        boolean open;
+        boolean valid;
+        List<String> allowedIds = new ArrayList<>();
     }
 
     //*****************************************
     //***** Persistent desired state **********
     //*****************************************
-    public volatile String uuid = "";
+    volatile String uuid = "";
 
-    public volatile int selectedMainChannel = 0;
-    public volatile int selectedRelayChannel = 0;
+    volatile int selectedMainChannel = 0;
+    volatile int selectedRelayChannel = 0;
 
     //True is TX, false is RX
-    public volatile boolean txMode = false;
+    volatile boolean txMode = false;
     //Only applies to TX mode, true = relay, false is no relay
-    public volatile boolean relayMode = false;
+    volatile boolean relayMode = false;
 
     //TX Auto-level control user parameters
-    public volatile float maxGainDb = 0.0f;
-    public volatile float increaseDbPerSecond = 0.0f;
-    public volatile float holdTimeSeconds = 0.0f;
-    public volatile int networkPacketRedundancy = 0;
+    volatile float maxGainDb = 0.0f;
+    volatile float increaseDbPerSecond = 0.0f;
+    volatile float holdTimeSeconds = 0.0f;
+    volatile int networkPacketRedundancy = 0;
 
     //*****************************************
     //***** Non-persistent desired state ******
     //*****************************************
-    public volatile boolean mute = false;
-    public volatile boolean happening = false;
-    public volatile boolean headphonesMandatory = false;
-    public volatile boolean channelsManaged = false;
-    public volatile Map<Integer, Chan> channelMap = new ConcurrentHashMap<>();
+    volatile boolean mute = false;
+    volatile boolean happening = false;
+    volatile boolean headphonesMandatory = false;
+    volatile boolean channelsManaged = false;
+    volatile Map<Integer, Chan> channelMap = new ConcurrentHashMap<>();
 
     //*****************************************
     //***** Non-persistent reported state *****
     //*****************************************
-    public volatile boolean mainChannelFree = false;
-    public volatile boolean relayChannelFree = false;
-    public volatile boolean rxBusy = true;
-    public volatile boolean rxValid = false;
-    public volatile boolean txEnabled = false;
-    public volatile boolean rxMulticastMode = true;
-    public volatile boolean rxMulticastOk = false;
-    public volatile boolean rxMulticastTested = false;
-    public volatile boolean rxRtspOk = false;
-    public volatile boolean rxRtspTested = false;
-    public volatile boolean stateInitialised = false;
-    public volatile boolean headphones = false;
-    public volatile boolean appIsVisible = true;
-    public volatile boolean wifiOn = false;
+    volatile boolean mainChannelFree = false;
+    volatile boolean relayChannelFree = false;
+    volatile boolean rxBusy = true;
+    volatile boolean rxValid = false;
+    volatile boolean txEnabled = false;
+    volatile boolean rxMulticastMode = true;
+    volatile boolean rxMulticastOk = false;
+    volatile boolean rxMulticastTested = false;
+    volatile boolean rxRtspOk = false;
+    volatile boolean rxRtspTested = false;
+    volatile boolean stateInitialised = false;
+    volatile boolean headphones = false;
+    volatile boolean appIsVisible = true;
+    volatile boolean wifiOn = false;
 
     private static Context context;
     private int maxChannels;
@@ -85,10 +85,10 @@ final class AppState  {
 
     private AppState thisObj = this;
 
-    public AppState() {
+    AppState() {
 
     }
-    public AppState(Context initContext, String prefDef, TranslationTX translationTxObj, int initMaxChannels) {
+    AppState(Context initContext, String prefDef, TranslationTX translationTxObj, int initMaxChannels) {
         maxChannels = initMaxChannels;
         context = initContext;
         prefs = context.getSharedPreferences(prefDef, MODE_PRIVATE);
@@ -100,7 +100,7 @@ final class AppState  {
 
 
 
-    public Map<Integer, Chan> defaultChannels () {
+    Map<Integer, Chan> defaultChannels () {
         Map<Integer, Chan> defaultChannelMap = new ConcurrentHashMap<>();
 
         for (int i =0; i < maxChannels; i++) {
@@ -108,7 +108,7 @@ final class AppState  {
         }
         return defaultChannelMap;
     }
-    public static AppState.Chan defaultChannel(int chanNum) {
+    static AppState.Chan defaultChannel(int chanNum) {
         AppState.Chan chan = new AppState.Chan();
         chan.name = String.format("%s%4d", MainActivity.context.getString(R.string.channel_text), chanNum + 1);
         chan.viewId = -1;
@@ -118,7 +118,7 @@ final class AppState  {
         return chan;
     }
 
-    public void fetchChannelMap () {
+    void fetchChannelMap () {
         if (HubComms.getChannelMap() != null) {
             channelsManaged = true;
             Map<Integer, Chan> newChannelMap = new ConcurrentHashMap<>(HubComms.getChannelMap());
@@ -151,15 +151,15 @@ final class AppState  {
     }
 
     //Compare the full state
-    public boolean equals (AppState compareWith) {
+    boolean equals (AppState compareWith) {
         return persistEquals(compareWith) && transientEquals(compareWith) && reportedEquals(compareWith);
     }
     //Compare the desired state
-    public boolean desiredEquals (AppState compareWith) {
+    boolean desiredEquals (AppState compareWith) {
         return persistEquals(compareWith) && transientEquals(compareWith);
     }
     //Compare the state of persistent state
-    public boolean persistEquals (AppState compareWith) {
+    boolean persistEquals (AppState compareWith) {
         if (selectedMainChannel != compareWith.selectedMainChannel) {
             return false;
         }
@@ -187,7 +187,7 @@ final class AppState  {
         return true;
     }
     //Compare the transient state
-    public boolean transientEquals (AppState compareWith) {
+    boolean transientEquals (AppState compareWith) {
         if (mute != compareWith.mute) {
             return false;
         }
@@ -200,15 +200,12 @@ final class AppState  {
         if (channelsManaged != compareWith.channelsManaged) {
             return false;
         }
-        if (!channelMap.equals(compareWith.channelMap)) {
-            return false;
-        }
-        //Deeper compare
         if (channelMap != null) {
             for (Map.Entry<Integer, Chan> thisPair : channelMap.entrySet()) {
                 Chan thisChan = thisPair.getValue();
                 Chan thatChan = compareWith.channelMap.get(thisPair.getKey().intValue());
                 if ((thatChan == null) ||
+                        (thisChan.open != thatChan.open) ||
                         (!thisChan.name.equals(thatChan.name)) ||
                         (thisChan.viewId != thatChan.viewId)) {
                     return false;
@@ -218,7 +215,7 @@ final class AppState  {
         return true;
     }
     //Compare the reported state
-    public boolean reportedEquals (AppState compareWith) {
+    boolean reportedEquals (AppState compareWith) {
         if (mainChannelFree != compareWith.mainChannelFree) {
             return false;
         }
@@ -258,9 +255,6 @@ final class AppState  {
         if (wifiOn != compareWith.wifiOn) {
             return false;
         }
-        if (!channelMap.equals(compareWith.channelMap)) {
-            return false;
-        }
         //Deep compare
         if (!channelsManaged && (channelMap != null)) {
             for (Map.Entry<Integer, Chan> thisPair : channelMap.entrySet()) {
@@ -276,7 +270,7 @@ final class AppState  {
         return true;
     }
 
-    public void readPrefs () {
+    void readPrefs () {
         //Do nothing if not constructed to handle prefs
         if (prefs == null) {
             return;
@@ -301,7 +295,7 @@ final class AppState  {
         stateInitialised = true;
     }
 
-    public void writePrefs () {
+    void writePrefs () {
         SharedPreferences.Editor editor;
 
         //Do nothing if not constructed to handle prefs
@@ -347,11 +341,11 @@ final class AppState  {
             }
         }
     };
-    public void copyAllTo (AppState targetState) {
+    void copyAllTo (AppState targetState) {
         copyDesiredTo(targetState);
         copyReportedTo(targetState);
     }
-    public void copyDesiredTo (AppState targetState) {
+    void copyDesiredTo (AppState targetState) {
         targetState.uuid = uuid;
         targetState.selectedMainChannel = selectedMainChannel;
         targetState.selectedRelayChannel = selectedRelayChannel;
@@ -379,7 +373,7 @@ final class AppState  {
         targetState.channelMap = null;
         targetState.channelMap = new ConcurrentHashMap<>(channelMap);
     }
-    public void copyReportedTo (AppState targetState) {
+    void copyReportedTo (AppState targetState) {
         targetState.mainChannelFree = mainChannelFree;
         targetState.relayChannelFree = relayChannelFree;
         targetState.rxBusy = rxBusy;
