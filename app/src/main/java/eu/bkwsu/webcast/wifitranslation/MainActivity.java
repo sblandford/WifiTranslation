@@ -380,12 +380,7 @@ public class MainActivity extends AppCompatActivity {
         //Read through the channels and display them. Assigning ids as we go.
         // TODO Channel IDs don't match when Hub disconnected and defaults re-established
         for(Map.Entry<Integer, AppState.Chan> pair : new TreeMap<>(desiredState.channelMap).entrySet()) {
-            int newId;
-            if (Build.VERSION.SDK_INT >= 17) {
-                newId = generateViewId();
-            } else {
-                newId = Tools.generateViewId();
-            }
+            int newId = Tools.generateViewId();;
             AppState.Chan chan = pair.getValue();
             MenuItem nm = menu.add(R.id.channel_selector_group, newId, Menu.FLAG_APPEND_TO_GROUP, chan.name);
             nm.setCheckable(true);
