@@ -549,7 +549,7 @@ public class MainActivity extends AppCompatActivity {
         if (state.txMode) {
             if (state.happening) {
                 if (state.mute) {
-                    setMainButtonColorText(Color.YELLOW, getString(R.string.status_muted));
+                    setMainButtonColorText(Color.parseColor("teal"), getString(R.string.status_muted));
                 } else {
                     setMainButtonColorText(Color.RED, getString(R.string.status_mute));
                 }
