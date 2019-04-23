@@ -854,6 +854,7 @@ public class MainActivity extends AppCompatActivity {
                                 doTest = true;
                             }
                             // Test channel
+                            // TODO sometimes starts test mode after play selected resulting in no sound
                             if (doTest) {
                                 translationRx.setMulticastMode(rxTestMulticastMode);
                                 translationRx.action(TranslationRX.Command.TEST);
