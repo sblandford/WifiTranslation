@@ -853,13 +853,15 @@ public class MainActivity extends AppCompatActivity {
                                 rxTestMulticastMode = true;
                                 doTest = true;
                             }
-                            // Test channel
-                            // TODO sometimes starts test mode after play selected resulting in no sound
+
+                            // Test channel if not playing
                             if (doTest) {
-                                translationRx.setMulticastMode(rxTestMulticastMode);
-                                translationRx.action(TranslationRX.Command.TEST);
-                                rxTestComplete = false;
-                                Log.d(TAG, "Starting RX test with multicast mode : " + rxTestMulticastMode);
+                                if (!stateSnapshot.happening) {
+                                    translationRx.setMulticastMode(rxTestMulticastMode);
+                                    translationRx.action(TranslationRX.Command.TEST);
+                                    rxTestComplete = false;
+                                    Log.d(TAG, "Starting RX test with multicast mode : " + rxTestMulticastMode);
+                                }
                             }
                             break;
                         case STARTING:
