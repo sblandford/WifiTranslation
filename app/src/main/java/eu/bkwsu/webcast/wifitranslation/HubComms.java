@@ -22,6 +22,7 @@ import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -34,7 +35,6 @@ final class HubComms {
     private static volatile boolean hubIpRun = false;
     private static volatile boolean hubFound = false;
     private static volatile boolean hubPollRun = false;
-    private static volatile boolean hubByHostname = false;
     private static volatile String hubWanProtocol = "http";
     private static volatile String hubLanProtocol = "http";
     private static volatile String hubProtocol = "http";
@@ -49,6 +49,7 @@ final class HubComms {
     private static int HUB_BROADCAST_PORT;
     private static int HUB_BROADCAST_TIMEOUT;
     private static String HUB_HOSTNAME;
+    private static int HUB_CHANGE_ALERT_PORT;
     private static int HUB_POLL_REQUEST_TIMEOUT;
     private static int HUB_POLL_LOSS_COUNT;
     private static int HUB_POLL_INTERVAL_MILLISECONDS;
@@ -65,6 +66,7 @@ final class HubComms {
         HUB_BROADCAST_TIMEOUT = parseInt(prop.getProperty("HUB_BROADCAST_TIMEOUT"));
         HUB_BROADCAST_PORT = parseInt(prop.getProperty("HUB_BROADCAST_PORT"));
         HUB_HOSTNAME = prop.getProperty("HUB_HOSTNAME");
+        HUB_CHANGE_ALERT_PORT = parseInt(prop.getProperty("HUB_CHANGE_ALERT_PORT"));
         HUB_POLL_REQUEST_TIMEOUT = parseInt(prop.getProperty("HUB_POLL_REQUEST_TIMEOUT"));
         HUB_POLL_LOSS_COUNT = parseInt(prop.getProperty("HUB_POLL_LOSS_COUNT"));
         HUB_POLL_INTERVAL_MILLISECONDS = parseInt(prop.getProperty("HUB_POLL_INTERVAL_MILLISECONDS"));
@@ -206,11 +208,35 @@ final class HubComms {
                             hubFound = true;
                             triedAllPorts = true;
                             pollLossCounter = HUB_POLL_LOSS_COUNT;
-                            //Sleep for a bit before re-polling
+                            //Sleep for a bit before re-polling whilst waiting for change-alert
+                            DatagramSocket sock = null;
                             try {
-                                Thread.sleep(HUB_POLL_INTERVAL_MILLISECONDS);
-                            } catch (InterruptedException e) {
-                                Log.d(TAG, "Active state thread interrupted");
+                                byte[] packetBuff = new byte[PACKET_BUFFER_SIZE];
+
+                                //Keep a socket open to listen to all the UDP trafic that is destined for this port
+                                sock = new DatagramSocket(null);
+                                sock.setReuseAddress(true);
+                                sock.setBroadcast(true);
+                                sock.bind(new InetSocketAddress(HUB_CHANGE_ALERT_PORT));
+                                sock.setBroadcast(true);
+                                DatagramPacket pack = new DatagramPacket(packetBuff, PACKET_BUFFER_SIZE);
+                                sock.setSoTimeout(HUB_POLL_INTERVAL_MILLISECONDS);
+                                sock.receive(pack);
+                                Log.d(TAG, "Received change alert from hub");
+                                try {
+                                    //Wait random up to a second to spread out poll-request load on hub
+                                    Thread.sleep(new Random().nextInt(1000));
+                                } catch (InterruptedException e) {
+                                    Log.d(TAG, "Active state thread interrupted");
+                                }
+                            } catch (SocketTimeoutException e) {
+                                // No action on timeout
+                            } catch (IOException e) {
+                                throw new IllegalStateException("IOException " + e.toString());
+                            } finally {
+                                if (sock != null) {
+                                    sock.close();
+                                }
                             }
                         } else {
                             // If we haven't received a broadcast message from the Hub
