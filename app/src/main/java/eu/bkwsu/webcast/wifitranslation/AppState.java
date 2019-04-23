@@ -126,7 +126,7 @@ final class AppState  {
             for(Map.Entry<Integer, Chan> thisPair : newChannelMap.entrySet()) {
                 Chan targetChan = thisPair.getValue();
                 Chan thisChan = channelMap.get(thisPair.getKey().intValue());
-                if ((thisChan != null) && (targetChan != null)){
+                if (thisChan != null){
                     targetChan.viewId = thisChan.viewId;
                 } else {
                     targetChan.viewId = -1;
@@ -134,10 +134,32 @@ final class AppState  {
             }
             channelMap = newChannelMap;
         } else {
-            channelMap = defaultChannels();
+            if (!channelMapAlreadyDefault()) {
+                channelMap = defaultChannels();
+            }
             channelsManaged = false;
         }
         clipChannelToMapSize();
+    }
+
+    private boolean channelMapAlreadyDefault () {
+        Map<Integer, Chan> defaultMap = defaultChannels();
+        if (channelMap != null) {
+            if (channelMap.size() != defaultMap.size()) {
+                return false;
+            }
+            for (Map.Entry<Integer, Chan> thisPair : channelMap.entrySet()) {
+                Chan thisChan = thisPair.getValue();
+                Chan thatChan = defaultMap.get(thisPair.getKey().intValue());
+                if ((thatChan == null) ||
+                        (!thisChan.name.equals(thatChan.name))) {
+                    return false;
+                }
+            }
+        } else {
+            return false;
+        }
+        return true;
     }
 
     private void clipChannelToMapSize () {

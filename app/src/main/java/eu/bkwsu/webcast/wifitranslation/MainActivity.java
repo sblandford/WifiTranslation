@@ -394,9 +394,15 @@ public class MainActivity extends AppCompatActivity {
             pair.setValue(chan);
         }
         menu.setGroupCheckable(R.id.channel_selector_group, true, true);
-        menu.findItem(getChannelDisplayId(currentChannel)).setChecked(true);
+        final MenuItem item = menu.findItem(getChannelDisplayId(currentChannel));
+        if (item != null) {
+            item.setChecked(true);
+        }
         if (desiredState.relayMode && desiredState.txMode && !ALLOW_LOOPBACK) {
-            menu.findItem(getChannelDisplayId(otherChannel)).setEnabled(false);
+            final MenuItem otherItem = menu.findItem(getChannelDisplayId(otherChannel));
+            if (otherItem != null) {
+                otherItem.setEnabled(false);
+            }
         }
     }
 
