@@ -381,12 +381,13 @@ final class AppState  {
         targetState.happening = happening;
         targetState.headphonesMandatory = headphonesMandatory;
         targetState.channelsManaged = channelsManaged;
-        //Copy valid and busy states back unless managed
+        //Copy valid and busy states _back_ unless managed
         if (!channelsManaged) {
             for (Map.Entry<Integer, Chan> thisPair : channelMap.entrySet()) {
                 Chan thisChan = thisPair.getValue();
                 Chan targetChan = targetState.channelMap.get(thisPair.getKey().intValue());
                 if (targetChan != null) {
+                    thisChan.open = targetChan.open;
                     thisChan.busy = targetChan.busy;
                     thisChan.valid = targetChan.valid;
                 }
@@ -415,6 +416,7 @@ final class AppState  {
                 Chan thisChan = thisPair.getValue();
                 Chan targetChan = targetState.channelMap.get(thisPair.getKey().intValue());
                 if (targetChan != null) {
+                    targetChan.open = thisChan.open;
                     targetChan.valid = thisChan.valid;
                     targetChan.busy = thisChan.busy;
                 }

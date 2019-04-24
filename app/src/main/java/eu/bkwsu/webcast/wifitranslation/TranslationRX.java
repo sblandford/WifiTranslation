@@ -275,12 +275,12 @@ final class TranslationRX {
                                                 !((rtpSequenceNumber < 0x8000) && (rtpSequenceNumberPrevious > 0x8000))) {
                                             continue;
                                         }
-                                        if (rtpSequenceNumber != (rtpSequenceNumberPrevious + 1)) {
-                                            Log.w(TAG, "RTP Sequence number : " + rtpSequenceNumber + ", previous : " + rtpSequenceNumberPrevious);
-                                        }
 
                                         //Initial tests passed for AMR RTP packet
                                         if (audioOn) {
+                                            if (rtpSequenceNumber != (rtpSequenceNumberPrevious + 1)) {
+                                                Log.w(TAG, "RTP Sequence number : " + rtpSequenceNumber + ", previous : " + rtpSequenceNumberPrevious);
+                                            }
                                             //Repeat same packet for any missing packets
                                             for (int i = 0; (i < (rtpSequenceNumber - rtpSequenceNumberPrevious)) && (i < MISSING_PACKET_MAX_REPEAT); i++) {
                                                 putRtpPacket(packetBuff, packetLength, i == 0);

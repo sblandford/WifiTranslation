@@ -712,6 +712,7 @@ public class MainActivity extends AppCompatActivity {
                     translationTx.setChannelsManaged(desiredState.channelsManaged);
                     rxReTest = true;
                 }
+
                 if (!stateSnapshot.desiredEquals(activeState) || !activeState.stateInitialised) {
 
                     if (stateSnapshot.happening != activeState.happening) {
@@ -938,8 +939,8 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
 
-                    // Only allow transmit if multicast is working and we are in the list of UUIDs allowed to or the channel is open
-                    if ((chan.allowedIds.contains(uuid) || chan.open) && activeState.rxMulticastMode) {
+                    // Only allow transmit if we are in the list of UUIDs allowed to or the channel is open
+                    if (chan.allowedIds.contains(uuid) || chan.open) {
                         activeState.txEnabled = !activeState.rxBusy;
                     } else {
                         // Not allowed
