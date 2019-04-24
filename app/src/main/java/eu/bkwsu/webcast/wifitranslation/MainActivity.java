@@ -949,7 +949,6 @@ public class MainActivity extends AppCompatActivity {
 
                     // Organise retest if pending
                     if (rxReTest && rxTestComplete) {
-                        Log.d(TAG, "Triggering TX retest");
                         activeState.rxMulticastOk = false;
                         activeState.rxMulticastTested = false;
                         activeState.rxRtspOk = false;
