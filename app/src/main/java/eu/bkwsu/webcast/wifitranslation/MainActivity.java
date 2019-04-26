@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Sleep management
     private Object mPauseLock = new Object();
+    private boolean mPauseSuspended = false;
     private boolean mPaused = false;
 
 
@@ -157,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
         translationTx.setIncreaseDbPerSecond(desiredState.increaseDbPerSecond);
         translationTx.setHoldTimeSeconds(desiredState.holdTimeSeconds);
         translationTx.setNetworkPacketRedundancy(desiredState.networkPacketRedundancy);
+
 
         final Button buttonStop = (Button) findViewById(R.id.button_stop);
         buttonStop.setOnClickListener(new View.OnClickListener() {
@@ -586,9 +588,9 @@ public class MainActivity extends AppCompatActivity {
         if (visible) {
             if (state.happening) {
                 if (state.rxValid) {
-                    setRelayChanColorText(Color.GREEN, state.selectedRelayChannel);
+                    setRelayChanColorText(Color.rgb(0,150,0), state.selectedRelayChannel);
                 } else {
-                    setRelayChanColorText(Color.CYAN, state.selectedRelayChannel);
+                    setRelayChanColorText(Color.rgb(0,150,100), state.selectedRelayChannel);
                 }
             } else {
                 setRelayChanColorText(Color.TRANSPARENT, state.selectedRelayChannel);
@@ -737,9 +739,7 @@ public class MainActivity extends AppCompatActivity {
                             && stateSnapshot.happening) {
                         translationRx.action(TranslationRX.Command.STOP);
                     }
-                    if (!stateSnapshot.txMode || !stateSnapshot.relayMode || !stateSnapshot.happening) {
-                        translationRx.channelSelect(stateSnapshot.selectedMainChannel);
-                    }
+                    translationRx.channelSelect((stateSnapshot.relayMode && stateSnapshot.txMode)?stateSnapshot.selectedRelayChannel:stateSnapshot.selectedMainChannel);
                     if ((stateSnapshot.happening != activeState.happening)
                             && stateSnapshot.happening) {
                         if (stateSnapshot.relayMode) {
@@ -990,7 +990,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                 //Go to sleep if lost focus and nothing happening
-                if (!stateSnapshot.appIsVisible && !stateSnapshot.happening) {
+                mPauseSuspended = stateSnapshot.happening;
+                if (!stateSnapshot.appIsVisible && !mPauseSuspended) {
                     Log.i(TAG, "Going to sleep");
                     //Stop any RX test
                     translationRx.action(TranslationRX.Command.STOP);
@@ -1184,7 +1185,7 @@ public class MainActivity extends AppCompatActivity {
         }
         // Wait for threads to be shut down
         Log.i(TAG, "Waiting to enter lost-focus mode");
-        while (!mPaused) {
+        while (!mPaused && !mPauseSuspended) {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {

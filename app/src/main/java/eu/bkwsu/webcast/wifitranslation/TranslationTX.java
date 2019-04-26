@@ -460,7 +460,7 @@ final class TranslationTX {
                     Tools.acquireWifiHighPerfLock();
                     sock.send(pack);
                 } catch (IOException e) {
-                    throw new IllegalStateException("RTP send packet " + e.toString());
+                    Log.e(TAG,"RTP send packet " + e.toString());
                 }
                 try {
                     Thread.sleep(PACKET_REDUNDANCY_SPACE_MS);
@@ -474,7 +474,7 @@ final class TranslationTX {
                 Tools.acquireWifiHighPerfLock();
                 sock.send(pack);
             } catch (IOException e) {
-                throw new IllegalStateException("UUID send packet " + e.toString());
+                Log.e(TAG,"UUID send packet " + e.toString());
             }
         }
 
