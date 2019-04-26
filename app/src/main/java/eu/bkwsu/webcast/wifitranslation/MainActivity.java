@@ -590,7 +590,7 @@ public class MainActivity extends AppCompatActivity {
                 if (state.rxValid) {
                     setRelayChanColorText(Color.rgb(0,150,0), state.selectedRelayChannel);
                 } else {
-                    setRelayChanColorText(Color.rgb(0,150,100), state.selectedRelayChannel);
+                    setRelayChanColorText(Color.rgb(0,150,150), state.selectedRelayChannel);
                 }
             } else {
                 setRelayChanColorText(Color.TRANSPARENT, state.selectedRelayChannel);
@@ -739,7 +739,7 @@ public class MainActivity extends AppCompatActivity {
                             && stateSnapshot.happening) {
                         translationRx.action(TranslationRX.Command.STOP);
                     }
-                    translationRx.channelSelect((stateSnapshot.relayMode && stateSnapshot.txMode)?stateSnapshot.selectedRelayChannel:stateSnapshot.selectedMainChannel);
+                    translationRx.channelSelect((stateSnapshot.relayMode && stateSnapshot.txMode && stateSnapshot.happening)?stateSnapshot.selectedRelayChannel:stateSnapshot.selectedMainChannel);
                     if ((stateSnapshot.happening != activeState.happening)
                             && stateSnapshot.happening) {
                         if (stateSnapshot.relayMode) {
