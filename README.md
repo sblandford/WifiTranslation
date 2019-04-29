@@ -23,4 +23,15 @@ Note that multicast will not work in all situations.
 # Network
 * Packet redundancy: Repeat each network packet n times to compensate for packet loss e.g. due to Bluetooth reducing WiFi performance. This also increases the network bandwidth used by n times.
 
-Future versions of this app will allow management at a venue by a central hub on the network which will manage who is authorised to translate and provide unicast fallback and support for IOS devices.
+
+# The WifiTranslation Hub
+For better control of the WiFi Translation in a venue, check out the "WifiTranslationHub" that is designed to run on a computer on the same LAN.
+
+Source code of WifiTranslationHub: https://github.com/sblandford/WifiTranslationHub
+
+This adds the following functionality:
+
+* Provide an HTML audio player for all other devices with a web browser
+* Name translation channels e.g. "English", "French", "Hindi" etc.
+* Manage who can transmit on each channel
+* Provide transparent RTSP fall-back for devices with no multicast support
