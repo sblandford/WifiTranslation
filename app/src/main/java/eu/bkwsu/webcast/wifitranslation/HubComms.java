@@ -35,6 +35,7 @@ final class HubComms {
     private static volatile boolean hubIpRun = false;
     private static volatile boolean hubFound = false;
     private static volatile boolean hubPollRun = false;
+    private static volatile boolean hubPollReRun = false;
     private static volatile String hubWanProtocol = "http";
     private static volatile String hubLanProtocol = "http";
     private static volatile String hubProtocol = "http";
@@ -131,6 +132,7 @@ final class HubComms {
                                 Log.i(TAG, "Hub information detected from broadcast : WAN Proto : " + hubWanProtocol +
                                         ", LAN Proto : " + hubLanProtocol + ", Hostname : " + hubHostName +
                                         ", IP : " + hubIp + ", Web Port : " + Integer.toString(hubWebPort));
+                                validateHostname ();
                                 //Mission accomplished so stop
                                 hubProtocol = hubLanProtocol;
                                 hubIpRun = false;
@@ -188,16 +190,14 @@ final class HubComms {
                     hubPortIndex = 0;
                     triedAllPorts = false;
 
-                    try {
-                        InetAddress address = InetAddress.getByName(HUB_HOSTNAME);
-                        hubIp = address.getHostAddress();
-                        Log.i(TAG, "Hub IP address detected by name resolution : " + hubIp);
-                    } catch (UnknownHostException e) {
-                        Log.i(TAG, "Unable to resolve Hub by name : " + HUB_HOSTNAME);
-                        // Don't even try it if name doesn't resolve
+                    hubHostName = HUB_HOSTNAME;
+
+                    validateHostname ();
+
+                    if (hubHostName.length() == 0) {
+                        //Don't try if we can't resolve hostname
                         triedAllPorts = true;
                     }
-
 
                     while (hubPollRun && (hubFound || !triedAllPorts)) {
                         if (fetchJson(hubProtocol, hubHostName, hubIp, hubWebPort)) {
@@ -206,6 +206,7 @@ final class HubComms {
                                 Log.i(TAG, "Successfully polled hub");
                             }
                             hubFound = true;
+                            hubPollReRun = false;
                             triedAllPorts = true;
                             pollLossCounter = HUB_POLL_LOSS_COUNT;
                             //Sleep for a bit before re-polling whilst waiting for change-alert
@@ -220,9 +221,18 @@ final class HubComms {
                                 sock.bind(new InetSocketAddress(HUB_CHANGE_ALERT_PORT));
                                 sock.setBroadcast(true);
                                 DatagramPacket pack = new DatagramPacket(packetBuff, PACKET_BUFFER_SIZE);
-                                sock.setSoTimeout(HUB_POLL_INTERVAL_MILLISECONDS);
-                                sock.receive(pack);
-                                Log.d(TAG, "Received change alert from hub");
+                                // 1 second timeout
+                                sock.setSoTimeout(1000);
+                                startTime = System.currentTimeMillis();
+                                while (hubPollRun && ((System.currentTimeMillis() - startTime) < HUB_POLL_INTERVAL_MILLISECONDS)) {
+                                    try {
+                                        sock.receive(pack);
+                                    } catch (SocketTimeoutException e) {
+                                        continue;
+                                    }
+                                    Log.d(TAG, "Received change alert from hub");
+                                    break;
+                                }
                                 try {
                                     //Wait random up to a second to spread out poll-request load on hub
                                     Thread.sleep(new Random().nextInt(1000));
@@ -245,6 +255,10 @@ final class HubComms {
                                 String portText = (HUB_STAT_PORTS[hubPortIndex++]);
                                 String portClue = portText.substring(portText.length() - 1);
                                 hubProtocol = ("3".equals(portClue)) ? "https" : "http";
+                                if ((hubProtocol == "https") && (hubHostName.length() <= 0)) {
+                                    //Don't attempt https when there is no hostname
+                                    continue;
+                                }
                                 hubWebPort = Integer.parseInt(portText);
                                 if (hubPortIndex >= HUB_STAT_PORTS.length) {
                                     triedAllPorts = true;
@@ -273,7 +287,7 @@ final class HubComms {
                     }
                     // Wait for timeout if hub still not found
                     startTime = System.currentTimeMillis();
-                    while (hubPollRun && (!hubFound) && ((System.currentTimeMillis() - startTime) < HUB_POLL_RETRY_INTERVAL_MILLISECONDS)) {
+                    while (hubPollRun && (!hubFound) && ((System.currentTimeMillis() - startTime) < HUB_POLL_RETRY_INTERVAL_MILLISECONDS) && !hubPollReRun) {
                         try {
                             //Wait a second
                             Thread.sleep(1000);
@@ -281,6 +295,7 @@ final class HubComms {
                             Log.d(TAG, "Active state thread interrupted");
                         }
                     }
+                    hubPollReRun = false;
                     if (hubPollRun) {
                         Log.i(TAG, "Restarting search for for Hub");
                     }
@@ -330,7 +345,7 @@ final class HubComms {
             return false;
         }
 
-        String urlText = protocol + "://" + ("https".equals(protocol)?hostname:ip) + ":" + port + "/" + HUB_STAT_PATH;
+        String urlText = protocol + "://" + ((hostname.length() > 0)?hostname:ip) + ":" + port + "/" + HUB_STAT_PATH;
 
         try {
             URL url = new URL(urlText);
@@ -436,9 +451,25 @@ final class HubComms {
         return true;
     }
 
+    private static void validateHostname () {
+        try {
+            InetAddress address = InetAddress.getByName(hubHostName);
+            hubIp = address.getHostAddress();
+            Log.i(TAG, "Hub IP address detected by name resolution : " + hubIp);
+        } catch (UnknownHostException e) {
+            Log.i(TAG, "Forgetting hostname. Unable to resolve Hub by name : " + hubHostName);
+            // Don't try hostname if name doesn't resolve
+            hubHostName = "";
+        }
+    }
+
     static Map<Integer, AppState.Chan> getChannelMap() {
         return latestChannelMap;
     }
 
     static String getHostIp () { return hubIp;}
+
+    static void hubRePoll () {
+        hubPollReRun = true;
+    }
 }

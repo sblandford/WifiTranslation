@@ -965,6 +965,10 @@ public class MainActivity extends AppCompatActivity {
 
                 //Record Wifi state
                 activeState.wifiOn = Tools.isWifiOn();
+                //Prompt retest of hub on WiFi return
+                if (activeState.wifiOn && (activeState.wifiOn != stateSnapshot.wifiOn)) {
+                    hubComms.hubRePoll();
+                }
                 //Record headphone state
                 activeState.headphones = Tools.phones_check();
                 //Act on headphone state change
@@ -1176,6 +1180,7 @@ public class MainActivity extends AppCompatActivity {
             mPaused = false;
             mPauseLock.notifyAll();
         }
+        hubComms.hubRePoll();
     }
 
     @Override
