@@ -8,4 +8,14 @@
         <item name="colorAccent">@color/colorAccent</item> -->
     </style>
 
+    <style name="stopButton" parent="startStopButton">
+        <item name="android:background">#C0C0C0</item>
+    </style>
+
+    <style name="startStopButton">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
 </resources>
