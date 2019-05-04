@@ -65,6 +65,7 @@ final class AppState  {
     volatile boolean relayChannelFree = false;
     volatile boolean rxBusy = true;
     volatile boolean rxValid = false;
+    volatile boolean rxTested = false;
     volatile boolean txEnabled = false;
     volatile boolean rxMulticastMode = true;
     volatile boolean rxMulticastOk = false;
@@ -250,6 +251,9 @@ final class AppState  {
         if (rxValid != compareWith.rxValid) {
             return false;
         }
+        if (rxTested != compareWith.rxTested) {
+            return false;
+        }
         if (txEnabled != compareWith.txEnabled) {
             return false;
         }
@@ -401,6 +405,7 @@ final class AppState  {
         targetState.relayChannelFree = relayChannelFree;
         targetState.rxBusy = rxBusy;
         targetState.rxValid = rxValid;
+        targetState.rxTested = rxTested;
         targetState.txEnabled = txEnabled;
         targetState.rxMulticastMode = rxMulticastMode;
         targetState.rxMulticastOk = rxMulticastOk;

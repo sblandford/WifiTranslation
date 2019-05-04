@@ -577,7 +577,11 @@ public class MainActivity extends AppCompatActivity {
                         setMainButtonColorText(Color.LTGRAY, getString(R.string.status_rx_start));
                     }
                 } else {
-                    setMainButtonColorText(Color.LTGRAY, getString(R.string.status_unavailable));
+                    if (state.rxTested) {
+                        setMainButtonColorText(Color.LTGRAY, getString(R.string.status_unavailable));
+                    } else {
+                        setMainButtonColorText(Color.LTGRAY, getString(R.string.status_searching));
+                    }
                 }
             }
         }
@@ -960,7 +964,8 @@ public class MainActivity extends AppCompatActivity {
                     activeState.rxValid = rxTestedValid;
                     activeState.txEnabled = !rxTestedBusy;
                 }
-
+                // Indicate testing in progress or complete. In non-managed mode test is continuously repeated
+                activeState.rxTested = rxTestComplete || !stateSnapshot.channelsManaged;
 
 
                 //Record Wifi state
