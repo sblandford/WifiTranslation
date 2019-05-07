@@ -119,7 +119,7 @@ final class AppState  {
         return chan;
     }
 
-    void fetchChannelMap () {
+    synchronized void fetchChannelMap () {
         if (HubComms.getChannelMap() != null) {
             channelsManaged = true;
             Map<Integer, Chan> newChannelMap = new ConcurrentHashMap<>(HubComms.getChannelMap());
@@ -143,7 +143,7 @@ final class AppState  {
         clipChannelToMapSize();
     }
 
-    private boolean channelMapAlreadyDefault () {
+    synchronized private boolean channelMapAlreadyDefault () {
         Map<Integer, Chan> defaultMap = defaultChannels();
         if (channelMap != null) {
             if (channelMap.size() != defaultMap.size()) {
@@ -163,7 +163,7 @@ final class AppState  {
         return true;
     }
 
-    private void clipChannelToMapSize () {
+    synchronized private void clipChannelToMapSize () {
         // Reset to first channel if new channel range is less than selected channel
         if (selectedMainChannel >= channelMap.size()) {
             selectedMainChannel = 0;
@@ -182,7 +182,7 @@ final class AppState  {
         return persistEquals(compareWith) && transientEquals(compareWith);
     }
     //Compare the state of persistent state
-    boolean persistEquals (AppState compareWith) {
+    synchronized boolean persistEquals (AppState compareWith) {
         if (selectedMainChannel != compareWith.selectedMainChannel) {
             return false;
         }
@@ -210,7 +210,7 @@ final class AppState  {
         return true;
     }
     //Compare the transient state
-    boolean transientEquals (AppState compareWith) {
+    synchronized boolean transientEquals (AppState compareWith) {
         if (mute != compareWith.mute) {
             return false;
         }
@@ -238,7 +238,7 @@ final class AppState  {
         return true;
     }
     //Compare the reported state
-    boolean reportedEquals (AppState compareWith) {
+    synchronized boolean reportedEquals (AppState compareWith) {
         if (mainChannelFree != compareWith.mainChannelFree) {
             return false;
         }
@@ -371,7 +371,7 @@ final class AppState  {
         copyDesiredTo(targetState);
         copyReportedTo(targetState);
     }
-    void copyDesiredTo (AppState targetState) {
+    synchronized void copyDesiredTo (AppState targetState) {
         targetState.uuid = uuid;
         targetState.selectedMainChannel = selectedMainChannel;
         targetState.selectedRelayChannel = selectedRelayChannel;
@@ -400,7 +400,7 @@ final class AppState  {
         targetState.channelMap = null;
         targetState.channelMap = new ConcurrentHashMap<>(channelMap);
     }
-    void copyReportedTo (AppState targetState) {
+    synchronized void copyReportedTo (AppState targetState) {
         targetState.mainChannelFree = mainChannelFree;
         targetState.relayChannelFree = relayChannelFree;
         targetState.rxBusy = rxBusy;
@@ -428,8 +428,4 @@ final class AppState  {
             }
         }
     }
-
-    //Merge Hub status into state
-
-
 }
