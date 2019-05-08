@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Тарҷумаи Wifi</string>
+    <string name="channel_display_prefix">Канал</string>
+    <string name="relay_channel_display_prefix">Радио</string>
+    <string name="status">Дастрас нест</string>
+    <string name="channel_button_text">Интихоб кунед</string>
+    <string name="relay_channel_button_text">Радио</string>
+    <string name="stop_button_text">Ист</string>
+
+    <string name="status_rx_start">Оғоз кунед</string>
+    <string name="status_tx_start">Пахш кунед</string>
+    <string name="status_searching">Ҷустуҷӯ</string>
+    <string name="status_unavailable">Дастрас нест</string>
+    <string name="status_headphones">Смартакҳоро гӯш кунед</string>
+    <string name="status_talk">Гуфтугӯ</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">Дар бораи парвоз (Барои пахш кардан)</string>
+    <string name="status_muted">Хомӯш (Press for untute)</string>
+    <string name="status_no_wifi">Лутфан, ба WiFi пайваст шавед</string>
+
+    <string name="channel_text">Канал</string>
+    <string name="ch01_text">Канали 1</string>
+    <string name="ch02_text">Канал 2</string>
+    <string name="ch03_text">Канал 3</string>
+    <string name="ch04_text">4</string>
+    <string name="ch05_text">5</string>
+    <string name="ch06_text">6</string>
+    <string name="ch07_text">7</string>
+    <string name="ch08_text">8</string>
+    <string name="ch09_text">9</string>
+    <string name="ch10_text">Канали 10</string>
+
+    <string name="options_switch_TX">Ҳолати интиқол</string>
+    <string name="options_relay_TX">Радио</string>
+    <string name="options_settings">Танзимотҳо</string>
+    <string name="options_about">Дар бораи ...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Бештар</string>
+    <string name="gain_controls_increase_db_per_second">Баланд бардоштани ҳосилнокӣ дар як сония</string>
+    <string name="gain_controls_hold_time">Ҳаҷми ҳадди ниҳоии вақт маҳдуд аст</string>
+
+    <string name="network_controls_title">Шабака</string>
+    <string name="network_controls_packet_redundancy">Фосилаи маҷмӯъ</string>
+
+    <string name="app_description">Тарҷумаи Multicast дар бораи Wi-Fi маҳаллӣ</string>
+    <string name="app_credits">Брахма Кумарис</string>
+
+    <string name="perms_alert_test">Лутфан розигии микрофонро дар иҷозатномаҳои Идораро фаъол кунед</string>
+    <string name="multicast_alert">Мутаассифона, ин дастгоҳ конфигуратсияи Linux-ро ба вуҷуд намеорад</string>
+</resources>

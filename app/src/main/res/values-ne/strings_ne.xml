@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">वाईफाई अनुवाद</string>
+    <string name="channel_display_prefix">च्यानल</string>
+    <string name="relay_channel_display_prefix">रिले</string>
+    <string name="status">उपलब्ध छैन</string>
+    <string name="channel_button_text">छान्नुहोस्</string>
+    <string name="relay_channel_button_text">रिले</string>
+    <string name="stop_button_text">रोक</string>
+
+    <string name="status_rx_start">सुरू गर्नुहोस्</string>
+    <string name="status_tx_start">प्रसारण गर्नुहोस्</string>
+    <string name="status_searching">खोज्दै ...</string>
+    <string name="status_unavailable">उपलब्ध छैन</string>
+    <string name="status_headphones">हेडफोन सम्मिलित गर्नुहोस्</string>
+    <string name="status_talk">कुरा गर्नुहोस्</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">एयरमा (म्यूट गर्न थिच्नुहोस्)</string>
+    <string name="status_muted">मौन गरियो (अनम्यूट गर्न थिच्नुहोस्)</string>
+    <string name="status_no_wifi">कृपया WiFi मा जडान गर्नुहोस्</string>
+
+    <string name="channel_text">च्यानल</string>
+    <string name="ch01_text">च्यानल 1</string>
+    <string name="ch02_text">च्यानल 2</string>
+    <string name="ch03_text">च्यानल 3</string>
+    <string name="ch04_text">च्यानल 4</string>
+    <string name="ch05_text">च्यानल 5</string>
+    <string name="ch06_text">च्यानल 6</string>
+    <string name="ch07_text">च्यानल 7</string>
+    <string name="ch08_text">च्यानल 8</string>
+    <string name="ch09_text">च्यानल 9</string>
+    <string name="ch10_text">च्यानल 10</string>
+
+    <string name="options_switch_TX">ट्रांसमिट मोड</string>
+    <string name="options_relay_TX">रिले</string>
+    <string name="options_settings">सेटिङ्हरू</string>
+    <string name="options_about">बारेमा ...</string>
+
+    <string name="gain_controls_title">लाभ बूस्टर</string>
+    <string name="gain_controls_max_gain_db_title">अधिकतम लाभ बूस्ट</string>
+    <string name="gain_controls_increase_db_per_second">प्रति सेकेन्ड वृद्धि प्रति सेकंड</string>
+    <string name="gain_controls_hold_time">चुप सीमा होल्ड समय</string>
+
+    <string name="network_controls_title">नेटवर्क</string>
+    <string name="network_controls_packet_redundancy">प्याकेट अनावश्यक</string>
+
+    <string name="app_description">स्थानीय Wi-Fi मा बहुभाषी अनुवाद</string>
+    <string name="app_credits">ब्रह्मा कुमारिस लन्डन आईटी टोली</string>
+
+    <string name="perms_alert_test">प्रसारण सक्षम गर्नको लागि कृपया एप अनुमतिमा माइक्रोफोन अनुमति सक्षम गर्नुहोस्</string>
+    <string name="multicast_alert">दुर्भाग्यवश यो उपकरणमा लिनक्स कर्नेल कन्फिगुरेसनमा मल्टीसेस्ट सक्षम छैन</string>
+</resources>

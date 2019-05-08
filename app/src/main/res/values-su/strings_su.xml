@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi Tarjamahan</string>
+    <string name="channel_display_prefix">Saluran</string>
+    <string name="relay_channel_display_prefix">relay</string>
+    <string name="status">sadia</string>
+    <string name="channel_button_text">milih</string>
+    <string name="relay_channel_button_text">relay</string>
+    <string name="stop_button_text">Eureun</string>
+
+    <string name="status_rx_start">ngamimitian</string>
+    <string name="status_tx_start">siaran</string>
+    <string name="status_searching">Néangan ...</string>
+    <string name="status_unavailable">sadia</string>
+    <string name="status_headphones">Selapkeun headphone</string>
+    <string name="status_talk">omongan</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON hawa (Pencet pikeun Ngajempékeun)</string>
+    <string name="status_muted">Muted (Pencet pikeun unmute)</string>
+    <string name="status_no_wifi">Mangga nyambung ka WiFi</string>
+
+    <string name="channel_text">Saluran</string>
+    <string name="ch01_text">channel 1</string>
+    <string name="ch02_text">channel 2</string>
+    <string name="ch03_text">channel 3</string>
+    <string name="ch04_text">channel 4</string>
+    <string name="ch05_text">channel 5</string>
+    <string name="ch06_text">channel 6</string>
+    <string name="ch07_text">channel 7</string>
+    <string name="ch08_text">channel 8</string>
+    <string name="ch09_text">channel 9</string>
+    <string name="ch10_text">channel 10</string>
+
+    <string name="options_switch_TX">modeu ngirimkeun</string>
+    <string name="options_relay_TX">relay</string>
+    <string name="options_settings">setélan</string>
+    <string name="options_about">Ngeunaan ...</string>
+
+    <string name="gain_controls_title">gain booster</string>
+    <string name="gain_controls_max_gain_db_title">Maksimum Gain naekeun</string>
+    <string name="gain_controls_increase_db_per_second">Mangtaun kanaékan per detik</string>
+    <string name="gain_controls_hold_time">Puncak waktos wates ditahan</string>
+
+    <string name="network_controls_title">jaringan</string>
+    <string name="network_controls_packet_redundancy">packet redundancy</string>
+
+    <string name="app_description">panarjamahan Vérsi Multicast leuwih Wi-Fi lokal</string>
+    <string name="app_credits">Tim IT Brahma Kumaris London</string>
+
+    <string name="perms_alert_test">Mangga ngaktipkeun idin Mikropon di App Pangidinan ngaktipkeun Broadcast</string>
+    <string name="multicast_alert">Hanjakal alat ieu teu geus multicast diaktipkeun dina konfigurasi kernel Linux Ubuntu</string>
+</resources>

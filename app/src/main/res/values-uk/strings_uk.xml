@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Переклад Wi-Fi</string>
+    <string name="channel_display_prefix">Канал</string>
+    <string name="relay_channel_display_prefix">Реле</string>
+    <string name="status">Недоступно</string>
+    <string name="channel_button_text">Виберіть</string>
+    <string name="relay_channel_button_text">Реле</string>
+    <string name="stop_button_text">Стій</string>
+
+    <string name="status_rx_start">Початок</string>
+    <string name="status_tx_start">Трансляція</string>
+    <string name="status_searching">Пошук ...</string>
+    <string name="status_unavailable">Недоступно</string>
+    <string name="status_headphones">Вставте навушники</string>
+    <string name="status_talk">Поговоріть</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Натисніть, щоб вимкнути звук)</string>
+    <string name="status_muted">Приглушено (натисніть, щоб увімкнути звук)</string>
+    <string name="status_no_wifi">Підключіться до WiFi</string>
+
+    <string name="channel_text">Канал</string>
+    <string name="ch01_text">Канал 1</string>
+    <string name="ch02_text">Канал 2</string>
+    <string name="ch03_text">Канал 3</string>
+    <string name="ch04_text">Канал 4</string>
+    <string name="ch05_text">5 канал</string>
+    <string name="ch06_text">Канал 6</string>
+    <string name="ch07_text">Канал 7</string>
+    <string name="ch08_text">Канал 8</string>
+    <string name="ch09_text">Канал 9</string>
+    <string name="ch10_text">Канал 10</string>
+
+    <string name="options_switch_TX">Режим передачі</string>
+    <string name="options_relay_TX">Реле</string>
+    <string name="options_settings">Налаштування</string>
+    <string name="options_about">Про ...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Максимальне збільшення посилення</string>
+    <string name="gain_controls_increase_db_per_second">Збільшення збільшення в секунду</string>
+    <string name="gain_controls_hold_time">Пік граничного часу утримання</string>
+
+    <string name="network_controls_title">Мережа</string>
+    <string name="network_controls_packet_redundancy">Надмірність пакетів</string>
+
+    <string name="app_description">Багатоадресний переклад через місцевий Wi-Fi</string>
+    <string name="app_credits">Брахма Кумаріс Лондон ІТ-команда</string>
+
+    <string name="perms_alert_test">Увімкніть дозвіл мікрофона в дозволах додатків, щоб увімкнути трансляцію</string>
+    <string name="multicast_alert">На жаль, цей пристрій не підтримує багатоадресну передачу в конфігурації ядра Linux</string>
+</resources>

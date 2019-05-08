@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Cyfieithiad Wifi</string>
+    <string name="channel_display_prefix">Sianel</string>
+    <string name="relay_channel_display_prefix">Taith Gyfnewid</string>
+    <string name="status">Ddim ar gael</string>
+    <string name="channel_button_text">Dewiswch</string>
+    <string name="relay_channel_button_text">Taith Gyfnewid</string>
+    <string name="stop_button_text">Stopiwch</string>
+
+    <string name="status_rx_start">Dechrau</string>
+    <string name="status_tx_start">Darlledwyd</string>
+    <string name="status_searching">Chwilio ...</string>
+    <string name="status_unavailable">Ddim ar gael</string>
+    <string name="status_headphones">Mewnosod clustffonau</string>
+    <string name="status_talk">Sgwrs</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Gwasgwch i fud)</string>
+    <string name="status_muted">Wedi blino (Pwyswch i ddadwneud)</string>
+    <string name="status_no_wifi">Cysylltwch â WiFi os gwelwch yn dda</string>
+
+    <string name="channel_text">Sianel</string>
+    <string name="ch01_text">Sianel 1</string>
+    <string name="ch02_text">Sianel 2</string>
+    <string name="ch03_text">Sianel 3</string>
+    <string name="ch04_text">Channel 4</string>
+    <string name="ch05_text">Channel 5</string>
+    <string name="ch06_text">Sianel 6</string>
+    <string name="ch07_text">Sianel 7</string>
+    <string name="ch08_text">Channel 8</string>
+    <string name="ch09_text">Sianel 9</string>
+    <string name="ch10_text">Channel 10</string>
+
+    <string name="options_switch_TX">Trosglwyddo\'r modd</string>
+    <string name="options_relay_TX">Taith Gyfnewid</string>
+    <string name="options_settings">Lleoliadau</string>
+    <string name="options_about">Am ...</string>
+
+    <string name="gain_controls_title">Ennill atgyfnerthu</string>
+    <string name="gain_controls_max_gain_db_title">Hwb Ennill Uchafswm</string>
+    <string name="gain_controls_increase_db_per_second">Ennill cynnydd yr eiliad</string>
+    <string name="gain_controls_hold_time">Y terfyn uchaf yn dal amser</string>
+
+    <string name="network_controls_title">Rhwydwaith</string>
+    <string name="network_controls_packet_redundancy">Diswyddo pecyn</string>
+
+    <string name="app_description">Cyfieithu aml-lawr dros Wi-Fi lleol</string>
+    <string name="app_credits">Brahma Kumaris Llundain tîm TG</string>
+
+    <string name="perms_alert_test">A wnewch chi alluogi caniatâd y Meicroffon mewn Caniatadau App i alluogi Darlledu</string>
+    <string name="multicast_alert">Yn anffodus nid oes gan y ddyfais hon aml-gast wedi\'i alluogi yn y cyfluniad cnewyllyn Linux</string>
+</resources>

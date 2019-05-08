@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">WiFi թարգմանություն</string>
+    <string name="channel_display_prefix">Ալիք</string>
+    <string name="relay_channel_display_prefix">Ռելե</string>
+    <string name="status">Անհասանելի է</string>
+    <string name="channel_button_text">Ընտրեք</string>
+    <string name="relay_channel_button_text">Ռելե</string>
+    <string name="stop_button_text">Դադարեցրեք</string>
+
+    <string name="status_rx_start">Սկսեք</string>
+    <string name="status_tx_start">Հեռարձակում</string>
+    <string name="status_searching">Որոնում ...</string>
+    <string name="status_unavailable">Անհասանելի է</string>
+    <string name="status_headphones">Ներդիր ականջակալներ</string>
+    <string name="status_talk">Խոսեք</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">Օդային տարածքում (Press to silence)</string>
+    <string name="status_muted">Խլացված (Press to unmute)</string>
+    <string name="status_no_wifi">Խնդրում ենք միացնել WiFi- ին</string>
+
+    <string name="channel_text">Ալիք</string>
+    <string name="ch01_text">1-ին ալիքը</string>
+    <string name="ch02_text">2-րդ ալիքը</string>
+    <string name="ch03_text">Channel 3- ը</string>
+    <string name="ch04_text">Channel 4- ը</string>
+    <string name="ch05_text">5-րդ ալիք</string>
+    <string name="ch06_text">6-րդ ալիքը</string>
+    <string name="ch07_text">Channel 7- ը</string>
+    <string name="ch08_text">Channel 8- ը</string>
+    <string name="ch09_text">Channel 9- ը</string>
+    <string name="ch10_text">Channel 10- ը</string>
+
+    <string name="options_switch_TX">Փոխանցում ռեժիմ</string>
+    <string name="options_relay_TX">Ռելե</string>
+    <string name="options_settings">Կարգավորումներ</string>
+    <string name="options_about">Մասին...</string>
+
+    <string name="gain_controls_title">Գին Booster- ը</string>
+    <string name="gain_controls_max_gain_db_title">Առավելագույն եկամուտների խթանումը</string>
+    <string name="gain_controls_increase_db_per_second">Հասանելիքը մեկ վայրկյանում ավելանում է</string>
+    <string name="gain_controls_hold_time">Պիկ սահմանը պահելու ժամանակը</string>
+
+    <string name="network_controls_title">Ցանցը</string>
+    <string name="network_controls_packet_redundancy">Փաթեթի ավելացում</string>
+
+    <string name="app_description">Տեղական Wi-Fi- ի բազմակի թարգմանության թարգմանությունը</string>
+    <string name="app_credits">Brahma Kumaris Լոնդոնի ՏՏ թիմը</string>
+
+    <string name="perms_alert_test">Խնդրում ենք միացնել Microphone- ի թույլտվությունը Ծրագրային թույլտվություններում `հեռարձակման համար</string>
+    <string name="multicast_alert">Ցավոք, այս սարքն ունի Linux միջուկի կոնֆիգուրացիայում միացված multicast- ը</string>
+</resources>

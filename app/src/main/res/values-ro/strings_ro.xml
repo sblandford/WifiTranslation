@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Traducere Wifi</string>
+    <string name="channel_display_prefix">Canal</string>
+    <string name="relay_channel_display_prefix">Releu</string>
+    <string name="status">Indisponibil</string>
+    <string name="channel_button_text">Selectați</string>
+    <string name="relay_channel_button_text">Releu</string>
+    <string name="stop_button_text">Stop</string>
+
+    <string name="status_rx_start">start</string>
+    <string name="status_tx_start">Broadcast</string>
+    <string name="status_searching">In cautarea...</string>
+    <string name="status_unavailable">Indisponibil</string>
+    <string name="status_headphones">Introduceți căști</string>
+    <string name="status_talk">Vorbi</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Apăsați pentru a dezactiva)</string>
+    <string name="status_muted">Dezactivat (Apăsați pentru a dezactiva)</string>
+    <string name="status_no_wifi">Conectați-vă la WiFi</string>
+
+    <string name="channel_text">Canal</string>
+    <string name="ch01_text">Canal 1</string>
+    <string name="ch02_text">Canalul 2</string>
+    <string name="ch03_text">Canal 3</string>
+    <string name="ch04_text">Canalul 4</string>
+    <string name="ch05_text">Canal 5</string>
+    <string name="ch06_text">Canal 6</string>
+    <string name="ch07_text">Canal 7</string>
+    <string name="ch08_text">Canalul 8</string>
+    <string name="ch09_text">Canal 9</string>
+    <string name="ch10_text">Canal 10</string>
+
+    <string name="options_switch_TX">Modul de transmisie</string>
+    <string name="options_relay_TX">Releu</string>
+    <string name="options_settings">Setări</string>
+    <string name="options_about">Despre...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Creșterea maximă a câștigului</string>
+    <string name="gain_controls_increase_db_per_second">Creșteți câștigul pe secundă</string>
+    <string name="gain_controls_hold_time">Viteza maximă de ținere a limitei</string>
+
+    <string name="network_controls_title">Reţea</string>
+    <string name="network_controls_packet_redundancy">Redundanță pachet</string>
+
+    <string name="app_description">Traducerea multicast prin Wi-Fi local</string>
+    <string name="app_credits">Brahma Kumaris Echipa IT din Londra</string>
+
+    <string name="perms_alert_test">Activați permisiunea Microfon în Permisiunile aplicației pentru a activa difuzarea</string>
+    <string name="multicast_alert">Din păcate, acest dispozitiv nu are activată funcția de multicast în configurația kernelului Linux</string>
+</resources>

@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Tłumaczenie Wifi</string>
+    <string name="channel_display_prefix">Kanał</string>
+    <string name="relay_channel_display_prefix">Przekaźnik</string>
+    <string name="status">Niedostępne</string>
+    <string name="channel_button_text">Wybierz</string>
+    <string name="relay_channel_button_text">Przekaźnik</string>
+    <string name="stop_button_text">Zatrzymać</string>
+
+    <string name="status_rx_start">Początek</string>
+    <string name="status_tx_start">Nadawanie</string>
+    <string name="status_searching">Badawczy...</string>
+    <string name="status_unavailable">Niedostępne</string>
+    <string name="status_headphones">Włóż słuchawki</string>
+    <string name="status_talk">Rozmowa</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (naciśnij, aby wyciszyć)</string>
+    <string name="status_muted">Wyciszony (naciśnij, aby wyłączyć wyciszenie)</string>
+    <string name="status_no_wifi">Połącz się z WiFi</string>
+
+    <string name="channel_text">Kanał</string>
+    <string name="ch01_text">Kanał 1</string>
+    <string name="ch02_text">Kanał 2</string>
+    <string name="ch03_text">Kanał 3</string>
+    <string name="ch04_text">Kanał 4</string>
+    <string name="ch05_text">Kanał 5</string>
+    <string name="ch06_text">Kanał 6</string>
+    <string name="ch07_text">Kanał 7</string>
+    <string name="ch08_text">Kanał 8</string>
+    <string name="ch09_text">Kanał 9</string>
+    <string name="ch10_text">Kanał 10</string>
+
+    <string name="options_switch_TX">Tryb transmisji</string>
+    <string name="options_relay_TX">Przekaźnik</string>
+    <string name="options_settings">Ustawienia</string>
+    <string name="options_about">O...</string>
+
+    <string name="gain_controls_title">Zyskaj Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maksymalne wzmocnienie wzmocnienia</string>
+    <string name="gain_controls_increase_db_per_second">Zwiększ przyrost na sekundę</string>
+    <string name="gain_controls_hold_time">Limit czasu utrzymywania wartości szczytowej</string>
+
+    <string name="network_controls_title">Sieć</string>
+    <string name="network_controls_packet_redundancy">Nadmiarowość pakietów</string>
+
+    <string name="app_description">Tłumaczenie multiemisji przez lokalne Wi-Fi</string>
+    <string name="app_credits">Zespół IT Brahma Kumaris w Londynie</string>
+
+    <string name="perms_alert_test">Włącz uprawnienie Mikrofon w Uprawnienia aplikacji, aby włączyć rozsyłanie</string>
+    <string name="multicast_alert">Niestety to urządzenie nie ma włączonej multiemisji w konfiguracji jądra Linux</string>
+</resources>

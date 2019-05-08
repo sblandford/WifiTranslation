@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">와이파이 번역</string>
+    <string name="channel_display_prefix">채널</string>
+    <string name="relay_channel_display_prefix">계전기</string>
+    <string name="status">없는</string>
+    <string name="channel_button_text">고르다</string>
+    <string name="relay_channel_button_text">계전기</string>
+    <string name="stop_button_text">중지</string>
+
+    <string name="status_rx_start">스타트</string>
+    <string name="status_tx_start">방송</string>
+    <string name="status_searching">수색...</string>
+    <string name="status_unavailable">없는</string>
+    <string name="status_headphones">헤드폰 삽입</string>
+    <string name="status_talk">이야기</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (음소거하려면 누릅니다)</string>
+    <string name="status_muted">음소거 (음소거를 해제하려면 누릅니다)</string>
+    <string name="status_no_wifi">WiFi에 연결하십시오.</string>
+
+    <string name="channel_text">채널</string>
+    <string name="ch01_text">채널 1</string>
+    <string name="ch02_text">채널 2</string>
+    <string name="ch03_text">채널 3</string>
+    <string name="ch04_text">채널 4</string>
+    <string name="ch05_text">채널 5</string>
+    <string name="ch06_text">채널 6</string>
+    <string name="ch07_text">채널 7</string>
+    <string name="ch08_text">채널 8</string>
+    <string name="ch09_text">채널 9</string>
+    <string name="ch10_text">채널 10</string>
+
+    <string name="options_switch_TX">전송 모드</string>
+    <string name="options_relay_TX">계전기</string>
+    <string name="options_settings">설정</string>
+    <string name="options_about">약...</string>
+
+    <string name="gain_controls_title">이득 부스터</string>
+    <string name="gain_controls_max_gain_db_title">최대 이득 부스트</string>
+    <string name="gain_controls_increase_db_per_second">초당 증가율</string>
+    <string name="gain_controls_hold_time">피크 리미트 홀드 시간</string>
+
+    <string name="network_controls_title">회로망</string>
+    <string name="network_controls_packet_redundancy">패킷 중복성</string>
+
+    <string name="app_description">로컬 Wi-Fi를 통한 멀티 캐스트 번역</string>
+    <string name="app_credits">브라마 쿠마리스 런던 IT 팀</string>
+
+    <string name="perms_alert_test">브로드 캐스트를 사용하도록 설정하려면 앱 권한에서 마이크 권한을 사용 설정하세요.</string>
+    <string name="multicast_alert">불행하게도이 장치는 Linux 커널 구성에서 멀티 캐스트를 사용할 수 없습니다.</string>
+</resources>

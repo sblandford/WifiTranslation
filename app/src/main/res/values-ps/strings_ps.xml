@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">وائی فای ژباړه</string>
+    <string name="channel_display_prefix">چینل</string>
+    <string name="relay_channel_display_prefix">ریل</string>
+    <string name="status">نشته</string>
+    <string name="channel_button_text">غوره کړه</string>
+    <string name="relay_channel_button_text">ریل</string>
+    <string name="stop_button_text">درېدل</string>
+
+    <string name="status_rx_start">پیل</string>
+    <string name="status_tx_start">خپرونه</string>
+    <string name="status_searching">لټون کول ...</string>
+    <string name="status_unavailable">نشته</string>
+    <string name="status_headphones">د غږفونونو داخلول</string>
+    <string name="status_talk">خبرې اترې</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">هوا ته</string>
+    <string name="status_muted">مات شوی</string>
+    <string name="status_no_wifi">مهرباني وکړئ د وین فای سره اړیکه ونیسئ</string>
+
+    <string name="channel_text">چینل</string>
+    <string name="ch01_text">چینل 1</string>
+    <string name="ch02_text">چینل 2</string>
+    <string name="ch03_text">چینل 3</string>
+    <string name="ch04_text">چینل 4</string>
+    <string name="ch05_text">چینل 5</string>
+    <string name="ch06_text">چینل 6</string>
+    <string name="ch07_text">چینل 7</string>
+    <string name="ch08_text">چینل 8</string>
+    <string name="ch09_text">چینل 9</string>
+    <string name="ch10_text">چینل 10</string>
+
+    <string name="options_switch_TX">د لېږد موډل</string>
+    <string name="options_relay_TX">ریل</string>
+    <string name="options_settings">امستنې</string>
+    <string name="options_about">په اړه ...</string>
+
+    <string name="gain_controls_title">د ګټونکي بوسٹر</string>
+    <string name="gain_controls_max_gain_db_title">د زیاتو لاسته راوړنو زیاتوالی</string>
+    <string name="gain_controls_increase_db_per_second">لاسته راوړنې په هر ثانوي کې زیاتوالي</string>
+    <string name="gain_controls_hold_time">د چوپړ محدودیت وخت نیسي</string>
+
+    <string name="network_controls_title">شبکه</string>
+    <string name="network_controls_packet_redundancy">د پکیټ بی ځایه کیدل</string>
+
+    <string name="app_description">د سیمه ایز Wi-Fi په اړه ملیکست ژباړنه</string>
+    <string name="app_credits">برهما کماریزس د لندن ټلیفون ټیم</string>
+
+    <string name="perms_alert_test">مهرباني وکړئ د خپرونې د فعالولو لپاره د اپیلونو په اجازه کې د مایکروفون اجازه اجازه ورکړئ</string>
+    <string name="multicast_alert">په خواشینۍ سره دا وسیله د لینکس د کینل کنټرول کې ګڼ شمیر فعال فعال نه لري</string>
+</resources>

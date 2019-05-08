@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">વાઇફાઇ અનુવાદ</string>
+    <string name="channel_display_prefix">ચેનલ</string>
+    <string name="relay_channel_display_prefix">રિલે</string>
+    <string name="status">અનુપલબ્ધ</string>
+    <string name="channel_button_text">પસંદ કરો</string>
+    <string name="relay_channel_button_text">રિલે</string>
+    <string name="stop_button_text">બંધ</string>
+
+    <string name="status_rx_start">શરૂઆત</string>
+    <string name="status_tx_start">બ્રોડકાસ્ટ</string>
+    <string name="status_searching">શોધી રહ્યું છે ...</string>
+    <string name="status_unavailable">અનુપલબ્ધ</string>
+    <string name="status_headphones">હેડફોન્સ શામેલ કરો</string>
+    <string name="status_talk">વાત કરો</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">વાયુ પર (મ્યૂટ કરવા માટે દબાવો)</string>
+    <string name="status_muted">Muted (અનમ્યૂટ કરવા માટે દબાવો)</string>
+    <string name="status_no_wifi">કૃપા કરીને વાઇફાઇથી કનેક્ટ કરો</string>
+
+    <string name="channel_text">ચેનલ</string>
+    <string name="ch01_text">ચેનલ 1</string>
+    <string name="ch02_text">ચેનલ 2</string>
+    <string name="ch03_text">ચેનલ 3</string>
+    <string name="ch04_text">ચેનલ 4</string>
+    <string name="ch05_text">ચેનલ 5</string>
+    <string name="ch06_text">ચેનલ 6</string>
+    <string name="ch07_text">ચેનલ 7</string>
+    <string name="ch08_text">ચેનલ 8</string>
+    <string name="ch09_text">ચેનલ 9</string>
+    <string name="ch10_text">ચેનલ 10</string>
+
+    <string name="options_switch_TX">પ્રસારણ સ્થિતિ</string>
+    <string name="options_relay_TX">રિલે</string>
+    <string name="options_settings">સેટિંગ્સ</string>
+    <string name="options_about">વિશે ...</string>
+
+    <string name="gain_controls_title">બૂસ્ટર મેળવો</string>
+    <string name="gain_controls_max_gain_db_title">મહત્તમ ગેઇન બૂસ્ટ</string>
+    <string name="gain_controls_increase_db_per_second">સેકન્ડ દીઠ ગેઇન વધારો</string>
+    <string name="gain_controls_hold_time">પીક મર્યાદા પકડી સમય</string>
+
+    <string name="network_controls_title">નેટવર્ક</string>
+    <string name="network_controls_packet_redundancy">પેકેટ રિડન્ડન્સી</string>
+
+    <string name="app_description">સ્થાનિક Wi-Fi પર મલ્ટીકાસ્ટ અનુવાદ</string>
+    <string name="app_credits">બ્રહ્મા કુમારિસ લંડન આઇટી ટીમ</string>
+
+    <string name="perms_alert_test">બ્રોડકાસ્ટ સક્ષમ કરવા માટે એપ્લિકેશન પરવાનગીઓમાં માઇક્રોફોનની પરવાનગીને સક્ષમ કરો</string>
+    <string name="multicast_alert">કમનસીબે આ ઉપકરણમાં લિનક્સ કર્નલ ગોઠવણીમાં મલ્ટિકાસ્ટ સક્ષમ નથી</string>
+</resources>

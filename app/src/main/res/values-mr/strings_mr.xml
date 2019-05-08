@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">वायफाय भाषांतर</string>
+    <string name="channel_display_prefix">चॅनेल</string>
+    <string name="relay_channel_display_prefix">रिले</string>
+    <string name="status">अनुपलब्ध</string>
+    <string name="channel_button_text">निवडा</string>
+    <string name="relay_channel_button_text">रिले</string>
+    <string name="stop_button_text">थांबवा</string>
+
+    <string name="status_rx_start">प्रारंभ करा</string>
+    <string name="status_tx_start">प्रसारण</string>
+    <string name="status_searching">शोधत आहे ...</string>
+    <string name="status_unavailable">अनुपलब्ध</string>
+    <string name="status_headphones">हेडफोन घाला</string>
+    <string name="status_talk">बोल</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">चालू (मूक करण्यासाठी दाबा)</string>
+    <string name="status_muted">निःशब्द (अनम्यूट करण्यासाठी दाबा)</string>
+    <string name="status_no_wifi">कृपया वायफायशी कनेक्ट व्हा</string>
+
+    <string name="channel_text">चॅनेल</string>
+    <string name="ch01_text">चॅनेल 1</string>
+    <string name="ch02_text">चॅनेल 2</string>
+    <string name="ch03_text">चॅनेल 3</string>
+    <string name="ch04_text">चॅनेल 4</string>
+    <string name="ch05_text">चॅनेल 5</string>
+    <string name="ch06_text">चॅनेल 6</string>
+    <string name="ch07_text">चॅनेल 7</string>
+    <string name="ch08_text">चॅनेल 8</string>
+    <string name="ch09_text">चॅनेल 9</string>
+    <string name="ch10_text">चॅनेल 10</string>
+
+    <string name="options_switch_TX">प्रेषण मोड</string>
+    <string name="options_relay_TX">रिले</string>
+    <string name="options_settings">सेटिंग्ज</string>
+    <string name="options_about">बद्दल ...</string>
+
+    <string name="gain_controls_title">लाभ बूस्टर</string>
+    <string name="gain_controls_max_gain_db_title">कमाल बक्षीस बूस्ट</string>
+    <string name="gain_controls_increase_db_per_second">प्रति सेकंद वाढणे</string>
+    <string name="gain_controls_hold_time">शिखर मर्यादा धरून वेळ</string>
+
+    <string name="network_controls_title">नेटवर्क</string>
+    <string name="network_controls_packet_redundancy">पॅकेट रिडंडंसी</string>
+
+    <string name="app_description">स्थानिक वाय-फाय वर मल्टीकास्ट भाषांतर</string>
+    <string name="app_credits">ब्रह्मा कुमारिस लंडन आयटी टीम</string>
+
+    <string name="perms_alert_test">कृपया प्रसारण सक्षम करण्यासाठी अॅप परवानग्या मधील मायक्रोफोन परवानगी सक्षम करा</string>
+    <string name="multicast_alert">दुर्दैवाने या डिव्हाइसला Linux कर्नल कॉन्फिगरेशनमध्ये मल्टीकास्ट सक्षम केलेले नाही</string>
+</resources>

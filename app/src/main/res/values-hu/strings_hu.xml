@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi fordítás</string>
+    <string name="channel_display_prefix">Csatorna</string>
+    <string name="relay_channel_display_prefix">Relé</string>
+    <string name="status">Nem érhető el</string>
+    <string name="channel_button_text">választ</string>
+    <string name="relay_channel_button_text">Relé</string>
+    <string name="stop_button_text">Állj meg</string>
+
+    <string name="status_rx_start">Rajt</string>
+    <string name="status_tx_start">Adás</string>
+    <string name="status_searching">Keresés ...</string>
+    <string name="status_unavailable">Nem érhető el</string>
+    <string name="status_headphones">Helyezze be a fejhallgatót</string>
+    <string name="status_talk">Beszélgetés</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Nyomja meg a némításhoz)</string>
+    <string name="status_muted">Elnémítva (Nyomja meg a gombot a némítás kikapcsolásához)</string>
+    <string name="status_no_wifi">Kérjük, csatlakozzon a WiFi-hoz</string>
+
+    <string name="channel_text">Csatorna</string>
+    <string name="ch01_text">1. csatorna</string>
+    <string name="ch02_text">2. csatorna</string>
+    <string name="ch03_text">3. csatorna</string>
+    <string name="ch04_text">4. csatorna</string>
+    <string name="ch05_text">5. csatorna</string>
+    <string name="ch06_text">6. csatorna</string>
+    <string name="ch07_text">7. csatorna</string>
+    <string name="ch08_text">8. csatorna</string>
+    <string name="ch09_text">9. csatorna</string>
+    <string name="ch10_text">10. csatorna</string>
+
+    <string name="options_switch_TX">Átviteli mód</string>
+    <string name="options_relay_TX">Relé</string>
+    <string name="options_settings">Beállítások</string>
+    <string name="options_about">Ról ről...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maximum Gain Boost</string>
+    <string name="gain_controls_increase_db_per_second">Növelje a másodpercenkénti növekedést</string>
+    <string name="gain_controls_hold_time">A csúcshatár tartási ideje</string>
+
+    <string name="network_controls_title">Hálózat</string>
+    <string name="network_controls_packet_redundancy">Csomag redundancia</string>
+
+    <string name="app_description">Multicast fordítás a helyi Wi-Fi-n keresztül</string>
+    <string name="app_credits">Brahma Kumaris London IT csapata</string>
+
+    <string name="perms_alert_test">Engedélyezze a Mikrofon engedélyt az App Engedélyekben, hogy engedélyezze a Broadcast szolgáltatást</string>
+    <string name="multicast_alert">Sajnos ez az eszköz nem engedélyezett a multicast engedélyezését a Linux kernel konfigurációjában</string>
+</resources>

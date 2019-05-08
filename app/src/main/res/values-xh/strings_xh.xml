@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Ukuguqulelwa kweWifi</string>
+    <string name="channel_display_prefix">Isiteshi</string>
+    <string name="relay_channel_display_prefix">Dlulisa</string>
+    <string name="status">Ayikho</string>
+    <string name="channel_button_text">Khetha</string>
+    <string name="relay_channel_button_text">Dlulisa</string>
+    <string name="stop_button_text">Yeka</string>
+
+    <string name="status_rx_start">Qala</string>
+    <string name="status_tx_start">Ukusasazwa</string>
+    <string name="status_searching">Ukukhangela ...</string>
+    <string name="status_unavailable">Ayikho</string>
+    <string name="status_headphones">Faka iifowuni</string>
+    <string name="status_talk">Thetha</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">KWI-AIR (Cinezela ukuthulisa)</string>
+    <string name="status_muted">Ikhutshiwe (Cinezela ukukhupha)</string>
+    <string name="status_no_wifi">Nceda uqhagamshele kwi-WiFi</string>
+
+    <string name="channel_text">Isiteshi</string>
+    <string name="ch01_text">Isiteshi 1</string>
+    <string name="ch02_text">Isiteshi 2</string>
+    <string name="ch03_text">Isiteshi 3</string>
+    <string name="ch04_text">Isiteshi 4</string>
+    <string name="ch05_text">Isiteshi 5</string>
+    <string name="ch06_text">Isiteshi 6</string>
+    <string name="ch07_text">Isiteshi 7</string>
+    <string name="ch08_text">Isiteshi 8</string>
+    <string name="ch09_text">Isiteshi 9</string>
+    <string name="ch10_text">Isiteshi 10</string>
+
+    <string name="options_switch_TX">Indlela yokuthumela</string>
+    <string name="options_relay_TX">Dlulisa</string>
+    <string name="options_settings">Izicwangciso</string>
+    <string name="options_about">Mayelana ...</string>
+
+    <string name="gain_controls_title">Ukufumana i-Booster</string>
+    <string name="gain_controls_max_gain_db_title">Ubukhulu bokuzuza</string>
+    <string name="gain_controls_increase_db_per_second">Ukwandiswa okwesibini</string>
+    <string name="gain_controls_hold_time">Umda wePaak ugcine ixesha</string>
+
+    <string name="network_controls_title">Inethiwekhi</string>
+    <string name="network_controls_packet_redundancy">Iipakethi zokubuyiswa</string>
+
+    <string name="app_description">Ukuguqulelwa kwe-Multicast kwi-Wi-Fi yangaphakathi</string>
+    <string name="app_credits">UBrahma Kumaris London IT ithimba</string>
+
+    <string name="perms_alert_test">Nceda unike imvume yemakrofoni kwiimvume ze-App ukwenzela ukuSasaza</string>
+    <string name="multicast_alert">Ngelishwa le fowuni ayinayo i-multicast inikwe amandla kwi-Linux kernel configuration</string>
+</resources>

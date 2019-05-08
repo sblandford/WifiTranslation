@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi თარგმანი</string>
+    <string name="channel_display_prefix">არხი</string>
+    <string name="relay_channel_display_prefix">სარელეო</string>
+    <string name="status">მიუწვდომელია</string>
+    <string name="channel_button_text">აირჩიეთ</string>
+    <string name="relay_channel_button_text">სარელეო</string>
+    <string name="stop_button_text">შეაჩერე</string>
+
+    <string name="status_rx_start">დაწყება</string>
+    <string name="status_tx_start">მაუწყებლობა</string>
+    <string name="status_searching">ძიება ...</string>
+    <string name="status_unavailable">მიუწვდომელია</string>
+    <string name="status_headphones">ჩადეთ ყურსასმენები</string>
+    <string name="status_talk">საუბარი</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">AIR (პრესა მუნჯი)</string>
+    <string name="status_muted">მუნჯი (პრესის გასახსნელად)</string>
+    <string name="status_no_wifi">გთხოვთ, დაუკავშირდეთ WiFi- ს</string>
+
+    <string name="channel_text">არხი</string>
+    <string name="ch01_text">არხი 1</string>
+    <string name="ch02_text">არხი 2</string>
+    <string name="ch03_text">არხი 3</string>
+    <string name="ch04_text">Channel 4</string>
+    <string name="ch05_text">მე -5 არხი</string>
+    <string name="ch06_text">არხი 6</string>
+    <string name="ch07_text">არხი 7</string>
+    <string name="ch08_text">არხი 8</string>
+    <string name="ch09_text">არხი 9</string>
+    <string name="ch10_text">Channel 10</string>
+
+    <string name="options_switch_TX">გადაცემის რეჟიმი</string>
+    <string name="options_relay_TX">სარელეო</string>
+    <string name="options_settings">პარამეტრები</string>
+    <string name="options_about">შესახებ ...</string>
+
+    <string name="gain_controls_title">მოგება Booster</string>
+    <string name="gain_controls_max_gain_db_title">მაქსიმალური მოგება Boost</string>
+    <string name="gain_controls_increase_db_per_second">ზრდა წამში</string>
+    <string name="gain_controls_hold_time">პიკი ლიმიტის გამართვა დრო</string>
+
+    <string name="network_controls_title">ქსელი</string>
+    <string name="network_controls_packet_redundancy">პაკეტის redundancy</string>
+
+    <string name="app_description">Multicast თარგმანი ადგილობრივი Wi-Fi- ზე</string>
+    <string name="app_credits">ბრაჰმა კუმარისი ლონდოტის IT გუნდი</string>
+
+    <string name="perms_alert_test">გთხოვთ, ჩართოთ აპლიკაციის ნებართვაში მიკროფონის ნებართვა მაუწყებლობის გასააქტიურებლად</string>
+    <string name="multicast_alert">სამწუხაროდ, ამ მოწყობილობას არ გააჩნია მულტიკასტი ჩართული Linux- ის კონფიგურაციაში</string>
+</resources>

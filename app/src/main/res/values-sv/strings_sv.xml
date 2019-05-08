@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi översättning</string>
+    <string name="channel_display_prefix">kanalisera</string>
+    <string name="relay_channel_display_prefix">Relä</string>
+    <string name="status">Inte tillgänglig</string>
+    <string name="channel_button_text">Välj</string>
+    <string name="relay_channel_button_text">Relä</string>
+    <string name="stop_button_text">Sluta</string>
+
+    <string name="status_rx_start">Start</string>
+    <string name="status_tx_start">Utsända</string>
+    <string name="status_searching">Sökande...</string>
+    <string name="status_unavailable">Inte tillgänglig</string>
+    <string name="status_headphones">Sätt i hörlurar</string>
+    <string name="status_talk">Prata</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">PÅ LUFT (Tryck för att stänga av)</string>
+    <string name="status_muted">Mute (Tryck för att stänga av)</string>
+    <string name="status_no_wifi">Vänligen anslut till WiFi</string>
+
+    <string name="channel_text">kanalisera</string>
+    <string name="ch01_text">Kanal 1</string>
+    <string name="ch02_text">Kanal 2</string>
+    <string name="ch03_text">Kanal 3</string>
+    <string name="ch04_text">Kanal 4</string>
+    <string name="ch05_text">Kanal 5</string>
+    <string name="ch06_text">Kanal 6</string>
+    <string name="ch07_text">Kanal 7</string>
+    <string name="ch08_text">Kanal 8</string>
+    <string name="ch09_text">Kanal 9</string>
+    <string name="ch10_text">Kanal 10</string>
+
+    <string name="options_switch_TX">Överföringsläge</string>
+    <string name="options_relay_TX">Relä</string>
+    <string name="options_settings">inställningar</string>
+    <string name="options_about">Handla om...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maximal vinstökning</string>
+    <string name="gain_controls_increase_db_per_second">Förhöjning per sekund</string>
+    <string name="gain_controls_hold_time">Peak limit hålltid</string>
+
+    <string name="network_controls_title">Nätverk</string>
+    <string name="network_controls_packet_redundancy">Paketredundans</string>
+
+    <string name="app_description">Multicast översättning över lokal Wi-Fi</string>
+    <string name="app_credits">Brahma Kumaris London IT-team</string>
+
+    <string name="perms_alert_test">Aktivera mikrofonbehörigheten i Appbehörigheter för att aktivera sändning</string>
+    <string name="multicast_alert">Tyvärr har den här enheten inte multicast aktiverad i Linux-kärnkonfigurationen</string>
+</resources>

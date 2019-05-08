@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Terjemahan Wifi</string>
+    <string name="channel_display_prefix">Saluran</string>
+    <string name="relay_channel_display_prefix">Relay</string>
+    <string name="status">Tidak tersedia</string>
+    <string name="channel_button_text">Pilih</string>
+    <string name="relay_channel_button_text">Relay</string>
+    <string name="stop_button_text">Berhenti</string>
+
+    <string name="status_rx_start">Mulakan</string>
+    <string name="status_tx_start">Siaran</string>
+    <string name="status_searching">Mencari...</string>
+    <string name="status_unavailable">Tidak tersedia</string>
+    <string name="status_headphones">Masukkan fon kepala</string>
+    <string name="status_talk">Bercakap</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">PADA AIR (Tekan untuk membisukan)</string>
+    <string name="status_muted">Diredam (Tekan untuk nyenyapkan)</string>
+    <string name="status_no_wifi">Sila berhubung dengan WiFi</string>
+
+    <string name="channel_text">Saluran</string>
+    <string name="ch01_text">Saluran 1</string>
+    <string name="ch02_text">Saluran 2</string>
+    <string name="ch03_text">Saluran 3</string>
+    <string name="ch04_text">Saluran 4</string>
+    <string name="ch05_text">Saluran 5</string>
+    <string name="ch06_text">Saluran 6</string>
+    <string name="ch07_text">Saluran 7</string>
+    <string name="ch08_text">Saluran 8</string>
+    <string name="ch09_text">Saluran 9</string>
+    <string name="ch10_text">Saluran 10</string>
+
+    <string name="options_switch_TX">Mod penghantaran</string>
+    <string name="options_relay_TX">Relay</string>
+    <string name="options_settings">Tetapan</string>
+    <string name="options_about">Mengenai ...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Kadar Pinjaman Maksimum</string>
+    <string name="gain_controls_increase_db_per_second">Peningkatan keuntungan sesaat</string>
+    <string name="gain_controls_hold_time">Had maksimum memegang masa</string>
+
+    <string name="network_controls_title">Rangkaian</string>
+    <string name="network_controls_packet_redundancy">Redundansi paket</string>
+
+    <string name="app_description">Terjemahan Multicast melalui Wi-Fi tempatan</string>
+    <string name="app_credits">Brahma Kumaris London IT team</string>
+
+    <string name="perms_alert_test">Sila aktifkan izin Mikrofon dalam Kebenaran App untuk membolehkan Penyiaran</string>
+    <string name="multicast_alert">Malangnya peranti ini tidak mempunyai multicast yang dibolehkan dalam konfigurasi kernel Linux</string>
+</resources>

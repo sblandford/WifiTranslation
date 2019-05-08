@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi-käännös</string>
+    <string name="channel_display_prefix">kanava</string>
+    <string name="relay_channel_display_prefix">Rele</string>
+    <string name="status">poissa</string>
+    <string name="channel_button_text">valita</string>
+    <string name="relay_channel_button_text">Rele</string>
+    <string name="stop_button_text">Stop</string>
+
+    <string name="status_rx_start">alkaa</string>
+    <string name="status_tx_start">Lähettää</string>
+    <string name="status_searching">Haetaan ...</string>
+    <string name="status_unavailable">poissa</string>
+    <string name="status_headphones">Aseta kuulokkeet</string>
+    <string name="status_talk">Puhua</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Mykistä painamalla)</string>
+    <string name="status_muted">Mykistetty (poista mykistys painamalla)</string>
+    <string name="status_no_wifi">Yhdistä WiFi-verkkoon</string>
+
+    <string name="channel_text">kanava</string>
+    <string name="ch01_text">Kanava 1</string>
+    <string name="ch02_text">Kanava 2</string>
+    <string name="ch03_text">Kanava 3</string>
+    <string name="ch04_text">Kanava 4</string>
+    <string name="ch05_text">Kanava 5</string>
+    <string name="ch06_text">Kanava 6</string>
+    <string name="ch07_text">Kanava 7</string>
+    <string name="ch08_text">Kanava 8</string>
+    <string name="ch09_text">Kanava 9</string>
+    <string name="ch10_text">Kanava 10</string>
+
+    <string name="options_switch_TX">Lähetystila</string>
+    <string name="options_relay_TX">Rele</string>
+    <string name="options_settings">asetukset</string>
+    <string name="options_about">Noin...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Suurin mahdollinen vahvistus</string>
+    <string name="gain_controls_increase_db_per_second">Voitto kasvaa sekunnissa</string>
+    <string name="gain_controls_hold_time">Peak-raja-aika</string>
+
+    <string name="network_controls_title">verkko</string>
+    <string name="network_controls_packet_redundancy">Pakettien irtisanominen</string>
+
+    <string name="app_description">Multicast-käännös paikalliselta Wi-Fi: ltä</string>
+    <string name="app_credits">Brahma Kumaris Lontoon IT-tiimi</string>
+
+    <string name="perms_alert_test">Ota Broadcast-toiminto käyttöön ottamalla käyttöön sovellusoikeuksien Mikrofonin käyttöoikeus</string>
+    <string name="multicast_alert">Valitettavasti tällä laitteella ei ole monilähetystä käytössä Linux-ytimen kokoonpanossa</string>
+</resources>

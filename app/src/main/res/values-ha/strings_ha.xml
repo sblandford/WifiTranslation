@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi Translation</string>
+    <string name="channel_display_prefix">Channel</string>
+    <string name="relay_channel_display_prefix">Relay</string>
+    <string name="status">Babu samuwa</string>
+    <string name="channel_button_text">Zaɓi</string>
+    <string name="relay_channel_button_text">Relay</string>
+    <string name="stop_button_text">Tsaya</string>
+
+    <string name="status_rx_start">Fara</string>
+    <string name="status_tx_start">Watsa shirye-shirye</string>
+    <string name="status_searching">Binciken ...</string>
+    <string name="status_unavailable">Babu samuwa</string>
+    <string name="status_headphones">Saka kunn kunne</string>
+    <string name="status_talk">Magana</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Latsa don saututtuwa)</string>
+    <string name="status_muted">Muted (Danna don kwashe)</string>
+    <string name="status_no_wifi">Da fatan a haɗa zuwa WiFi</string>
+
+    <string name="channel_text">Channel</string>
+    <string name="ch01_text">Channel 1</string>
+    <string name="ch02_text">Channel 2</string>
+    <string name="ch03_text">Channel 3</string>
+    <string name="ch04_text">Channel 4</string>
+    <string name="ch05_text">Channel 5</string>
+    <string name="ch06_text">Channel 6</string>
+    <string name="ch07_text">Channel 7</string>
+    <string name="ch08_text">Channel 8</string>
+    <string name="ch09_text">Channel 9</string>
+    <string name="ch10_text">Channel 10</string>
+
+    <string name="options_switch_TX">Yanayin watsawa</string>
+    <string name="options_relay_TX">Relay</string>
+    <string name="options_settings">Saituna</string>
+    <string name="options_about">Game da ...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Binciken Mai Girma Mafi Girma</string>
+    <string name="gain_controls_increase_db_per_second">Karuwa ta karuwa ta biyu</string>
+    <string name="gain_controls_hold_time">Ƙadafin iyaka riƙe lokaci</string>
+
+    <string name="network_controls_title">Network</string>
+    <string name="network_controls_packet_redundancy">Packet redundancy</string>
+
+    <string name="app_description">Tashar multicast a kan Wi-Fi na gida</string>
+    <string name="app_credits">Brahma Kumaris London IT team</string>
+
+    <string name="perms_alert_test">Da fatan a taimaka da izinin Microphone a cikin Aikace-aikacen Abubuwa don ba da damar Watsa shirye-shirye</string>
+    <string name="multicast_alert">Abin baƙin ciki wannan na\'urar ba ta da multicast sa a cikin Linux kernel sanyi</string>
+</resources>

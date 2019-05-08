@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">WiFi vertimas</string>
+    <string name="channel_display_prefix">Kanalas</string>
+    <string name="relay_channel_display_prefix">Relė</string>
+    <string name="status">Nepasiekiamas</string>
+    <string name="channel_button_text">Pasirinkite</string>
+    <string name="relay_channel_button_text">Relė</string>
+    <string name="stop_button_text">Sustabdyti</string>
+
+    <string name="status_rx_start">Pradėti</string>
+    <string name="status_tx_start">Transliacija</string>
+    <string name="status_searching">Ieškoma ...</string>
+    <string name="status_unavailable">Nepasiekiamas</string>
+    <string name="status_headphones">Įdėkite ausines</string>
+    <string name="status_talk">Kalbėkite</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Paspauskite norėdami išjungti)</string>
+    <string name="status_muted">Išjungta (paspauskite, jei norite išjungti)</string>
+    <string name="status_no_wifi">Prašome prisijungti prie „WiFi“</string>
+
+    <string name="channel_text">Kanalas</string>
+    <string name="ch01_text">1 kanalas</string>
+    <string name="ch02_text">2 kanalas</string>
+    <string name="ch03_text">3 kanalas</string>
+    <string name="ch04_text">4 kanalas</string>
+    <string name="ch05_text">5 kanalas</string>
+    <string name="ch06_text">6 kanalas</string>
+    <string name="ch07_text">7 kanalas</string>
+    <string name="ch08_text">8 kanalas</string>
+    <string name="ch09_text">9 kanalas</string>
+    <string name="ch10_text">10 kanalas</string>
+
+    <string name="options_switch_TX">Perdavimo režimas</string>
+    <string name="options_relay_TX">Relė</string>
+    <string name="options_settings">Nustatymai</string>
+    <string name="options_about">Apie ...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maksimalus padidėjimo padidėjimas</string>
+    <string name="gain_controls_increase_db_per_second">Gauti padidėjimą per sekundę</string>
+    <string name="gain_controls_hold_time">Didžiausias ribinės trukmės laikymo laikas</string>
+
+    <string name="network_controls_title">Tinklas</string>
+    <string name="network_controls_packet_redundancy">Paketinis atleidimas</string>
+
+    <string name="app_description">Multicast vertimas per vietinį „Wi-Fi“</string>
+    <string name="app_credits">Brahma Kumaris Londono IT komanda</string>
+
+    <string name="perms_alert_test">Jei norite įgalinti transliavimą, įgalinkite „App Permissions“ „Microphone“ leidimą</string>
+    <string name="multicast_alert">Deja, šio įrenginio „Linux“ branduolio konfigūracijoje nėra įgalintas daugiaadresis</string>
+</resources>

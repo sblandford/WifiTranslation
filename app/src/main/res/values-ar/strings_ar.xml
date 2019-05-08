@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">ترجمة واي فاي</string>
+    <string name="channel_display_prefix">قناة</string>
+    <string name="relay_channel_display_prefix">تناوب</string>
+    <string name="status">غير متوفره</string>
+    <string name="channel_button_text">تحديد</string>
+    <string name="relay_channel_button_text">تناوب</string>
+    <string name="stop_button_text">توقف</string>
+
+    <string name="status_rx_start">بداية</string>
+    <string name="status_tx_start">بث</string>
+    <string name="status_searching">البحث ...</string>
+    <string name="status_unavailable">غير متوفره</string>
+    <string name="status_headphones">أدخل سماعات الرأس</string>
+    <string name="status_talk">حديث</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">على الهواء (اضغط لكتم)</string>
+    <string name="status_muted">كتم الصوت (اضغط لإلغاء الصوت)</string>
+    <string name="status_no_wifi">يرجى الاتصال واي فاي</string>
+
+    <string name="channel_text">قناة</string>
+    <string name="ch01_text">قناة 1</string>
+    <string name="ch02_text">القناة 2</string>
+    <string name="ch03_text">القناة 3</string>
+    <string name="ch04_text">القناة 4</string>
+    <string name="ch05_text">القناة 5</string>
+    <string name="ch06_text">القناة 6</string>
+    <string name="ch07_text">القناة 7</string>
+    <string name="ch08_text">القناة 8</string>
+    <string name="ch09_text">القناة 9</string>
+    <string name="ch10_text">القناة 10</string>
+
+    <string name="options_switch_TX">وضع الإرسال</string>
+    <string name="options_relay_TX">تناوب</string>
+    <string name="options_settings">الإعدادات</string>
+    <string name="options_about">حول...</string>
+
+    <string name="gain_controls_title">كسب الداعم</string>
+    <string name="gain_controls_max_gain_db_title">الحد الأقصى لزيادة الأرباح</string>
+    <string name="gain_controls_increase_db_per_second">كسب زيادة في الثانية الواحدة</string>
+    <string name="gain_controls_hold_time">ذروة وقت الانتظار الحد</string>
+
+    <string name="network_controls_title">شبكة الاتصال</string>
+    <string name="network_controls_packet_redundancy">حزمة التكرار</string>
+
+    <string name="app_description">ترجمة البث المتعدد عبر شبكة Wi-Fi المحلية</string>
+    <string name="app_credits">فريق براهما كوماريس لندن لتكنولوجيا المعلومات</string>
+
+    <string name="perms_alert_test">يرجى تمكين إذن الميكروفون في أذونات التطبيق لتمكين البث</string>
+    <string name="multicast_alert">لسوء الحظ ، لم يتم تمكين الإرسال المتعدد لهذا الجهاز في تكوين Linux kernel</string>
+</resources>

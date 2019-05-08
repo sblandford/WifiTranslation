@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">వైఫై అనువాదం</string>
+    <string name="channel_display_prefix">ఛానల్</string>
+    <string name="relay_channel_display_prefix">రిలే</string>
+    <string name="status">అందుబాటులో</string>
+    <string name="channel_button_text">ఎంచుకోండి</string>
+    <string name="relay_channel_button_text">రిలే</string>
+    <string name="stop_button_text">ఆపు</string>
+
+    <string name="status_rx_start">ప్రారంభం</string>
+    <string name="status_tx_start">ప్రసార</string>
+    <string name="status_searching">శోధిస్తోంది ...</string>
+    <string name="status_unavailable">అందుబాటులో</string>
+    <string name="status_headphones">హెడ్ఫోన్స్ ఇన్సర్ట్ చెయ్యి</string>
+    <string name="status_talk">చర్చ</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">AIR లో (మ్యూట్ చేయడానికి నొక్కండి)</string>
+    <string name="status_muted">మ్యూట్ చేయబడింది (అన్మ్యూట్ చేయడానికి ముద్రించు)</string>
+    <string name="status_no_wifi">దయచేసి WiFi కి కనెక్ట్ చేయండి</string>
+
+    <string name="channel_text">ఛానల్</string>
+    <string name="ch01_text">ఛానల్ 1</string>
+    <string name="ch02_text">ఛానల్ 2</string>
+    <string name="ch03_text">ఛానల్ 3</string>
+    <string name="ch04_text">ఛానల్ 4</string>
+    <string name="ch05_text">ఛానల్ 5</string>
+    <string name="ch06_text">ఛానల్ 6</string>
+    <string name="ch07_text">ఛానల్ 7</string>
+    <string name="ch08_text">ఛానల్ 8</string>
+    <string name="ch09_text">ఛానల్ 9</string>
+    <string name="ch10_text">ఛానల్ 10</string>
+
+    <string name="options_switch_TX">మోడ్ ప్రసారం</string>
+    <string name="options_relay_TX">రిలే</string>
+    <string name="options_settings">సెట్టింగులు</string>
+    <string name="options_about">గురించి ...</string>
+
+    <string name="gain_controls_title">లాభం booster</string>
+    <string name="gain_controls_max_gain_db_title">గరిష్ట లాభం బూస్ట్</string>
+    <string name="gain_controls_increase_db_per_second">సెకనుకు పెరుగుదల పెంచుకోండి</string>
+    <string name="gain_controls_hold_time">పీక్ పరిమితి సమయాన్ని కలిగి ఉంటుంది</string>
+
+    <string name="network_controls_title">నెట్వర్క్</string>
+    <string name="network_controls_packet_redundancy">ప్యాకెట్ రిడండెన్సీ</string>
+
+    <string name="app_description">స్థానిక Wi-Fi పై బహుళ భాష అనువాదం</string>
+    <string name="app_credits">బ్రహ్మ కుమారిస్ లండన్ ఐటీ టీం</string>
+
+    <string name="perms_alert_test">దయచేసి బ్రాడ్కాస్ట్ను ప్రారంభించటానికి అనువర్తన అనుమతులలో మైక్రోఫోన్ అనుమతిని ప్రారంభించండి</string>
+    <string name="multicast_alert">దురదృష్టవశాత్తు ఈ పరికరం లినక్స్ కెర్నల్ కాన్ఫిగరేషన్లో బహుళస్థాయి ప్రారంభించబడలేదు</string>
+</resources>

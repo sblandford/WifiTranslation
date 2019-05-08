@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi Translation</string>
+    <string name="channel_display_prefix">Channel</string>
+    <string name="relay_channel_display_prefix">Sungani</string>
+    <string name="status">Simukupezeka</string>
+    <string name="channel_button_text">Sankhani</string>
+    <string name="relay_channel_button_text">Sungani</string>
+    <string name="stop_button_text">Imani</string>
+
+    <string name="status_rx_start">Yambani</string>
+    <string name="status_tx_start">Kutulutsidwa</string>
+    <string name="status_searching">Kusaka ...</string>
+    <string name="status_unavailable">Simukupezeka</string>
+    <string name="status_headphones">Ikani makutu</string>
+    <string name="status_talk">Nkhani</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">PA AIR (Fufuzani kuti mumvetsetse)</string>
+    <string name="status_muted">Kutsekedwa (Fufuzani kuti musamvetsetse)</string>
+    <string name="status_no_wifi">Chonde tumikizani ku WiFi</string>
+
+    <string name="channel_text">Channel</string>
+    <string name="ch01_text">Chida 1</string>
+    <string name="ch02_text">Chitsulo 2</string>
+    <string name="ch03_text">Channel 3</string>
+    <string name="ch04_text">Channel 4</string>
+    <string name="ch05_text">Channel 5</string>
+    <string name="ch06_text">Chida 6</string>
+    <string name="ch07_text">Channel 7</string>
+    <string name="ch08_text">Channel 8</string>
+    <string name="ch09_text">Channel 9</string>
+    <string name="ch10_text">Channel 10</string>
+
+    <string name="options_switch_TX">Sintha njira</string>
+    <string name="options_relay_TX">Sungani</string>
+    <string name="options_settings">Zosintha</string>
+    <string name="options_about">About ...</string>
+
+    <string name="gain_controls_title">Pezani Zowonjezera</string>
+    <string name="gain_controls_max_gain_db_title">Kukula Kwambiri Kwambiri</string>
+    <string name="gain_controls_increase_db_per_second">Kuwonjezeka pamphindi</string>
+    <string name="gain_controls_hold_time">Tsamba laling\'ono likhale ndi nthawi</string>
+
+    <string name="network_controls_title">Mtanda</string>
+    <string name="network_controls_packet_redundancy">Mapepala a redundancy</string>
+
+    <string name="app_description">Kusintha kwakukulu pa Wi-Fi yapafupi</string>
+    <string name="app_credits">Brahma Kumaris London IT timu</string>
+
+    <string name="perms_alert_test">Chonde lolani Maikrofoni alandile ku Ma App Permissions kuti athandize Broadcast</string>
+    <string name="multicast_alert">Mwamwayi chipangizochi sichikhala ndi multicast chomwe chimathandiza kusintha kwa Linux kernel</string>
+</resources>

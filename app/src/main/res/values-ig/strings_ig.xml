@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">WiFi Translation</string>
+    <string name="channel_display_prefix">Channel</string>
+    <string name="relay_channel_display_prefix">Relay</string>
+    <string name="status">Enweghị ya</string>
+    <string name="channel_button_text">Họrọ</string>
+    <string name="relay_channel_button_text">Relay</string>
+    <string name="stop_button_text">Kwụsị</string>
+
+    <string name="status_rx_start">Malite</string>
+    <string name="status_tx_start">Mgbasa ozi</string>
+    <string name="status_searching">Ịchọ ...</string>
+    <string name="status_unavailable">Enweghị ya</string>
+    <string name="status_headphones">Tinye ụdaisi</string>
+    <string name="status_talk">Kwuo</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">NA AIR (Pịa ka ogbi)</string>
+    <string name="status_muted">Muted (Pịa ka ọ ghara ịmalite)</string>
+    <string name="status_no_wifi">Biko jikọọ WiFi</string>
+
+    <string name="channel_text">Channel</string>
+    <string name="ch01_text">Channel 1</string>
+    <string name="ch02_text">Channel 2</string>
+    <string name="ch03_text">Channel 3</string>
+    <string name="ch04_text">Channel 4</string>
+    <string name="ch05_text">Channel 5</string>
+    <string name="ch06_text">Channel 6</string>
+    <string name="ch07_text">Channel 7</string>
+    <string name="ch08_text">Channel 8</string>
+    <string name="ch09_text">Channel 9</string>
+    <string name="ch10_text">Channel 10</string>
+
+    <string name="options_switch_TX">Usoro mgbasa ozi</string>
+    <string name="options_relay_TX">Relay</string>
+    <string name="options_settings">Ntọala</string>
+    <string name="options_about">Banyere ...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Enweghi Ike Ibu</string>
+    <string name="gain_controls_increase_db_per_second">Nweta ụba kwa nke abụọ</string>
+    <string name="gain_controls_hold_time">Ọnụ ọgụgụ kacha elu nwere oge</string>
+
+    <string name="network_controls_title">Network</string>
+    <string name="network_controls_packet_redundancy">Ngalaba ntanye</string>
+
+    <string name="app_description">Ntughari nke otutu Wi-Fi mpaghara</string>
+    <string name="app_credits">Brahma Kumaris London IT otu</string>
+
+    <string name="perms_alert_test">Biko mee ka ikikere Microphone na ikikere Nkwekọrịta iji mee ka mgbasa ozi</string>
+    <string name="multicast_alert">O di nwute na ngwaọrụ a enweghi otutu nke enyere na nhazi Linux</string>
+</resources>

@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi tõlge</string>
+    <string name="channel_display_prefix">Kanal</string>
+    <string name="relay_channel_display_prefix">Relee</string>
+    <string name="status">Ei ole saadaval</string>
+    <string name="channel_button_text">Valige</string>
+    <string name="relay_channel_button_text">Relee</string>
+    <string name="stop_button_text">Peatus</string>
+
+    <string name="status_rx_start">Alusta</string>
+    <string name="status_tx_start">Ringhääling</string>
+    <string name="status_searching">Otsimine ...</string>
+    <string name="status_unavailable">Ei ole saadaval</string>
+    <string name="status_headphones">Sisestage kõrvaklapid</string>
+    <string name="status_talk">Räägi</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (vaigistamiseks vajuta)</string>
+    <string name="status_muted">Vaigistatud (vajuta vaigistamiseks)</string>
+    <string name="status_no_wifi">Palun ühendage WiFi</string>
+
+    <string name="channel_text">Kanal</string>
+    <string name="ch01_text">Kanal 1</string>
+    <string name="ch02_text">2. kanal</string>
+    <string name="ch03_text">3. kanal</string>
+    <string name="ch04_text">4. kanal</string>
+    <string name="ch05_text">Kanal 5</string>
+    <string name="ch06_text">Kanal 6</string>
+    <string name="ch07_text">7. kanal</string>
+    <string name="ch08_text">8. kanal</string>
+    <string name="ch09_text">Kanal 9</string>
+    <string name="ch10_text">Kanal 10</string>
+
+    <string name="options_switch_TX">Edastusrežiim</string>
+    <string name="options_relay_TX">Relee</string>
+    <string name="options_settings">Seaded</string>
+    <string name="options_about">Teave ...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maksimaalne võimenduse suurendamine</string>
+    <string name="gain_controls_increase_db_per_second">Kasvu suurendamine sekundis</string>
+    <string name="gain_controls_hold_time">Piirväärtuse hoidmise aeg</string>
+
+    <string name="network_controls_title">Võrk</string>
+    <string name="network_controls_packet_redundancy">Pakettide koondamine</string>
+
+    <string name="app_description">Multicast-tõlge kohalikul Wi-Fi-l</string>
+    <string name="app_credits">Brahma Kumaris Londoni IT-meeskond</string>
+
+    <string name="perms_alert_test">Ringhäälingu lubamiseks lubage rakenduse õigustes mikrofoni luba</string>
+    <string name="multicast_alert">Kahjuks pole sellel seadmel Linuxi kerneli konfiguratsioonis lubatud multicast</string>
+</resources>

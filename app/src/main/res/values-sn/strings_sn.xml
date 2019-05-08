@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi Shanduro</string>
+    <string name="channel_display_prefix">Channel</string>
+    <string name="relay_channel_display_prefix">Relay</string>
+    <string name="status">Hazviwaniki</string>
+    <string name="channel_button_text">Sarudza</string>
+    <string name="relay_channel_button_text">Relay</string>
+    <string name="stop_button_text">Mira</string>
+
+    <string name="status_rx_start">Tanga</string>
+    <string name="status_tx_start">Broadcast</string>
+    <string name="status_searching">Tsvaga ...</string>
+    <string name="status_unavailable">Hazviwaniki</string>
+    <string name="status_headphones">Isa ma-headphones</string>
+    <string name="status_talk">Hurukuro</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">PANE AIR (Dhinda kuti uite mbeveve)</string>
+    <string name="status_muted">Kusungurudzwa (Dhinda kuisa unmute)</string>
+    <string name="status_no_wifi">Ndapota shandisai WiFi</string>
+
+    <string name="channel_text">Channel</string>
+    <string name="ch01_text">Chiteshi 1</string>
+    <string name="ch02_text">Chiteshi 2</string>
+    <string name="ch03_text">Chiteshi 3</string>
+    <string name="ch04_text">Chiteshi 4</string>
+    <string name="ch05_text">Chiteshi 5</string>
+    <string name="ch06_text">Chiteshi 6</string>
+    <string name="ch07_text">Chiteshi 7</string>
+    <string name="ch08_text">Chiteshi 8</string>
+    <string name="ch09_text">Chiteshi 9</string>
+    <string name="ch10_text">Chiteshi 10</string>
+
+    <string name="options_switch_TX">Transmit mode</string>
+    <string name="options_relay_TX">Relay</string>
+    <string name="options_settings">Zvirongwa</string>
+    <string name="options_about">Nezve ...</string>
+
+    <string name="gain_controls_title">Gadzira Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maximum Gain Boost</string>
+    <string name="gain_controls_increase_db_per_second">Itai kuwedzera kwechipiri</string>
+    <string name="gain_controls_hold_time">Peak chikamu chibata nguva</string>
+
+    <string name="network_controls_title">Network</string>
+    <string name="network_controls_packet_redundancy">Packet redundancy</string>
+
+    <string name="app_description">Shanduro yeMicticast pamusoro peWi-Fi yemo</string>
+    <string name="app_credits">Brahma Kumaris London IT team</string>
+
+    <string name="perms_alert_test">Ndapota ita kuti Microphone ibvumirwe muApp Permissions kuti ibudirire Broadcast</string>
+    <string name="multicast_alert">Zvinosuruvarisa kuti chigadzirwa ichi hachina ma multiticast chakabvumirwa mu Linux kernel yekugadzirisa</string>
+</resources>

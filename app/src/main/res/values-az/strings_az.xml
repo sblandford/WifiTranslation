@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi Tərcümə</string>
+    <string name="channel_display_prefix">Kanal</string>
+    <string name="relay_channel_display_prefix">Relay</string>
+    <string name="status">Unavailable</string>
+    <string name="channel_button_text">Seçin</string>
+    <string name="relay_channel_button_text">Relay</string>
+    <string name="stop_button_text">Dur</string>
+
+    <string name="status_rx_start">Başlamaq</string>
+    <string name="status_tx_start">Broadcast</string>
+    <string name="status_searching">Axtarış ...</string>
+    <string name="status_unavailable">Unavailable</string>
+    <string name="status_headphones">Qulaqlıqları daxil edin</string>
+    <string name="status_talk">Talk</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">HAVA\'DA (Səs vermək üçün basın)</string>
+    <string name="status_muted">Səssiz (səsləndirmək üçün basın)</string>
+    <string name="status_no_wifi">WiFi-ə qoşulun</string>
+
+    <string name="channel_text">Kanal</string>
+    <string name="ch01_text">Kanal 1</string>
+    <string name="ch02_text">Kanal 2</string>
+    <string name="ch03_text">Kanal 3</string>
+    <string name="ch04_text">Kanal 4</string>
+    <string name="ch05_text">Kanal 5</string>
+    <string name="ch06_text">Kanal 6</string>
+    <string name="ch07_text">Kanal 7</string>
+    <string name="ch08_text">Kanal 8</string>
+    <string name="ch09_text">Kanal 9</string>
+    <string name="ch10_text">Kanal 10</string>
+
+    <string name="options_switch_TX">Göndərmə rejimi</string>
+    <string name="options_relay_TX">Relay</string>
+    <string name="options_settings">Ayarlar</string>
+    <string name="options_about">Haqqında ...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maksimum qazanc artırın</string>
+    <string name="gain_controls_increase_db_per_second">Saniyəyə artım qazanır</string>
+    <string name="gain_controls_hold_time">Peak limit tutma vaxtı</string>
+
+    <string name="network_controls_title">Şəbəkə</string>
+    <string name="network_controls_packet_redundancy">Paket fazlalığı</string>
+
+    <string name="app_description">Yerli Wi-Fi üzərindən multicast tərcümə</string>
+    <string name="app_credits">Brahma Kumaris London İT qrupu</string>
+
+    <string name="perms_alert_test">Rəqəmli yayımı təmin etmək üçün App icazələrində Mikrofonun icazəsini təmin edin</string>
+    <string name="multicast_alert">Təəssüf ki, bu cihazın Linux çekirdek konfiqurasiyasında etkinleştirilmiş multicast imkanları yoxdur</string>
+</resources>

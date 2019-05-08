@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wi-Fi Пераклад</string>
+    <string name="channel_display_prefix">канал</string>
+    <string name="relay_channel_display_prefix">рэле</string>
+    <string name="status">недаступны</string>
+    <string name="channel_button_text">выбраць</string>
+    <string name="relay_channel_button_text">рэле</string>
+    <string name="stop_button_text">спыніць</string>
+
+    <string name="status_rx_start">пачатак</string>
+    <string name="status_tx_start">Broadcast</string>
+    <string name="status_searching">Пошук ...</string>
+    <string name="status_unavailable">недаступны</string>
+    <string name="status_headphones">ўстаўце навушнікі</string>
+    <string name="status_talk">балбатня</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Націсніце для адключэння)</string>
+    <string name="status_muted">Прыглушаны (Націсніце для прыглушэнне)</string>
+    <string name="status_no_wifi">Падключыцеся да Wi-Fi</string>
+
+    <string name="channel_text">канал</string>
+    <string name="ch01_text">канал 1</string>
+    <string name="ch02_text">канал 2</string>
+    <string name="ch03_text">канал 3</string>
+    <string name="ch04_text">Channel 4</string>
+    <string name="ch05_text">канал 5</string>
+    <string name="ch06_text">канал 6</string>
+    <string name="ch07_text">канал 7</string>
+    <string name="ch08_text">канал 8</string>
+    <string name="ch09_text">9 канала</string>
+    <string name="ch10_text">канал 10</string>
+
+    <string name="options_switch_TX">рэжым перадачы</string>
+    <string name="options_relay_TX">рэле</string>
+    <string name="options_settings">налады</string>
+    <string name="options_about">О ...</string>
+
+    <string name="gain_controls_title">ўзмацненне Booster</string>
+    <string name="gain_controls_max_gain_db_title">Максімальнае ўзмацненне падштурхоўвання</string>
+    <string name="gain_controls_increase_db_per_second">Павелічэнне ўзмацнення ў секунду</string>
+    <string name="gain_controls_hold_time">Пік абмежаванні па часе ўтрымання</string>
+
+    <string name="network_controls_title">сетка</string>
+    <string name="network_controls_packet_redundancy">пакет рэзервавання</string>
+
+    <string name="app_description">Multicast пераклад праз лакальную Wi-Fi</string>
+    <string name="app_credits">Брахма Кумарис Лондан ІТ-каманда</string>
+
+    <string name="perms_alert_test">Калі ласка, уключыце дазвол мікрафона ў App Правы доступу для ўключэння вяшчання</string>
+    <string name="multicast_alert">На жаль, гэта прылада не мае шматадрасных уключаны ў канфігурацыі ядра Linux</string>
+</resources>

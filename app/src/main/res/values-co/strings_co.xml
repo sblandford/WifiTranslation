@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Traduzione Wifi</string>
+    <string name="channel_display_prefix">Canali</string>
+    <string name="relay_channel_display_prefix">Relay</string>
+    <string name="status">Unavailable</string>
+    <string name="channel_button_text">Selezziunu</string>
+    <string name="relay_channel_button_text">Relay</string>
+    <string name="stop_button_text">Stop</string>
+
+    <string name="status_rx_start">Cumprà</string>
+    <string name="status_tx_start">Trasmissione</string>
+    <string name="status_searching">Ricercà ...</string>
+    <string name="status_unavailable">Unavailable</string>
+    <string name="status_headphones">Inserisci cuffie</string>
+    <string name="status_talk">Parlà</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Press to mute)</string>
+    <string name="status_muted">Sciacciatu (Prema per mudarà)</string>
+    <string name="status_no_wifi">Cunnessione per WiFi</string>
+
+    <string name="channel_text">Canali</string>
+    <string name="ch01_text">Canale 1</string>
+    <string name="ch02_text">Canali 2</string>
+    <string name="ch03_text">Canale 3</string>
+    <string name="ch04_text">Canale 4</string>
+    <string name="ch05_text">Canale 5</string>
+    <string name="ch06_text">Canale 6</string>
+    <string name="ch07_text">Canale 7</string>
+    <string name="ch08_text">Canale 8</string>
+    <string name="ch09_text">Canale 9</string>
+    <string name="ch10_text">Canale 10</string>
+
+    <string name="options_switch_TX">Modu di trasmissione</string>
+    <string name="options_relay_TX">Relay</string>
+    <string name="options_settings">Impostazioni</string>
+    <string name="options_about">Circa ...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maximum Boost Boost</string>
+    <string name="gain_controls_increase_db_per_second">Incremento di guaddu per secondu</string>
+    <string name="gain_controls_hold_time">Limite di picca tene u tempu</string>
+
+    <string name="network_controls_title">Rete</string>
+    <string name="network_controls_packet_redundancy">Ridondanza di pacchetti</string>
+
+    <string name="app_description">Traduzione multicast sopra u Wi-Fi locale</string>
+    <string name="app_credits">Squadra IT di Brahma Kumaris Londra</string>
+
+    <string name="perms_alert_test">Per piacè abilite u permesso di Microphone in Autorizzazioni di l\'App per abilità Broadcast</string>
+    <string name="multicast_alert">Sfortunatamente, questu dispositivu ùn hà micca attivatu a multicast in a configurazione di u kernel Linux</string>
+</resources>

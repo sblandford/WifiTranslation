@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi පරිවර්තන</string>
+    <string name="channel_display_prefix">නාලිකාව</string>
+    <string name="relay_channel_display_prefix">රිලේ</string>
+    <string name="status">නොපවතී</string>
+    <string name="channel_button_text">තෝරන්න</string>
+    <string name="relay_channel_button_text">රිලේ</string>
+    <string name="stop_button_text">නවත්වන්න</string>
+
+    <string name="status_rx_start">ආරම්භ කරන්න</string>
+    <string name="status_tx_start">විකාශය</string>
+    <string name="status_searching">සෙවීම ...</string>
+    <string name="status_unavailable">නොපවතී</string>
+    <string name="status_headphones">හෙඩ්ෆෝන් ඇතුළත් කරන්න</string>
+    <string name="status_talk">කතා කරන්න</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (ශබ්දය විරහිත කරන්න)</string>
+    <string name="status_muted">මුළුමනින්ම (අක්රිය කරන්න)</string>
+    <string name="status_no_wifi">කරුණාකර WiFi වෙත සම්බන්ධ වන්න</string>
+
+    <string name="channel_text">නාලිකාව</string>
+    <string name="ch01_text">චැනල් 1</string>
+    <string name="ch02_text">චැනල් 2</string>
+    <string name="ch03_text">චැනල් 3</string>
+    <string name="ch04_text">චැනල් 4</string>
+    <string name="ch05_text">චැනල් 5</string>
+    <string name="ch06_text">චැනල් 6</string>
+    <string name="ch07_text">චැනල් 7</string>
+    <string name="ch08_text">චැනල් 8</string>
+    <string name="ch09_text">චැනල් 9</string>
+    <string name="ch10_text">චැනල් 10</string>
+
+    <string name="options_switch_TX">සම්ප්රේෂණ ක්රමය</string>
+    <string name="options_relay_TX">රිලේ</string>
+    <string name="options_settings">සැකසුම්</string>
+    <string name="options_about">ගැන...</string>
+
+    <string name="gain_controls_title">බූස්ටරය ගයි</string>
+    <string name="gain_controls_max_gain_db_title">උපරිම වර්ධන වේගයක්</string>
+    <string name="gain_controls_increase_db_per_second">තත්පරයට වැඩි වීම</string>
+    <string name="gain_controls_hold_time">උච්ච සීමා කාලය</string>
+
+    <string name="network_controls_title">ජාල</string>
+    <string name="network_controls_packet_redundancy">පැකට්ටුව අතිරික්තතාව</string>
+
+    <string name="app_description">දේශීය Wi-Fi හරහා බහුතැටි පරිවර්තනය</string>
+    <string name="app_credits">බ්රාහ්ම කුමාරි ලන්ඩන් තොරතුරු තාක්ෂණ කණ්ඩායම</string>
+
+    <string name="perms_alert_test">විකාශනයට සක්රිය කිරීම සඳහා යෙදුම් අවසරයන් තුළ මයික්රොෆෝන් අවසරය සක්රිය කරන්න</string>
+    <string name="multicast_alert">අවාසනාවකට මෙම උපාංගය බහුජාතික බහුලව සතුව Linux kernel සැකසුම තුල සක්රීය කර ඇත</string>
+</resources>

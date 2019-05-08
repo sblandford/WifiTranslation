@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Terjemahan Wifi</string>
+    <string name="channel_display_prefix">Saluran</string>
+    <string name="relay_channel_display_prefix">Menyampaikan</string>
+    <string name="status">Tidak tersedia</string>
+    <string name="channel_button_text">Memilih</string>
+    <string name="relay_channel_button_text">Menyampaikan</string>
+    <string name="stop_button_text">Berhenti</string>
+
+    <string name="status_rx_start">Mulai</string>
+    <string name="status_tx_start">Siaran</string>
+    <string name="status_searching">Mencari ...</string>
+    <string name="status_unavailable">Tidak tersedia</string>
+    <string name="status_headphones">Masukkan headphone</string>
+    <string name="status_talk">Berbicara</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Tekan untuk membisukan)</string>
+    <string name="status_muted">Diam (Tekan untuk membunyikan suara)</string>
+    <string name="status_no_wifi">Silakan terhubung ke WiFi</string>
+
+    <string name="channel_text">Saluran</string>
+    <string name="ch01_text">Saluran 1</string>
+    <string name="ch02_text">Saluran 2</string>
+    <string name="ch03_text">Saluran 3</string>
+    <string name="ch04_text">Saluran 4</string>
+    <string name="ch05_text">Saluran 5</string>
+    <string name="ch06_text">Saluran 6</string>
+    <string name="ch07_text">Saluran 7</string>
+    <string name="ch08_text">Saluran 8</string>
+    <string name="ch09_text">Saluran 9</string>
+    <string name="ch10_text">Saluran 10</string>
+
+    <string name="options_switch_TX">Mode pengiriman</string>
+    <string name="options_relay_TX">Menyampaikan</string>
+    <string name="options_settings">Pengaturan</string>
+    <string name="options_about">Tentang...</string>
+
+    <string name="gain_controls_title">Dapatkan Booster</string>
+    <string name="gain_controls_max_gain_db_title">Peningkatan Keuntungan Maksimum</string>
+    <string name="gain_controls_increase_db_per_second">Dapatkan peningkatan per detik</string>
+    <string name="gain_controls_hold_time">Waktu tunggu batas puncak</string>
+
+    <string name="network_controls_title">Jaringan</string>
+    <string name="network_controls_packet_redundancy">Redundansi paket</string>
+
+    <string name="app_description">Terjemahan multicast melalui Wi-Fi lokal</string>
+    <string name="app_credits">Tim IT London Brahma Kumaris</string>
+
+    <string name="perms_alert_test">Harap aktifkan izin Mikrofon di Izin Aplikasi untuk mengaktifkan Siaran</string>
+    <string name="multicast_alert">Sayangnya perangkat ini tidak memiliki multicast yang diaktifkan di konfigurasi kernel Linux</string>
+</resources>

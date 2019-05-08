@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">แปล Wifi</string>
+    <string name="channel_display_prefix">ช่อง</string>
+    <string name="relay_channel_display_prefix">ถ่ายทอด</string>
+    <string name="status">ไม่มี</string>
+    <string name="channel_button_text">เลือก</string>
+    <string name="relay_channel_button_text">ถ่ายทอด</string>
+    <string name="stop_button_text">หยุด</string>
+
+    <string name="status_rx_start">เริ่มต้น</string>
+    <string name="status_tx_start">ออกอากาศ</string>
+    <string name="status_searching">ค้นหา ...</string>
+    <string name="status_unavailable">ไม่มี</string>
+    <string name="status_headphones">ใส่หูฟัง</string>
+    <string name="status_talk">พูดคุย</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (กดเพื่อปิดเสียง)</string>
+    <string name="status_muted">ปิดเสียง (กดเพื่อเปิดเสียง)</string>
+    <string name="status_no_wifi">โปรดเชื่อมต่อกับ WiFi</string>
+
+    <string name="channel_text">ช่อง</string>
+    <string name="ch01_text">ช่อง 1</string>
+    <string name="ch02_text">ช่อง 2</string>
+    <string name="ch03_text">ช่อง 3</string>
+    <string name="ch04_text">ช่อง 4</string>
+    <string name="ch05_text">ช่อง 5</string>
+    <string name="ch06_text">ช่อง 6</string>
+    <string name="ch07_text">ช่อง 7</string>
+    <string name="ch08_text">ช่อง 8</string>
+    <string name="ch09_text">ช่อง 9</string>
+    <string name="ch10_text">ช่อง 10</string>
+
+    <string name="options_switch_TX">โหมดการส่ง</string>
+    <string name="options_relay_TX">ถ่ายทอด</string>
+    <string name="options_settings">การตั้งค่า</string>
+    <string name="options_about">เกี่ยวกับ ...</string>
+
+    <string name="gain_controls_title">ตัวเพิ่มกําไร</string>
+    <string name="gain_controls_max_gain_db_title">เพิ่มกำไรสูงสุด</string>
+    <string name="gain_controls_increase_db_per_second">เพิ่มกำไรต่อวินาที</string>
+    <string name="gain_controls_hold_time">เวลาที่ จำกัด ไว้สูงสุด</string>
+
+    <string name="network_controls_title">เครือข่าย</string>
+    <string name="network_controls_packet_redundancy">แพ็คเก็ตซ้ำซ้อน</string>
+
+    <string name="app_description">การแปลหลายผู้รับผ่าน Wi-Fi ท้องถิ่น</string>
+    <string name="app_credits">บราห์มากุมารีลอนดอนทีมไอที</string>
+
+    <string name="perms_alert_test">โปรดเปิดใช้งานการอนุญาตไมโครโฟนในการอนุญาตของแอปเพื่อเปิดใช้งานการออกอากาศ</string>
+    <string name="multicast_alert">น่าเสียดายที่อุปกรณ์นี้ไม่ได้เปิดใช้งานมัลติคาสต์ในการกำหนดค่าเคอร์เนล Linux</string>
+</resources>

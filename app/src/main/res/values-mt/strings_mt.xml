@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Traduzzjoni Wifi</string>
+    <string name="channel_display_prefix">Kanal</string>
+    <string name="relay_channel_display_prefix">Relay</string>
+    <string name="status">Mhux disponibbli</string>
+    <string name="channel_button_text">Agħżel</string>
+    <string name="relay_channel_button_text">Relay</string>
+    <string name="stop_button_text">Waqfa</string>
+
+    <string name="status_rx_start">Ibda</string>
+    <string name="status_tx_start">Xandir</string>
+    <string name="status_searching">Fittex ...</string>
+    <string name="status_unavailable">Mhux disponibbli</string>
+    <string name="status_headphones">Daħħal il-headphones</string>
+    <string name="status_talk">Tkellem</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">FUQ L-AJRU (Agħfas biex iddawwar)</string>
+    <string name="status_muted">Mutat (Agħfas biex ingħeleb)</string>
+    <string name="status_no_wifi">Jekk jogħġbok qabbad il-WiFi</string>
+
+    <string name="channel_text">Kanal</string>
+    <string name="ch01_text">Kanal 1</string>
+    <string name="ch02_text">Kanal 2</string>
+    <string name="ch03_text">Kanal 3</string>
+    <string name="ch04_text">Kanal 4</string>
+    <string name="ch05_text">Kanal 5</string>
+    <string name="ch06_text">Kanal 6</string>
+    <string name="ch07_text">Kanal 7</string>
+    <string name="ch08_text">Kanal 8</string>
+    <string name="ch09_text">Kanal 9</string>
+    <string name="ch10_text">Kanal 10</string>
+
+    <string name="options_switch_TX">Trasmetti l-mod</string>
+    <string name="options_relay_TX">Relay</string>
+    <string name="options_settings">Settings</string>
+    <string name="options_about">Dwar ...</string>
+
+    <string name="gain_controls_title">Gwadan Booster</string>
+    <string name="gain_controls_max_gain_db_title">Spinta lill-Qligħ Massimu</string>
+    <string name="gain_controls_increase_db_per_second">Żieda fil-qligħ kull sekonda</string>
+    <string name="gain_controls_hold_time">Il-limitu massimu tal-ħin</string>
+
+    <string name="network_controls_title">Netwerk</string>
+    <string name="network_controls_packet_redundancy">Redundancy tal-pakkett</string>
+
+    <string name="app_description">Multicast traduzzjoni fuq Wi-Fi lokali</string>
+    <string name="app_credits">Tim tal-IT ta \'Brahma Kumaris f\'Londra</string>
+
+    <string name="perms_alert_test">Jekk joghgbok ippermetti l-permess tal-Mikrofonu fil-Permessijiet tal-App biex jippermetti lix-Xandir</string>
+    <string name="multicast_alert">Sfortunatament dan l-apparat m\'għandux multicast attivat fil-konfigurazzjoni tal-qalba tal-Linux</string>
+</resources>

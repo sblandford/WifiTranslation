@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">ওয়াইফাই অনুবাদ</string>
+    <string name="channel_display_prefix">চ্যানেল</string>
+    <string name="relay_channel_display_prefix">রিলেই</string>
+    <string name="status">অপ্রাপ্য</string>
+    <string name="channel_button_text">নির্বাচন করা</string>
+    <string name="relay_channel_button_text">রিলেই</string>
+    <string name="stop_button_text">থামুন</string>
+
+    <string name="status_rx_start">শুরু</string>
+    <string name="status_tx_start">ব্রডকাস্ট</string>
+    <string name="status_searching">অনুসন্ধান করা হচ্ছে ...</string>
+    <string name="status_unavailable">অপ্রাপ্য</string>
+    <string name="status_headphones">হেডফোন ঢোকান</string>
+    <string name="status_talk">আলাপ</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">বাতাসে (নিঃশব্দে টিপুন)</string>
+    <string name="status_muted">Muted (নিষ্ক্রিয় করতে টিপুন)</string>
+    <string name="status_no_wifi">ওয়াইফাই সংযোগ করুন</string>
+
+    <string name="channel_text">চ্যানেল</string>
+    <string name="ch01_text">চ্যানেল 1</string>
+    <string name="ch02_text">চ্যানেল 2</string>
+    <string name="ch03_text">চ্যানেল 3</string>
+    <string name="ch04_text">চ্যানেল 4</string>
+    <string name="ch05_text">চ্যানেল 5</string>
+    <string name="ch06_text">চ্যানেল 6</string>
+    <string name="ch07_text">চ্যানেল 7</string>
+    <string name="ch08_text">চ্যানেল 8</string>
+    <string name="ch09_text">চ্যানেল 9</string>
+    <string name="ch10_text">চ্যানেল 10</string>
+
+    <string name="options_switch_TX">প্রেরণ মোড</string>
+    <string name="options_relay_TX">রিলেই</string>
+    <string name="options_settings">সেটিংস</string>
+    <string name="options_about">সম্পর্কিত...</string>
+
+    <string name="gain_controls_title">বুস্টার লাভ</string>
+    <string name="gain_controls_max_gain_db_title">সর্বাধিক লাভ বুস্ট</string>
+    <string name="gain_controls_increase_db_per_second">প্রতি সেকেন্ডে বৃদ্ধি লাভ</string>
+    <string name="gain_controls_hold_time">শিখর সীমা হোল্ড সময়</string>
+
+    <string name="network_controls_title">নেটওয়ার্ক</string>
+    <string name="network_controls_packet_redundancy">প্যাকেট অমূল্যতা</string>
+
+    <string name="app_description">স্থানীয় ওয়াই ফাই উপর মাল্টিকাস্ট অনুবাদ</string>
+    <string name="app_credits">ব্রাহ্ম কুমারিস লন্ডন আইটি দল</string>
+
+    <string name="perms_alert_test">ব্রডকাস্ট সক্ষম করতে অ্যাপ্লিকেশন অনুমতিগুলিতে মাইক্রোফোন অনুমতিটি সক্ষম করুন</string>
+    <string name="multicast_alert">দুর্ভাগ্যবশত এই ডিভাইসটি লিনাক্স কার্নেল কনফিগারেশনে মাল্টিস্টাস্ট সক্ষম নেই</string>
+</resources>

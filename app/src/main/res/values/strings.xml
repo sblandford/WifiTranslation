@@ -44,7 +44,7 @@
     <string name="network_controls_title">Network</string>
     <string name="network_controls_packet_redundancy">Packet redundancy</string>
 
-    <string name="app_description">Mutlicast translation over local Wi-Fi</string>
+    <string name="app_description">Multicast translation over local Wi-Fi</string>
     <string name="app_credits">Brahma Kumaris London IT team</string>
 
     <string name="perms_alert_test">Please enable the Microphone permission in App Permissions to enable Broadcast</string>

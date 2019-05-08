@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi Vertaling</string>
+    <string name="channel_display_prefix">kanaal</string>
+    <string name="relay_channel_display_prefix">Relay</string>
+    <string name="status">nie beskikbaar nie</string>
+    <string name="channel_button_text">Kies</string>
+    <string name="relay_channel_button_text">Relay</string>
+    <string name="stop_button_text">stop</string>
+
+    <string name="status_rx_start">begin</string>
+    <string name="status_tx_start">uitsending</string>
+    <string name="status_searching">Soek ...</string>
+    <string name="status_unavailable">nie beskikbaar nie</string>
+    <string name="status_headphones">Voeg koptelefoon in</string>
+    <string name="status_talk">Praat</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">OP LUG (Druk om te stom)</string>
+    <string name="status_muted">Gedempte (Druk om te skakel)</string>
+    <string name="status_no_wifi">Koppel asseblief aan WiFi</string>
+
+    <string name="channel_text">kanaal</string>
+    <string name="ch01_text">Kanaal 1</string>
+    <string name="ch02_text">Kanaal 2</string>
+    <string name="ch03_text">Kanaal 3</string>
+    <string name="ch04_text">Kanaal 4</string>
+    <string name="ch05_text">Kanaal 5</string>
+    <string name="ch06_text">Kanaal 6</string>
+    <string name="ch07_text">Kanaal 7</string>
+    <string name="ch08_text">Kanaal 8</string>
+    <string name="ch09_text">Kanaal 9</string>
+    <string name="ch10_text">Kanaal 10</string>
+
+    <string name="options_switch_TX">Oordragmodus</string>
+    <string name="options_relay_TX">Relay</string>
+    <string name="options_settings">instellings</string>
+    <string name="options_about">Oor ...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maksimum Gain Boost</string>
+    <string name="gain_controls_increase_db_per_second">Verhoging styg per sekonde</string>
+    <string name="gain_controls_hold_time">Peak limiet hou tyd</string>
+
+    <string name="network_controls_title">Network</string>
+    <string name="network_controls_packet_redundancy">Pakket ontslag</string>
+
+    <string name="app_description">Multicast-vertaling oor plaaslike Wi-Fi</string>
+    <string name="app_credits">Brahma Kumaris London IT-span</string>
+
+    <string name="perms_alert_test">Aktiveer asseblief die Mikrofoon-toestemming in Apptoestemmings om Broadcast te aktiveer</string>
+    <string name="multicast_alert">Ongelukkig het hierdie toestel nie multicast in die Linux-kernkonfigurasie aangeskakel nie</string>
+</resources>

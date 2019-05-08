@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Dịch thuật Wifi</string>
+    <string name="channel_display_prefix">Kênh</string>
+    <string name="relay_channel_display_prefix">Rơle</string>
+    <string name="status">Không có sẵn</string>
+    <string name="channel_button_text">Lựa chọn</string>
+    <string name="relay_channel_button_text">Rơle</string>
+    <string name="stop_button_text">Dừng lại</string>
+
+    <string name="status_rx_start">Khởi đầu</string>
+    <string name="status_tx_start">Phát sóng</string>
+    <string name="status_searching">Đang tìm kiếm...</string>
+    <string name="status_unavailable">Không có sẵn</string>
+    <string name="status_headphones">Chèn tai nghe</string>
+    <string name="status_talk">Nói chuyện</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Nhấn để tắt tiếng)</string>
+    <string name="status_muted">Tắt tiếng (Nhấn để bật tiếng)</string>
+    <string name="status_no_wifi">Vui lòng kết nối với WiFi</string>
+
+    <string name="channel_text">Kênh</string>
+    <string name="ch01_text">Kênh 1</string>
+    <string name="ch02_text">Kênh 2</string>
+    <string name="ch03_text">Kênh 3</string>
+    <string name="ch04_text">Kênh số 4</string>
+    <string name="ch05_text">Kênh 5</string>
+    <string name="ch06_text">Kênh 6</string>
+    <string name="ch07_text">Kênh 7</string>
+    <string name="ch08_text">Kênh 8</string>
+    <string name="ch09_text">Kênh 9</string>
+    <string name="ch10_text">Kênh 10</string>
+
+    <string name="options_switch_TX">Chế độ truyền</string>
+    <string name="options_relay_TX">Rơle</string>
+    <string name="options_settings">Cài đặt</string>
+    <string name="options_about">Trong khoảng...</string>
+
+    <string name="gain_controls_title">Tăng cường</string>
+    <string name="gain_controls_max_gain_db_title">Tăng tối đa</string>
+    <string name="gain_controls_increase_db_per_second">Tăng mỗi giây</string>
+    <string name="gain_controls_hold_time">Thời gian giữ giới hạn cao điểm</string>
+
+    <string name="network_controls_title">Mạng</string>
+    <string name="network_controls_packet_redundancy">Dự phòng gói</string>
+
+    <string name="app_description">Dịch đa tuyến qua Wi-Fi cục bộ</string>
+    <string name="app_credits">Đội ngũ IT Brahma Kumaris London</string>
+
+    <string name="perms_alert_test">Vui lòng bật quyền Micrô trong Quyền ứng dụng để bật Phát sóng</string>
+    <string name="multicast_alert">Thật không may, thiết bị này không được kích hoạt phát đa hướng trong cấu hình nhân Linux</string>
+</resources>

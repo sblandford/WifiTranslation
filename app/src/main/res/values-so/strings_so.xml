@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi Translation</string>
+    <string name="channel_display_prefix">Channel</string>
+    <string name="relay_channel_display_prefix">Socdaalka</string>
+    <string name="status">Lama hayo</string>
+    <string name="channel_button_text">Xulo</string>
+    <string name="relay_channel_button_text">Socdaalka</string>
+    <string name="stop_button_text">Jooji</string>
+
+    <string name="status_rx_start">Bilow</string>
+    <string name="status_tx_start">Warbaahinta</string>
+    <string name="status_searching">Raadinta ...</string>
+    <string name="status_unavailable">Lama hayo</string>
+    <string name="status_headphones">Geli wershadaha dhegaha</string>
+    <string name="status_talk">Kala hadal</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON HUB (Riix si aad uhesho)</string>
+    <string name="status_muted">Isku-dhuftay (riix si aad u aragto)</string>
+    <string name="status_no_wifi">Fadlan ku xiro WiFi</string>
+
+    <string name="channel_text">Channel</string>
+    <string name="ch01_text">Channel 1</string>
+    <string name="ch02_text">Channel 2</string>
+    <string name="ch03_text">Channel 3</string>
+    <string name="ch04_text">Channel 4</string>
+    <string name="ch05_text">Qeybta 5</string>
+    <string name="ch06_text">Qeybta 6</string>
+    <string name="ch07_text">Qeybta 7</string>
+    <string name="ch08_text">Channel 8</string>
+    <string name="ch09_text">Channel 9</string>
+    <string name="ch10_text">Channel 10</string>
+
+    <string name="options_switch_TX">Habka gudbinta</string>
+    <string name="options_relay_TX">Socdaalka</string>
+    <string name="options_settings">Goobaha</string>
+    <string name="options_about">Ku saabsan ...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Gaariga Ugu Sareeya</string>
+    <string name="gain_controls_increase_db_per_second">Korodhka korodhka sanadka</string>
+    <string name="gain_controls_hold_time">Waqti xaddidaad xaddidan</string>
+
+    <string name="network_controls_title">Shabakad</string>
+    <string name="network_controls_packet_redundancy">Maqnaanshaha buuxda</string>
+
+    <string name="app_description">Tarjumada Multicast ee kudhisan shabakadda Wi-Fi-ga</string>
+    <string name="app_credits">Brahma Kumaris Kooxda IT-ga ee London</string>
+
+    <string name="perms_alert_test">Fadlan awood u yeelashada maqalka mikrôfhone ee Ogolaashaha App inay awoodaan Warbaahinta</string>
+    <string name="multicast_alert">Nasiib darro qalabkan ma haysan karti badan ee kumbuyuutarka xawaaraha Linux</string>
+</resources>

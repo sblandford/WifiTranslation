@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi Translation</string>
+    <string name="channel_display_prefix">Channel</string>
+    <string name="relay_channel_display_prefix">Relay</string>
+    <string name="status">Kāore i te wātea</string>
+    <string name="channel_button_text">Tīpako</string>
+    <string name="relay_channel_button_text">Relay</string>
+    <string name="stop_button_text">Kati</string>
+
+    <string name="status_rx_start">Tīmata</string>
+    <string name="status_tx_start">Whakapāho</string>
+    <string name="status_searching">Rapu ana ...</string>
+    <string name="status_unavailable">Kāore i te wātea</string>
+    <string name="status_headphones">Kōkuhu taringa</string>
+    <string name="status_talk">Kōrero</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Press to mute)</string>
+    <string name="status_muted">Muted (Tuku ki te whakaheke)</string>
+    <string name="status_no_wifi">Tena hono atu ki WiFi</string>
+
+    <string name="channel_text">Channel</string>
+    <string name="ch01_text">Channel 1</string>
+    <string name="ch02_text">Channel 2</string>
+    <string name="ch03_text">Channel 3</string>
+    <string name="ch04_text">Channel 4</string>
+    <string name="ch05_text">Channel 5</string>
+    <string name="ch06_text">Channel 6</string>
+    <string name="ch07_text">Channel 7</string>
+    <string name="ch08_text">Channel 8</string>
+    <string name="ch09_text">Channel 9</string>
+    <string name="ch10_text">Channel 10</string>
+
+    <string name="options_switch_TX">Aratau tuku</string>
+    <string name="options_relay_TX">Relay</string>
+    <string name="options_settings">Tautuhinga</string>
+    <string name="options_about">Mō ...</string>
+
+    <string name="gain_controls_title">Riwai Pupuri</string>
+    <string name="gain_controls_max_gain_db_title">Ko te Raina Miirahi Nui</string>
+    <string name="gain_controls_increase_db_per_second">Whiwhia te whakanui i te rua</string>
+    <string name="gain_controls_hold_time">Ko te wahanga peak te pupuri i te wa</string>
+
+    <string name="network_controls_title">Whatunga</string>
+    <string name="network_controls_packet_redundancy">Paaetanga Packet</string>
+
+    <string name="app_description">Ko te whakamaori Multicast mo Wi-Fi</string>
+    <string name="app_credits">Brahma Kumaris London IT Team</string>
+
+    <string name="perms_alert_test">Tena whakaaetia te whakaaetanga a Microphone i roto i nga Whakaaetanga Whakaaetanga kia taea ai te Whakawhitiwhiti</string>
+    <string name="multicast_alert">Engari, kaore e taea e tenei mahinga te whakahohe i te maha o te whakahohe i roto i te whirihoranga o te kiore Linux</string>
+</resources>

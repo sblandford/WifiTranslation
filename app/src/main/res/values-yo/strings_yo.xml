@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi Translation</string>
+    <string name="channel_display_prefix">Ikanni</string>
+    <string name="relay_channel_display_prefix">Ifiranṣẹ</string>
+    <string name="status">Ko wa</string>
+    <string name="channel_button_text">Yan</string>
+    <string name="relay_channel_button_text">Ifiranṣẹ</string>
+    <string name="stop_button_text">Duro</string>
+
+    <string name="status_rx_start">Bẹrẹ</string>
+    <string name="status_tx_start">Itaniji</string>
+    <string name="status_searching">Wiwa ...</string>
+    <string name="status_unavailable">Ko wa</string>
+    <string name="status_headphones">Fi akọkun sii</string>
+    <string name="status_talk">Ọrọ sisọrọ</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Tẹ lati dakẹ)</string>
+    <string name="status_muted">Muted (Tẹ lati ṣatunkọ)</string>
+    <string name="status_no_wifi">Jowo sopọ si WiFi</string>
+
+    <string name="channel_text">Ikanni</string>
+    <string name="ch01_text">Ikanni 1</string>
+    <string name="ch02_text">Ikanni 2</string>
+    <string name="ch03_text">Ikanni 3</string>
+    <string name="ch04_text">Ikanni 4</string>
+    <string name="ch05_text">Ikanni 5</string>
+    <string name="ch06_text">Ikanni 6</string>
+    <string name="ch07_text">Ikanni 7</string>
+    <string name="ch08_text">Ikanni 8</string>
+    <string name="ch09_text">Ikanni 9</string>
+    <string name="ch10_text">Ikanni 10</string>
+
+    <string name="options_switch_TX">Ipo igbasilẹ</string>
+    <string name="options_relay_TX">Ifiranṣẹ</string>
+    <string name="options_settings">Ètò</string>
+    <string name="options_about">Nipa ...</string>
+
+    <string name="gain_controls_title">Gba Booster</string>
+    <string name="gain_controls_max_gain_db_title">Imudara to pọju Iwọn</string>
+    <string name="gain_controls_increase_db_per_second">Mu ilosoke sii fun keji</string>
+    <string name="gain_controls_hold_time">Ifilelẹ ti iye ti idaduro akoko</string>
+
+    <string name="network_controls_title">Nẹtiwọki</string>
+    <string name="network_controls_packet_redundancy">Sisẹpo packet</string>
+
+    <string name="app_description">Iyipada Multicast lori Wi-Fi agbegbe</string>
+    <string name="app_credits">Brahma Kumaris London IT team</string>
+
+    <string name="perms_alert_test">Jowo jeki gbohungbohun funni laaye ni Awọn igbanilaaye Awọn Idanilaaye lati ṣe Itaniji</string>
+    <string name="multicast_alert">Laanu ẹrọ yi ko ni agbara multicast ṣiṣẹ ni iṣeto iṣiro Linux</string>
+</resources>

@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Përkthimi Wifi</string>
+    <string name="channel_display_prefix">kanal</string>
+    <string name="relay_channel_display_prefix">rele</string>
+    <string name="status">i padisponueshëm</string>
+    <string name="channel_button_text">zgjedh</string>
+    <string name="relay_channel_button_text">rele</string>
+    <string name="stop_button_text">stop</string>
+
+    <string name="status_rx_start">fillim</string>
+    <string name="status_tx_start">Broadcast</string>
+    <string name="status_searching">Duke kërkuar ...</string>
+    <string name="status_unavailable">i padisponueshëm</string>
+    <string name="status_headphones">Futni kufjet</string>
+    <string name="status_talk">diskutim</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Shtypni për të heshtur)</string>
+    <string name="status_muted">Mbyllur (Shtypni për të çaktivizuar)</string>
+    <string name="status_no_wifi">Lidhu me WiFi</string>
+
+    <string name="channel_text">kanal</string>
+    <string name="ch01_text">Kanali 1</string>
+    <string name="ch02_text">Kanali 2</string>
+    <string name="ch03_text">Kanali 3</string>
+    <string name="ch04_text">Kanali 4</string>
+    <string name="ch05_text">Kanali 5</string>
+    <string name="ch06_text">Kanali 6</string>
+    <string name="ch07_text">Kanali 7</string>
+    <string name="ch08_text">Kanali 8</string>
+    <string name="ch09_text">Kanali 9</string>
+    <string name="ch10_text">Kanali 10</string>
+
+    <string name="options_switch_TX">Modaliteti i transmetimit</string>
+    <string name="options_relay_TX">rele</string>
+    <string name="options_settings">Cilësimet</string>
+    <string name="options_about">Rreth ...</string>
+
+    <string name="gain_controls_title">Përforcues i fitimit</string>
+    <string name="gain_controls_max_gain_db_title">Shpejtësia maksimale e fitimit</string>
+    <string name="gain_controls_increase_db_per_second">Rritja e fitimit për sekondë</string>
+    <string name="gain_controls_hold_time">Kufiri i pikave të mbajë kohën</string>
+
+    <string name="network_controls_title">rrjet</string>
+    <string name="network_controls_packet_redundancy">Tepricë e paketës</string>
+
+    <string name="app_description">Përkthimi Multicast mbi Wi-Fi vendor</string>
+    <string name="app_credits">Brahma Kumaris London IT ekip</string>
+
+    <string name="perms_alert_test">Aktivizo lejen e mikrofonit në lejet e aplikacioneve për të aktivizuar transmetimin</string>
+    <string name="multicast_alert">Për fat të keq, kjo pajisje nuk ka multicast të aktivizuara në konfigurimin e kernel Linux</string>
+</resources>

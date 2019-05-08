@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Překlad do Wifi</string>
+    <string name="channel_display_prefix">Kanál</string>
+    <string name="relay_channel_display_prefix">Relé</string>
+    <string name="status">Není k dispozici</string>
+    <string name="channel_button_text">Vybrat</string>
+    <string name="relay_channel_button_text">Relé</string>
+    <string name="stop_button_text">Stop</string>
+
+    <string name="status_rx_start">Start</string>
+    <string name="status_tx_start">Přenos</string>
+    <string name="status_searching">Vyhledávání ...</string>
+    <string name="status_unavailable">Není k dispozici</string>
+    <string name="status_headphones">Vložte sluchátka</string>
+    <string name="status_talk">Mluvit</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ZAPNUTO (Stiskněte pro ztlumení)</string>
+    <string name="status_muted">Ztlumené (Stiskněte pro zrušení zvuku)</string>
+    <string name="status_no_wifi">Připojte se k WiFi</string>
+
+    <string name="channel_text">Kanál</string>
+    <string name="ch01_text">Kanál 1</string>
+    <string name="ch02_text">Kanál 2</string>
+    <string name="ch03_text">Kanál 3</string>
+    <string name="ch04_text">Kanál 4</string>
+    <string name="ch05_text">Kanál 5</string>
+    <string name="ch06_text">Kanál 6</string>
+    <string name="ch07_text">Kanál 7</string>
+    <string name="ch08_text">Kanál 8</string>
+    <string name="ch09_text">Kanál 9</string>
+    <string name="ch10_text">Kanál 10</string>
+
+    <string name="options_switch_TX">Režim vysílání</string>
+    <string name="options_relay_TX">Relé</string>
+    <string name="options_settings">Nastavení</string>
+    <string name="options_about">O...</string>
+
+    <string name="gain_controls_title">Zisk Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maximální zesílení zisku</string>
+    <string name="gain_controls_increase_db_per_second">Zvýšení zisku za sekundu</string>
+    <string name="gain_controls_hold_time">Maximální doba zdržení</string>
+
+    <string name="network_controls_title">Síť</string>
+    <string name="network_controls_packet_redundancy">Redundance paketů</string>
+
+    <string name="app_description">Multicast překlad přes místní Wi-Fi</string>
+    <string name="app_credits">Brahma Kumaris Londýn IT tým</string>
+
+    <string name="perms_alert_test">Chcete-li povolit vysílání, povolte oprávnění mikrofonu v oprávnění k aplikaci</string>
+    <string name="multicast_alert">Bohužel toto zařízení nemá v konfiguraci jádra Linuxu povoleno vícesměrové vysílání</string>
+</resources>

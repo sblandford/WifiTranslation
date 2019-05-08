@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">ਵਾਈਫਾਈ ਅਨੁਵਾਦ</string>
+    <string name="channel_display_prefix">ਚੈਨਲ</string>
+    <string name="relay_channel_display_prefix">ਰੀਲੇਅ</string>
+    <string name="status">ਅਣਉਪਲਬਧ</string>
+    <string name="channel_button_text">ਚੁਣੋ</string>
+    <string name="relay_channel_button_text">ਰੀਲੇਅ</string>
+    <string name="stop_button_text">ਰੂਕੋ</string>
+
+    <string name="status_rx_start">ਸ਼ੁਰੂ ਕਰੋ</string>
+    <string name="status_tx_start">ਬ੍ਰੌਡਕਾਸਟ</string>
+    <string name="status_searching">ਖੋਜ ਰਿਹਾ ਹੈ ...</string>
+    <string name="status_unavailable">ਅਣਉਪਲਬਧ</string>
+    <string name="status_headphones">ਹੈੱਡਫੋਨ ਸੰਮਿਲਿਤ ਕਰੋ</string>
+    <string name="status_talk">Talk</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ਔਨ ਏਅਰ (ਮੂਕ ਕਰਨ ਲਈ ਦਬਾਓ)</string>
+    <string name="status_muted">ਮਿਊਟ ਕੀਤਾ ਗਿਆ (ਅਨਮਿਊਟ ਕਰਨ ਲਈ ਪ੍ਰੈਸ ਕਰੋ)</string>
+    <string name="status_no_wifi">ਕਿਰਪਾ ਕਰਕੇ WiFi ਨਾਲ ਕਨੈਕਟ ਕਰੋ</string>
+
+    <string name="channel_text">ਚੈਨਲ</string>
+    <string name="ch01_text">ਚੈਨਲ 1</string>
+    <string name="ch02_text">ਚੈਨਲ 2</string>
+    <string name="ch03_text">ਚੈਨਲ 3</string>
+    <string name="ch04_text">ਚੈਨਲ 4</string>
+    <string name="ch05_text">ਚੈਨਲ 5</string>
+    <string name="ch06_text">ਚੈਨਲ 6</string>
+    <string name="ch07_text">ਚੈਨਲ 7</string>
+    <string name="ch08_text">ਚੈਨਲ 8</string>
+    <string name="ch09_text">ਚੈਨਲ 9</string>
+    <string name="ch10_text">ਚੈਨਲ 10</string>
+
+    <string name="options_switch_TX">ਪ੍ਰਸਾਰਿਤ ਮੋਡ</string>
+    <string name="options_relay_TX">ਰੀਲੇਅ</string>
+    <string name="options_settings">ਸੈਟਿੰਗਾਂ</string>
+    <string name="options_about">ਇਸ ਬਾਰੇ ...</string>
+
+    <string name="gain_controls_title">ਲਾਭ ਬੂਸਟਰ</string>
+    <string name="gain_controls_max_gain_db_title">ਵੱਧ ਤੋਂ ਵੱਧ ਲਾਭ ਹਾਸਲ ਕਰੋ</string>
+    <string name="gain_controls_increase_db_per_second">ਪ੍ਰਾਪਤੀ ਪ੍ਰਤੀ ਸਕਿੰਟ</string>
+    <string name="gain_controls_hold_time">ਪੀਕ ਸੀਮਾ ਨੂੰ ਰੋਕਣ ਦਾ ਸਮਾਂ</string>
+
+    <string name="network_controls_title">ਨੈੱਟਵਰਕ</string>
+    <string name="network_controls_packet_redundancy">ਪੈਕੇਟ ਰਿਡੰਡਸੀ</string>
+
+    <string name="app_description">ਸਥਾਨਕ ਵਾਈ-ਫਾਈ ਤੋਂ ਮਲਟੀਕਾਸਟ ਅਨੁਵਾਦ</string>
+    <string name="app_credits">ਬ੍ਰਹਮਾ ਕੁਮਾਰਸ ਲੰਡਨ ਆਈ ਟੀ ਟੀਮ</string>
+
+    <string name="perms_alert_test">ਕਿਰਪਾ ਕਰਕੇ ਬ੍ਰੌਡਕਾਸਟ ਨੂੰ ਸਮਰੱਥ ਕਰਨ ਲਈ ਐਪ ਅਨੁਮਤੀਆਂ ਵਿੱਚ ਮਾਈਕ੍ਰੋਫੋਨ ਅਨੁਮਤੀ ਸਮਰੱਥ ਕਰੋ</string>
+    <string name="multicast_alert">ਬਦਕਿਸਮਤੀ ਨਾਲ ਇਸ ਜੰਤਰ ਵਿੱਚ ਲੀਨਕਸ ਕਰਨਲ ਸੰਰਚਨਾ ਵਿੱਚ ਮਲਟੀਕਾਸਟ ਸਮਰਥਿਤ ਨਹੀਂ ਹੈ</string>
+</resources>

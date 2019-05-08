@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi Translation</string>
+    <string name="channel_display_prefix">Saluran</string>
+    <string name="relay_channel_display_prefix">Relay</string>
+    <string name="status">Ora kasedhiya</string>
+    <string name="channel_button_text">Pilih</string>
+    <string name="relay_channel_button_text">Relay</string>
+    <string name="stop_button_text">Mungkasi</string>
+
+    <string name="status_rx_start">Mulai</string>
+    <string name="status_tx_start">Broadcast</string>
+    <string name="status_searching">Nggolek ...</string>
+    <string name="status_unavailable">Ora kasedhiya</string>
+    <string name="status_headphones">Pasang headphone</string>
+    <string name="status_talk">Dhiskusi</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Pencet kanggo bisu)</string>
+    <string name="status_muted">Muted (Pencet kanggo unmute)</string>
+    <string name="status_no_wifi">Mangga nyambung menyang WiFi</string>
+
+    <string name="channel_text">Saluran</string>
+    <string name="ch01_text">Saluran 1</string>
+    <string name="ch02_text">Saluran 2</string>
+    <string name="ch03_text">Saluran 3</string>
+    <string name="ch04_text">Kanal 4</string>
+    <string name="ch05_text">Saluran 5</string>
+    <string name="ch06_text">Saluran 6</string>
+    <string name="ch07_text">Saluran 7</string>
+    <string name="ch08_text">Saluran 8</string>
+    <string name="ch09_text">Saluran 9</string>
+    <string name="ch10_text">Saluran 10</string>
+
+    <string name="options_switch_TX">Ngirim mode</string>
+    <string name="options_relay_TX">Relay</string>
+    <string name="options_settings">Setelan</string>
+    <string name="options_about">Babagan ...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maksimum ngedongkrak</string>
+    <string name="gain_controls_increase_db_per_second">Gain tambah per detik</string>
+    <string name="gain_controls_hold_time">Watesan maksimum tetep</string>
+
+    <string name="network_controls_title">Jaringan</string>
+    <string name="network_controls_packet_redundancy">Paket redundansi</string>
+
+    <string name="app_description">Terjemahan multicast liwat Wi-Fi lokal</string>
+    <string name="app_credits">Brahma Kumaris London IT team</string>
+
+    <string name="perms_alert_test">Mangga ngaktifake idin Mikropon ing Ijin Aplikasi kanggo ngaktifake Broadcast</string>
+    <string name="multicast_alert">Sayange, piranti iki ora duwe fungsi multicast ing konfigurasi kernel Linux</string>
+</resources>

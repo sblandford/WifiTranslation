@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi Translation</string>
+    <string name="channel_display_prefix">Суваг</string>
+    <string name="relay_channel_display_prefix">Рела</string>
+    <string name="status">Боломжгүй</string>
+    <string name="channel_button_text">Сонгох</string>
+    <string name="relay_channel_button_text">Рела</string>
+    <string name="stop_button_text">Зогс</string>
+
+    <string name="status_rx_start">Эхлээд</string>
+    <string name="status_tx_start">Өргөн нэвтрүүлэг</string>
+    <string name="status_searching">Хайж байна ...</string>
+    <string name="status_unavailable">Боломжгүй</string>
+    <string name="status_headphones">Чихэвч оруулах</string>
+    <string name="status_talk">Яриа</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">АГААРЫН ДУУД (чимээгүй болгохын тулд дарна уу)</string>
+    <string name="status_muted">Хурдасгасан (Товчлохын тулд дарна уу)</string>
+    <string name="status_no_wifi">WiFi рүү холбогдоно уу</string>
+
+    <string name="channel_text">Суваг</string>
+    <string name="ch01_text">1-р суваг</string>
+    <string name="ch02_text">2-р суваг</string>
+    <string name="ch03_text">3-р суваг</string>
+    <string name="ch04_text">4-р суваг</string>
+    <string name="ch05_text">5-р суваг</string>
+    <string name="ch06_text">6-р суваг</string>
+    <string name="ch07_text">7-р суваг</string>
+    <string name="ch08_text">8-р суваг</string>
+    <string name="ch09_text">9-р суваг</string>
+    <string name="ch10_text">10-р суваг</string>
+
+    <string name="options_switch_TX">Дамжуулах горим</string>
+    <string name="options_relay_TX">Рела</string>
+    <string name="options_settings">Тохиргоо</string>
+    <string name="options_about">Тухай ...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Хамгийн их ашиг олно</string>
+    <string name="gain_controls_increase_db_per_second">Секундэд нэмэгдэнэ</string>
+    <string name="gain_controls_hold_time">Оргил хязгаарыг барих хугацаа</string>
+
+    <string name="network_controls_title">Сүлжээ</string>
+    <string name="network_controls_packet_redundancy">Пакет давтамж</string>
+
+    <string name="app_description">Орон нутгийн Wi-Fi-ээр олон хэл дээрх орчуулга</string>
+    <string name="app_credits">Брахма Кумарис Лондонгийн IT-ийн баг</string>
+
+    <string name="perms_alert_test">Broadcast-г идэвхжүүлэхийн тулд Апп зөвшөөрлийг Микрофон зөвшөөрлийг идэвхжүүлнэ үү</string>
+    <string name="multicast_alert">Харамсалтай нь энэ төхөөрөмж нь Linux цөмийн тохиргоонд multicast-г идэвхжүүлээгүй байдаг</string>
+</resources>

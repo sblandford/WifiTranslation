@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi Eadar-theangachadh</string>
+    <string name="channel_display_prefix">Sianal</string>
+    <string name="relay_channel_display_prefix">Relay</string>
+    <string name="status">Gun ri fhaighinn</string>
+    <string name="channel_button_text">Tagh</string>
+    <string name="relay_channel_button_text">Relay</string>
+    <string name="stop_button_text">Stad</string>
+
+    <string name="status_rx_start">Tòisich</string>
+    <string name="status_tx_start">Air a chraoladh</string>
+    <string name="status_searching">A ’rannsachadh ...</string>
+    <string name="status_unavailable">Gun ri fhaighinn</string>
+    <string name="status_headphones">Cuir fònaichean-cluaise ann</string>
+    <string name="status_talk">Bruidhinn</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Press to mute)</string>
+    <string name="status_muted">Gòrach</string>
+    <string name="status_no_wifi">Dèan ceangal ri WiFi</string>
+
+    <string name="channel_text">Sianal</string>
+    <string name="ch01_text">Sianal 1</string>
+    <string name="ch02_text">Sianal 2</string>
+    <string name="ch03_text">Sianal 3</string>
+    <string name="ch04_text">Sianal 4</string>
+    <string name="ch05_text">Sianal 5</string>
+    <string name="ch06_text">Sianal 6</string>
+    <string name="ch07_text">Sianal 7</string>
+    <string name="ch08_text">Sianal 8</string>
+    <string name="ch09_text">Sianal 9</string>
+    <string name="ch10_text">Sianal 10</string>
+
+    <string name="options_switch_TX">Modh sgaoilidh</string>
+    <string name="options_relay_TX">Relay</string>
+    <string name="options_settings">Roghainnean</string>
+    <string name="options_about">Mu dheidhinn ...</string>
+
+    <string name="gain_controls_title">Cuir ris a \'bhuannachd</string>
+    <string name="gain_controls_max_gain_db_title">Àrd-bhuannachd airson àrdachadh</string>
+    <string name="gain_controls_increase_db_per_second">Àrdachadh air àrdachadh gach diog</string>
+    <string name="gain_controls_hold_time">Cumar ùine gun stad</string>
+
+    <string name="network_controls_title">Lìonra</string>
+    <string name="network_controls_packet_redundancy">A ’cur às do phacaid</string>
+
+    <string name="app_description">Eadar-theangachadh ioma-raon tro Wi-Fi ionadail</string>
+    <string name="app_credits">Brahma Kumaris Lunnainn sgioba IT</string>
+
+    <string name="perms_alert_test">Cuir air chomas cead a ’Mhicrophone ann an App Permissions a dhèanamh gus am faighear air Craoladh</string>
+    <string name="multicast_alert">Gu mì-fhortanach, chan eil ioma-chrann air a chuir air an inneal seo ann an rèiteachadh na h-eithne Linux</string>
+</resources>

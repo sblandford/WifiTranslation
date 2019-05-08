@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi Tradiksyon</string>
+    <string name="channel_display_prefix">Chèn</string>
+    <string name="relay_channel_display_prefix">Relè</string>
+    <string name="status">Disponib</string>
+    <string name="channel_button_text">Chwazi</string>
+    <string name="relay_channel_button_text">Relè</string>
+    <string name="stop_button_text">One Stop</string>
+
+    <string name="status_rx_start">Kòmanse</string>
+    <string name="status_tx_start">Emisyon</string>
+    <string name="status_searching">Chache ...</string>
+    <string name="status_unavailable">Disponib</string>
+    <string name="status_headphones">Antre kas ekoutè</string>
+    <string name="status_talk">Pale</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">Sou lè (peze bèbè)</string>
+    <string name="status_muted">Soupilye (peze kalm)</string>
+    <string name="status_no_wifi">Tanpri konekte WiFi</string>
+
+    <string name="channel_text">Chèn</string>
+    <string name="ch01_text">Chèn 1</string>
+    <string name="ch02_text">Chèn 2</string>
+    <string name="ch03_text">Chèn 3</string>
+    <string name="ch04_text">Chèn 4</string>
+    <string name="ch05_text">Chèn 5</string>
+    <string name="ch06_text">Chèn 6</string>
+    <string name="ch07_text">Chèn 7</string>
+    <string name="ch08_text">Chèn 8</string>
+    <string name="ch09_text">Chèn 9</string>
+    <string name="ch10_text">Chèn 10</string>
+
+    <string name="options_switch_TX">Transmèt mòd</string>
+    <string name="options_relay_TX">Relè</string>
+    <string name="options_settings">Anviwònman</string>
+    <string name="options_about">About ...</string>
+
+    <string name="gain_controls_title">Akeri rapèl</string>
+    <string name="gain_controls_max_gain_db_title">Maksimòm ogmantasyon akeri</string>
+    <string name="gain_controls_increase_db_per_second">Ogmante ogmantasyon pou chak dezyèm</string>
+    <string name="gain_controls_hold_time">Peak limit kenbe tan</string>
+
+    <string name="network_controls_title">Rezo</string>
+    <string name="network_controls_packet_redundancy">Redondans pake</string>
+
+    <string name="app_description">Tradiksyon multikast sou lokal Wi-Fi</string>
+    <string name="app_credits">Brahma Kumaris London IT ekip</string>
+
+    <string name="perms_alert_test">Tanpri pèmèt pèmisyon an Mikwo nan App Otorizasyon yo pèmèt Difizyon</string>
+    <string name="multicast_alert">Malerezman aparèy sa a pa gen multikast pèmèt nan configuration Linux du</string>
+</resources>

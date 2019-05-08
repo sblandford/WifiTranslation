@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi Translation</string>
+    <string name="channel_display_prefix">Channel</string>
+    <string name="relay_channel_display_prefix">Relay</string>
+    <string name="status">Hindi magagamit</string>
+    <string name="channel_button_text">Piliin ang</string>
+    <string name="relay_channel_button_text">Relay</string>
+    <string name="stop_button_text">Itigil</string>
+
+    <string name="status_rx_start">Magsimula</string>
+    <string name="status_tx_start">Broadcast</string>
+    <string name="status_searching">Naghahanap ...</string>
+    <string name="status_unavailable">Hindi magagamit</string>
+    <string name="status_headphones">Magsingit ng mga headphone</string>
+    <string name="status_talk">Makipag-usap</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">SA AIR (Pindutin ang mute)</string>
+    <string name="status_muted">Muted (Pindutin ang upang i-unmute)</string>
+    <string name="status_no_wifi">Mangyaring kumonekta sa WiFi</string>
+
+    <string name="channel_text">Channel</string>
+    <string name="ch01_text">Channel 1</string>
+    <string name="ch02_text">Channel 2</string>
+    <string name="ch03_text">Channel 3</string>
+    <string name="ch04_text">Channel 4</string>
+    <string name="ch05_text">Channel 5</string>
+    <string name="ch06_text">Channel 6</string>
+    <string name="ch07_text">Channel 7</string>
+    <string name="ch08_text">Channel 8</string>
+    <string name="ch09_text">Channel 9</string>
+    <string name="ch10_text">Channel 10</string>
+
+    <string name="options_switch_TX">Ipadala ang mode</string>
+    <string name="options_relay_TX">Relay</string>
+    <string name="options_settings">Mga Setting</string>
+    <string name="options_about">Tungkol sa ...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maximum Gain Boost</string>
+    <string name="gain_controls_increase_db_per_second">Makakuha ng pagtaas sa bawat segundo</string>
+    <string name="gain_controls_hold_time">Ang limitasyon ng peak ay may oras</string>
+
+    <string name="network_controls_title">Network</string>
+    <string name="network_controls_packet_redundancy">Packet redundancy</string>
+
+    <string name="app_description">Multicast translation sa lokal na Wi-Fi</string>
+    <string name="app_credits">Brahma Kumaris London IT team</string>
+
+    <string name="perms_alert_test">Mangyaring paganahin ang pahintulot ng Mikropono sa Mga Pahintulot ng App upang paganahin ang Broadcast</string>
+    <string name="multicast_alert">Sa kasamaang palad ang aparatong ito ay walang pinagana ng multicast sa pagsasaayos ng kernel ng Linux</string>
+</resources>

@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi tulkošana</string>
+    <string name="channel_display_prefix">Kanāls</string>
+    <string name="relay_channel_display_prefix">Relejs</string>
+    <string name="status">Nav pieejams</string>
+    <string name="channel_button_text">Izvēlieties</string>
+    <string name="relay_channel_button_text">Relejs</string>
+    <string name="stop_button_text">Pārtraukt</string>
+
+    <string name="status_rx_start">Sākt</string>
+    <string name="status_tx_start">Apraide</string>
+    <string name="status_searching">Meklēšana...</string>
+    <string name="status_unavailable">Nav pieejams</string>
+    <string name="status_headphones">Ievietojiet austiņas</string>
+    <string name="status_talk">Runāt</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Nospiediet, lai izslēgtu)</string>
+    <string name="status_muted">Izslēgts (nospiediet, lai izslēgtu)</string>
+    <string name="status_no_wifi">Lūdzu, izveidojiet savienojumu ar WiFi</string>
+
+    <string name="channel_text">Kanāls</string>
+    <string name="ch01_text">1. kanāls</string>
+    <string name="ch02_text">2. kanāls</string>
+    <string name="ch03_text">3. kanāls</string>
+    <string name="ch04_text">4. kanāls</string>
+    <string name="ch05_text">5. kanāls</string>
+    <string name="ch06_text">6. kanāls</string>
+    <string name="ch07_text">7. kanāls</string>
+    <string name="ch08_text">8. kanāls</string>
+    <string name="ch09_text">9. kanāls</string>
+    <string name="ch10_text">10. kanāls</string>
+
+    <string name="options_switch_TX">Pārraides režīms</string>
+    <string name="options_relay_TX">Relejs</string>
+    <string name="options_settings">Iestatījumi</string>
+    <string name="options_about">Par ...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maksimālais palielinājuma palielinājums</string>
+    <string name="gain_controls_increase_db_per_second">Iegūt pieaugumu sekundē</string>
+    <string name="gain_controls_hold_time">Maksimālais ierobežošanas laiks</string>
+
+    <string name="network_controls_title">Tīkls</string>
+    <string name="network_controls_packet_redundancy">Pakešu atlaišana</string>
+
+    <string name="app_description">Multicast tulkošana vietējā Wi-Fi tīklā</string>
+    <string name="app_credits">Brahma Kumaris Londonas IT komanda</string>
+
+    <string name="perms_alert_test">Lai iespējotu apraidi, iespējojiet lietojumprogrammu atļaujā norādīto mikrofonu atļauju</string>
+    <string name="multicast_alert">Diemžēl šajā ierīcē Linux kodola konfigurācijā nav iespējota multicast</string>
+</resources>

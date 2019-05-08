@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Μετάφραση Wifi</string>
+    <string name="channel_display_prefix">Κανάλι</string>
+    <string name="relay_channel_display_prefix">Αναμετάδοση</string>
+    <string name="status">Μη ΔΙΑΘΕΣΙΜΟΣ</string>
+    <string name="channel_button_text">Επιλέγω</string>
+    <string name="relay_channel_button_text">Αναμετάδοση</string>
+    <string name="stop_button_text">Να σταματήσει</string>
+
+    <string name="status_rx_start">Αρχή</string>
+    <string name="status_tx_start">Αναμετάδοση</string>
+    <string name="status_searching">Ερευνητικός...</string>
+    <string name="status_unavailable">Μη ΔΙΑΘΕΣΙΜΟΣ</string>
+    <string name="status_headphones">Τοποθετήστε τα ακουστικά</string>
+    <string name="status_talk">ΜΙΛΑ ρε</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Πατήστε για σίγαση)</string>
+    <string name="status_muted">Σίγαση (Πατήστε για να απενεργοποιήσετε)</string>
+    <string name="status_no_wifi">Συνδεθείτε στο WiFi</string>
+
+    <string name="channel_text">Κανάλι</string>
+    <string name="ch01_text">Κανάλι 1</string>
+    <string name="ch02_text">Κανάλι 2</string>
+    <string name="ch03_text">Κανάλι 3</string>
+    <string name="ch04_text">Κανάλι 4</string>
+    <string name="ch05_text">Κανάλι 5</string>
+    <string name="ch06_text">Κανάλι 6</string>
+    <string name="ch07_text">Κανάλι 7</string>
+    <string name="ch08_text">Κανάλι 8</string>
+    <string name="ch09_text">Κανάλι 9</string>
+    <string name="ch10_text">Κανάλι 10</string>
+
+    <string name="options_switch_TX">Λειτουργία μετάδοσης</string>
+    <string name="options_relay_TX">Αναμετάδοση</string>
+    <string name="options_settings">Ρυθμίσεις</string>
+    <string name="options_about">Σχετικά με...</string>
+
+    <string name="gain_controls_title">Αποκτήστε ενισχυτή</string>
+    <string name="gain_controls_max_gain_db_title">Μέγιστη αύξηση κέρδους</string>
+    <string name="gain_controls_increase_db_per_second">Αύξηση κέρδους ανά δευτερόλεπτο</string>
+    <string name="gain_controls_hold_time">Όριο αιχμής αιχμής</string>
+
+    <string name="network_controls_title">Δίκτυο</string>
+    <string name="network_controls_packet_redundancy">Επαναφορά πακέτων</string>
+
+    <string name="app_description">Μετάφραση πολυλειτουργικού δικτύου μέσω τοπικού Wi-Fi</string>
+    <string name="app_credits">Ομάδα Brahma Kumaris του Λονδίνου</string>
+
+    <string name="perms_alert_test">Ενεργοποιήστε την άδεια μικροφώνου στα δικαιώματα χρήσης App για να ενεργοποιήσετε την εκπομπή</string>
+    <string name="multicast_alert">Δυστυχώς, αυτή η συσκευή δεν έχει ενεργοποιημένη την πολυεκπομπή στη διαμόρφωση του πυρήνα του Linux</string>
+</resources>

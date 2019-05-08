@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">وائيفي ترجمو</string>
+    <string name="channel_display_prefix">چئنل</string>
+    <string name="relay_channel_display_prefix">رلي</string>
+    <string name="status">دستياب ناهي</string>
+    <string name="channel_button_text">چونڊيو</string>
+    <string name="relay_channel_button_text">رلي</string>
+    <string name="stop_button_text">رکو</string>
+
+    <string name="status_rx_start">شروع ڪيو</string>
+    <string name="status_tx_start">براڊلينڊ</string>
+    <string name="status_searching">ڳولها پيو ...</string>
+    <string name="status_unavailable">دستياب ناهي</string>
+    <string name="status_headphones">ہیڈفون داخل ڪريو</string>
+    <string name="status_talk">ڳالهايو</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">پر ايئر (پريس کي دٻايو)</string>
+    <string name="status_muted">خاموش (پريس کي انٽميو)</string>
+    <string name="status_no_wifi">مهرباني ڪري وائي فني سان رابطو ڪريو</string>
+
+    <string name="channel_text">چئنل</string>
+    <string name="ch01_text">چينل 1</string>
+    <string name="ch02_text">چينل 2</string>
+    <string name="ch03_text">چينل 3</string>
+    <string name="ch04_text">چينل 4</string>
+    <string name="ch05_text">چينل 5</string>
+    <string name="ch06_text">چينل 6</string>
+    <string name="ch07_text">چينل 7</string>
+    <string name="ch08_text">چينل 8</string>
+    <string name="ch09_text">چينل 9</string>
+    <string name="ch10_text">چينل 10</string>
+
+    <string name="options_switch_TX">منتقلي جو طريقو</string>
+    <string name="options_relay_TX">رلي</string>
+    <string name="options_settings">سيٽنگون</string>
+    <string name="options_about">بابت ...</string>
+
+    <string name="gain_controls_title">گين بوسٹر</string>
+    <string name="gain_controls_max_gain_db_title">وڌ ۾ وڌ ڌيان جو فروغ</string>
+    <string name="gain_controls_increase_db_per_second">ماڻهون في سيڪنڊ وڌائي</string>
+    <string name="gain_controls_hold_time">چوٽي جي حد لڳائي وئي</string>
+
+    <string name="network_controls_title">نيٽورڪ</string>
+    <string name="network_controls_packet_redundancy">پيچري لالچ</string>
+
+    <string name="app_description">مقامي وائي فائي کان وڌيڪ ترجمو</string>
+    <string name="app_credits">برهمما ڪلميز لنڊن آئي ٽي ٽيم</string>
+
+    <string name="perms_alert_test">براڊڪاسٽ کي فعال ڪرڻ لاء مهرباني ڪري ايڪس جي اجازت ۾ مائڪروفونفون جي اجازت چالو ڪريو</string>
+    <string name="multicast_alert">بدقسمتي سان هي ڊوائيس لينڪس ڪيليلي ترتيبن ۾ گھڻائي جي قابل نه آهي</string>
+</resources>

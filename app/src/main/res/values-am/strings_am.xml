@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi Translation</string>
+    <string name="channel_display_prefix">ሰርጥ</string>
+    <string name="relay_channel_display_prefix">Relay</string>
+    <string name="status">አይገኝም</string>
+    <string name="channel_button_text">ይምረጡ</string>
+    <string name="relay_channel_button_text">Relay</string>
+    <string name="stop_button_text">ተወ</string>
+
+    <string name="status_rx_start">ይጀምሩ</string>
+    <string name="status_tx_start">ማሰራጫ</string>
+    <string name="status_searching">በመፈለግ ላይ ...</string>
+    <string name="status_unavailable">አይገኝም</string>
+    <string name="status_headphones">የጆሮ ማዳመጫዎች ያስገቡ</string>
+    <string name="status_talk">ይነጋገሩ</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">በአየር ላይ (ድምጸ-ከል ለማድረግ ይጫኑ)</string>
+    <string name="status_muted">ድምጸ-ከል ተደርጎ (ድምጸ-ከል ለማንሳት ይጫኑ)</string>
+    <string name="status_no_wifi">እባክዎ ከ WiFi ጋር ይገናኙ</string>
+
+    <string name="channel_text">ሰርጥ</string>
+    <string name="ch01_text">ጣቢያ 1</string>
+    <string name="ch02_text">ሰርጥ 2</string>
+    <string name="ch03_text">ሰርጥ 3</string>
+    <string name="ch04_text">ሰርጥ 4</string>
+    <string name="ch05_text">ሰርጥ 5</string>
+    <string name="ch06_text">ሰርጥ 6</string>
+    <string name="ch07_text">ሰርጥ 7</string>
+    <string name="ch08_text">ሰርጥ 8</string>
+    <string name="ch09_text">ሰርጥ 9</string>
+    <string name="ch10_text">ጣቢያ 10</string>
+
+    <string name="options_switch_TX">የማስተላለፍ ሁነታ</string>
+    <string name="options_relay_TX">Relay</string>
+    <string name="options_settings">ቅንብሮች</string>
+    <string name="options_about">ስለ ...</string>
+
+    <string name="gain_controls_title">ማበረታቻ ያግኙ</string>
+    <string name="gain_controls_max_gain_db_title">ከፍተኛ የገንዝብ ማጠንከሪያ</string>
+    <string name="gain_controls_increase_db_per_second">በሰከንድ ይጨምሩት</string>
+    <string name="gain_controls_hold_time">ከፍተኛውን ጊዜ የሚቆይበት ጊዜ</string>
+
+    <string name="network_controls_title">አውታረ መረብ</string>
+    <string name="network_controls_packet_redundancy">የጥቅል ድግግሞሽ</string>
+
+    <string name="app_description">በአካባቢያዊ Wi-Fi ላይ ብዙ ቃል ትርጉምን</string>
+    <string name="app_credits">ብራሃማ ክላሪስ የለንደን ቴክኖሎጂ ቡድን</string>
+
+    <string name="perms_alert_test">ስርጭትን ለማንቃት እባክዎ እባክዎ በመተግበሪያ ፍቃዶች ውስጥ የማይክሮፎን ፈቃድን ያንቁ</string>
+    <string name="multicast_alert">የአጋጣሚ ነገር ሆኖ ይህ መሳሪያ በበርካታ የሊነል ኩኪ ውቅር ውስጥ ብዝሃ-ስርዓቶች አልነበሩም</string>
+</resources>

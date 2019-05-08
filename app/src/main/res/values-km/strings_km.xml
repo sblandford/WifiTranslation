@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">ការបកប្រែវ៉ាយហ្វាយ</string>
+    <string name="channel_display_prefix">ឆានែល</string>
+    <string name="relay_channel_display_prefix">ការបញ្ជូន</string>
+    <string name="status">មិនអាចប្រើបាន</string>
+    <string name="channel_button_text">ជ្រើសរើស</string>
+    <string name="relay_channel_button_text">ការបញ្ជូន</string>
+    <string name="stop_button_text">បញ្ឈប់</string>
+
+    <string name="status_rx_start">ចាប់ផ្តើម</string>
+    <string name="status_tx_start">ចាក់ផ្សាយ</string>
+    <string name="status_searching">កំពុងស្វែងរក ...</string>
+    <string name="status_unavailable">មិនអាចប្រើបាន</string>
+    <string name="status_headphones">បញ្ចូលកាស</string>
+    <string name="status_talk">និយាយ</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">បើកខ្យល់ (ចុចដើម្បីបិទសម្លេង)</string>
+    <string name="status_muted">បានបិទសំឡេង (ចុចដើម្បីបើកសម្លេង)</string>
+    <string name="status_no_wifi">សូមភ្ជាប់វ៉ាយហ្វាយ</string>
+
+    <string name="channel_text">ឆានែល</string>
+    <string name="ch01_text">ឆានែល 1</string>
+    <string name="ch02_text">ឆានែល 2</string>
+    <string name="ch03_text">ឆានែល 3</string>
+    <string name="ch04_text">ឆានែល 4</string>
+    <string name="ch05_text">ឆានែល 5</string>
+    <string name="ch06_text">ឆានែល 6</string>
+    <string name="ch07_text">ឆានែល 7</string>
+    <string name="ch08_text">ឆានែល 8</string>
+    <string name="ch09_text">ឆានែល 9</string>
+    <string name="ch10_text">ឆានែល 10</string>
+
+    <string name="options_switch_TX">បញ្ជូនរបៀប</string>
+    <string name="options_relay_TX">ការបញ្ជូន</string>
+    <string name="options_settings">ការកំណត់</string>
+    <string name="options_about">អំពី ...</string>
+
+    <string name="gain_controls_title">ទទួលបានរំឭក</string>
+    <string name="gain_controls_max_gain_db_title">ការបង្កើនចំណេញអតិបរមា</string>
+    <string name="gain_controls_increase_db_per_second">ទទួលបានការកើនឡើងក្នុងមួយវិនាទី</string>
+    <string name="gain_controls_hold_time">កំណត់ពេលវេលាខ្ពស់បំផុត</string>
+
+    <string name="network_controls_title">បណ្តាញ</string>
+    <string name="network_controls_packet_redundancy">ការលែងត្រូវការកញ្ចប់</string>
+
+    <string name="app_description">បកប្រែម៉ាល់ធីខាសលើវ៉ាយហ្វាយក្នុងស្រុក</string>
+    <string name="app_credits">Brahma Kumaris London IT team</string>
+
+    <string name="perms_alert_test">សូមបើកសិទ្ធិមីក្រូហ្វូននៅក្នុងការអនុញ្ញាតកម្មវិធីដើម្បីបើកការផ្សាយ</string>
+    <string name="multicast_alert">ជាអកុសលឧបករណ៍នេះមិនមាន multicast ទេដែលត្រូវបានបើកនៅក្នុងការកំណត់រចនាសម្ព័ន្ធខឺណែលលីនុច</string>
+</resources>

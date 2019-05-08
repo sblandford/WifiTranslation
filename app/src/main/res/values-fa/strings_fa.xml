@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">ترجمه فای</string>
+    <string name="channel_display_prefix">کانال</string>
+    <string name="relay_channel_display_prefix">رله</string>
+    <string name="status">در دسترس نیست</string>
+    <string name="channel_button_text">انتخاب کنید</string>
+    <string name="relay_channel_button_text">رله</string>
+    <string name="stop_button_text">متوقف کردن</string>
+
+    <string name="status_rx_start">شروع کنید</string>
+    <string name="status_tx_start">پخش</string>
+    <string name="status_searching">جستجوکردن...</string>
+    <string name="status_unavailable">در دسترس نیست</string>
+    <string name="status_headphones">قرار دادن هدفون</string>
+    <string name="status_talk">صحبت</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (برای خاموش کردن فشار دهید)</string>
+    <string name="status_muted">خاموش (برای خاموش کردن فشار دهید)</string>
+    <string name="status_no_wifi">لطفا به فای وصل شوید</string>
+
+    <string name="channel_text">کانال</string>
+    <string name="ch01_text">کانال 1</string>
+    <string name="ch02_text">کانال 2</string>
+    <string name="ch03_text">کانال 3</string>
+    <string name="ch04_text">کانال 4</string>
+    <string name="ch05_text">کانال 5</string>
+    <string name="ch06_text">کانال 6</string>
+    <string name="ch07_text">کانال 7</string>
+    <string name="ch08_text">کانال 8</string>
+    <string name="ch09_text">کانال 9</string>
+    <string name="ch10_text">کانال 10</string>
+
+    <string name="options_switch_TX">حالت انتقال</string>
+    <string name="options_relay_TX">رله</string>
+    <string name="options_settings">تنظیمات</string>
+    <string name="options_about">در باره...</string>
+
+    <string name="gain_controls_title">افزایش تقویت کننده</string>
+    <string name="gain_controls_max_gain_db_title">افزایش حداکثر افزایش</string>
+    <string name="gain_controls_increase_db_per_second">افزایش در هر ثانیه افزایش می یابد</string>
+    <string name="gain_controls_hold_time">حداکثر محدود کردن زمان نگهداری</string>
+
+    <string name="network_controls_title">شبکه</string>
+    <string name="network_controls_packet_redundancy">افزونگی بسته</string>
+
+    <string name="app_description">ترجمه چندرسانه ای بیش از Wi-Fi محلی</string>
+    <string name="app_credits">Brahma Kumaris تیم IT لندن</string>
+
+    <string name="perms_alert_test">لطفا اجازه دسترسی میکروفون را در مجوز برنامه برای فعال کردن پخش را فعال کنید</string>
+    <string name="multicast_alert">متاسفانه این دستگاه چندپخشی را در پیکربندی کرنل لینوکس فعال نمی کند</string>
+</resources>

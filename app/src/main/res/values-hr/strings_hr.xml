@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Wifi prijevod</string>
+    <string name="channel_display_prefix">Kanal</string>
+    <string name="relay_channel_display_prefix">Relej</string>
+    <string name="status">nedostupan</string>
+    <string name="channel_button_text">Odaberi</string>
+    <string name="relay_channel_button_text">Relej</string>
+    <string name="stop_button_text">Stop</string>
+
+    <string name="status_rx_start">Početak</string>
+    <string name="status_tx_start">emitiranje</string>
+    <string name="status_searching">Tražim ...</string>
+    <string name="status_unavailable">nedostupan</string>
+    <string name="status_headphones">Umetnite slušalice</string>
+    <string name="status_talk">Razgovor</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Pritisni za isključivanje)</string>
+    <string name="status_muted">Isključeno (pritisnite za uključivanje zvuka)</string>
+    <string name="status_no_wifi">Povežite se na WiFi</string>
+
+    <string name="channel_text">Kanal</string>
+    <string name="ch01_text">1. kanal</string>
+    <string name="ch02_text">Kanal 2</string>
+    <string name="ch03_text">3. kanal</string>
+    <string name="ch04_text">Kanal 4</string>
+    <string name="ch05_text">Kanal 5</string>
+    <string name="ch06_text">Kanal 6</string>
+    <string name="ch07_text">Kanal 7</string>
+    <string name="ch08_text">Kanal 8</string>
+    <string name="ch09_text">Kanal 9</string>
+    <string name="ch10_text">Kanal 10</string>
+
+    <string name="options_switch_TX">Način prijenosa</string>
+    <string name="options_relay_TX">Relej</string>
+    <string name="options_settings">postavke</string>
+    <string name="options_about">Oko...</string>
+
+    <string name="gain_controls_title">Gain Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maksimalno pojačanje pojačanja</string>
+    <string name="gain_controls_increase_db_per_second">Povećanje pojačanja u sekundi</string>
+    <string name="gain_controls_hold_time">Maksimalno ograničenje vremena zadržavanja</string>
+
+    <string name="network_controls_title">Mreža</string>
+    <string name="network_controls_packet_redundancy">Redundantnost paketa</string>
+
+    <string name="app_description">Multicast prijevod preko lokalne Wi-Fi mreže</string>
+    <string name="app_credits">Brahma Kumaris London IT tim</string>
+
+    <string name="perms_alert_test">Omogućite dozvolu za mikrofon u dozvolama aplikacije da biste omogućili emitiranje</string>
+    <string name="multicast_alert">Nažalost, ovaj uređaj nema omogućenu multicast u konfiguraciji jezgre Linuxa</string>
+</resources>

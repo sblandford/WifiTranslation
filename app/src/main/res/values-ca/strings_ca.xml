@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Traducció Wifi</string>
+    <string name="channel_display_prefix">Canal</string>
+    <string name="relay_channel_display_prefix">Retransmissió</string>
+    <string name="status">No disponible</string>
+    <string name="channel_button_text">Seleccioneu</string>
+    <string name="relay_channel_button_text">Retransmissió</string>
+    <string name="stop_button_text">Stop</string>
+
+    <string name="status_rx_start">Començar</string>
+    <string name="status_tx_start">Difusió</string>
+    <string name="status_searching">S\'està cercant ...</string>
+    <string name="status_unavailable">No disponible</string>
+    <string name="status_headphones">Inseriu auriculars</string>
+    <string name="status_talk">Parli</string>
+    <string name="status_waiting" />
+    <string name="status_rx_run" />
+    <string name="status_mute">ON AIR (Premeu per silenciar)</string>
+    <string name="status_muted">Silenciat (premeu per silenciar)</string>
+    <string name="status_no_wifi">Connecteu-vos a WiFi</string>
+
+    <string name="channel_text">Canal</string>
+    <string name="ch01_text">Canal 1</string>
+    <string name="ch02_text">Canal 2</string>
+    <string name="ch03_text">Canal 3</string>
+    <string name="ch04_text">Canal 4</string>
+    <string name="ch05_text">Canal 5</string>
+    <string name="ch06_text">Canal 6</string>
+    <string name="ch07_text">Canal 7</string>
+    <string name="ch08_text">Canal 8</string>
+    <string name="ch09_text">Canal 9</string>
+    <string name="ch10_text">Canal 10</string>
+
+    <string name="options_switch_TX">Mode de transmissió</string>
+    <string name="options_relay_TX">Retransmissió</string>
+    <string name="options_settings">Configuració</string>
+    <string name="options_about">Quant a...</string>
+
+    <string name="gain_controls_title">Aconsegueix un reforç</string>
+    <string name="gain_controls_max_gain_db_title">Augment màxim del guany</string>
+    <string name="gain_controls_increase_db_per_second">Augment de guany per segon</string>
+    <string name="gain_controls_hold_time">Temps límit màxim</string>
+
+    <string name="network_controls_title">Xarxa</string>
+    <string name="network_controls_packet_redundancy">Redundància de paquets</string>
+
+    <string name="app_description">Traducció multicast sobre Wi-Fi local</string>
+    <string name="app_credits">Equip de TI de Brahma Kumaris a Londres</string>
+
+    <string name="perms_alert_test">Activeu el permís del micròfon als permisos d’aplicació per habilitar l’emissió</string>
+    <string name="multicast_alert">Malauradament, aquest dispositiu no té activada la multicast a la configuració del nucli Linux</string>
+</resources>
