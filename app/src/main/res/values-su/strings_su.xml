@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">relay</string>
     <string name="stop_button_text">Eureun</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">ngamimitian</string>
     <string name="status_tx_start">siaran</string>
     <string name="status_searching">Néangan ...</string>
     <string name="status_unavailable">sadia</string>
     <string name="status_headphones">Selapkeun headphone</string>
     <string name="status_talk">omongan</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON hawa (Pencet pikeun Ngajempékeun)</string>
-    <string name="status_muted">Muted (Pencet pikeun unmute)</string>
+    <string name="status_waiting">Ngantosan ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">bisu</string>
+    <string name="status_unmuted">ON hawa</string>
+    <string name="status_muted">muted</string>
+    <string name="status_unmute">Unmute</string>
     <string name="status_no_wifi">Mangga nyambung ka WiFi</string>
 
     <string name="channel_text">Saluran</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">setélan</string>
     <string name="options_about">Ngeunaan ...</string>
 
-    <string name="gain_controls_title">gain booster</string>
-    <string name="gain_controls_max_gain_db_title">Maksimum Gain naekeun</string>
-    <string name="gain_controls_increase_db_per_second">Mangtaun kanaékan per detik</string>
-    <string name="gain_controls_hold_time">Puncak waktos wates ditahan</string>
+    <string name="gain_controls_title">mikropon booster</string>
+    <string name="gain_controls_max_gain_db_title">Maksimum Mikropon naekeun</string>
+    <string name="gain_controls_increase_db_per_second">Mikropon dorongan kanaékan per detik</string>
+    <string name="gain_controls_hold_time">Puncak limiter waktos ditahan</string>
 
     <string name="network_controls_title">jaringan</string>
     <string name="network_controls_packet_redundancy">packet redundancy</string>

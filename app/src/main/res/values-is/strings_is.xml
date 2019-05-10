@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Hættu</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Byrja</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">Leita...</string>
     <string name="status_unavailable">Óþekkt</string>
     <string name="status_headphones">Settu heyrnartól í</string>
     <string name="status_talk">Tala</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">Á AIR (Ýttu á til að slökkva á)</string>
-    <string name="status_muted">Þrýstingur (ýttu á til að slökkva á)</string>
+    <string name="status_waiting">Bíður ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Slökktu á</string>
+    <string name="status_unmuted">Í LOFTINU</string>
+    <string name="status_muted">Þrýstingur</string>
+    <string name="status_unmute">Slökkva á</string>
     <string name="status_no_wifi">Vinsamlegast tengdu við WiFi</string>
 
     <string name="channel_text">Rás</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Stillingar</string>
     <string name="options_about">Um ...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Hámarksaukningin</string>
-    <string name="gain_controls_increase_db_per_second">Hækkun á sekúndu</string>
-    <string name="gain_controls_hold_time">Hámarkstími biðtíma</string>
+    <string name="gain_controls_title">Hljóðnemi</string>
+    <string name="gain_controls_max_gain_db_title">Hámarks hljóðnemi uppörvun</string>
+    <string name="gain_controls_increase_db_per_second">Hljóðnemi hækkun á sekúndu</string>
+    <string name="gain_controls_hold_time">Hámarksbindir halda tíma</string>
 
     <string name="network_controls_title">Net</string>
     <string name="network_controls_packet_redundancy">Pakkningafundur</string>

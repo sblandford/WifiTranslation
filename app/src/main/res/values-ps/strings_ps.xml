@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">ریل</string>
     <string name="stop_button_text">درېدل</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">پیل</string>
     <string name="status_tx_start">خپرونه</string>
     <string name="status_searching">لټون کول ...</string>
     <string name="status_unavailable">نشته</string>
     <string name="status_headphones">د غږفونونو داخلول</string>
     <string name="status_talk">خبرې اترې</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">هوا ته</string>
+    <string name="status_waiting">انتظار ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">مغز</string>
+    <string name="status_unmuted">په هوا کې</string>
     <string name="status_muted">مات شوی</string>
+    <string name="status_unmute">ړنګول</string>
     <string name="status_no_wifi">مهرباني وکړئ د وین فای سره اړیکه ونیسئ</string>
 
     <string name="channel_text">چینل</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">امستنې</string>
     <string name="options_about">په اړه ...</string>
 
-    <string name="gain_controls_title">د ګټونکي بوسٹر</string>
-    <string name="gain_controls_max_gain_db_title">د زیاتو لاسته راوړنو زیاتوالی</string>
-    <string name="gain_controls_increase_db_per_second">لاسته راوړنې په هر ثانوي کې زیاتوالي</string>
-    <string name="gain_controls_hold_time">د چوپړ محدودیت وخت نیسي</string>
+    <string name="gain_controls_title">د مایکروفون بورډ</string>
+    <string name="gain_controls_max_gain_db_title">د مايکروفون تر ټولو لوړ پوسټ</string>
+    <string name="gain_controls_increase_db_per_second">د مایکروفون وده په هر ثانیه کې زیاتوالی</string>
+    <string name="gain_controls_hold_time">د چپ محدودیت وخت نیسي</string>
 
     <string name="network_controls_title">شبکه</string>
     <string name="network_controls_packet_redundancy">د پکیټ بی ځایه کیدل</string>

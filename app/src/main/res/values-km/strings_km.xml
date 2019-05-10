@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">ការបញ្ជូន</string>
     <string name="stop_button_text">បញ្ឈប់</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">ចាប់ផ្តើម</string>
     <string name="status_tx_start">ចាក់ផ្សាយ</string>
     <string name="status_searching">កំពុងស្វែងរក ...</string>
     <string name="status_unavailable">មិនអាចប្រើបាន</string>
     <string name="status_headphones">បញ្ចូលកាស</string>
     <string name="status_talk">និយាយ</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">បើកខ្យល់ (ចុចដើម្បីបិទសម្លេង)</string>
-    <string name="status_muted">បានបិទសំឡេង (ចុចដើម្បីបើកសម្លេង)</string>
+    <string name="status_waiting">កំពុងរង់ចាំ ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">ផ្អាក</string>
+    <string name="status_unmuted">កំពុង​ផ្សាយ</string>
+    <string name="status_muted">បានបិទសំឡេង</string>
+    <string name="status_unmute">បើកសំលេង</string>
     <string name="status_no_wifi">សូមភ្ជាប់វ៉ាយហ្វាយ</string>
 
     <string name="channel_text">ឆានែល</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">ការកំណត់</string>
     <string name="options_about">អំពី ...</string>
 
-    <string name="gain_controls_title">ទទួលបានរំឭក</string>
-    <string name="gain_controls_max_gain_db_title">ការបង្កើនចំណេញអតិបរមា</string>
-    <string name="gain_controls_increase_db_per_second">ទទួលបានការកើនឡើងក្នុងមួយវិនាទី</string>
-    <string name="gain_controls_hold_time">កំណត់ពេលវេលាខ្ពស់បំផុត</string>
+    <string name="gain_controls_title">មីក្រូហ្វូនរំឭក</string>
+    <string name="gain_controls_max_gain_db_title">ការបង្កើនមីក្រូហ្វូនអតិបរមា</string>
+    <string name="gain_controls_increase_db_per_second">មីក្រូហ្វូនបង្កើនការកើនឡើងក្នុងមួយវិនាទី</string>
+    <string name="gain_controls_hold_time">អ្នកកំណត់កំរិតខ្ពស់រក្សាពេលវេលា</string>
 
     <string name="network_controls_title">បណ្តាញ</string>
     <string name="network_controls_packet_redundancy">ការលែងត្រូវការកញ្ចប់</string>

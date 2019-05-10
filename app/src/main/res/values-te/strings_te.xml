@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">రిలే</string>
     <string name="stop_button_text">ఆపు</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">ప్రారంభం</string>
     <string name="status_tx_start">ప్రసార</string>
     <string name="status_searching">శోధిస్తోంది ...</string>
     <string name="status_unavailable">అందుబాటులో</string>
     <string name="status_headphones">హెడ్ఫోన్స్ ఇన్సర్ట్ చెయ్యి</string>
     <string name="status_talk">చర్చ</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">AIR లో (మ్యూట్ చేయడానికి నొక్కండి)</string>
-    <string name="status_muted">మ్యూట్ చేయబడింది (అన్మ్యూట్ చేయడానికి ముద్రించు)</string>
+    <string name="status_waiting">వేచి ఉంది ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">మ్యూట్</string>
+    <string name="status_unmuted">గాలిలో</string>
+    <string name="status_muted">మ్యూట్</string>
+    <string name="status_unmute">మ్యూట్ని</string>
     <string name="status_no_wifi">దయచేసి WiFi కి కనెక్ట్ చేయండి</string>
 
     <string name="channel_text">ఛానల్</string>
@@ -36,9 +39,9 @@
     <string name="options_settings">సెట్టింగులు</string>
     <string name="options_about">గురించి ...</string>
 
-    <string name="gain_controls_title">లాభం booster</string>
-    <string name="gain_controls_max_gain_db_title">గరిష్ట లాభం బూస్ట్</string>
-    <string name="gain_controls_increase_db_per_second">సెకనుకు పెరుగుదల పెంచుకోండి</string>
+    <string name="gain_controls_title">మైక్రోఫోన్ బూస్టర్</string>
+    <string name="gain_controls_max_gain_db_title">గరిష్ట మైక్రోఫోన్ బూస్ట్</string>
+    <string name="gain_controls_increase_db_per_second">సెకనుకు మైక్రోఫోన్ ప్రోత్సాహక పెరుగుదల</string>
     <string name="gain_controls_hold_time">పీక్ పరిమితి సమయాన్ని కలిగి ఉంటుంది</string>
 
     <string name="network_controls_title">నెట్వర్క్</string>

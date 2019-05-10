@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Реле</string>
     <string name="stop_button_text">Стоп</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Начните</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">Поиск ...</string>
     <string name="status_unavailable">Недоступен</string>
     <string name="status_headphones">Вставьте наушники</string>
     <string name="status_talk">Говорить</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Нажмите, чтобы отключить звук)</string>
-    <string name="status_muted">Приглушенный (Нажмите, чтобы включить звук)</string>
+    <string name="status_waiting">Ожидание ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">безгласный</string>
+    <string name="status_unmuted">В ЭФИРЕ</string>
+    <string name="status_muted">приглушенный</string>
+    <string name="status_unmute">Unmute</string>
     <string name="status_no_wifi">Пожалуйста, подключитесь к WiFi</string>
 
     <string name="channel_text">канал</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">настройки</string>
     <string name="options_about">Около...</string>
 
-    <string name="gain_controls_title">Усиление усиления</string>
-    <string name="gain_controls_max_gain_db_title">Максимальное усиление усиления</string>
-    <string name="gain_controls_increase_db_per_second">Увеличение усиления в секунду</string>
-    <string name="gain_controls_hold_time">Время удержания пикового лимита</string>
+    <string name="gain_controls_title">Усилитель микрофона</string>
+    <string name="gain_controls_max_gain_db_title">Максимальное усиление микрофона</string>
+    <string name="gain_controls_increase_db_per_second">Увеличение усиления микрофона в секунду</string>
+    <string name="gain_controls_hold_time">Время удержания пикового ограничителя</string>
 
     <string name="network_controls_title">сеть</string>
     <string name="network_controls_packet_redundancy">Пакетная избыточность</string>

@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Sealaíocht</string>
     <string name="stop_button_text">Stad</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Tosaigh</string>
     <string name="status_tx_start">Craoladh</string>
     <string name="status_searching">Ag cuardach ...</string>
     <string name="status_unavailable">Níl sé ar fáil</string>
     <string name="status_headphones">Cuir cluasáin isteach</string>
     <string name="status_talk">Labhair</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Brúigh go balbh)</string>
-    <string name="status_muted">Muted (Brúigh go neamhdhíospóide)</string>
+    <string name="status_waiting">Ag feitheamh ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Mute</string>
+    <string name="status_unmuted">AR AIR</string>
+    <string name="status_muted">Muted</string>
+    <string name="status_unmute">Neamhchinnte</string>
     <string name="status_no_wifi">Déan teagmháil le do thoil le WiFi</string>
 
     <string name="channel_text">Cainéal</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Socruithe</string>
     <string name="options_about">Faoi...</string>
 
-    <string name="gain_controls_title">Gnóthachan teanndáileog</string>
-    <string name="gain_controls_max_gain_db_title">Treisiú ar Ghnóthachan Uasta</string>
-    <string name="gain_controls_increase_db_per_second">Méadaigh méadú in aghaidh an tsoicind</string>
-    <string name="gain_controls_hold_time">Coinníonn an teorainn buaic am</string>
+    <string name="gain_controls_title">Teanndáileog Micreafóin</string>
+    <string name="gain_controls_max_gain_db_title">Treisiú Microphone Uasmhéid</string>
+    <string name="gain_controls_increase_db_per_second">Méadú ar mhéadú micreafón in aghaidh an tsoicind</string>
+    <string name="gain_controls_hold_time">Coinníonn an buaicthráth am</string>
 
     <string name="network_controls_title">Líonra</string>
     <string name="network_controls_packet_redundancy">Iomarcaíocht phaicéad</string>

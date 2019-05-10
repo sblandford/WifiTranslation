@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">રિલે</string>
     <string name="stop_button_text">બંધ</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">શરૂઆત</string>
     <string name="status_tx_start">બ્રોડકાસ્ટ</string>
     <string name="status_searching">શોધી રહ્યું છે ...</string>
     <string name="status_unavailable">અનુપલબ્ધ</string>
     <string name="status_headphones">હેડફોન્સ શામેલ કરો</string>
     <string name="status_talk">વાત કરો</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">વાયુ પર (મ્યૂટ કરવા માટે દબાવો)</string>
-    <string name="status_muted">Muted (અનમ્યૂટ કરવા માટે દબાવો)</string>
+    <string name="status_waiting">રાહ જોઈ રહ્યું છે ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">મૌન</string>
+    <string name="status_unmuted">વાયુ પર</string>
+    <string name="status_muted">મુકિત</string>
+    <string name="status_unmute">નિષ્ક્રિય કરો</string>
     <string name="status_no_wifi">કૃપા કરીને વાઇફાઇથી કનેક્ટ કરો</string>
 
     <string name="channel_text">ચેનલ</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">સેટિંગ્સ</string>
     <string name="options_about">વિશે ...</string>
 
-    <string name="gain_controls_title">બૂસ્ટર મેળવો</string>
-    <string name="gain_controls_max_gain_db_title">મહત્તમ ગેઇન બૂસ્ટ</string>
-    <string name="gain_controls_increase_db_per_second">સેકન્ડ દીઠ ગેઇન વધારો</string>
-    <string name="gain_controls_hold_time">પીક મર્યાદા પકડી સમય</string>
+    <string name="gain_controls_title">માઇક્રોફોન બૂસ્ટર</string>
+    <string name="gain_controls_max_gain_db_title">મહત્તમ માઇક્રોફોન બુસ્ટ</string>
+    <string name="gain_controls_increase_db_per_second">સેકન્ડ દીઠ માઇક્રોફોન બુસ્ટ વધારો</string>
+    <string name="gain_controls_hold_time">પીક limiter સમય ધરાવે છે</string>
 
     <string name="network_controls_title">નેટવર્ક</string>
     <string name="network_controls_packet_redundancy">પેકેટ રિડન્ડન્સી</string>

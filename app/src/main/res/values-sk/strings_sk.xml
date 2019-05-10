@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">relé</string>
     <string name="stop_button_text">prestať</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">štart</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">Vyhľadávanie ...</string>
     <string name="status_unavailable">nedostupné</string>
     <string name="status_headphones">Vložte slúchadlá</string>
     <string name="status_talk">rozprávanie</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Stlačením vypnete zvuk)</string>
-    <string name="status_muted">Stlmenie (Stlačením tlačidla zapnete zvuk)</string>
+    <string name="status_waiting">Čakanie ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">nemý</string>
+    <string name="status_unmuted">NA ŽIVO</string>
+    <string name="status_muted">stlmený</string>
+    <string name="status_unmute">nahlas</string>
     <string name="status_no_wifi">Pripojte sa k WiFi</string>
 
     <string name="channel_text">channel</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">nastavenie</string>
     <string name="options_about">O ...</string>
 
-    <string name="gain_controls_title">Zisk Booster</string>
-    <string name="gain_controls_max_gain_db_title">Maximálne zvýšenie zisku</string>
-    <string name="gain_controls_increase_db_per_second">Zvýšenie zisku za sekundu</string>
-    <string name="gain_controls_hold_time">Maximálna doba zdržania</string>
+    <string name="gain_controls_title">Zosilňovač mikrofónu</string>
+    <string name="gain_controls_max_gain_db_title">Maximálne zvýšenie mikrofónu</string>
+    <string name="gain_controls_increase_db_per_second">Zvýšenie mikrofónu za sekundu</string>
+    <string name="gain_controls_hold_time">Doba maximálneho obmedzovača maxima</string>
 
     <string name="network_controls_title">sieť</string>
     <string name="network_controls_packet_redundancy">Redundancia paketov</string>

@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">реле</string>
     <string name="stop_button_text">Спри се</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">начало</string>
     <string name="status_tx_start">Предавания</string>
     <string name="status_searching">Търси се ...</string>
     <string name="status_unavailable">Не се предлага</string>
     <string name="status_headphones">Поставете слушалки</string>
     <string name="status_talk">Говоря</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Натиснете за изключване на звука)</string>
-    <string name="status_muted">Заглушен (Натиснете, за да включите звука)</string>
+    <string name="status_waiting">Очакване...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">ням</string>
+    <string name="status_unmuted">В ЕФИР</string>
+    <string name="status_muted">Спряно</string>
+    <string name="status_unmute">Със звук</string>
     <string name="status_no_wifi">Моля, свържете се с WiFi</string>
 
     <string name="channel_text">канал</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Настройки</string>
     <string name="options_about">Относно...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Максимално увеличаване на усилването</string>
-    <string name="gain_controls_increase_db_per_second">Увеличението на печалбата за секунда</string>
-    <string name="gain_controls_hold_time">Максимално време на задържане</string>
+    <string name="gain_controls_title">Усилвател на микрофона</string>
+    <string name="gain_controls_max_gain_db_title">Максимално усилване на микрофона</string>
+    <string name="gain_controls_increase_db_per_second">Усилването на микрофона се увеличава за секунда</string>
+    <string name="gain_controls_hold_time">Време за задържане на пиковия ограничител</string>
 
     <string name="network_controls_title">мрежа</string>
     <string name="network_controls_packet_redundancy">Резервиране на пакети</string>

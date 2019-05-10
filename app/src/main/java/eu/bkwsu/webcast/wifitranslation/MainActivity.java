@@ -545,42 +545,50 @@ public class MainActivity extends AppCompatActivity {
                 state.mute + ", rxTestedBusy:" + state.rxBusy + ", rxTestedValid :" +
                 state.rxValid + ", txEnabled : " + state.txEnabled + ", wifi : " + state.wifiOn);
         if (!state.wifiOn) {
-            setMainButtonColorText(Color.LTGRAY, getString(R.string.status_no_wifi));
-            return;
+            setInfoColorText(Color.LTGRAY, getString(R.string.status_no_wifi));
         }
         if (state.txMode) {
             if (state.happening) {
                 if (state.mute) {
-                    setMainButtonColorText(Color.parseColor("teal"), getString(R.string.status_muted));
+                    setInfoColorText(Color.LTGRAY, getString(R.string.status_muted));
+                    setMainButtonColorText(Color.parseColor("teal"), getString(R.string.status_unmute));
                 } else {
+                    setInfoColorText(Color.RED, getString(R.string.status_unmuted));
                     setMainButtonColorText(Color.RED, getString(R.string.status_mute));
                 }
             } else {
                 if (state.txEnabled) {
+                    setInfoColorText(Color.LTGRAY, getString(R.string.status_null));
                     setMainButtonColorText(Color.GREEN, getString(R.string.status_tx_start));
                 } else {
-                    setMainButtonColorText(Color.LTGRAY, getString(R.string.status_unavailable));
+                    setInfoColorText(Color.LTGRAY, getString(R.string.status_unavailable));
+                    setMainButtonColorText(Color.LTGRAY, getString(R.string.status_tx_start));
                 }
             }
         } else {
             if (state.happening) {
                 if (state.rxValid) {
-                    setMainButtonColorText(Color.GREEN, getString(R.string.status_rx_run));
+                    setInfoColorText(Color.LTGRAY,  getString(R.string.status_rx_run));
+                    setMainButtonColorText(Color.DKGRAY, getString(R.string.status_null));
                 } else {
-                    setMainButtonColorText(Color.CYAN, getString(R.string.status_waiting));
+                    setInfoColorText(Color.LTGRAY, getString(R.string.status_waiting));
+                    setMainButtonColorText(Color.DKGRAY, getString(R.string.status_null));
                 }
             } else {
                 if (state.rxValid) {
                     if (state.headphonesMandatory && !state.headphones) {
-                        setMainButtonColorText(Color.LTGRAY, getString(R.string.status_headphones));
+                        setInfoColorText(Color.LTGRAY, getString(R.string.status_headphones));
+                        setMainButtonColorText(Color.GRAY, getString(R.string.status_rx_start));
                     } else {
+                        setInfoColorText(Color.LTGRAY, getString(R.string.status_null));
                         setMainButtonColorText(Color.LTGRAY, getString(R.string.status_rx_start));
                     }
                 } else {
+                    setMainButtonColorText(Color.GRAY, getString(R.string.status_rx_start));
                     if (state.rxTested) {
-                        setMainButtonColorText(Color.LTGRAY, getString(R.string.status_unavailable));
+                        setInfoColorText(Color.LTGRAY, getString(R.string.status_unavailable));
                     } else {
-                        setMainButtonColorText(Color.LTGRAY, getString(R.string.status_searching));
+                        setInfoColorText(Color.LTGRAY, getString(R.string.status_searching));
                     }
                 }
             }
@@ -653,6 +661,18 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     findViewById(R.id.button_stop).setVisibility(View.INVISIBLE);
                 }
+            }
+        });
+    }
+    private void setInfoColorText (int setColor, String setText) {
+        final TextView infoText = (TextView)findViewById(R.id.text_info);
+        final int color = setColor;
+        final String text = setText;
+
+        runOnUiThread(new Runnable() {
+            public void run () {
+                infoText.setTextColor(color);
+                infoText.setText(text);
             }
         });
     }

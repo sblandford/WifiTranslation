@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">rele</string>
     <string name="stop_button_text">stop</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">fillim</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">Duke kërkuar ...</string>
     <string name="status_unavailable">i padisponueshëm</string>
     <string name="status_headphones">Futni kufjet</string>
     <string name="status_talk">diskutim</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Shtypni për të heshtur)</string>
-    <string name="status_muted">Mbyllur (Shtypni për të çaktivizuar)</string>
+    <string name="status_waiting">Ne pritje...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">memec</string>
+    <string name="status_unmuted">NE AJER</string>
+    <string name="status_muted">i mbytur</string>
+    <string name="status_unmute">unmute</string>
     <string name="status_no_wifi">Lidhu me WiFi</string>
 
     <string name="channel_text">kanal</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Cilësimet</string>
     <string name="options_about">Rreth ...</string>
 
-    <string name="gain_controls_title">Përforcues i fitimit</string>
-    <string name="gain_controls_max_gain_db_title">Shpejtësia maksimale e fitimit</string>
-    <string name="gain_controls_increase_db_per_second">Rritja e fitimit për sekondë</string>
-    <string name="gain_controls_hold_time">Kufiri i pikave të mbajë kohën</string>
+    <string name="gain_controls_title">Booster mikrofon</string>
+    <string name="gain_controls_max_gain_db_title">Maksimumi i Mikrofonit</string>
+    <string name="gain_controls_increase_db_per_second">Rritja e rritjes së mikrofonit për sekondë</string>
+    <string name="gain_controls_hold_time">Koha e mbajtjes së kufirit të pikut</string>
 
     <string name="network_controls_title">rrjet</string>
     <string name="network_controls_packet_redundancy">Tepricë e paketës</string>

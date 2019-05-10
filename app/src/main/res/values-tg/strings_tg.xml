@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Радио</string>
     <string name="stop_button_text">Ист</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Оғоз кунед</string>
     <string name="status_tx_start">Пахш кунед</string>
     <string name="status_searching">Ҷустуҷӯ</string>
     <string name="status_unavailable">Дастрас нест</string>
     <string name="status_headphones">Смартакҳоро гӯш кунед</string>
     <string name="status_talk">Гуфтугӯ</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">Дар бораи парвоз (Барои пахш кардан)</string>
-    <string name="status_muted">Хомӯш (Press for untute)</string>
+    <string name="status_waiting">Интизорӣ ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Хомӯш</string>
+    <string name="status_unmuted">Дар бораи АИО</string>
+    <string name="status_muted">Хомӯш</string>
+    <string name="status_unmute">Хомӯш</string>
     <string name="status_no_wifi">Лутфан, ба WiFi пайваст шавед</string>
 
     <string name="channel_text">Канал</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Танзимотҳо</string>
     <string name="options_about">Дар бораи ...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Бештар</string>
-    <string name="gain_controls_increase_db_per_second">Баланд бардоштани ҳосилнокӣ дар як сония</string>
-    <string name="gain_controls_hold_time">Ҳаҷми ҳадди ниҳоии вақт маҳдуд аст</string>
+    <string name="gain_controls_title">Booster микрофон</string>
+    <string name="gain_controls_max_gain_db_title">Баландтарин макони микрофон</string>
+    <string name="gain_controls_increase_db_per_second">Сатҳи микрофон дар як сония афзоиш меёбад</string>
+    <string name="gain_controls_hold_time">Маҳдудияти тухмии вақт</string>
 
     <string name="network_controls_title">Шабака</string>
     <string name="network_controls_packet_redundancy">Фосилаи маҷмӯъ</string>

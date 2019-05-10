@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">staffetta</string>
     <string name="stop_button_text">Fermare</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Inizio</string>
     <string name="status_tx_start">Trasmissione</string>
     <string name="status_searching">Ricerca in corso ...</string>
     <string name="status_unavailable">non disponibile</string>
     <string name="status_headphones">Inserire le cuffie</string>
     <string name="status_talk">Parlare</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (premere per disattivare)</string>
-    <string name="status_muted">Silenziato (premere per riattivare)</string>
+    <string name="status_waiting">In attesa...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">muto</string>
+    <string name="status_unmuted">IN ONDA</string>
+    <string name="status_muted">smorzato</string>
+    <string name="status_unmute">Attiva</string>
     <string name="status_no_wifi">Si prega di connettersi al WiFi</string>
 
     <string name="channel_text">Canale</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">impostazioni</string>
     <string name="options_about">Di...</string>
 
-    <string name="gain_controls_title">Guadagna Booster</string>
-    <string name="gain_controls_max_gain_db_title">Massimo guadagno</string>
-    <string name="gain_controls_increase_db_per_second">Guadagno aumento al secondo</string>
-    <string name="gain_controls_hold_time">Limite di picco</string>
+    <string name="gain_controls_title">Microphone Booster</string>
+    <string name="gain_controls_max_gain_db_title">Massima amplificazione del microfono</string>
+    <string name="gain_controls_increase_db_per_second">Aumento del boost del microfono al secondo</string>
+    <string name="gain_controls_hold_time">Tempo di attesa del limitatore di picco</string>
 
     <string name="network_controls_title">Rete</string>
     <string name="network_controls_packet_redundancy">Ridondanza del pacchetto</string>

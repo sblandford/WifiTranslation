@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Releu</string>
     <string name="stop_button_text">Stop</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">start</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">In cautarea...</string>
     <string name="status_unavailable">Indisponibil</string>
     <string name="status_headphones">Introduceți căști</string>
     <string name="status_talk">Vorbi</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Apăsați pentru a dezactiva)</string>
-    <string name="status_muted">Dezactivat (Apăsați pentru a dezactiva)</string>
+    <string name="status_waiting">Aşteptare...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Mut</string>
+    <string name="status_unmuted">ÎN DIRECT</string>
+    <string name="status_muted">Ignorat</string>
+    <string name="status_unmute">Activați sunetul</string>
     <string name="status_no_wifi">Conectați-vă la WiFi</string>
 
     <string name="channel_text">Canal</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Setări</string>
     <string name="options_about">Despre...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Creșterea maximă a câștigului</string>
-    <string name="gain_controls_increase_db_per_second">Creșteți câștigul pe secundă</string>
-    <string name="gain_controls_hold_time">Viteza maximă de ținere a limitei</string>
+    <string name="gain_controls_title">Microfon Booster</string>
+    <string name="gain_controls_max_gain_db_title">Stimularea maximă a microfonului</string>
+    <string name="gain_controls_increase_db_per_second">Creșterea amplificării microfonului pe secundă</string>
+    <string name="gain_controls_hold_time">Limitatorul de vârf deține timpul</string>
 
     <string name="network_controls_title">Reţea</string>
     <string name="network_controls_packet_redundancy">Redundanță pachet</string>

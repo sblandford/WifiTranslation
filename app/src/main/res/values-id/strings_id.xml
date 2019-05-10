@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Menyampaikan</string>
     <string name="stop_button_text">Berhenti</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Mulai</string>
     <string name="status_tx_start">Siaran</string>
     <string name="status_searching">Mencari ...</string>
     <string name="status_unavailable">Tidak tersedia</string>
     <string name="status_headphones">Masukkan headphone</string>
     <string name="status_talk">Berbicara</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Tekan untuk membisukan)</string>
-    <string name="status_muted">Diam (Tekan untuk membunyikan suara)</string>
+    <string name="status_waiting">Menunggu ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Bisu</string>
+    <string name="status_unmuted">MENGUDARA</string>
+    <string name="status_muted">Diam</string>
+    <string name="status_unmute">Suarakan</string>
     <string name="status_no_wifi">Silakan terhubung ke WiFi</string>
 
     <string name="channel_text">Saluran</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Pengaturan</string>
     <string name="options_about">Tentang...</string>
 
-    <string name="gain_controls_title">Dapatkan Booster</string>
-    <string name="gain_controls_max_gain_db_title">Peningkatan Keuntungan Maksimum</string>
-    <string name="gain_controls_increase_db_per_second">Dapatkan peningkatan per detik</string>
-    <string name="gain_controls_hold_time">Waktu tunggu batas puncak</string>
+    <string name="gain_controls_title">Penguat Mikrofon</string>
+    <string name="gain_controls_max_gain_db_title">Peningkatan Mikrofon Maksimum</string>
+    <string name="gain_controls_increase_db_per_second">Peningkatan mikrofon meningkat per detik</string>
+    <string name="gain_controls_hold_time">Waktu tahan pembatas puncak</string>
 
     <string name="network_controls_title">Jaringan</string>
     <string name="network_controls_packet_redundancy">Redundansi paket</string>

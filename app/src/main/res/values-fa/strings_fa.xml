@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">رله</string>
     <string name="stop_button_text">متوقف کردن</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">شروع کنید</string>
     <string name="status_tx_start">پخش</string>
     <string name="status_searching">جستجوکردن...</string>
     <string name="status_unavailable">در دسترس نیست</string>
     <string name="status_headphones">قرار دادن هدفون</string>
     <string name="status_talk">صحبت</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (برای خاموش کردن فشار دهید)</string>
-    <string name="status_muted">خاموش (برای خاموش کردن فشار دهید)</string>
+    <string name="status_waiting">در انتظار...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">بی صدا</string>
+    <string name="status_unmuted">روی هوا</string>
+    <string name="status_muted">خفه شدم</string>
+    <string name="status_unmute">خاموش کردن صدا</string>
     <string name="status_no_wifi">لطفا به فای وصل شوید</string>
 
     <string name="channel_text">کانال</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">تنظیمات</string>
     <string name="options_about">در باره...</string>
 
-    <string name="gain_controls_title">افزایش تقویت کننده</string>
-    <string name="gain_controls_max_gain_db_title">افزایش حداکثر افزایش</string>
-    <string name="gain_controls_increase_db_per_second">افزایش در هر ثانیه افزایش می یابد</string>
-    <string name="gain_controls_hold_time">حداکثر محدود کردن زمان نگهداری</string>
+    <string name="gain_controls_title">تقویت کننده میکروفن</string>
+    <string name="gain_controls_max_gain_db_title">حداکثر تقویت میکروفون</string>
+    <string name="gain_controls_increase_db_per_second">افزایش میکروفون در هر ثانیه افزایش می یابد</string>
+    <string name="gain_controls_hold_time">محدود کننده قله نگه داشتن زمان</string>
 
     <string name="network_controls_title">شبکه</string>
     <string name="network_controls_packet_redundancy">افزونگی بسته</string>

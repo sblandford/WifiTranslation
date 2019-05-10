@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Taith Gyfnewid</string>
     <string name="stop_button_text">Stopiwch</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Dechrau</string>
     <string name="status_tx_start">Darlledwyd</string>
     <string name="status_searching">Chwilio ...</string>
     <string name="status_unavailable">Ddim ar gael</string>
     <string name="status_headphones">Mewnosod clustffonau</string>
     <string name="status_talk">Sgwrs</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Gwasgwch i fud)</string>
-    <string name="status_muted">Wedi blino (Pwyswch i ddadwneud)</string>
+    <string name="status_waiting">Aros...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Mute</string>
+    <string name="status_unmuted">AR YR AWYR</string>
+    <string name="status_muted">Wedi\'i dwyllo</string>
+    <string name="status_unmute">Anghywir</string>
     <string name="status_no_wifi">Cysylltwch â WiFi os gwelwch yn dda</string>
 
     <string name="channel_text">Sianel</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Lleoliadau</string>
     <string name="options_about">Am ...</string>
 
-    <string name="gain_controls_title">Ennill atgyfnerthu</string>
-    <string name="gain_controls_max_gain_db_title">Hwb Ennill Uchafswm</string>
-    <string name="gain_controls_increase_db_per_second">Ennill cynnydd yr eiliad</string>
-    <string name="gain_controls_hold_time">Y terfyn uchaf yn dal amser</string>
+    <string name="gain_controls_title">Microffon Booster</string>
+    <string name="gain_controls_max_gain_db_title">Hwb Mwyaf Meicroffon</string>
+    <string name="gain_controls_increase_db_per_second">Cynnydd mewn microffon yn cynyddu fesul eiliad</string>
+    <string name="gain_controls_hold_time">Mae\'r cyfyngwr uchaf yn dal amser</string>
 
     <string name="network_controls_title">Rhwydwaith</string>
     <string name="network_controls_packet_redundancy">Diswyddo pecyn</string>

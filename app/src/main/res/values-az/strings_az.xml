@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Dur</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Başlamaq</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">Axtarış ...</string>
     <string name="status_unavailable">Unavailable</string>
     <string name="status_headphones">Qulaqlıqları daxil edin</string>
     <string name="status_talk">Talk</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">HAVA\'DA (Səs vermək üçün basın)</string>
-    <string name="status_muted">Səssiz (səsləndirmək üçün basın)</string>
+    <string name="status_waiting">Gözləmə ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Səssiz</string>
+    <string name="status_unmuted">HAVADA</string>
+    <string name="status_muted">Səsləndi</string>
+    <string name="status_unmute">Səs vermək</string>
     <string name="status_no_wifi">WiFi-ə qoşulun</string>
 
     <string name="channel_text">Kanal</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Ayarlar</string>
     <string name="options_about">Haqqında ...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Maksimum qazanc artırın</string>
-    <string name="gain_controls_increase_db_per_second">Saniyəyə artım qazanır</string>
-    <string name="gain_controls_hold_time">Peak limit tutma vaxtı</string>
+    <string name="gain_controls_title">Mikrofon Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maksimum Mikrofon Boost</string>
+    <string name="gain_controls_increase_db_per_second">Bir saniyədə mikrofon artırma artımı</string>
+    <string name="gain_controls_hold_time">Peak məhdudlaşdırıcı vaxt keçirin</string>
 
     <string name="network_controls_title">Şəbəkə</string>
     <string name="network_controls_packet_redundancy">Paket fazlalığı</string>

@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Kati</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Tīmata</string>
     <string name="status_tx_start">Whakapāho</string>
     <string name="status_searching">Rapu ana ...</string>
     <string name="status_unavailable">Kāore i te wātea</string>
     <string name="status_headphones">Kōkuhu taringa</string>
     <string name="status_talk">Kōrero</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Press to mute)</string>
-    <string name="status_muted">Muted (Tuku ki te whakaheke)</string>
+    <string name="status_waiting">Te tatari ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Mute</string>
+    <string name="status_unmuted">ON AIR</string>
+    <string name="status_muted">Kua tohua</string>
+    <string name="status_unmute">Whakamutua</string>
     <string name="status_no_wifi">Tena hono atu ki WiFi</string>
 
     <string name="channel_text">Channel</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Tautuhinga</string>
     <string name="options_about">Mō ...</string>
 
-    <string name="gain_controls_title">Riwai Pupuri</string>
-    <string name="gain_controls_max_gain_db_title">Ko te Raina Miirahi Nui</string>
-    <string name="gain_controls_increase_db_per_second">Whiwhia te whakanui i te rua</string>
-    <string name="gain_controls_hold_time">Ko te wahanga peak te pupuri i te wa</string>
+    <string name="gain_controls_title">Pouaka Porohita</string>
+    <string name="gain_controls_max_gain_db_title">Ko te Waea Motuhake Motuhake</string>
+    <string name="gain_controls_increase_db_per_second">Ka whakanui ake te whakanui i te puoro ki te rua</string>
+    <string name="gain_controls_hold_time">Ko te mana o te peak te pupuri i te wa</string>
 
     <string name="network_controls_title">Whatunga</string>
     <string name="network_controls_packet_redundancy">Paaetanga Packet</string>

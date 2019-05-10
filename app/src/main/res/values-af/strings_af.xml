@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">stop</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">begin</string>
     <string name="status_tx_start">uitsending</string>
     <string name="status_searching">Soek ...</string>
     <string name="status_unavailable">nie beskikbaar nie</string>
     <string name="status_headphones">Voeg koptelefoon in</string>
     <string name="status_talk">Praat</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">OP LUG (Druk om te stom)</string>
-    <string name="status_muted">Gedempte (Druk om te skakel)</string>
+    <string name="status_waiting">Wag ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">stom</string>
+    <string name="status_unmuted">OP DIE LUG</string>
+    <string name="status_muted">gedempte</string>
+    <string name="status_unmute">inschakelt</string>
     <string name="status_no_wifi">Koppel asseblief aan WiFi</string>
 
     <string name="channel_text">kanaal</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">instellings</string>
     <string name="options_about">Oor ...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Maksimum Gain Boost</string>
-    <string name="gain_controls_increase_db_per_second">Verhoging styg per sekonde</string>
-    <string name="gain_controls_hold_time">Peak limiet hou tyd</string>
+    <string name="gain_controls_title">Mikrofoon Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maksimum Mikrofoon Boost</string>
+    <string name="gain_controls_increase_db_per_second">Mikrofoon hupstoot verhoog per sekonde</string>
+    <string name="gain_controls_hold_time">Peak limiter hou tyd</string>
 
     <string name="network_controls_title">Network</string>
     <string name="network_controls_packet_redundancy">Pakket ontslag</string>

@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relej</string>
     <string name="stop_button_text">Stop</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Početak</string>
     <string name="status_tx_start">emitiranje</string>
     <string name="status_searching">Tražim ...</string>
     <string name="status_unavailable">nedostupan</string>
     <string name="status_headphones">Umetnite slušalice</string>
     <string name="status_talk">Razgovor</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Pritisni za isključivanje)</string>
-    <string name="status_muted">Isključeno (pritisnite za uključivanje zvuka)</string>
+    <string name="status_waiting">Čeka se ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">nijem</string>
+    <string name="status_unmuted">ON AIR</string>
+    <string name="status_muted">prigušen</string>
+    <string name="status_unmute">Uključi mikrofon</string>
     <string name="status_no_wifi">Povežite se na WiFi</string>
 
     <string name="channel_text">Kanal</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">postavke</string>
     <string name="options_about">Oko...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Maksimalno pojačanje pojačanja</string>
-    <string name="gain_controls_increase_db_per_second">Povećanje pojačanja u sekundi</string>
-    <string name="gain_controls_hold_time">Maksimalno ograničenje vremena zadržavanja</string>
+    <string name="gain_controls_title">Pojačivač mikrofona</string>
+    <string name="gain_controls_max_gain_db_title">Maksimalno pojačavanje mikrofona</string>
+    <string name="gain_controls_increase_db_per_second">Povećanje mikrofona u sekundi</string>
+    <string name="gain_controls_hold_time">Vrijeme zadržavanja maksimalnog ograničenja</string>
 
     <string name="network_controls_title">Mreža</string>
     <string name="network_controls_packet_redundancy">Redundantnost paketa</string>

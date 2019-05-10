@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Przekaźnik</string>
     <string name="stop_button_text">Zatrzymać</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Początek</string>
     <string name="status_tx_start">Nadawanie</string>
     <string name="status_searching">Badawczy...</string>
     <string name="status_unavailable">Niedostępne</string>
     <string name="status_headphones">Włóż słuchawki</string>
     <string name="status_talk">Rozmowa</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (naciśnij, aby wyciszyć)</string>
-    <string name="status_muted">Wyciszony (naciśnij, aby wyłączyć wyciszenie)</string>
+    <string name="status_waiting">Czekanie...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Niemy</string>
+    <string name="status_unmuted">NA ANTENIE</string>
+    <string name="status_muted">Wyciszony</string>
+    <string name="status_unmute">Wyłącz wyciszenie</string>
     <string name="status_no_wifi">Połącz się z WiFi</string>
 
     <string name="channel_text">Kanał</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Ustawienia</string>
     <string name="options_about">O...</string>
 
-    <string name="gain_controls_title">Zyskaj Booster</string>
-    <string name="gain_controls_max_gain_db_title">Maksymalne wzmocnienie wzmocnienia</string>
-    <string name="gain_controls_increase_db_per_second">Zwiększ przyrost na sekundę</string>
-    <string name="gain_controls_hold_time">Limit czasu utrzymywania wartości szczytowej</string>
+    <string name="gain_controls_title">Wzmacniacz mikrofonu</string>
+    <string name="gain_controls_max_gain_db_title">Maksymalne wzmocnienie mikrofonu</string>
+    <string name="gain_controls_increase_db_per_second">Zwiększenie wzmocnienia mikrofonu na sekundę</string>
+    <string name="gain_controls_hold_time">Limit czasu zatrzymania piku</string>
 
     <string name="network_controls_title">Sieć</string>
     <string name="network_controls_packet_redundancy">Nadmiarowość pakietów</string>

@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">ተወ</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">ይጀምሩ</string>
     <string name="status_tx_start">ማሰራጫ</string>
     <string name="status_searching">በመፈለግ ላይ ...</string>
     <string name="status_unavailable">አይገኝም</string>
     <string name="status_headphones">የጆሮ ማዳመጫዎች ያስገቡ</string>
     <string name="status_talk">ይነጋገሩ</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">በአየር ላይ (ድምጸ-ከል ለማድረግ ይጫኑ)</string>
-    <string name="status_muted">ድምጸ-ከል ተደርጎ (ድምጸ-ከል ለማንሳት ይጫኑ)</string>
+    <string name="status_waiting">በመጠበቅ ላይ ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">ድምጸ-ከል ያድርጉ</string>
+    <string name="status_unmuted">በአየር ላይ</string>
+    <string name="status_muted">ድምፀ-ከል ተደርጓል</string>
+    <string name="status_unmute">ድምጸ-ከል ያንሱ</string>
     <string name="status_no_wifi">እባክዎ ከ WiFi ጋር ይገናኙ</string>
 
     <string name="channel_text">ሰርጥ</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">ቅንብሮች</string>
     <string name="options_about">ስለ ...</string>
 
-    <string name="gain_controls_title">ማበረታቻ ያግኙ</string>
-    <string name="gain_controls_max_gain_db_title">ከፍተኛ የገንዝብ ማጠንከሪያ</string>
-    <string name="gain_controls_increase_db_per_second">በሰከንድ ይጨምሩት</string>
-    <string name="gain_controls_hold_time">ከፍተኛውን ጊዜ የሚቆይበት ጊዜ</string>
+    <string name="gain_controls_title">ማይክሮፎን ድምፅ ማሰማት</string>
+    <string name="gain_controls_max_gain_db_title">ከፍተኛውን ማይክሮፎን ከፍ አድርግ</string>
+    <string name="gain_controls_increase_db_per_second">ማይክሮፎን በሰከንድ ይጨምራል</string>
+    <string name="gain_controls_hold_time">የመረጡ መጠን ገደብ ጊዜ ይቆያል</string>
 
     <string name="network_controls_title">አውታረ መረብ</string>
     <string name="network_controls_packet_redundancy">የጥቅል ድግግሞሽ</string>

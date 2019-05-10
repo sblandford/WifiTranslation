@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Rele</string>
     <string name="stop_button_text">Stop</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Začni</string>
     <string name="status_tx_start">Oddaja</string>
     <string name="status_searching">Iskanje ...</string>
     <string name="status_unavailable">Ni na voljo</string>
     <string name="status_headphones">Vstavite slušalke</string>
     <string name="status_talk">Pogovor</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">V ZRAK (Pritisnite za izklop zvoka)</string>
-    <string name="status_muted">Zvišan (pritisnite, da vklopite zvok)</string>
+    <string name="status_waiting">Čakanje ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Nemo</string>
+    <string name="status_unmuted">ON AIR</string>
+    <string name="status_muted">Utišano</string>
+    <string name="status_unmute">Vklopite zvok</string>
     <string name="status_no_wifi">Povežite se z WiFi</string>
 
     <string name="channel_text">Kanal</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Nastavitve</string>
     <string name="options_about">O ...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Maksimalno povečanje ojačanja</string>
-    <string name="gain_controls_increase_db_per_second">Povečanje povečanja na sekundo</string>
-    <string name="gain_controls_hold_time">Najvišja omejitev časa zadrževanja</string>
+    <string name="gain_controls_title">Mikrofonski ojačevalnik</string>
+    <string name="gain_controls_max_gain_db_title">Maksimalno povečanje mikrofona</string>
+    <string name="gain_controls_increase_db_per_second">Povečanje mikrofona na sekundo</string>
+    <string name="gain_controls_hold_time">Čas zadrževanja največje omejitve</string>
 
     <string name="network_controls_title">Omrežje</string>
     <string name="network_controls_packet_redundancy">Redundanca paketov</string>

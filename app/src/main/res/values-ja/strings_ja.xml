@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">リレー</string>
     <string name="stop_button_text">やめる</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">開始</string>
     <string name="status_tx_start">放送</string>
     <string name="status_searching">検索しています...</string>
     <string name="status_unavailable">利用不可</string>
     <string name="status_headphones">ヘッドホンを挿入する</string>
     <string name="status_talk">トーク</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR（押してミュート）</string>
-    <string name="status_muted">ミュート（ミュートを解除）</string>
+    <string name="status_waiting">待っています...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">ミュート</string>
+    <string name="status_unmuted">放送中</string>
+    <string name="status_muted">ミュート</string>
+    <string name="status_unmute">ミュートを解除</string>
     <string name="status_no_wifi">WiFiに接続してください</string>
 
     <string name="channel_text">チャネル</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">設定</string>
     <string name="options_about">約...</string>
 
-    <string name="gain_controls_title">ゲインブースター</string>
-    <string name="gain_controls_max_gain_db_title">最大ゲインブースト</string>
-    <string name="gain_controls_increase_db_per_second">毎秒増加ゲイン</string>
-    <string name="gain_controls_hold_time">ピークリミットホールドタイム</string>
+    <string name="gain_controls_title">マイクブースター</string>
+    <string name="gain_controls_max_gain_db_title">最大マイクブースト</string>
+    <string name="gain_controls_increase_db_per_second">1秒あたりのマイクブーストの増加</string>
+    <string name="gain_controls_hold_time">ピークリミッターホールドタイム</string>
 
     <string name="network_controls_title">ネットワーク</string>
     <string name="network_controls_packet_redundancy">パケット冗長性</string>

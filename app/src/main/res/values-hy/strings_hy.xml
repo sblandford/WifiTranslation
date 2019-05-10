@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Ռելե</string>
     <string name="stop_button_text">Դադարեցրեք</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Սկսեք</string>
     <string name="status_tx_start">Հեռարձակում</string>
     <string name="status_searching">Որոնում ...</string>
     <string name="status_unavailable">Անհասանելի է</string>
     <string name="status_headphones">Ներդիր ականջակալներ</string>
     <string name="status_talk">Խոսեք</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">Օդային տարածքում (Press to silence)</string>
-    <string name="status_muted">Խլացված (Press to unmute)</string>
+    <string name="status_waiting">Սպասում ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Համր</string>
+    <string name="status_unmuted">ՕԴՈՒՄ</string>
+    <string name="status_muted">Խլացված</string>
+    <string name="status_unmute">Անջատեք</string>
     <string name="status_no_wifi">Խնդրում ենք միացնել WiFi- ին</string>
 
     <string name="channel_text">Ալիք</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Կարգավորումներ</string>
     <string name="options_about">Մասին...</string>
 
-    <string name="gain_controls_title">Գին Booster- ը</string>
-    <string name="gain_controls_max_gain_db_title">Առավելագույն եկամուտների խթանումը</string>
-    <string name="gain_controls_increase_db_per_second">Հասանելիքը մեկ վայրկյանում ավելանում է</string>
-    <string name="gain_controls_hold_time">Պիկ սահմանը պահելու ժամանակը</string>
+    <string name="gain_controls_title">Միկրոֆոն Booster</string>
+    <string name="gain_controls_max_gain_db_title">Առավելագույն խոսափողերի խթանումը</string>
+    <string name="gain_controls_increase_db_per_second">Միկրոֆոնի խթանման աճը մեկ վայրկյանում</string>
+    <string name="gain_controls_hold_time">Փակ սահմանափակում պահելու ժամանակը</string>
 
     <string name="network_controls_title">Ցանցը</string>
     <string name="network_controls_packet_redundancy">Փաթեթի ավելացում</string>

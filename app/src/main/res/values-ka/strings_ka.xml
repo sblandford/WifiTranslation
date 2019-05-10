@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">სარელეო</string>
     <string name="stop_button_text">შეაჩერე</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">დაწყება</string>
     <string name="status_tx_start">მაუწყებლობა</string>
     <string name="status_searching">ძიება ...</string>
     <string name="status_unavailable">მიუწვდომელია</string>
     <string name="status_headphones">ჩადეთ ყურსასმენები</string>
     <string name="status_talk">საუბარი</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">AIR (პრესა მუნჯი)</string>
-    <string name="status_muted">მუნჯი (პრესის გასახსნელად)</string>
+    <string name="status_waiting">ველოდები ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">მუნჯი</string>
+    <string name="status_unmuted">ᲰᲐᲔᲠᲨᲘ</string>
+    <string name="status_muted">მუნჯი</string>
+    <string name="status_unmute">Unmute</string>
     <string name="status_no_wifi">გთხოვთ, დაუკავშირდეთ WiFi- ს</string>
 
     <string name="channel_text">არხი</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">პარამეტრები</string>
     <string name="options_about">შესახებ ...</string>
 
-    <string name="gain_controls_title">მოგება Booster</string>
-    <string name="gain_controls_max_gain_db_title">მაქსიმალური მოგება Boost</string>
-    <string name="gain_controls_increase_db_per_second">ზრდა წამში</string>
-    <string name="gain_controls_hold_time">პიკი ლიმიტის გამართვა დრო</string>
+    <string name="gain_controls_title">მიკროფონი Booster</string>
+    <string name="gain_controls_max_gain_db_title">მაქსიმალური მიკროფონის გაზრდა</string>
+    <string name="gain_controls_increase_db_per_second">მიკროფონი გაზრდის წამში</string>
+    <string name="gain_controls_hold_time">Peak limiter გამართავს დრო</string>
 
     <string name="network_controls_title">ქსელი</string>
     <string name="network_controls_packet_redundancy">პაკეტის redundancy</string>

@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">رلي</string>
     <string name="stop_button_text">رکو</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">شروع ڪيو</string>
     <string name="status_tx_start">براڊلينڊ</string>
     <string name="status_searching">ڳولها پيو ...</string>
     <string name="status_unavailable">دستياب ناهي</string>
     <string name="status_headphones">ہیڈفون داخل ڪريو</string>
     <string name="status_talk">ڳالهايو</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">پر ايئر (پريس کي دٻايو)</string>
-    <string name="status_muted">خاموش (پريس کي انٽميو)</string>
+    <string name="status_waiting">انتظار ڪري رهيو آهي ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">گونگا</string>
+    <string name="status_unmuted">پر ايئر</string>
+    <string name="status_muted">خاموشي</string>
+    <string name="status_unmute">خاموش ٿيو</string>
     <string name="status_no_wifi">مهرباني ڪري وائي فني سان رابطو ڪريو</string>
 
     <string name="channel_text">چئنل</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">سيٽنگون</string>
     <string name="options_about">بابت ...</string>
 
-    <string name="gain_controls_title">گين بوسٹر</string>
-    <string name="gain_controls_max_gain_db_title">وڌ ۾ وڌ ڌيان جو فروغ</string>
-    <string name="gain_controls_increase_db_per_second">ماڻهون في سيڪنڊ وڌائي</string>
-    <string name="gain_controls_hold_time">چوٽي جي حد لڳائي وئي</string>
+    <string name="gain_controls_title">مائڪروفون بوسٹر</string>
+    <string name="gain_controls_max_gain_db_title">وڌ کان وڌ مائڪروفون بوٽ</string>
+    <string name="gain_controls_increase_db_per_second">في سيڪنڊ ميز وڌائڻ وڌائڻ</string>
+    <string name="gain_controls_hold_time">چوڪ محدود لڪائيندڙ وقت</string>
 
     <string name="network_controls_title">نيٽورڪ</string>
     <string name="network_controls_packet_redundancy">پيچري لالچ</string>

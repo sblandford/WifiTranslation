@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">ਰੀਲੇਅ</string>
     <string name="stop_button_text">ਰੂਕੋ</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">ਸ਼ੁਰੂ ਕਰੋ</string>
     <string name="status_tx_start">ਬ੍ਰੌਡਕਾਸਟ</string>
     <string name="status_searching">ਖੋਜ ਰਿਹਾ ਹੈ ...</string>
     <string name="status_unavailable">ਅਣਉਪਲਬਧ</string>
     <string name="status_headphones">ਹੈੱਡਫੋਨ ਸੰਮਿਲਿਤ ਕਰੋ</string>
     <string name="status_talk">Talk</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ਔਨ ਏਅਰ (ਮੂਕ ਕਰਨ ਲਈ ਦਬਾਓ)</string>
-    <string name="status_muted">ਮਿਊਟ ਕੀਤਾ ਗਿਆ (ਅਨਮਿਊਟ ਕਰਨ ਲਈ ਪ੍ਰੈਸ ਕਰੋ)</string>
+    <string name="status_waiting">ਉਡੀਕ ਕਰ ਰਿਹਾ ਹੈ ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">ਮੂਕ ਕਰੋ</string>
+    <string name="status_unmuted">ਔਨ ਏਅਰ</string>
+    <string name="status_muted">ਮਿਊਟ ਕੀਤਾ ਗਿਆ</string>
+    <string name="status_unmute">ਅਨਮਿਊਟ ਕਰੋ</string>
     <string name="status_no_wifi">ਕਿਰਪਾ ਕਰਕੇ WiFi ਨਾਲ ਕਨੈਕਟ ਕਰੋ</string>
 
     <string name="channel_text">ਚੈਨਲ</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">ਸੈਟਿੰਗਾਂ</string>
     <string name="options_about">ਇਸ ਬਾਰੇ ...</string>
 
-    <string name="gain_controls_title">ਲਾਭ ਬੂਸਟਰ</string>
-    <string name="gain_controls_max_gain_db_title">ਵੱਧ ਤੋਂ ਵੱਧ ਲਾਭ ਹਾਸਲ ਕਰੋ</string>
-    <string name="gain_controls_increase_db_per_second">ਪ੍ਰਾਪਤੀ ਪ੍ਰਤੀ ਸਕਿੰਟ</string>
-    <string name="gain_controls_hold_time">ਪੀਕ ਸੀਮਾ ਨੂੰ ਰੋਕਣ ਦਾ ਸਮਾਂ</string>
+    <string name="gain_controls_title">ਮਾਈਕ੍ਰੋਫੋਨ ਬੂਸਟਰ</string>
+    <string name="gain_controls_max_gain_db_title">ਅਧਿਕਤਮ ਮਾਈਕ੍ਰੋਫੋਨ ਬੂਸਟ</string>
+    <string name="gain_controls_increase_db_per_second">ਪ੍ਰਤੀ ਸਕਿੰਟ ਮਾਈਕ੍ਰੋਫੋਨ ਵਾਧਾ ਵਾਧਾ</string>
+    <string name="gain_controls_hold_time">ਪੀਕ ਸੀਮਿਟਰ ਹੋਲਡ ਟਾਈਮ</string>
 
     <string name="network_controls_title">ਨੈੱਟਵਰਕ</string>
     <string name="network_controls_packet_redundancy">ਪੈਕੇਟ ਰਿਡੰਡਸੀ</string>

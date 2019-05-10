@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Waqfa</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Ibda</string>
     <string name="status_tx_start">Xandir</string>
     <string name="status_searching">Fittex ...</string>
     <string name="status_unavailable">Mhux disponibbli</string>
     <string name="status_headphones">Daħħal il-headphones</string>
     <string name="status_talk">Tkellem</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">FUQ L-AJRU (Agħfas biex iddawwar)</string>
-    <string name="status_muted">Mutat (Agħfas biex ingħeleb)</string>
+    <string name="status_waiting">Stennija ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Mute</string>
+    <string name="status_unmuted">FUQ L-ARJA</string>
+    <string name="status_muted">Mitħun</string>
+    <string name="status_unmute">Ittellif</string>
     <string name="status_no_wifi">Jekk jogħġbok qabbad il-WiFi</string>
 
     <string name="channel_text">Kanal</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Settings</string>
     <string name="options_about">Dwar ...</string>
 
-    <string name="gain_controls_title">Gwadan Booster</string>
-    <string name="gain_controls_max_gain_db_title">Spinta lill-Qligħ Massimu</string>
-    <string name="gain_controls_increase_db_per_second">Żieda fil-qligħ kull sekonda</string>
-    <string name="gain_controls_hold_time">Il-limitu massimu tal-ħin</string>
+    <string name="gain_controls_title">Mikrofonu Booster</string>
+    <string name="gain_controls_max_gain_db_title">Boost tal-Mikrofonu Massimu</string>
+    <string name="gain_controls_increase_db_per_second">Żieda fl-ispinta tal-mikrofonu kull sekonda</string>
+    <string name="gain_controls_hold_time">Il-limitatur tal-ogħla ħin</string>
 
     <string name="network_controls_title">Netwerk</string>
     <string name="network_controls_packet_redundancy">Redundancy tal-pakkett</string>

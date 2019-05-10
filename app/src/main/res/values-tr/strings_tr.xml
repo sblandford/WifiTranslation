@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">röle</string>
     <string name="stop_button_text">durdurmak</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">başla</string>
     <string name="status_tx_start">Yayın yapmak</string>
     <string name="status_searching">Aramak...</string>
     <string name="status_unavailable">Kullanım dışı</string>
     <string name="status_headphones">Kulaklık takın</string>
     <string name="status_talk">konuşma</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">AIR (Sesi kapatmak için basın)</string>
-    <string name="status_muted">Sessiz (Sesi açmak için basın)</string>
+    <string name="status_waiting">Bekleniyor ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Sessiz</string>
+    <string name="status_unmuted">HAVADA</string>
+    <string name="status_muted">sessiz</string>
+    <string name="status_unmute">Sesi aç</string>
     <string name="status_no_wifi">Lütfen WiFi\'ye bağlanın</string>
 
     <string name="channel_text">Kanal</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Ayarlar</string>
     <string name="options_about">Hakkında...</string>
 
-    <string name="gain_controls_title">Kazanç Booster</string>
-    <string name="gain_controls_max_gain_db_title">Maksimum Kazanç Artışı</string>
-    <string name="gain_controls_increase_db_per_second">Saniyede artış artışı</string>
-    <string name="gain_controls_hold_time">Tepe sınırı tutma süresi</string>
+    <string name="gain_controls_title">Mikrofon Yükseltici</string>
+    <string name="gain_controls_max_gain_db_title">Maksimum Mikrofon Yükseltme</string>
+    <string name="gain_controls_increase_db_per_second">Mikrofon artışı saniyede artış</string>
+    <string name="gain_controls_hold_time">Tepe sınırlayıcı tutma süresi</string>
 
     <string name="network_controls_title">Ağ</string>
     <string name="network_controls_packet_redundancy">Paket yedekleme</string>

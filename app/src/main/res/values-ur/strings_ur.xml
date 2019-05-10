@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">ریلے</string>
     <string name="stop_button_text">بند کرو</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">شروع کریں</string>
     <string name="status_tx_start">نشریات</string>
     <string name="status_searching">تلاش کر رہا ہے ...</string>
     <string name="status_unavailable">دستیاب نہیں</string>
     <string name="status_headphones">ہیڈ فون داخل کریں</string>
     <string name="status_talk">بات چیت</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ایئر پر (گونگا پر دبائیں)</string>
-    <string name="status_muted">خاموش ہوگیا (انمیٹ پر دبائیں)</string>
+    <string name="status_waiting">انتظار کر رہا ہے ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">گونگا</string>
+    <string name="status_unmuted">ہوا پر</string>
+    <string name="status_muted">خاموش</string>
+    <string name="status_unmute">انمیٹ</string>
     <string name="status_no_wifi">برائے مہربانی وائی فائی سے رابطہ کریں</string>
 
     <string name="channel_text">چینل</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">ترتیبات</string>
     <string name="options_about">کے بارے میں...</string>
 
-    <string name="gain_controls_title">فائدہ بوسٹر</string>
-    <string name="gain_controls_max_gain_db_title">زیادہ سے زیادہ فائدہ فروغ دینے</string>
-    <string name="gain_controls_increase_db_per_second">فی سیکنڈ میں اضافہ</string>
-    <string name="gain_controls_hold_time">چپ حد کا وقت لگتا ہے</string>
+    <string name="gain_controls_title">مائیکروفون بوسٹر</string>
+    <string name="gain_controls_max_gain_db_title">زیادہ سے زیادہ مائیکروفون بوسٹ</string>
+    <string name="gain_controls_increase_db_per_second">فی سیکنڈ مائیکروفون فروغ میں اضافہ</string>
+    <string name="gain_controls_hold_time">چوک محدود ہے</string>
 
     <string name="network_controls_title">نیٹ ورک</string>
     <string name="network_controls_packet_redundancy">پیکٹ کی بے حد</string>

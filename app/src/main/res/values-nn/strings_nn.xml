@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Stoppe</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Start</string>
     <string name="status_tx_start">Kringkaste</string>
     <string name="status_searching">Søker...</string>
     <string name="status_unavailable">Utilgjengelig</string>
     <string name="status_headphones">Sett inn hodetelefoner</string>
     <string name="status_talk">Snakke</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">PÅ LUFT (Trykk for å dempe)</string>
-    <string name="status_muted">Muted (Trykk for å deaktivere)</string>
+    <string name="status_waiting">Venter...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Stum</string>
+    <string name="status_unmuted">PÅ LUFTA</string>
+    <string name="status_muted">dempet</string>
+    <string name="status_unmute">Mikrofon</string>
     <string name="status_no_wifi">Vennligst koble til WiFi</string>
 
     <string name="channel_text">Kanal</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">innstillinger</string>
     <string name="options_about">Handle om...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Maksimal gevinstforhøyelse</string>
-    <string name="gain_controls_increase_db_per_second">Få økning per sekund</string>
-    <string name="gain_controls_hold_time">Peak limit hold tid</string>
+    <string name="gain_controls_title">Mikrofonforsterker</string>
+    <string name="gain_controls_max_gain_db_title">Maksimal mikrofonforsterkning</string>
+    <string name="gain_controls_increase_db_per_second">Mikrofonforsterkning øker per sekund</string>
+    <string name="gain_controls_hold_time">Peak Limiter hold tid</string>
 
     <string name="network_controls_title">Network</string>
     <string name="network_controls_packet_redundancy">Pakke redundans</string>

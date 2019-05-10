@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">中繼</string>
     <string name="stop_button_text">停止</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">開始</string>
     <string name="status_tx_start">廣播</string>
     <string name="status_searching">搜索...</string>
     <string name="status_unavailable">不可用</string>
     <string name="status_headphones">插入耳機</string>
     <string name="status_talk">談論</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR（按靜音）</string>
-    <string name="status_muted">靜音（按下取消靜音）</string>
+    <string name="status_waiting">等候...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">靜音</string>
+    <string name="status_unmuted">正在播出</string>
+    <string name="status_muted">靜音</string>
+    <string name="status_unmute">取消靜音</string>
     <string name="status_no_wifi">請連接到WiFi</string>
 
     <string name="channel_text">渠道</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">設置</string>
     <string name="options_about">關於...</string>
 
-    <string name="gain_controls_title">獲得助推器</string>
-    <string name="gain_controls_max_gain_db_title">最大增益提升</string>
-    <string name="gain_controls_increase_db_per_second">每秒增加</string>
-    <string name="gain_controls_hold_time">峰值限制保持時間</string>
+    <string name="gain_controls_title">麥克風助推器</string>
+    <string name="gain_controls_max_gain_db_title">最大麥克風提升</string>
+    <string name="gain_controls_increase_db_per_second">麥克風每秒增加一次</string>
+    <string name="gain_controls_hold_time">峰值限制器保持時間</string>
 
     <string name="network_controls_title">網絡</string>
     <string name="network_controls_packet_redundancy">數據包冗餘</string>

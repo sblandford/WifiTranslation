@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Реле</string>
     <string name="stop_button_text">Стій</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Початок</string>
     <string name="status_tx_start">Трансляція</string>
     <string name="status_searching">Пошук ...</string>
     <string name="status_unavailable">Недоступно</string>
     <string name="status_headphones">Вставте навушники</string>
     <string name="status_talk">Поговоріть</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Натисніть, щоб вимкнути звук)</string>
-    <string name="status_muted">Приглушено (натисніть, щоб увімкнути звук)</string>
+    <string name="status_waiting">Очікування ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Mute</string>
+    <string name="status_unmuted">В ЕФІРІ</string>
+    <string name="status_muted">Вимкнено</string>
+    <string name="status_unmute">Увімкнути звук</string>
     <string name="status_no_wifi">Підключіться до WiFi</string>
 
     <string name="channel_text">Канал</string>
@@ -36,16 +39,16 @@
     <string name="options_settings">Налаштування</string>
     <string name="options_about">Про ...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Максимальне збільшення посилення</string>
-    <string name="gain_controls_increase_db_per_second">Збільшення збільшення в секунду</string>
-    <string name="gain_controls_hold_time">Пік граничного часу утримання</string>
+    <string name="gain_controls_title">Мікрофонний бустер</string>
+    <string name="gain_controls_max_gain_db_title">Максимальне підвищення мікрофону</string>
+    <string name="gain_controls_increase_db_per_second">Збільшення мікрофону в секунду</string>
+    <string name="gain_controls_hold_time">Час обмеження піку</string>
 
     <string name="network_controls_title">Мережа</string>
     <string name="network_controls_packet_redundancy">Надмірність пакетів</string>
 
     <string name="app_description">Багатоадресний переклад через місцевий Wi-Fi</string>
-    <string name="app_credits">Брахма Кумаріс Лондон ІТ-команда</string>
+    <string name="app_credits">Brahma Kumaris Лондон ІТ-команда</string>
 
     <string name="perms_alert_test">Увімкніть дозвіл мікрофона в дозволах додатків, щоб увімкнути трансляцію</string>
     <string name="multicast_alert">На жаль, цей пристрій не підтримує багатоадресну передачу в конфігурації ядра Linux</string>

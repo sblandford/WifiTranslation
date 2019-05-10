@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relaasje</string>
     <string name="stop_button_text">Halte</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Start</string>
     <string name="status_tx_start">Útstjoere</string>
     <string name="status_searching">Sykje troch ...</string>
     <string name="status_unavailable">Net beskikber</string>
     <string name="status_headphones">Kopiefoan ynfoegje</string>
     <string name="status_talk">Prate</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Pressje nei mute)</string>
-    <string name="status_muted">Ynsteld (Pressje om ûnmute)</string>
+    <string name="status_waiting">Wachtsje ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Stomme</string>
+    <string name="status_unmuted">YN \'E LOFT</string>
+    <string name="status_muted">Wetter - Agrarwetter</string>
+    <string name="status_unmute">Unmute</string>
     <string name="status_no_wifi">Meitsje ferbine mei WiFi</string>
 
     <string name="channel_text">Kanaal</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Ynstellings</string>
     <string name="options_about">Oer...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Maximum Gain Boost</string>
-    <string name="gain_controls_increase_db_per_second">Earntwikkeling per sekonde krije</string>
-    <string name="gain_controls_hold_time">Peaklimite hâldt tiid</string>
+    <string name="gain_controls_title">Mikrofoan Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maksimum Mikrofoan Boost</string>
+    <string name="gain_controls_increase_db_per_second">Mikrofoan stimulearret per sekonde</string>
+    <string name="gain_controls_hold_time">Peakbegryp hâldt tiid</string>
 
     <string name="network_controls_title">Netwurk</string>
     <string name="network_controls_packet_redundancy">Pakket redundancy</string>

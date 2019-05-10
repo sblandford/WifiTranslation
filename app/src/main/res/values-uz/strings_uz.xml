@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">O\'rnimizni</string>
     <string name="stop_button_text">To\'xta</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Boshlang</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">Qidirilmoqda ...</string>
     <string name="status_unavailable">Mavjud emas</string>
     <string name="status_headphones">Eshitish vositalarini joylashtiring</string>
     <string name="status_talk">Suhbatlashing</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">O\'N AIR (Ovozni o\'chirish uchun bosing)</string>
-    <string name="status_muted">Yumdik (yoqish uchun bosing)</string>
+    <string name="status_waiting">Kutilmoqda ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Mute</string>
+    <string name="status_unmuted">HAVODA</string>
+    <string name="status_muted">Muted</string>
+    <string name="status_unmute">Ovozni o\'chirish</string>
     <string name="status_no_wifi">Iltimos, Wi-Fi-ga ulaning</string>
 
     <string name="channel_text">Kanal</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Sozlamalar</string>
     <string name="options_about">Haqida ...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Maksimal daromadni oshirish</string>
-    <string name="gain_controls_increase_db_per_second">Bir soniyada ortib boradi</string>
-    <string name="gain_controls_hold_time">Peak limit ushlab turish muddati</string>
+    <string name="gain_controls_title">Mikrofonni mustahkamlovchi vosita</string>
+    <string name="gain_controls_max_gain_db_title">Maksimal mikrofonni kuchaytirish</string>
+    <string name="gain_controls_increase_db_per_second">Mikrofon soniyasiga soniyasining ortishi</string>
+    <string name="gain_controls_hold_time">Peak cheklovchini ushlab turish muddati</string>
 
     <string name="network_controls_title">Tarmoq</string>
     <string name="network_controls_packet_redundancy">Paket ortiqcha</string>

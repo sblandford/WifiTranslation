@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Реле</string>
     <string name="stop_button_text">Стоп</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Започнете</string>
     <string name="status_tx_start">Емитување</string>
     <string name="status_searching">Пребарување ...</string>
     <string name="status_unavailable">Недостапно</string>
     <string name="status_headphones">Вметнете слушалки</string>
     <string name="status_talk">Зборувај</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Притиснете за да го исклучите звукот)</string>
-    <string name="status_muted">Зачудено (Притиснете за да вклучите)</string>
+    <string name="status_waiting">Чекајќи ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Исклучи</string>
+    <string name="status_unmuted">ВО ЖИВО</string>
+    <string name="status_muted">Исклучен</string>
+    <string name="status_unmute">Вклучи</string>
     <string name="status_no_wifi">Поврзете се со WiFi</string>
 
     <string name="channel_text">Канал</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Подесувања</string>
     <string name="options_about">За ...</string>
 
-    <string name="gain_controls_title">Стекнат засилувач</string>
-    <string name="gain_controls_max_gain_db_title">Максимална засилување</string>
-    <string name="gain_controls_increase_db_per_second">Добијте зголемување во секунда</string>
-    <string name="gain_controls_hold_time">Времетраење на максималната граница</string>
+    <string name="gain_controls_title">Микрофон Бустер</string>
+    <string name="gain_controls_max_gain_db_title">Максимум зголемување на микрофонот</string>
+    <string name="gain_controls_increase_db_per_second">Зголемување на зголемување на микрофонот во секунда</string>
+    <string name="gain_controls_hold_time">Пик-ограничувачот има време</string>
 
     <string name="network_controls_title">Мрежа</string>
     <string name="network_controls_packet_redundancy">Пакетот вишок</string>

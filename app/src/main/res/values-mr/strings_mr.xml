@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">रिले</string>
     <string name="stop_button_text">थांबवा</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">प्रारंभ करा</string>
     <string name="status_tx_start">प्रसारण</string>
     <string name="status_searching">शोधत आहे ...</string>
     <string name="status_unavailable">अनुपलब्ध</string>
     <string name="status_headphones">हेडफोन घाला</string>
     <string name="status_talk">बोल</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">चालू (मूक करण्यासाठी दाबा)</string>
-    <string name="status_muted">निःशब्द (अनम्यूट करण्यासाठी दाबा)</string>
+    <string name="status_waiting">प्रतीक्षा करीत आहे ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">निःशब्द</string>
+    <string name="status_unmuted">चालू</string>
+    <string name="status_muted">निःशब्द</string>
+    <string name="status_unmute">सशब्द</string>
     <string name="status_no_wifi">कृपया वायफायशी कनेक्ट व्हा</string>
 
     <string name="channel_text">चॅनेल</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">सेटिंग्ज</string>
     <string name="options_about">बद्दल ...</string>
 
-    <string name="gain_controls_title">लाभ बूस्टर</string>
-    <string name="gain_controls_max_gain_db_title">कमाल बक्षीस बूस्ट</string>
-    <string name="gain_controls_increase_db_per_second">प्रति सेकंद वाढणे</string>
-    <string name="gain_controls_hold_time">शिखर मर्यादा धरून वेळ</string>
+    <string name="gain_controls_title">मायक्रोफोन बूस्टर</string>
+    <string name="gain_controls_max_gain_db_title">कमाल मायक्रोफोन बूस्ट</string>
+    <string name="gain_controls_increase_db_per_second">प्रति सेकंद मायक्रोफोन बूस्ट वाढ</string>
+    <string name="gain_controls_hold_time">शिखर मर्यादा वेळ धरून</string>
 
     <string name="network_controls_title">नेटवर्क</string>
     <string name="network_controls_packet_redundancy">पॅकेट रिडंडंसी</string>

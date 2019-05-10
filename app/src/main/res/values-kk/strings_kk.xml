@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Реле</string>
     <string name="stop_button_text">Тоқта</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Бастау</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">Іздеуде ...</string>
     <string name="status_unavailable">Қол жетімді емес</string>
     <string name="status_headphones">Құлаққаптарды салыңыз</string>
     <string name="status_talk">Әңгіме</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Дыбысты өшіру үшін басыңыз)</string>
-    <string name="status_muted">Үнсіз (қосу үшін басыңыз)</string>
+    <string name="status_waiting">Күтілуде ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Дыбысты өшіріңіз</string>
+    <string name="status_unmuted">АУАДА</string>
+    <string name="status_muted">Үнсіз</string>
+    <string name="status_unmute">Үндеңіз</string>
     <string name="status_no_wifi">WiFi-ге қосылыңыз</string>
 
     <string name="channel_text">Арна</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Параметрлер</string>
     <string name="options_about">Біз туралы ...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Максималды кірісті арттыру</string>
-    <string name="gain_controls_increase_db_per_second">Бір секундқа өседі</string>
-    <string name="gain_controls_hold_time">Шекті ұстау уақыты</string>
+    <string name="gain_controls_title">Микрофонды күшейткіш</string>
+    <string name="gain_controls_max_gain_db_title">Максимум микрофонды күшейту</string>
+    <string name="gain_controls_increase_db_per_second">Микрофонның секундына өсуін арттыру</string>
+    <string name="gain_controls_hold_time">Шекті шекті уақытты ұстап тұру</string>
 
     <string name="network_controls_title">Желілік</string>
     <string name="network_controls_packet_redundancy">Пакеттік артықшылық</string>

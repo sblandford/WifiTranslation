@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">ריליי</string>
     <string name="stop_button_text">אָפּשטעל</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">אָנהייב</string>
     <string name="status_tx_start">בראָאַדקאַסט</string>
     <string name="status_searching">זוך ...</string>
     <string name="status_unavailable">Unavailable</string>
     <string name="status_headphones">אַרייַנשטעלן כעדפאָונז</string>
     <string name="status_talk">רעדן</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">אויף לופט (דרוק צו שטום)</string>
-    <string name="status_muted">מיוטיד (דרוק צו ונמוטע)</string>
+    <string name="status_waiting">ווארטן ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Mute</string>
+    <string name="status_unmuted">ON AIR</string>
+    <string name="status_muted">Muted</string>
+    <string name="status_unmute">ונמוטע</string>
     <string name="status_no_wifi">ביטע פאַרבינדן צו וויפי</string>
 
     <string name="channel_text">טשאַננעל</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Settings</string>
     <string name="options_about">וועגן ...</string>
 
-    <string name="gain_controls_title">געווינען באָאָסטער</string>
-    <string name="gain_controls_max_gain_db_title">מאַקסימום געווינען באָאָסט</string>
-    <string name="gain_controls_increase_db_per_second">געוואקסן פאַרגרעסערן פּער רגע</string>
-    <string name="gain_controls_hold_time">פּיק שיעור האַלטן צייַט</string>
+    <string name="gain_controls_title">מיקראָפאָן בוסטער</string>
+    <string name="gain_controls_max_gain_db_title">מאַקסימום מיקראָפאָן באָאָסט</string>
+    <string name="gain_controls_increase_db_per_second">מיקראָפאָן פאַרגרעסערן פאַרגרעסערן פּער רגע</string>
+    <string name="gain_controls_hold_time">שפּיץ לימיטער האַלטן צייַט</string>
 
     <string name="network_controls_title">Network</string>
     <string name="network_controls_packet_redundancy">פּאַקאַט יבעריק</string>

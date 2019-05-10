@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">রিলেই</string>
     <string name="stop_button_text">থামুন</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">শুরু</string>
     <string name="status_tx_start">ব্রডকাস্ট</string>
     <string name="status_searching">অনুসন্ধান করা হচ্ছে ...</string>
     <string name="status_unavailable">অপ্রাপ্য</string>
     <string name="status_headphones">হেডফোন ঢোকান</string>
     <string name="status_talk">আলাপ</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">বাতাসে (নিঃশব্দে টিপুন)</string>
-    <string name="status_muted">Muted (নিষ্ক্রিয় করতে টিপুন)</string>
+    <string name="status_waiting">অপেক্ষা করা হচ্ছে ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">মূক</string>
+    <string name="status_unmuted">বেতারযোগে ঘোষিত</string>
+    <string name="status_muted">নিঃশব্দ করা</string>
+    <string name="status_unmute">সশব্দ</string>
     <string name="status_no_wifi">ওয়াইফাই সংযোগ করুন</string>
 
     <string name="channel_text">চ্যানেল</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">সেটিংস</string>
     <string name="options_about">সম্পর্কিত...</string>
 
-    <string name="gain_controls_title">বুস্টার লাভ</string>
-    <string name="gain_controls_max_gain_db_title">সর্বাধিক লাভ বুস্ট</string>
-    <string name="gain_controls_increase_db_per_second">প্রতি সেকেন্ডে বৃদ্ধি লাভ</string>
-    <string name="gain_controls_hold_time">শিখর সীমা হোল্ড সময়</string>
+    <string name="gain_controls_title">মাইক্রোফোন সহায়তাকারী</string>
+    <string name="gain_controls_max_gain_db_title">সর্বোচ্চ মাইক্রোফোন বুস্ট</string>
+    <string name="gain_controls_increase_db_per_second">মাইক্রোফোন বৃদ্ধি প্রতি সেকেন্ডে বৃদ্ধি</string>
+    <string name="gain_controls_hold_time">শিখর limiter সময় রাখা</string>
 
     <string name="network_controls_title">নেটওয়ার্ক</string>
     <string name="network_controls_packet_redundancy">প্যাকেট অমূল্যতা</string>

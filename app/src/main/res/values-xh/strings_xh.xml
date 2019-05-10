@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Dlulisa</string>
     <string name="stop_button_text">Yeka</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Qala</string>
     <string name="status_tx_start">Ukusasazwa</string>
     <string name="status_searching">Ukukhangela ...</string>
     <string name="status_unavailable">Ayikho</string>
     <string name="status_headphones">Faka iifowuni</string>
     <string name="status_talk">Thetha</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">KWI-AIR (Cinezela ukuthulisa)</string>
-    <string name="status_muted">Ikhutshiwe (Cinezela ukukhupha)</string>
+    <string name="status_waiting">Kulinda ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Thulisa</string>
+    <string name="status_unmuted">EMOYENI</string>
+    <string name="status_muted">Ikhutshwe</string>
+    <string name="status_unmute">Susa</string>
     <string name="status_no_wifi">Nceda uqhagamshele kwi-WiFi</string>
 
     <string name="channel_text">Isiteshi</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Izicwangciso</string>
     <string name="options_about">Mayelana ...</string>
 
-    <string name="gain_controls_title">Ukufumana i-Booster</string>
-    <string name="gain_controls_max_gain_db_title">Ubukhulu bokuzuza</string>
-    <string name="gain_controls_increase_db_per_second">Ukwandiswa okwesibini</string>
-    <string name="gain_controls_hold_time">Umda wePaak ugcine ixesha</string>
+    <string name="gain_controls_title">I-Microphone Booster</string>
+    <string name="gain_controls_max_gain_db_title">Ukukhulisa iMakrofoni enkulu</string>
+    <string name="gain_controls_increase_db_per_second">Ukunyuka kwemakrofoni kunyuka ngesibini</string>
+    <string name="gain_controls_hold_time">I-limit limiter ixesha</string>
 
     <string name="network_controls_title">Inethiwekhi</string>
     <string name="network_controls_packet_redundancy">Iipakethi zokubuyiswa</string>

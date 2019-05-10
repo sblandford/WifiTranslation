@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relee</string>
     <string name="stop_button_text">Peatus</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Alusta</string>
     <string name="status_tx_start">Ringhääling</string>
     <string name="status_searching">Otsimine ...</string>
     <string name="status_unavailable">Ei ole saadaval</string>
     <string name="status_headphones">Sisestage kõrvaklapid</string>
     <string name="status_talk">Räägi</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (vaigistamiseks vajuta)</string>
-    <string name="status_muted">Vaigistatud (vajuta vaigistamiseks)</string>
+    <string name="status_waiting">Ootan ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Vaigista</string>
+    <string name="status_unmuted">ÕHUS</string>
+    <string name="status_muted">Vaigistatud</string>
+    <string name="status_unmute">Ava mikrofon</string>
     <string name="status_no_wifi">Palun ühendage WiFi</string>
 
     <string name="channel_text">Kanal</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Seaded</string>
     <string name="options_about">Teave ...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Maksimaalne võimenduse suurendamine</string>
-    <string name="gain_controls_increase_db_per_second">Kasvu suurendamine sekundis</string>
-    <string name="gain_controls_hold_time">Piirväärtuse hoidmise aeg</string>
+    <string name="gain_controls_title">Mikrofoni võimendaja</string>
+    <string name="gain_controls_max_gain_db_title">Maksimaalne mikrofoni võimendus</string>
+    <string name="gain_controls_increase_db_per_second">Mikrofoni suurendamine sekundis</string>
+    <string name="gain_controls_hold_time">Piigi piiraja hoidmise aeg</string>
 
     <string name="network_controls_title">Võrk</string>
     <string name="network_controls_packet_redundancy">Pakettide koondamine</string>

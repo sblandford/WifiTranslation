@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Acha</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Anza</string>
     <string name="status_tx_start">Tangaza</string>
     <string name="status_searching">Inatafuta ...</string>
     <string name="status_unavailable">Haipatikani</string>
     <string name="status_headphones">Ingiza vichwa vya sauti</string>
     <string name="status_talk">Majadiliano</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Waandishi wa habari ili kuwaza)</string>
-    <string name="status_muted">Imefunguliwa (Bonyeza kufuta)</string>
+    <string name="status_waiting">Inasubiri ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Simama</string>
+    <string name="status_unmuted">HEWANI</string>
+    <string name="status_muted">Imefunguliwa</string>
+    <string name="status_unmute">Futa</string>
     <string name="status_no_wifi">Tafadhali ingia kwenye WiFi</string>
 
     <string name="channel_text">Kituo</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Mipangilio</string>
     <string name="options_about">Kuhusu ...</string>
 
-    <string name="gain_controls_title">Kupata Booster</string>
-    <string name="gain_controls_max_gain_db_title">Upeo wa Mafanikio</string>
-    <string name="gain_controls_increase_db_per_second">Pata ongezeko kwa pili</string>
-    <string name="gain_controls_hold_time">Kiwango cha kilele cha kushikilia</string>
+    <string name="gain_controls_title">Nyongeza ya kipaza sauti</string>
+    <string name="gain_controls_max_gain_db_title">Kuimarisha kipaza sauti kipaza sauti</string>
+    <string name="gain_controls_increase_db_per_second">Kuongezeka kwa kipaza sauti kwa pili</string>
+    <string name="gain_controls_hold_time">Kizuizi cha kilele cha kushikilia muda</string>
 
     <string name="network_controls_title">Mtandao</string>
     <string name="network_controls_packet_redundancy">Pakiti ya redundancy</string>

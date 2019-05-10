@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">ถ่ายทอด</string>
     <string name="stop_button_text">หยุด</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">เริ่มต้น</string>
     <string name="status_tx_start">ออกอากาศ</string>
     <string name="status_searching">ค้นหา ...</string>
     <string name="status_unavailable">ไม่มี</string>
     <string name="status_headphones">ใส่หูฟัง</string>
     <string name="status_talk">พูดคุย</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (กดเพื่อปิดเสียง)</string>
-    <string name="status_muted">ปิดเสียง (กดเพื่อเปิดเสียง)</string>
+    <string name="status_waiting">ที่รอคอย...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">ใบ้</string>
+    <string name="status_unmuted">ออกอากาศ</string>
+    <string name="status_muted">ไม่ออกเสียง</string>
+    <string name="status_unmute">เปิดเสียง</string>
     <string name="status_no_wifi">โปรดเชื่อมต่อกับ WiFi</string>
 
     <string name="channel_text">ช่อง</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">การตั้งค่า</string>
     <string name="options_about">เกี่ยวกับ ...</string>
 
-    <string name="gain_controls_title">ตัวเพิ่มกําไร</string>
-    <string name="gain_controls_max_gain_db_title">เพิ่มกำไรสูงสุด</string>
-    <string name="gain_controls_increase_db_per_second">เพิ่มกำไรต่อวินาที</string>
-    <string name="gain_controls_hold_time">เวลาที่ จำกัด ไว้สูงสุด</string>
+    <string name="gain_controls_title">ไมโครโฟน Booster</string>
+    <string name="gain_controls_max_gain_db_title">เพิ่มไมโครโฟนสูงสุด</string>
+    <string name="gain_controls_increase_db_per_second">เพิ่มไมโครโฟนเพิ่มขึ้นต่อวินาที</string>
+    <string name="gain_controls_hold_time">จำกัด เวลาสูงสุดไว้</string>
 
     <string name="network_controls_title">เครือข่าย</string>
     <string name="network_controls_packet_redundancy">แพ็คเก็ตซ้ำซ้อน</string>

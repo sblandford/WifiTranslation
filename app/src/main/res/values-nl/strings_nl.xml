@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relais</string>
     <string name="stop_button_text">Hou op</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Begin</string>
     <string name="status_tx_start">Uitzending</string>
     <string name="status_searching">Zoeken...</string>
     <string name="status_unavailable">Niet beschikbaar</string>
     <string name="status_headphones">Plaats een koptelefoon</string>
     <string name="status_talk">Praten</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Druk om te dempen)</string>
-    <string name="status_muted">Gedempt (Druk om het dempen op te heffen)</string>
+    <string name="status_waiting">Aan het wachten...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Dempen</string>
+    <string name="status_unmuted">ON AIR</string>
+    <string name="status_muted">Gedempt</string>
+    <string name="status_unmute">Unmute</string>
     <string name="status_no_wifi">Maak verbinding met wifi</string>
 
     <string name="channel_text">Kanaal</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">instellingen</string>
     <string name="options_about">Wat betreft...</string>
 
-    <string name="gain_controls_title">Krijg Booster</string>
-    <string name="gain_controls_max_gain_db_title">Maximale winstversterking</string>
-    <string name="gain_controls_increase_db_per_second">Versterking per seconde</string>
-    <string name="gain_controls_hold_time">Pieklimiet vasthoudtijd</string>
+    <string name="gain_controls_title">Microfoonversterker</string>
+    <string name="gain_controls_max_gain_db_title">Maximale microfoonversterking</string>
+    <string name="gain_controls_increase_db_per_second">Microfoonversterking verhoogt per seconde</string>
+    <string name="gain_controls_hold_time">Beperking van de piekbegrenzer</string>
 
     <string name="network_controls_title">Netwerk</string>
     <string name="network_controls_packet_redundancy">Pakketredundantie</string>

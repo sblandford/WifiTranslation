@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Socdaalka</string>
     <string name="stop_button_text">Jooji</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Bilow</string>
     <string name="status_tx_start">Warbaahinta</string>
     <string name="status_searching">Raadinta ...</string>
     <string name="status_unavailable">Lama hayo</string>
     <string name="status_headphones">Geli wershadaha dhegaha</string>
     <string name="status_talk">Kala hadal</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON HUB (Riix si aad uhesho)</string>
-    <string name="status_muted">Isku-dhuftay (riix si aad u aragto)</string>
+    <string name="status_waiting">Sugitaanka ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Susan</string>
+    <string name="status_unmuted">ONO</string>
+    <string name="status_muted">Mute</string>
+    <string name="status_unmute">Dareen la\'aan</string>
     <string name="status_no_wifi">Fadlan ku xiro WiFi</string>
 
     <string name="channel_text">Channel</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Goobaha</string>
     <string name="options_about">Ku saabsan ...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Gaariga Ugu Sareeya</string>
-    <string name="gain_controls_increase_db_per_second">Korodhka korodhka sanadka</string>
-    <string name="gain_controls_hold_time">Waqti xaddidaad xaddidan</string>
+    <string name="gain_controls_title">Boosterka mikrophone</string>
+    <string name="gain_controls_max_gain_db_title">Boostada ugu sareeya</string>
+    <string name="gain_controls_increase_db_per_second">Kororka macaamiisha korodhka sanadka</string>
+    <string name="gain_controls_hold_time">Xaddidaadda cuntadu waxay qabataa waqti</string>
 
     <string name="network_controls_title">Shabakad</string>
     <string name="network_controls_packet_redundancy">Maqnaanshaha buuxda</string>

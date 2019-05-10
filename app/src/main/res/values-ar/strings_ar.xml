@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">تناوب</string>
     <string name="stop_button_text">توقف</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">بداية</string>
     <string name="status_tx_start">بث</string>
     <string name="status_searching">البحث ...</string>
     <string name="status_unavailable">غير متوفره</string>
     <string name="status_headphones">أدخل سماعات الرأس</string>
     <string name="status_talk">حديث</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">على الهواء (اضغط لكتم)</string>
-    <string name="status_muted">كتم الصوت (اضغط لإلغاء الصوت)</string>
+    <string name="status_waiting">انتظار...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">كتم الصوت</string>
+    <string name="status_unmuted">على الهواء مباشرة</string>
+    <string name="status_muted">صامتة</string>
+    <string name="status_unmute">غير الصامت</string>
     <string name="status_no_wifi">يرجى الاتصال واي فاي</string>
 
     <string name="channel_text">قناة</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">الإعدادات</string>
     <string name="options_about">حول...</string>
 
-    <string name="gain_controls_title">كسب الداعم</string>
-    <string name="gain_controls_max_gain_db_title">الحد الأقصى لزيادة الأرباح</string>
-    <string name="gain_controls_increase_db_per_second">كسب زيادة في الثانية الواحدة</string>
-    <string name="gain_controls_hold_time">ذروة وقت الانتظار الحد</string>
+    <string name="gain_controls_title">ميكروفون الداعم</string>
+    <string name="gain_controls_max_gain_db_title">الحد الأقصى لدعم الميكروفون</string>
+    <string name="gain_controls_increase_db_per_second">زيادة الميكروفون في الثانية</string>
+    <string name="gain_controls_hold_time">ذروة المحدد عقد الوقت</string>
 
     <string name="network_controls_title">شبكة الاتصال</string>
     <string name="network_controls_packet_redundancy">حزمة التكرار</string>

@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Релаи</string>
     <string name="stop_button_text">Зауставити</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Почетак</string>
     <string name="status_tx_start">Броадцаст</string>
     <string name="status_searching">У потрази...</string>
     <string name="status_unavailable">Недоступно</string>
     <string name="status_headphones">Уметните слушалице</string>
     <string name="status_talk">Талк</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ОН АИР (Притисните да бисте искључили звук)</string>
-    <string name="status_muted">Искључено (притисните да бисте укључили звук)</string>
+    <string name="status_waiting">Чекање ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Муте</string>
+    <string name="status_unmuted">УЖИВО</string>
+    <string name="status_muted">Мутед</string>
+    <string name="status_unmute">Унмуте</string>
     <string name="status_no_wifi">Повежите се на ВиФи</string>
 
     <string name="channel_text">Канал</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Подешавања</string>
     <string name="options_about">О томе...</string>
 
-    <string name="gain_controls_title">Гаин Боостер</string>
-    <string name="gain_controls_max_gain_db_title">Макимум Гаин Боост</string>
-    <string name="gain_controls_increase_db_per_second">Повећање појачања у секунди</string>
-    <string name="gain_controls_hold_time">Максимално ограничење времена задржавања</string>
+    <string name="gain_controls_title">Мицропхоне Боостер</string>
+    <string name="gain_controls_max_gain_db_title">Максимално појачавање микрофона</string>
+    <string name="gain_controls_increase_db_per_second">Повећање микрофона у секунди</string>
+    <string name="gain_controls_hold_time">Време задржавања максимума ограничења</string>
 
     <string name="network_controls_title">Мрежа</string>
     <string name="network_controls_packet_redundancy">Редундантност пакета</string>

@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relè</string>
     <string name="stop_button_text">One Stop</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Kòmanse</string>
     <string name="status_tx_start">Emisyon</string>
     <string name="status_searching">Chache ...</string>
     <string name="status_unavailable">Disponib</string>
     <string name="status_headphones">Antre kas ekoutè</string>
     <string name="status_talk">Pale</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">Sou lè (peze bèbè)</string>
-    <string name="status_muted">Soupilye (peze kalm)</string>
+    <string name="status_waiting">Ap tann ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Bèbè</string>
+    <string name="status_unmuted">NAN LÈ</string>
+    <string name="status_muted">San</string>
+    <string name="status_unmute">Unmute</string>
     <string name="status_no_wifi">Tanpri konekte WiFi</string>
 
     <string name="channel_text">Chèn</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Anviwònman</string>
     <string name="options_about">About ...</string>
 
-    <string name="gain_controls_title">Akeri rapèl</string>
-    <string name="gain_controls_max_gain_db_title">Maksimòm ogmantasyon akeri</string>
-    <string name="gain_controls_increase_db_per_second">Ogmante ogmantasyon pou chak dezyèm</string>
-    <string name="gain_controls_hold_time">Peak limit kenbe tan</string>
+    <string name="gain_controls_title">Microphone Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maksimòm mikwofòn Pouse</string>
+    <string name="gain_controls_increase_db_per_second">Ogmantasyon mikwofòn ogmante pou chak dezyèm</string>
+    <string name="gain_controls_hold_time">Peak Limiter kenbe tan</string>
 
     <string name="network_controls_title">Rezo</string>
     <string name="network_controls_packet_redundancy">Redondans pake</string>

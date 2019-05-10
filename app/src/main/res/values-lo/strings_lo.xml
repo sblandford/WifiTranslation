@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">ຢຸດ</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">ເລີ່ມຕົ້ນ</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">ຄົ້ນຫາ ...</string>
     <string name="status_unavailable">ບໍ່ສາມາດໃຊ້ໄດ້</string>
     <string name="status_headphones">ໃສ່ຫົວຫູຟັງ</string>
     <string name="status_talk">ສົນທະນາ</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (ກົດເພື່ອປິດສຽງ)</string>
-    <string name="status_muted">ຖືກລົບ (ກົດເພື່ອເປີດສຽງ)</string>
+    <string name="status_waiting">ລໍຖ້າ ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Mute</string>
+    <string name="status_unmuted">ອອກ​ອາ​ກາດ</string>
+    <string name="status_muted">ຖືກລົບກວນ</string>
+    <string name="status_unmute">ຍົກເລີກ</string>
     <string name="status_no_wifi">ກະລຸນາເຊື່ອມຕໍ່ WiFi</string>
 
     <string name="channel_text">Channel</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Settings</string>
     <string name="options_about">ກ່ຽວກັບ ...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">ເພີ່ມກໍາໄຮສູງສຸດ</string>
-    <string name="gain_controls_increase_db_per_second">ເພີ່ມຂຶ້ນຕໍ່ວິນາທີ</string>
-    <string name="gain_controls_hold_time">ໄລຍະເວລາຈໍາກັດສູງສຸດ</string>
+    <string name="gain_controls_title">Microphone Booster</string>
+    <string name="gain_controls_max_gain_db_title">Microphone ສູງສຸດເພີ່ມຂຶ້ນ</string>
+    <string name="gain_controls_increase_db_per_second">ໄມໂຄໂຟນເພີ່ມການເພີ່ມຂຶ້ນຕໍ່ວິນາທີ</string>
+    <string name="gain_controls_hold_time">ຈໍາກັດສູງສຸດຖືເວລາ</string>
 
     <string name="network_controls_title">ເຄືອຂ່າຍ</string>
     <string name="network_controls_packet_redundancy">Packet redundancy</string>

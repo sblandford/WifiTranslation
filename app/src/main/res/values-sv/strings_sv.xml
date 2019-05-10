@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relä</string>
     <string name="stop_button_text">Sluta</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Start</string>
     <string name="status_tx_start">Utsända</string>
     <string name="status_searching">Sökande...</string>
     <string name="status_unavailable">Inte tillgänglig</string>
     <string name="status_headphones">Sätt i hörlurar</string>
     <string name="status_talk">Prata</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">PÅ LUFT (Tryck för att stänga av)</string>
-    <string name="status_muted">Mute (Tryck för att stänga av)</string>
+    <string name="status_waiting">Väntar...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Stum</string>
+    <string name="status_unmuted">PÅ LUFT</string>
+    <string name="status_muted">dämpad</string>
+    <string name="status_unmute">Mikrofon</string>
     <string name="status_no_wifi">Vänligen anslut till WiFi</string>
 
     <string name="channel_text">kanalisera</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">inställningar</string>
     <string name="options_about">Handla om...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Maximal vinstökning</string>
-    <string name="gain_controls_increase_db_per_second">Förhöjning per sekund</string>
-    <string name="gain_controls_hold_time">Peak limit hålltid</string>
+    <string name="gain_controls_title">Mikrofonförstärkare</string>
+    <string name="gain_controls_max_gain_db_title">Maximal mikrofonförstärkning</string>
+    <string name="gain_controls_increase_db_per_second">Mikrofonhöjning ökar per sekund</string>
+    <string name="gain_controls_hold_time">Peak Limiter hålltid</string>
 
     <string name="network_controls_title">Nätverk</string>
     <string name="network_controls_packet_redundancy">Paketredundans</string>

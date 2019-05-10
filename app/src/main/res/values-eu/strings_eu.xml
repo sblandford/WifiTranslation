@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Gelditu</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">start</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">Bilatzen ...</string>
     <string name="status_unavailable">Ez dago erabilgarri</string>
     <string name="status_headphones">Txertatu aurikularrak</string>
     <string name="status_talk">Eztabaida</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (sakatu mututzeko)</string>
-    <string name="status_muted">Ezkutatua (sakatu sakatzean)</string>
+    <string name="status_waiting">Zain ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Mutu</string>
+    <string name="status_unmuted">AIREAN</string>
+    <string name="status_muted">Muted</string>
+    <string name="status_unmute">Jarraitu</string>
     <string name="status_no_wifi">Konektatu WiFi bidez</string>
 
     <string name="channel_text">Channel</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">ezarpenak</string>
     <string name="options_about">About ...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Gehienezko irabazien sustapena</string>
-    <string name="gain_controls_increase_db_per_second">Gainean segundoko gehikuntza</string>
-    <string name="gain_controls_hold_time">Peak muga denbora mantentzea</string>
+    <string name="gain_controls_title">Mikrofonoen Booster</string>
+    <string name="gain_controls_max_gain_db_title">Gehienezko Mikrofonoaren Zabalkundea</string>
+    <string name="gain_controls_increase_db_per_second">Mikrofonoa areagotzeko segundoko areagotzea</string>
+    <string name="gain_controls_hold_time">Peak mugatzailea mantentze denbora</string>
 
     <string name="network_controls_title">Sarea</string>
     <string name="network_controls_packet_redundancy">Pakete erredundantzia</string>

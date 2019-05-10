@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Реле</string>
     <string name="stop_button_text">токтотуу</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">баштоо</string>
     <string name="status_tx_start">уктуруу</string>
     <string name="status_searching">Издөө ...</string>
     <string name="status_unavailable">жеткиликтүү эмес</string>
     <string name="status_headphones">наушник менен киргизүү</string>
     <string name="status_talk">сүйлөшүү</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">Абага (Press киргиле)</string>
-    <string name="status_muted">Үнсүз (Press үнүн үчүн)</string>
+    <string name="status_waiting">Күтүлүүдө ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">көп сүйлөбөгөн</string>
+    <string name="status_unmuted">ON AIR</string>
+    <string name="status_muted">Үнсүз</string>
+    <string name="status_unmute">Өтмөктүн</string>
     <string name="status_no_wifi">Сураныч, WiFi туташуу</string>
 
     <string name="channel_text">канал</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Орнотуулар</string>
     <string name="options_about">Жөнүндө ...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Maximum Gain Boost</string>
-    <string name="gain_controls_increase_db_per_second">секундасына жогорулатууга ээ</string>
-    <string name="gain_controls_hold_time">Чокусу се убакыт</string>
+    <string name="gain_controls_title">алгыч Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maximum алгыч Boost</string>
+    <string name="gain_controls_increase_db_per_second">секундасына алгыч сезүүгө көбөйтүү</string>
+    <string name="gain_controls_hold_time">Чокусу чектегич кармалган убактысы</string>
 
     <string name="network_controls_title">Network</string>
     <string name="network_controls_packet_redundancy">пакеттер кыскартуу</string>

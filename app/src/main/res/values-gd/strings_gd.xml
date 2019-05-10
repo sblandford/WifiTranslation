@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Stad</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Tòisich</string>
     <string name="status_tx_start">Air a chraoladh</string>
     <string name="status_searching">A ’rannsachadh ...</string>
     <string name="status_unavailable">Gun ri fhaighinn</string>
     <string name="status_headphones">Cuir fònaichean-cluaise ann</string>
     <string name="status_talk">Bruidhinn</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Press to mute)</string>
-    <string name="status_muted">Gòrach</string>
+    <string name="status_waiting">A ’feitheamh ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Mute</string>
+    <string name="status_unmuted">AIR AIR</string>
+    <string name="status_muted">Air a chreachadh</string>
+    <string name="status_unmute">Dì-chliù</string>
     <string name="status_no_wifi">Dèan ceangal ri WiFi</string>
 
     <string name="channel_text">Sianal</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Roghainnean</string>
     <string name="options_about">Mu dheidhinn ...</string>
 
-    <string name="gain_controls_title">Cuir ris a \'bhuannachd</string>
-    <string name="gain_controls_max_gain_db_title">Àrd-bhuannachd airson àrdachadh</string>
-    <string name="gain_controls_increase_db_per_second">Àrdachadh air àrdachadh gach diog</string>
-    <string name="gain_controls_hold_time">Cumar ùine gun stad</string>
+    <string name="gain_controls_title">Daingneach microphone</string>
+    <string name="gain_controls_max_gain_db_title">Àrd Microphone Boost as motha</string>
+    <string name="gain_controls_increase_db_per_second">Àrdachadh ann am meudachadh microfòn gach dàrna</string>
+    <string name="gain_controls_hold_time">Tha am mullach as àirde airson ùine a chumail</string>
 
     <string name="network_controls_title">Lìonra</string>
     <string name="network_controls_packet_redundancy">A ’cur às do phacaid</string>
@@ -47,6 +50,6 @@
     <string name="app_description">Eadar-theangachadh ioma-raon tro Wi-Fi ionadail</string>
     <string name="app_credits">Brahma Kumaris Lunnainn sgioba IT</string>
 
-    <string name="perms_alert_test">Cuir air chomas cead a ’Mhicrophone ann an App Permissions a dhèanamh gus am faighear air Craoladh</string>
+    <string name="perms_alert_test">Cuir air chomas cead a ’Microphone ann an App Permissions a dhèanamh gus am faighear air Craoladh</string>
     <string name="multicast_alert">Gu mì-fhortanach, chan eil ioma-chrann air a chuir air an inneal seo ann an rèiteachadh na h-eithne Linux</string>
 </resources>

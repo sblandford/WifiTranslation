@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Dlulisa amehlo</string>
     <string name="stop_button_text">Ima</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Qala</string>
     <string name="status_tx_start">Ukusakaza</string>
     <string name="status_searching">Isesha ...</string>
     <string name="status_unavailable">Ayitholakali</string>
     <string name="status_headphones">Faka imisindo</string>
     <string name="status_talk">Khuluma</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">KU-AIR (Cindezela ukuthulisa)</string>
-    <string name="status_muted">Ihanjisiwe (Cindezela ukukhipha unmute)</string>
+    <string name="status_waiting">Ilinde ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Thulisa</string>
+    <string name="status_unmuted">EMOYENI</string>
+    <string name="status_muted">Kuthulwe</string>
+    <string name="status_unmute">Susa ukuthula</string>
     <string name="status_no_wifi">Sicela uxhume ku-WiFi</string>
 
     <string name="channel_text">Isiteshi</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Izilungiselelo</string>
     <string name="options_about">Mayelana ...</string>
 
-    <string name="gain_controls_title">Thola isikhulu</string>
-    <string name="gain_controls_max_gain_db_title">Ukukhuliswa Okuphezulu Okuphezulu</string>
-    <string name="gain_controls_increase_db_per_second">Thola ukwanda ngomzuzwana</string>
-    <string name="gain_controls_hold_time">Umkhawulo wokuphakama ubambe isikhathi</string>
+    <string name="gain_controls_title">I-Microphone Booster</string>
+    <string name="gain_controls_max_gain_db_title">Ukukhulisa imakrofoni enkulu</string>
+    <string name="gain_controls_increase_db_per_second">Ukwandiswa kwemakrofoni ukondla ngomzuzwana ngamunye</string>
+    <string name="gain_controls_hold_time">I-limit limiter ibambe isikhathi</string>
 
     <string name="network_controls_title">Inethiwekhi</string>
     <string name="network_controls_packet_redundancy">Iphakheji redundancy</string>

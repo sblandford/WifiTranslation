@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Αναμετάδοση</string>
     <string name="stop_button_text">Να σταματήσει</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Αρχή</string>
     <string name="status_tx_start">Αναμετάδοση</string>
     <string name="status_searching">Ερευνητικός...</string>
     <string name="status_unavailable">Μη ΔΙΑΘΕΣΙΜΟΣ</string>
     <string name="status_headphones">Τοποθετήστε τα ακουστικά</string>
     <string name="status_talk">ΜΙΛΑ ρε</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Πατήστε για σίγαση)</string>
-    <string name="status_muted">Σίγαση (Πατήστε για να απενεργοποιήσετε)</string>
+    <string name="status_waiting">Αναμονή...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Βουβός</string>
+    <string name="status_unmuted">ΣΤΟΝ ΑΕΡΑ</string>
+    <string name="status_muted">Μιλήθηκε</string>
+    <string name="status_unmute">Αναίρεση σίγασης</string>
     <string name="status_no_wifi">Συνδεθείτε στο WiFi</string>
 
     <string name="channel_text">Κανάλι</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Ρυθμίσεις</string>
     <string name="options_about">Σχετικά με...</string>
 
-    <string name="gain_controls_title">Αποκτήστε ενισχυτή</string>
-    <string name="gain_controls_max_gain_db_title">Μέγιστη αύξηση κέρδους</string>
-    <string name="gain_controls_increase_db_per_second">Αύξηση κέρδους ανά δευτερόλεπτο</string>
-    <string name="gain_controls_hold_time">Όριο αιχμής αιχμής</string>
+    <string name="gain_controls_title">Ενισχυτής μικροφώνου</string>
+    <string name="gain_controls_max_gain_db_title">Μέγιστη ενίσχυση μικροφώνου</string>
+    <string name="gain_controls_increase_db_per_second">Μείωση ώθησης μικροφώνου ανά δευτερόλεπτο</string>
+    <string name="gain_controls_hold_time">Ο περιοριστής αιχμής έχει χρόνο</string>
 
     <string name="network_controls_title">Δίκτυο</string>
     <string name="network_controls_packet_redundancy">Επαναφορά πακέτων</string>

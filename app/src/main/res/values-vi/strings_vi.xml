@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Rơle</string>
     <string name="stop_button_text">Dừng lại</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Khởi đầu</string>
     <string name="status_tx_start">Phát sóng</string>
     <string name="status_searching">Đang tìm kiếm...</string>
     <string name="status_unavailable">Không có sẵn</string>
     <string name="status_headphones">Chèn tai nghe</string>
     <string name="status_talk">Nói chuyện</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Nhấn để tắt tiếng)</string>
-    <string name="status_muted">Tắt tiếng (Nhấn để bật tiếng)</string>
+    <string name="status_waiting">Đang chờ đợi...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Tắt tiếng</string>
+    <string name="status_unmuted">TRÊN KHÔNG KHÍ</string>
+    <string name="status_muted">Tắt tiếng</string>
+    <string name="status_unmute">Bật tiếng</string>
     <string name="status_no_wifi">Vui lòng kết nối với WiFi</string>
 
     <string name="channel_text">Kênh</string>
@@ -36,9 +39,9 @@
     <string name="options_settings">Cài đặt</string>
     <string name="options_about">Trong khoảng...</string>
 
-    <string name="gain_controls_title">Tăng cường</string>
-    <string name="gain_controls_max_gain_db_title">Tăng tối đa</string>
-    <string name="gain_controls_increase_db_per_second">Tăng mỗi giây</string>
+    <string name="gain_controls_title">Tăng cường micro</string>
+    <string name="gain_controls_max_gain_db_title">Tăng cường micro tối đa</string>
+    <string name="gain_controls_increase_db_per_second">Tăng micrô mỗi giây</string>
     <string name="gain_controls_hold_time">Thời gian giữ giới hạn cao điểm</string>
 
     <string name="network_controls_title">Mạng</string>

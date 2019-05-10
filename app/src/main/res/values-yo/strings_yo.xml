@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Ifiranṣẹ</string>
     <string name="stop_button_text">Duro</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Bẹrẹ</string>
     <string name="status_tx_start">Itaniji</string>
     <string name="status_searching">Wiwa ...</string>
     <string name="status_unavailable">Ko wa</string>
     <string name="status_headphones">Fi akọkun sii</string>
     <string name="status_talk">Ọrọ sisọrọ</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Tẹ lati dakẹ)</string>
-    <string name="status_muted">Muted (Tẹ lati ṣatunkọ)</string>
+    <string name="status_waiting">Nduro ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Mute</string>
+    <string name="status_unmuted">LORI AFEFE</string>
+    <string name="status_muted">Muted</string>
+    <string name="status_unmute">Ṣi i</string>
     <string name="status_no_wifi">Jowo sopọ si WiFi</string>
 
     <string name="channel_text">Ikanni</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Ètò</string>
     <string name="options_about">Nipa ...</string>
 
-    <string name="gain_controls_title">Gba Booster</string>
-    <string name="gain_controls_max_gain_db_title">Imudara to pọju Iwọn</string>
-    <string name="gain_controls_increase_db_per_second">Mu ilosoke sii fun keji</string>
-    <string name="gain_controls_hold_time">Ifilelẹ ti iye ti idaduro akoko</string>
+    <string name="gain_controls_title">Bọtini gbohungbohun</string>
+    <string name="gain_controls_max_gain_db_title">Imudani Agbọrọsọ Iwọn didun</string>
+    <string name="gain_controls_increase_db_per_second">Imudani imuduro ohun ilosoke sii fun keji</string>
+    <string name="gain_controls_hold_time">Fi opin si akoko idaduro</string>
 
     <string name="network_controls_title">Nẹtiwọki</string>
     <string name="network_controls_packet_redundancy">Sisẹpo packet</string>

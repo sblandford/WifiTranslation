@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">ರಿಲೇ</string>
     <string name="stop_button_text">ನಿಲ್ಲಿಸಿ</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">ಪ್ರಾರಂಭಿಸಿ</string>
     <string name="status_tx_start">ಪ್ರಸಾರ</string>
     <string name="status_searching">ಹುಡುಕಲಾಗುತ್ತಿದೆ ...</string>
     <string name="status_unavailable">ಲಭ್ಯವಿಲ್ಲ</string>
     <string name="status_headphones">ಹೆಡ್ಫೋನ್ಗಳನ್ನು ಸೇರಿಸಿ</string>
     <string name="status_talk">ಚರ್ಚೆ</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ವಾಯುಪ್ರದೇಶದಲ್ಲಿ (ಮ್ಯೂಟ್ ಮಾಡಲು ಒತ್ತಿರಿ)</string>
-    <string name="status_muted">ಮ್ಯೂಟ್ ಮಾಡಲಾಗಿದೆ (ಅನ್ಮ್ಯೂಟ್ ಮಾಡಲು ಒತ್ತಿರಿ)</string>
+    <string name="status_waiting">ನಿರೀಕ್ಷಿಸಲಾಗುತ್ತಿದೆ ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">ಮ್ಯೂಟ್ ಮಾಡಿ</string>
+    <string name="status_unmuted">ಪ್ರಸಾರದಲ್ಲಿ</string>
+    <string name="status_muted">ಮ್ಯೂಟ್ ಮಾಡಲಾಗಿದೆ</string>
+    <string name="status_unmute">ಅನ್ಮ್ಯೂಟ್ ಮಾಡಿ</string>
     <string name="status_no_wifi">ವೈಫೈಗೆ ಸಂಪರ್ಕಿಸಿ</string>
 
     <string name="channel_text">ಚಾನಲ್</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">ಸೆಟ್ಟಿಂಗ್ಗಳು</string>
     <string name="options_about">ಕುರಿತು ...</string>
 
-    <string name="gain_controls_title">ಲಾಭ ಬೂಸ್ಟರ್</string>
-    <string name="gain_controls_max_gain_db_title">ಗರಿಷ್ಠ ಲಾಭ ಹೆಚ್ಚಳ</string>
-    <string name="gain_controls_increase_db_per_second">ಸೆಕೆಂಡಿಗೆ ಹೆಚ್ಚಳವನ್ನು ಹೆಚ್ಚಿಸಿ</string>
-    <string name="gain_controls_hold_time">ಗರಿಷ್ಠ ಮಿತಿ ಸಮಯ ಹಿಡಿಯುತ್ತದೆ</string>
+    <string name="gain_controls_title">ಮೈಕ್ರೊಫೋನ್ ಬೂಸ್ಟರ್</string>
+    <string name="gain_controls_max_gain_db_title">ಗರಿಷ್ಠ ಮೈಕ್ರೊಫೋನ್ ಬೂಸ್ಟ್</string>
+    <string name="gain_controls_increase_db_per_second">ಪ್ರತಿ ಸೆಕೆಂಡಿಗೆ ಮೈಕ್ರೊಫೋನ್ ವರ್ಧಕ ಹೆಚ್ಚಳ</string>
+    <string name="gain_controls_hold_time">ಪೀಕ್ ಲಿಮಿಟರ್ ಸಮಯವನ್ನು ಹಿಡಿದುಕೊಳ್ಳಿ</string>
 
     <string name="network_controls_title">ನೆಟ್ವರ್ಕ್</string>
     <string name="network_controls_packet_redundancy">ಪ್ಯಾಕೆಟ್ ಪುನರುಕ್ತಿ</string>

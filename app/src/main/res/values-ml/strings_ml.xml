@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">റിലേ</string>
     <string name="stop_button_text">നിർത്തുക</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">ആരംഭിക്കുക</string>
     <string name="status_tx_start">പ്രക്ഷേപണം ചെയ്യുക</string>
     <string name="status_searching">തിരയുന്നു ...</string>
     <string name="status_unavailable">ലഭ്യമല്ല</string>
     <string name="status_headphones">ഹെഡ്ഫോണുകൾ ചേർക്കുക</string>
     <string name="status_talk">സംവാദം</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ഓൺ എയർ (മ്യൂട്ട് ചെയ്യുന്നതിന് അമർത്തുക)</string>
-    <string name="status_muted">നിശബ്ദമാക്കി (അൺമ്യൂട്ട് അമർത്തുക)</string>
+    <string name="status_waiting">കാത്തിരിക്കുന്നു ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">നിശബ്ദമാക്കുക</string>
+    <string name="status_unmuted">ഓൺ എയർ</string>
+    <string name="status_muted">നിശബ്ദമാക്കി</string>
+    <string name="status_unmute">അൺമ്യൂട്ടുചെയ്യുക</string>
     <string name="status_no_wifi">വൈഫൈയിലേക്ക് കണക്റ്റുചെയ്യുക</string>
 
     <string name="channel_text">ചാനൽ</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">ക്രമീകരണങ്ങൾ</string>
     <string name="options_about">കുറിച്ച് ...</string>
 
-    <string name="gain_controls_title">നേട്ടം ബൂസ്റ്റർ</string>
-    <string name="gain_controls_max_gain_db_title">പരമാവധി ലാഭം ബൂസ്റ്റ്</string>
-    <string name="gain_controls_increase_db_per_second">ഒരു സെക്കൻഡിന് വർദ്ധനവ്</string>
-    <string name="gain_controls_hold_time">പീക്ക് ലിമിറ്റ് സമയം പിടിക്കുന്നു</string>
+    <string name="gain_controls_title">മൈക്രോഫോൺ ബോസ്റ്റർ</string>
+    <string name="gain_controls_max_gain_db_title">പരമാവധി മൈക്രോഫോൺ ബൂസ്റ്റ്</string>
+    <string name="gain_controls_increase_db_per_second">സെക്കന്റിൽ വർദ്ധനവ് മൈക്രോഫോൺ</string>
+    <string name="gain_controls_hold_time">പീക്ക് ലിമിറ്റർ സമയം പിടിക്കുക</string>
 
     <string name="network_controls_title">നെറ്റ്വർക്ക്</string>
     <string name="network_controls_packet_redundancy">പാക്കറ്റ് റിഡൻഡൻസി</string>

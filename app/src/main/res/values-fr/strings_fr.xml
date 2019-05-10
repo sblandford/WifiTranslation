@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relais</string>
     <string name="stop_button_text">Arrêtez</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Début</string>
     <string name="status_tx_start">Diffuser</string>
     <string name="status_searching">Recherche...</string>
     <string name="status_unavailable">Indisponible</string>
     <string name="status_headphones">Insérer un casque</string>
     <string name="status_talk">Parler</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">ON AIR (Appuyez pour mettre en sourdine)</string>
-    <string name="status_muted">Muet (appuyez pour réactiver le son)</string>
+    <string name="status_waiting">Attendre...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">Muet</string>
+    <string name="status_unmuted">À L\'ANTENNE</string>
+    <string name="status_muted">En sourdine</string>
+    <string name="status_unmute">Activer le muet</string>
     <string name="status_no_wifi">S\'il vous plaît connecter au WiFi</string>
 
     <string name="channel_text">Canal</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Réglages</string>
     <string name="options_about">Sur...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Augmentation maximale du gain</string>
-    <string name="gain_controls_increase_db_per_second">Augmentation de gain par seconde</string>
-    <string name="gain_controls_hold_time">Temps limite de maintien</string>
+    <string name="gain_controls_title">Amplificateur de microphone</string>
+    <string name="gain_controls_max_gain_db_title">Amplification maximale du microphone</string>
+    <string name="gain_controls_increase_db_per_second">Augmentation du microphone par seconde</string>
+    <string name="gain_controls_hold_time">Temps de maintien du limiteur de pointe</string>
 
     <string name="network_controls_title">Réseau</string>
     <string name="network_controls_packet_redundancy">Redondance des paquets</string>

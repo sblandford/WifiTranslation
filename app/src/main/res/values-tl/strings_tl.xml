@@ -7,16 +7,19 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Itigil</string>
 
+    <string name="status_null" ></string>
     <string name="status_rx_start">Magsimula</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">Naghahanap ...</string>
     <string name="status_unavailable">Hindi magagamit</string>
     <string name="status_headphones">Magsingit ng mga headphone</string>
     <string name="status_talk">Makipag-usap</string>
-    <string name="status_waiting" />
-    <string name="status_rx_run" />
-    <string name="status_mute">SA AIR (Pindutin ang mute)</string>
-    <string name="status_muted">Muted (Pindutin ang upang i-unmute)</string>
+    <string name="status_waiting">Naghihintay ...</string>
+    <string name="status_rx_run" ></string>
+    <string name="status_mute">I-mute</string>
+    <string name="status_unmuted">SA AIR</string>
+    <string name="status_muted">Muted</string>
+    <string name="status_unmute">I-unmute</string>
     <string name="status_no_wifi">Mangyaring kumonekta sa WiFi</string>
 
     <string name="channel_text">Channel</string>
@@ -36,10 +39,10 @@
     <string name="options_settings">Mga Setting</string>
     <string name="options_about">Tungkol sa ...</string>
 
-    <string name="gain_controls_title">Gain Booster</string>
-    <string name="gain_controls_max_gain_db_title">Maximum Gain Boost</string>
-    <string name="gain_controls_increase_db_per_second">Makakuha ng pagtaas sa bawat segundo</string>
-    <string name="gain_controls_hold_time">Ang limitasyon ng peak ay may oras</string>
+    <string name="gain_controls_title">Mikropono Booster</string>
+    <string name="gain_controls_max_gain_db_title">Maximum Microphone Boost</string>
+    <string name="gain_controls_increase_db_per_second">Palakasin ang pagtaas ng mikropono bawat segundo</string>
+    <string name="gain_controls_hold_time">Peak limiter ay may oras</string>
 
     <string name="network_controls_title">Network</string>
     <string name="network_controls_packet_redundancy">Packet redundancy</string>
