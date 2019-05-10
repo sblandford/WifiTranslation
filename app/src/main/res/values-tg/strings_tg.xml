@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Радио</string>
     <string name="stop_button_text">Ист</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Оғоз кунед</string>
     <string name="status_tx_start">Пахш кунед</string>
     <string name="status_searching">Ҷустуҷӯ</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Смартакҳоро гӯш кунед</string>
     <string name="status_talk">Гуфтугӯ</string>
     <string name="status_waiting">Интизорӣ ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Хомӯш</string>
     <string name="status_unmuted">Дар бораи АИО</string>
     <string name="status_muted">Хомӯш</string>

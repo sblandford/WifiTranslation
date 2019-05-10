@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Hættu</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Byrja</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">Leita...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Settu heyrnartól í</string>
     <string name="status_talk">Tala</string>
     <string name="status_waiting">Bíður ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Slökktu á</string>
     <string name="status_unmuted">Í LOFTINU</string>
     <string name="status_muted">Þrýstingur</string>

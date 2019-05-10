@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">রিলেই</string>
     <string name="stop_button_text">থামুন</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">শুরু</string>
     <string name="status_tx_start">ব্রডকাস্ট</string>
     <string name="status_searching">অনুসন্ধান করা হচ্ছে ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">হেডফোন ঢোকান</string>
     <string name="status_talk">আলাপ</string>
     <string name="status_waiting">অপেক্ষা করা হচ্ছে ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">মূক</string>
     <string name="status_unmuted">বেতারযোগে ঘোষিত</string>
     <string name="status_muted">নিঃশব্দ করা</string>

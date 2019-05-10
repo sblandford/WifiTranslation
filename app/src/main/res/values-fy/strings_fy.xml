@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relaasje</string>
     <string name="stop_button_text">Halte</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Start</string>
     <string name="status_tx_start">Útstjoere</string>
     <string name="status_searching">Sykje troch ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Kopiefoan ynfoegje</string>
     <string name="status_talk">Prate</string>
     <string name="status_waiting">Wachtsje ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Stomme</string>
     <string name="status_unmuted">YN \'E LOFT</string>
     <string name="status_muted">Wetter - Agrarwetter</string>

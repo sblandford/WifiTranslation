@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Mira</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Tanga</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">Tsvaga ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Isa ma-headphones</string>
     <string name="status_talk">Hurukuro</string>
     <string name="status_waiting">Kumirira ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Taura</string>
     <string name="status_unmuted">ONA AIR</string>
     <string name="status_muted">Kutedzwa</string>

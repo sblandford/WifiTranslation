@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relė</string>
     <string name="stop_button_text">Sustabdyti</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Pradėti</string>
     <string name="status_tx_start">Transliacija</string>
     <string name="status_searching">Ieškoma ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Įdėkite ausines</string>
     <string name="status_talk">Kalbėkite</string>
     <string name="status_waiting">Laukiama ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Nutildyti</string>
     <string name="status_unmuted">GYVAI</string>
     <string name="status_muted">Išjungta</string>

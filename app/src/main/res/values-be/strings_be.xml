@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">рэле</string>
     <string name="stop_button_text">спыніць</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">пачатак</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">Пошук ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">ўстаўце навушнікі</string>
     <string name="status_talk">балбатня</string>
     <string name="status_waiting">Чаканне ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">маўклівым</string>
     <string name="status_unmuted">У ЭФІРЫ</string>
     <string name="status_muted">прыглушаны</string>

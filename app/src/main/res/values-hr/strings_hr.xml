@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relej</string>
     <string name="stop_button_text">Stop</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Početak</string>
     <string name="status_tx_start">emitiranje</string>
     <string name="status_searching">Tražim ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Umetnite slušalice</string>
     <string name="status_talk">Razgovor</string>
     <string name="status_waiting">Čeka se ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">nijem</string>
     <string name="status_unmuted">ON AIR</string>
     <string name="status_muted">prigušen</string>

@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Gelditu</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">start</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">Bilatzen ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Txertatu aurikularrak</string>
     <string name="status_talk">Eztabaida</string>
     <string name="status_waiting">Zain ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Mutu</string>
     <string name="status_unmuted">AIREAN</string>
     <string name="status_muted">Muted</string>

@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">stop</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">begin</string>
     <string name="status_tx_start">uitsending</string>
     <string name="status_searching">Soek ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Voeg koptelefoon in</string>
     <string name="status_talk">Praat</string>
     <string name="status_waiting">Wag ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">stom</string>
     <string name="status_unmuted">OP DIE LUG</string>
     <string name="status_muted">gedempte</string>

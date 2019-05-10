@@ -2,20 +2,20 @@
     <string name="app_name">Wifi Eadar-theangachadh</string>
     <string name="channel_display_prefix">Sianal</string>
     <string name="relay_channel_display_prefix">Relay</string>
-    <string name="status">Gun ri fhaighinn</string>
+    <string name="status">Chan eil seo ri fhaighinn</string>
     <string name="channel_button_text">Tagh</string>
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Stad</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Tòisich</string>
     <string name="status_tx_start">Air a chraoladh</string>
     <string name="status_searching">A ’rannsachadh ...</string>
-    <string name="status_unavailable">Gun ri fhaighinn</string>
+    <string name="status_unavailable">Chan eil seo ri fhaighinn</string>
     <string name="status_headphones">Cuir fònaichean-cluaise ann</string>
     <string name="status_talk">Bruidhinn</string>
     <string name="status_waiting">A ’feitheamh ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Mute</string>
     <string name="status_unmuted">AIR AIR</string>
     <string name="status_muted">Air a chreachadh</string>

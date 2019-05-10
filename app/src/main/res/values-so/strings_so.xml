@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Socdaalka</string>
     <string name="stop_button_text">Jooji</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Bilow</string>
     <string name="status_tx_start">Warbaahinta</string>
     <string name="status_searching">Raadinta ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Geli wershadaha dhegaha</string>
     <string name="status_talk">Kala hadal</string>
     <string name="status_waiting">Sugitaanka ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Susan</string>
     <string name="status_unmuted">ONO</string>
     <string name="status_muted">Mute</string>

@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Releu</string>
     <string name="stop_button_text">Stop</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">start</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">In cautarea...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Introduceți căști</string>
     <string name="status_talk">Vorbi</string>
     <string name="status_waiting">Aşteptare...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Mut</string>
     <string name="status_unmuted">ÎN DIRECT</string>
     <string name="status_muted">Ignorat</string>
@@ -28,7 +28,7 @@
     <string name="ch03_text">Canal 3</string>
     <string name="ch04_text">Canalul 4</string>
     <string name="ch05_text">Canal 5</string>
-    <string name="ch06_text">Canal 6</string>
+    <string name="ch06_text">Canalul 6</string>
     <string name="ch07_text">Canal 7</string>
     <string name="ch08_text">Canalul 8</string>
     <string name="ch09_text">Canal 9</string>

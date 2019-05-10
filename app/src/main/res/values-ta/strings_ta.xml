@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">ரிலே</string>
     <string name="stop_button_text">நிறுத்து</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">தொடக்கம்</string>
     <string name="status_tx_start">பிராட்காஸ்ட்</string>
     <string name="status_searching">தேடி...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">ஹெட்ஃபோன்களைச் செருகவும்</string>
     <string name="status_talk">பேச்சு</string>
     <string name="status_waiting">காத்திருக்கிறது ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">முடக்கு</string>
     <string name="status_unmuted">விமானத்தில்</string>
     <string name="status_muted">முடக்கியது</string>

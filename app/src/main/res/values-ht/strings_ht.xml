@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relè</string>
     <string name="stop_button_text">One Stop</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Kòmanse</string>
     <string name="status_tx_start">Emisyon</string>
     <string name="status_searching">Chache ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Antre kas ekoutè</string>
     <string name="status_talk">Pale</string>
     <string name="status_waiting">Ap tann ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Bèbè</string>
     <string name="status_unmuted">NAN LÈ</string>
     <string name="status_muted">San</string>

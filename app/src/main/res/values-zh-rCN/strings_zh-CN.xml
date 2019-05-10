@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">中继</string>
     <string name="stop_button_text">停止</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">开始</string>
     <string name="status_tx_start">广播</string>
     <string name="status_searching">搜索...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">插入耳机</string>
     <string name="status_talk">谈论</string>
     <string name="status_waiting">等候...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">静音</string>
     <string name="status_unmuted">正在播出</string>
     <string name="status_muted">静音</string>

@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">O\'rnimizni</string>
     <string name="stop_button_text">To\'xta</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Boshlang</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">Qidirilmoqda ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Eshitish vositalarini joylashtiring</string>
     <string name="status_talk">Suhbatlashing</string>
     <string name="status_waiting">Kutilmoqda ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Mute</string>
     <string name="status_unmuted">HAVODA</string>
     <string name="status_muted">Muted</string>

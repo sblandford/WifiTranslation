@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">relay</string>
     <string name="stop_button_text">Eureun</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">ngamimitian</string>
     <string name="status_tx_start">siaran</string>
     <string name="status_searching">Néangan ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Selapkeun headphone</string>
     <string name="status_talk">omongan</string>
     <string name="status_waiting">Ngantosan ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">bisu</string>
     <string name="status_unmuted">ON hawa</string>
     <string name="status_muted">muted</string>

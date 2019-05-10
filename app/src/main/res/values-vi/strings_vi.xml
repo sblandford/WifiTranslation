@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Rơle</string>
     <string name="stop_button_text">Dừng lại</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Khởi đầu</string>
     <string name="status_tx_start">Phát sóng</string>
     <string name="status_searching">Đang tìm kiếm...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Chèn tai nghe</string>
     <string name="status_talk">Nói chuyện</string>
     <string name="status_waiting">Đang chờ đợi...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Tắt tiếng</string>
     <string name="status_unmuted">TRÊN KHÔNG KHÍ</string>
     <string name="status_muted">Tắt tiếng</string>

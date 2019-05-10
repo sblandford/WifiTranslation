@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Реле</string>
     <string name="stop_button_text">токтотуу</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">баштоо</string>
     <string name="status_tx_start">уктуруу</string>
     <string name="status_searching">Издөө ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">наушник менен киргизүү</string>
     <string name="status_talk">сүйлөшүү</string>
     <string name="status_waiting">Күтүлүүдө ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">көп сүйлөбөгөн</string>
     <string name="status_unmuted">ON AIR</string>
     <string name="status_muted">Үнсүз</string>

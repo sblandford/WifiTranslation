@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">ถ่ายทอด</string>
     <string name="stop_button_text">หยุด</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">เริ่มต้น</string>
     <string name="status_tx_start">ออกอากาศ</string>
     <string name="status_searching">ค้นหา ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">ใส่หูฟัง</string>
     <string name="status_talk">พูดคุย</string>
     <string name="status_waiting">ที่รอคอย...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">ใบ้</string>
     <string name="status_unmuted">ออกอากาศ</string>
     <string name="status_muted">ไม่ออกเสียง</string>

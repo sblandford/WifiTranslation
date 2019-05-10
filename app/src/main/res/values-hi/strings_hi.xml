@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">रिले</string>
     <string name="stop_button_text">रुकें</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">शुरु</string>
     <string name="status_tx_start">प्रसारण</string>
     <string name="status_searching">खोज कर...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">हेडफोन लगाएं</string>
     <string name="status_talk">बातचीत</string>
     <string name="status_waiting">इंतज़ार कर रही...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">मूक</string>
     <string name="status_unmuted">हवा में</string>
     <string name="status_muted">म्यूट किए गए</string>

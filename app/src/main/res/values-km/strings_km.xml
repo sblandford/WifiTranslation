@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">ការបញ្ជូន</string>
     <string name="stop_button_text">បញ្ឈប់</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">ចាប់ផ្តើម</string>
     <string name="status_tx_start">ចាក់ផ្សាយ</string>
     <string name="status_searching">កំពុងស្វែងរក ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">បញ្ចូលកាស</string>
     <string name="status_talk">និយាយ</string>
     <string name="status_waiting">កំពុងរង់ចាំ ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">ផ្អាក</string>
     <string name="status_unmuted">កំពុង​ផ្សាយ</string>
     <string name="status_muted">បានបិទសំឡេង</string>

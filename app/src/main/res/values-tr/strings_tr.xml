@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">röle</string>
     <string name="stop_button_text">durdurmak</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">başla</string>
     <string name="status_tx_start">Yayın yapmak</string>
     <string name="status_searching">Aramak...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Kulaklık takın</string>
     <string name="status_talk">konuşma</string>
     <string name="status_waiting">Bekleniyor ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Sessiz</string>
     <string name="status_unmuted">HAVADA</string>
     <string name="status_muted">sessiz</string>

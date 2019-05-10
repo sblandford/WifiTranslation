@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">ממסר</string>
     <string name="stop_button_text">תפסיק</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">התחל</string>
     <string name="status_tx_start">שידור</string>
     <string name="status_searching">מחפש ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">הכנס אוזניות</string>
     <string name="status_talk">שיחה</string>
     <string name="status_waiting">ממתין ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">השתקה</string>
     <string name="status_unmuted">באוויר</string>
     <string name="status_muted">מושתק</string>

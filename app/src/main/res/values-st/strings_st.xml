@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Khutlisa</string>
     <string name="stop_button_text">Ema</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Qala</string>
     <string name="status_tx_start">E phatlalatsoa</string>
     <string name="status_searching">Ho batlisisa ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Kenya li-headphones</string>
     <string name="status_talk">Puo</string>
     <string name="status_waiting">E emetse ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Tlisa</string>
     <string name="status_unmuted">KA AIR</string>
     <string name="status_muted">E fetotsoe</string>

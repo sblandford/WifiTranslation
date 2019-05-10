@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">リレー</string>
     <string name="stop_button_text">やめる</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">開始</string>
     <string name="status_tx_start">放送</string>
     <string name="status_searching">検索しています...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">ヘッドホンを挿入する</string>
     <string name="status_talk">トーク</string>
     <string name="status_waiting">待っています...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">ミュート</string>
     <string name="status_unmuted">放送中</string>
     <string name="status_muted">ミュート</string>

@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Ifiranṣẹ</string>
     <string name="stop_button_text">Duro</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Bẹrẹ</string>
     <string name="status_tx_start">Itaniji</string>
     <string name="status_searching">Wiwa ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Fi akọkun sii</string>
     <string name="status_talk">Ọrọ sisọrọ</string>
     <string name="status_waiting">Nduro ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Mute</string>
     <string name="status_unmuted">LORI AFEFE</string>
     <string name="status_muted">Muted</string>

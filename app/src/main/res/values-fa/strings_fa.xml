@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">رله</string>
     <string name="stop_button_text">متوقف کردن</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">شروع کنید</string>
     <string name="status_tx_start">پخش</string>
     <string name="status_searching">جستجوکردن...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">قرار دادن هدفون</string>
     <string name="status_talk">صحبت</string>
     <string name="status_waiting">در انتظار...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">بی صدا</string>
     <string name="status_unmuted">روی هوا</string>
     <string name="status_muted">خفه شدم</string>

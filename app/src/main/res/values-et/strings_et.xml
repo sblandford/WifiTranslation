@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relee</string>
     <string name="stop_button_text">Peatus</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Alusta</string>
     <string name="status_tx_start">Ringhääling</string>
     <string name="status_searching">Otsimine ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Sisestage kõrvaklapid</string>
     <string name="status_talk">Räägi</string>
     <string name="status_waiting">Ootan ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Vaigista</string>
     <string name="status_unmuted">ÕHUS</string>
     <string name="status_muted">Vaigistatud</string>

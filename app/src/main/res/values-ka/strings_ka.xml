@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">სარელეო</string>
     <string name="stop_button_text">შეაჩერე</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">დაწყება</string>
     <string name="status_tx_start">მაუწყებლობა</string>
     <string name="status_searching">ძიება ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">ჩადეთ ყურსასმენები</string>
     <string name="status_talk">საუბარი</string>
     <string name="status_waiting">ველოდები ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">მუნჯი</string>
     <string name="status_unmuted">ᲰᲐᲔᲠᲨᲘ</string>
     <string name="status_muted">მუნჯი</string>

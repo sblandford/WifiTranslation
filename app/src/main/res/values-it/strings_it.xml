@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">staffetta</string>
     <string name="stop_button_text">Fermare</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Inizio</string>
     <string name="status_tx_start">Trasmissione</string>
     <string name="status_searching">Ricerca in corso ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Inserire le cuffie</string>
     <string name="status_talk">Parlare</string>
     <string name="status_waiting">In attesa...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">muto</string>
     <string name="status_unmuted">IN ONDA</string>
     <string name="status_muted">smorzato</string>

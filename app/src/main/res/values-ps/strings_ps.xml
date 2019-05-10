@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">ریل</string>
     <string name="stop_button_text">درېدل</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">پیل</string>
     <string name="status_tx_start">خپرونه</string>
     <string name="status_searching">لټون کول ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">د غږفونونو داخلول</string>
     <string name="status_talk">خبرې اترې</string>
     <string name="status_waiting">انتظار ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">مغز</string>
     <string name="status_unmuted">په هوا کې</string>
     <string name="status_muted">مات شوی</string>

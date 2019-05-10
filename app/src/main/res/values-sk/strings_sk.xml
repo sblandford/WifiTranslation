@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">relé</string>
     <string name="stop_button_text">prestať</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">štart</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">Vyhľadávanie ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Vložte slúchadlá</string>
     <string name="status_talk">rozprávanie</string>
     <string name="status_waiting">Čakanie ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">nemý</string>
     <string name="status_unmuted">NA ŽIVO</string>
     <string name="status_muted">stlmený</string>

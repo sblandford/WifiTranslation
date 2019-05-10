@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">ריליי</string>
     <string name="stop_button_text">אָפּשטעל</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">אָנהייב</string>
     <string name="status_tx_start">בראָאַדקאַסט</string>
     <string name="status_searching">זוך ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">אַרייַנשטעלן כעדפאָונז</string>
     <string name="status_talk">רעדן</string>
     <string name="status_waiting">ווארטן ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Mute</string>
     <string name="status_unmuted">ON AIR</string>
     <string name="status_muted">Muted</string>

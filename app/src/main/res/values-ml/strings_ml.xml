@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">റിലേ</string>
     <string name="stop_button_text">നിർത്തുക</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">ആരംഭിക്കുക</string>
     <string name="status_tx_start">പ്രക്ഷേപണം ചെയ്യുക</string>
     <string name="status_searching">തിരയുന്നു ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">ഹെഡ്ഫോണുകൾ ചേർക്കുക</string>
     <string name="status_talk">സംവാദം</string>
     <string name="status_waiting">കാത്തിരിക്കുന്നു ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">നിശബ്ദമാക്കുക</string>
     <string name="status_unmuted">ഓൺ എയർ</string>
     <string name="status_muted">നിശബ്ദമാക്കി</string>

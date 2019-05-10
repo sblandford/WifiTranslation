@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Tsaya</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Fara</string>
     <string name="status_tx_start">Watsa shirye-shirye</string>
     <string name="status_searching">Binciken ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Saka kunn kunne</string>
     <string name="status_talk">Magana</string>
     <string name="status_waiting">Jiran ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Mute</string>
     <string name="status_unmuted">ON AIR</string>
     <string name="status_muted">Muted</string>

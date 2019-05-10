@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">계전기</string>
     <string name="stop_button_text">중지</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">스타트</string>
     <string name="status_tx_start">방송</string>
     <string name="status_searching">수색...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">헤드폰 삽입</string>
     <string name="status_talk">이야기</string>
     <string name="status_waiting">기다리는...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">묵자</string>
     <string name="status_unmuted">생방송</string>
     <string name="status_muted">음소거 됨</string>

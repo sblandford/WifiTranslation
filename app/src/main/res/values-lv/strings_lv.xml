@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relejs</string>
     <string name="stop_button_text">Pārtraukt</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Sākt</string>
     <string name="status_tx_start">Apraide</string>
     <string name="status_searching">Meklēšana...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Ievietojiet austiņas</string>
     <string name="status_talk">Runāt</string>
     <string name="status_waiting">Gaida ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Izslēgt skaņu</string>
     <string name="status_unmuted">GAISĀ</string>
     <string name="status_muted">Izslēgts</string>

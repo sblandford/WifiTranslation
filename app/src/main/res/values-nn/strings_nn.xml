@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Stoppe</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Start</string>
     <string name="status_tx_start">Kringkaste</string>
     <string name="status_searching">Søker...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Sett inn hodetelefoner</string>
     <string name="status_talk">Snakke</string>
     <string name="status_waiting">Venter...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Stum</string>
     <string name="status_unmuted">PÅ LUFTA</string>
     <string name="status_muted">dempet</string>

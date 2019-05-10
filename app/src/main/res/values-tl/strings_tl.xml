@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Itigil</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Magsimula</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">Naghahanap ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Magsingit ng mga headphone</string>
     <string name="status_talk">Makipag-usap</string>
     <string name="status_waiting">Naghihintay ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">I-mute</string>
     <string name="status_unmuted">SA AIR</string>
     <string name="status_muted">Muted</string>

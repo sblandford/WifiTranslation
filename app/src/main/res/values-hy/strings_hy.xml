@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Ռելե</string>
     <string name="stop_button_text">Դադարեցրեք</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Սկսեք</string>
     <string name="status_tx_start">Հեռարձակում</string>
     <string name="status_searching">Որոնում ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Ներդիր ականջակալներ</string>
     <string name="status_talk">Խոսեք</string>
     <string name="status_waiting">Սպասում ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Համր</string>
     <string name="status_unmuted">ՕԴՈՒՄ</string>
     <string name="status_muted">Խլացված</string>

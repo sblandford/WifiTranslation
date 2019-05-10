@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Sealaíocht</string>
     <string name="stop_button_text">Stad</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Tosaigh</string>
     <string name="status_tx_start">Craoladh</string>
     <string name="status_searching">Ag cuardach ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Cuir cluasáin isteach</string>
     <string name="status_talk">Labhair</string>
     <string name="status_waiting">Ag feitheamh ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Mute</string>
     <string name="status_unmuted">AR AIR</string>
     <string name="status_muted">Muted</string>

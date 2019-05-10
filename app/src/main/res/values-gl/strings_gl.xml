@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relé</string>
     <string name="stop_button_text">Parar</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Inicio</string>
     <string name="status_tx_start">Transmisión</string>
     <string name="status_searching">Buscando ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Inserir auriculares</string>
     <string name="status_talk">Falar</string>
     <string name="status_waiting">Agardando ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Silenciar</string>
     <string name="status_unmuted">ON AIR</string>
     <string name="status_muted">Silenciado</string>

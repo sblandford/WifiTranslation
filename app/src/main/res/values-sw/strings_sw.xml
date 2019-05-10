@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Acha</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Anza</string>
     <string name="status_tx_start">Tangaza</string>
     <string name="status_searching">Inatafuta ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Ingiza vichwa vya sauti</string>
     <string name="status_talk">Majadiliano</string>
     <string name="status_waiting">Inasubiri ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Simama</string>
     <string name="status_unmuted">HEWANI</string>
     <string name="status_muted">Imefunguliwa</string>

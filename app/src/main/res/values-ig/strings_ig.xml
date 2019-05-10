@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Kwụsị</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Malite</string>
     <string name="status_tx_start">Mgbasa ozi</string>
     <string name="status_searching">Ịchọ ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Tinye ụdaisi</string>
     <string name="status_talk">Kwuo</string>
     <string name="status_waiting">Na-echere ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Mute</string>
     <string name="status_unmuted">NA AIR</string>
     <string name="status_muted">Muted</string>

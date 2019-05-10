@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Sungani</string>
     <string name="stop_button_text">Imani</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Yambani</string>
     <string name="status_tx_start">Kutulutsidwa</string>
     <string name="status_searching">Kusaka ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Ikani makutu</string>
     <string name="status_talk">Nkhani</string>
     <string name="status_waiting">Kudikira ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Lankhulani</string>
     <string name="status_unmuted">PA AIR</string>
     <string name="status_muted">Kusungidwa</string>

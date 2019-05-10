@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Рела</string>
     <string name="stop_button_text">Зогс</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Эхлээд</string>
     <string name="status_tx_start">Өргөн нэвтрүүлэг</string>
     <string name="status_searching">Хайж байна ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Чихэвч оруулах</string>
     <string name="status_talk">Яриа</string>
     <string name="status_waiting">Хүлээж байна ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Чимээгүй байна</string>
     <string name="status_unmuted">АГААРТ</string>
     <string name="status_muted">Чиглэсэн</string>

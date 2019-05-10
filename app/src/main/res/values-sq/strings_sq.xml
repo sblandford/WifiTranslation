@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">rele</string>
     <string name="stop_button_text">stop</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">fillim</string>
     <string name="status_tx_start">Broadcast</string>
     <string name="status_searching">Duke kërkuar ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Futni kufjet</string>
     <string name="status_talk">diskutim</string>
     <string name="status_waiting">Ne pritje...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">memec</string>
     <string name="status_unmuted">NE AJER</string>
     <string name="status_muted">i mbytur</string>

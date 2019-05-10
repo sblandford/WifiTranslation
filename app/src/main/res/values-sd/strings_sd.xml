@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">رلي</string>
     <string name="stop_button_text">رکو</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">شروع ڪيو</string>
     <string name="status_tx_start">براڊلينڊ</string>
     <string name="status_searching">ڳولها پيو ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">ہیڈفون داخل ڪريو</string>
     <string name="status_talk">ڳالهايو</string>
     <string name="status_waiting">انتظار ڪري رهيو آهي ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">گونگا</string>
     <string name="status_unmuted">پر ايئر</string>
     <string name="status_muted">خاموشي</string>

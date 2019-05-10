@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">ተወ</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">ይጀምሩ</string>
     <string name="status_tx_start">ማሰራጫ</string>
     <string name="status_searching">በመፈለግ ላይ ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">የጆሮ ማዳመጫዎች ያስገቡ</string>
     <string name="status_talk">ይነጋገሩ</string>
     <string name="status_waiting">በመጠበቅ ላይ ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">ድምጸ-ከል ያድርጉ</string>
     <string name="status_unmuted">በአየር ላይ</string>
     <string name="status_muted">ድምፀ-ከል ተደርጓል</string>
@@ -50,6 +50,6 @@
     <string name="app_description">በአካባቢያዊ Wi-Fi ላይ ብዙ ቃል ትርጉምን</string>
     <string name="app_credits">ብራሃማ ክላሪስ የለንደን ቴክኖሎጂ ቡድን</string>
 
-    <string name="perms_alert_test">ስርጭትን ለማንቃት እባክዎ እባክዎ በመተግበሪያ ፍቃዶች ውስጥ የማይክሮፎን ፈቃድን ያንቁ</string>
+    <string name="perms_alert_test">ስርጭትን ለማንቃት እባክዎ እባክዎ በመተግበሪያ ፍቃዶች ውስጥ የማይክሮፎን ፍቃድን ያንቁ</string>
     <string name="multicast_alert">የአጋጣሚ ነገር ሆኖ ይህ መሳሪያ በበርካታ የሊነል ኩኪ ውቅር ውስጥ ብዝሃ-ስርዓቶች አልነበሩም</string>
 </resources>

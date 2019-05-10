@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Rele</string>
     <string name="stop_button_text">Stop</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">alkaa</string>
     <string name="status_tx_start">Lähettää</string>
     <string name="status_searching">Haetaan ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Aseta kuulokkeet</string>
     <string name="status_talk">Puhua</string>
     <string name="status_waiting">Odotetaan ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">mykkä</string>
     <string name="status_unmuted">ILMASSA</string>
     <string name="status_muted">vaimea</string>

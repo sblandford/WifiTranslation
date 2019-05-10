@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relé</string>
     <string name="stop_button_text">Állj meg</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Rajt</string>
     <string name="status_tx_start">Adás</string>
     <string name="status_searching">Keresés ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Helyezze be a fejhallgatót</string>
     <string name="status_talk">Beszélgetés</string>
     <string name="status_waiting">Várakozás...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Néma</string>
     <string name="status_unmuted">ADÁSBAN</string>
     <string name="status_muted">Tompított</string>

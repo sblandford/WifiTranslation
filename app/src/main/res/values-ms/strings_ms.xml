@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relay</string>
     <string name="stop_button_text">Berhenti</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Mulakan</string>
     <string name="status_tx_start">Siaran</string>
     <string name="status_searching">Mencari...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Masukkan fon kepala</string>
     <string name="status_talk">Bercakap</string>
     <string name="status_waiting">Menunggu ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Bisu</string>
     <string name="status_unmuted">KE UDARA</string>
     <string name="status_muted">Diredam</string>

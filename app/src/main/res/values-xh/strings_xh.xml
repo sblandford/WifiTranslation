@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Dlulisa</string>
     <string name="stop_button_text">Yeka</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Qala</string>
     <string name="status_tx_start">Ukusasazwa</string>
     <string name="status_searching">Ukukhangela ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Faka iifowuni</string>
     <string name="status_talk">Thetha</string>
     <string name="status_waiting">Kulinda ...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Thulisa</string>
     <string name="status_unmuted">EMOYENI</string>
     <string name="status_muted">Ikhutshwe</string>

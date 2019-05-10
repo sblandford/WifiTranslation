@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">Relais</string>
     <string name="stop_button_text">Hou op</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">Begin</string>
     <string name="status_tx_start">Uitzending</string>
     <string name="status_searching">Zoeken...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Plaats een koptelefoon</string>
     <string name="status_talk">Praten</string>
     <string name="status_waiting">Aan het wachten...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">Dempen</string>
     <string name="status_unmuted">ON AIR</string>
     <string name="status_muted">Gedempt</string>

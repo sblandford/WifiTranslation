@@ -7,7 +7,7 @@
     <string name="relay_channel_button_text">реле</string>
     <string name="stop_button_text">Спри се</string>
 
-    <string name="status_null" ></string>
+    <string name="status_null" />
     <string name="status_rx_start">начало</string>
     <string name="status_tx_start">Предавания</string>
     <string name="status_searching">Търси се ...</string>
@@ -15,7 +15,7 @@
     <string name="status_headphones">Поставете слушалки</string>
     <string name="status_talk">Говоря</string>
     <string name="status_waiting">Очакване...</string>
-    <string name="status_rx_run" ></string>
+    <string name="status_rx_run" />
     <string name="status_mute">ням</string>
     <string name="status_unmuted">В ЕФИР</string>
     <string name="status_muted">Спряно</string>
