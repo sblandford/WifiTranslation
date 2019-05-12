@@ -224,7 +224,7 @@ final class HubComms {
                                 // 1 second timeout
                                 sock.setSoTimeout(1000);
                                 startTime = System.currentTimeMillis();
-                                while (hubPollRun && ((System.currentTimeMillis() - startTime) < HUB_POLL_INTERVAL_MILLISECONDS)) {
+                                while (hubPollRun && ((System.currentTimeMillis() - startTime) < HUB_POLL_INTERVAL_MILLISECONDS) && !hubPollReRun) {
                                     try {
                                         sock.receive(pack);
                                     } catch (SocketTimeoutException e) {
@@ -233,6 +233,7 @@ final class HubComms {
                                     Log.d(TAG, "Received change alert from hub");
                                     break;
                                 }
+                                hubPollReRun = false;
                                 try {
                                     //Wait random up to a second to spread out poll-request load on hub
                                     Thread.sleep(new Random().nextInt(1000));
