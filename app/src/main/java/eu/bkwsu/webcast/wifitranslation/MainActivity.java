@@ -546,6 +546,8 @@ public class MainActivity extends AppCompatActivity {
                 state.rxValid + ", txEnabled : " + state.txEnabled + ", wifi : " + state.wifiOn);
         if (!state.wifiOn) {
             setInfoColorText(Color.LTGRAY, getString(R.string.status_no_wifi));
+            setMainButtonColorText(Color.LTGRAY, (state.txMode)?getString(R.string.status_tx_start):getString(R.string.status_rx_start));
+            return;
         }
         if (state.txMode) {
             if (state.happening) {
