@@ -318,7 +318,6 @@ final class AppState  {
             prefThreadRunning = true;
             prefsThread.start();
         }
-        stateInitialised = true;
     }
 
     void writePrefs () {
