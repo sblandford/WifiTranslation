@@ -571,11 +571,10 @@ public class MainActivity extends AppCompatActivity {
             if (state.happening) {
                 if (state.rxValid) {
                     setInfoColorText(Color.LTGRAY,  getString(R.string.status_rx_run));
-                    setMainButtonColorText(Color.DKGRAY, getString(R.string.status_null));
                 } else {
                     setInfoColorText(Color.LTGRAY, getString(R.string.status_waiting));
-                    setMainButtonColorText(Color.DKGRAY, getString(R.string.status_null));
                 }
+                setMainButtonColorText(getResources().getColor((state.rxMulticastMode)?R.color.colorMulticastPlaying:R.color.colorRTSPPlaying), getString(R.string.status_null));
             } else {
                 if (state.rxValid) {
                     if (state.headphonesMandatory && !state.headphones) {
@@ -583,7 +582,7 @@ public class MainActivity extends AppCompatActivity {
                         setMainButtonColorText(Color.GRAY, getString(R.string.status_rx_start));
                     } else {
                         setInfoColorText(Color.LTGRAY, getString(R.string.status_null));
-                        setMainButtonColorText(Color.LTGRAY, getString(R.string.status_rx_start));
+                        setMainButtonColorText(getResources().getColor((state.rxMulticastMode)?R.color.colorMulticastReady:R.color.colorRTSPReady), getString(R.string.status_rx_start));
                     }
                 } else {
                     setMainButtonColorText(Color.GRAY, getString(R.string.status_rx_start));

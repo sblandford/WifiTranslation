@@ -5,4 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorActionText">#000000</color>
     <color name="colorActionTextShadow">#FFFFFF</color>
+    <color name="colorMulticastReady">#cccccc</color>
+    <color name="colorRTSPReady">#CEA3A7</color>
+    <color name="colorMulticastPlaying">#444444</color>
+    <color name="colorRTSPPlaying">#98777B</color>
 </resources>
