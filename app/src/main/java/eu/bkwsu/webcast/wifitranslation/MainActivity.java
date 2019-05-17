@@ -4,6 +4,7 @@ import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,6 +13,7 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Handler;
 import android.os.PowerManager;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
@@ -20,6 +22,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -36,6 +39,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 import java.util.Properties;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.TreeMap;
 
 import static android.view.View.generateViewId;
@@ -474,15 +479,33 @@ public class MainActivity extends AppCompatActivity {
     private void canDoMulticast() {
         File igmpFile = new File( "/proc/net/igmp" );
         if (!igmpFile.exists()) {
-            LayoutInflater noMicPermsInflater = getLayoutInflater();
-            View noMulticastLayout = noMicPermsInflater.inflate(R.layout.no_multicast, null);
+            LayoutInflater noMutlicastAlerInflater = getLayoutInflater();
+            View noMulticastLayout = noMutlicastAlerInflater.inflate(R.layout.no_multicast, null);
             AlertDialog.Builder noMulticastAlert = new AlertDialog.Builder(context);
             noMulticastAlert.setView(noMulticastLayout);
-            AlertDialog noMicPermsDialog = noMulticastAlert.create();
-            noMicPermsDialog.show();
+            AlertDialog noMutlicastAlerDialog = noMulticastAlert.create();
+            noMutlicastAlerDialog.show();
         }
     }
 
+    private void txStopConfirm () {
+        LayoutInflater txStopConfirmInflater = getLayoutInflater();
+        View txStopConfirmLayout = txStopConfirmInflater.inflate(R.layout.tx_stop_confirm, null);
+        AlertDialog.Builder txStopConfirmAlert = new AlertDialog.Builder(context);
+        txStopConfirmAlert.setView(txStopConfirmLayout);
+        final AlertDialog txStopConfirmDialog = txStopConfirmAlert.create();
+        txStopConfirmDialog.show();
+        final Timer t = new Timer();
+        t.schedule(new TimerTask() {
+            public void run() {
+                txStopConfirmDialog.dismiss();
+            }
+        }, 2000);
+
+    }
+
+
+        
     //**********************************************************************
     //************************ Display state *******************************
     //**********************************************************************
@@ -1211,19 +1234,78 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onPause() {
-        if (activeState != null) {
-            activeState.appIsVisible = false;
+        // Prevent pause while broadcasting
+        if (activeState.txMode && activeState.happening) {
+
+            super.onPause();
+
+            ActivityManager activityManager = (ActivityManager) getApplicationContext()
+                    .getSystemService(Context.ACTIVITY_SERVICE);
+
+            activityManager.moveTaskToFront(getTaskId(), 0);
+
+        } else {
+
+
+            if (activeState != null) {
+                activeState.appIsVisible = false;
+            }
+            // Wait for threads to be shut down
+            Log.i(TAG, "Waiting to enter lost-focus mode");
+            while (!mPaused && !mPauseSuspended) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Log.d(TAG, "Wait for pause thread interrupted");
+                }
+            }
+            Log.i(TAG, "Entering lost-focus mode");
+            super.onPause();
         }
-        // Wait for threads to be shut down
-        Log.i(TAG, "Waiting to enter lost-focus mode");
-        while (!mPaused && !mPauseSuspended) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                Log.d(TAG, "Wait for pause thread interrupted");
+    }
+
+    // Capture back button while broadcasting
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (activeState.txMode && activeState.happening && (keyCode == KeyEvent.KEYCODE_BACK)) {
+            txStopConfirm();
+            return true;
+        } else {
+            return super.onKeyDown(keyCode, event);
+        }
+    }
+
+    // Prevent recent apps key while broadcasting
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+
+        if (activeState.txMode && activeState.happening) {
+
+            if (!hasFocus) {
+                txStopConfirm();
+                windowCloseHandler.postDelayed(windowCloserRunnable, 250);
             }
         }
-        Log.i(TAG, "Entering lost-focus mode");
-        super.onPause();
     }
+    private void toggleRecents() {
+        Intent closeRecents = new Intent("com.android.systemui.recent.action.TOGGLE_RECENTS");
+        closeRecents.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
+        ComponentName recents = new ComponentName("com.android.systemui", "com.android.systemui.recent.RecentsActivity");
+        closeRecents.setComponent(recents);
+        this.startActivity(closeRecents);
+    }
+
+    private Handler windowCloseHandler = new Handler();
+    private Runnable windowCloserRunnable = new Runnable() {
+        @Override
+        public void run() {
+            ActivityManager am = (ActivityManager)getApplicationContext().getSystemService(Context.ACTIVITY_SERVICE);
+            ComponentName cn = am.getRunningTasks(1).get(0).topActivity;
+
+            if (cn != null && cn.getClassName().equals("com.android.systemui.recent.RecentsActivity")) {
+                toggleRecents();
+            }
+        }
+    };
 }

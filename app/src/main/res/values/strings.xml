@@ -52,5 +52,7 @@
 
     <string name="perms_alert_test">Please enable the Microphone permission in App Permissions to enable Broadcast</string>
     <string name="multicast_alert">Unfortunately this device does not have multicast enabled in the Linux kernel configuration</string>
+
+    <string name="tx_stop_alert">Stop the broadcast before navigating away</string>
 </resources>
 
