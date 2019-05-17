@@ -479,12 +479,16 @@ public class MainActivity extends AppCompatActivity {
     private void canDoMulticast() {
         File igmpFile = new File( "/proc/net/igmp" );
         if (!igmpFile.exists()) {
-            LayoutInflater noMutlicastAlerInflater = getLayoutInflater();
-            View noMulticastLayout = noMutlicastAlerInflater.inflate(R.layout.no_multicast, null);
-            AlertDialog.Builder noMulticastAlert = new AlertDialog.Builder(context);
-            noMulticastAlert.setView(noMulticastLayout);
-            AlertDialog noMutlicastAlerDialog = noMulticastAlert.create();
-            noMutlicastAlerDialog.show();
+            // Some phones were found to only have igmp6 file but still work
+            File igmp6File = new File("/proc/net/igmp6");
+            if (!igmp6File.exists()) {
+                LayoutInflater noMutlicastAlerInflater = getLayoutInflater();
+                View noMulticastLayout = noMutlicastAlerInflater.inflate(R.layout.no_multicast, null);
+                AlertDialog.Builder noMulticastAlert = new AlertDialog.Builder(context);
+                noMulticastAlert.setView(noMulticastLayout);
+                AlertDialog noMutlicastAlerDialog = noMulticastAlert.create();
+                noMutlicastAlerDialog.show();
+            }
         }
     }
 
