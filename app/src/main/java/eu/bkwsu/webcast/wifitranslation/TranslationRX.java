@@ -16,6 +16,8 @@ import java.net.MulticastSocket;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.Properties;
 import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -85,6 +87,10 @@ final class TranslationRX {
     private static int ACTION_WAIT_TIMEOUT;
     //How many packet sequence numbers to consider invalid due to repeated or delayed
     private static int  RTP_SEQUENCE_TRACK_RANGE;
+    //How many consecutive bad RTP packets before registering "unavailable" state
+    private static int RTP_MAX_BAD_PACKETS;
+    //Multicast send-before-receive string content
+    private static String MULTICAST_SEND_BEFORE_RX_STRING;
 
     //RTP packets
     private static int MISSING_PACKET_MAX_REPEAT;
@@ -166,6 +172,8 @@ final class TranslationRX {
         PUT_TIMEOUT_US = Integer.parseInt(prop.getProperty("RX_PUT_TIMEOUT_US"));
         LOGFREQ = Integer.parseInt(prop.getProperty("RX_LOGFREQ"));
         RTP_SEQUENCE_TRACK_RANGE = Integer.parseInt(prop.getProperty("RX_RTP_SEQUENCE_TRACK_RANGE"));
+        MULTICAST_SEND_BEFORE_RX_STRING =  prop.getProperty("RX_MULTICAST_SEND_BEFORE_RX_STRING");
+        RTP_MAX_BAD_PACKETS = Integer.parseInt(prop.getProperty("RX_RTP_MAX_BAD_PACKETS"));
         THREAD_TIMEOUT = Integer.parseInt(prop.getProperty("RX_THREAD_TIMEOUT"));
         ACTION_WAIT_TIMEOUT = Integer.parseInt(prop.getProperty("RX_ACTION_WAIT_TIMEOUT"));
         MISSING_PACKET_MAX_REPEAT = Integer.parseInt(prop.getProperty("RX_MISSING_PACKET_MAX_REPEAT"));
@@ -223,10 +231,16 @@ final class TranslationRX {
                             }
                         }
                         try {
+                            int badPacketCount = 0;
+                            byte[] sendBeforeBytes = MULTICAST_SEND_BEFORE_RX_STRING.getBytes();
+
                             if (localMulticastMode) {
                                 mSock = new MulticastSocket(MULTICAST_PORT);
                                 mSock.joinGroup(multicastIpAddress);
                                 mSock.setSoTimeout(MULTICAST_TIMEOUT);
+                                DatagramPacket sendBeforePacket = new DatagramPacket(sendBeforeBytes, sendBeforeBytes.length,
+                                        multicastIpAddress, MULTICAST_PORT);
+                                mSock.send(sendBeforePacket);
                             } else {
                                 uSock = new DatagramSocket(null);
                                 uSock.setReuseAddress(true);
@@ -267,6 +281,7 @@ final class TranslationRX {
 
                                     //Does this look like an AMR RTP packet?
                                     if ((packetLength > RTP_HEADER_SIZE) && (payLoadType == RTP_PAYLOAD_ID) && ((tocId & (byte) 0xFF) == RTP_TOC_HEADER)) {
+                                        badPacketCount = 0;
                                         state = Status.RUNNING;
 
                                         //Ignore late or repeated packets unless it is a sequence roll-over
@@ -287,17 +302,22 @@ final class TranslationRX {
                                             }
                                         }
                                         rtpSequenceNumberPrevious = rtpSequenceNumber;
-                                    //Otherwise does this look like a UUID list, if so, are we in it?
+                                    // Otherwise does this look like a UUID list, if so, are we in it?
                                     } else if ((packetLength % MainActivity.uuid.length()) == 0) {
+                                        badPacketCount = 0;
                                         state = Status.UNAVAILABLE;
-                                        for (int packetPtr =0; packetPtr < packetLength; packetPtr += MainActivity.uuid.length()) {
+                                        for (int packetPtr = 0; packetPtr < packetLength; packetPtr += MainActivity.uuid.length()) {
                                             String rxUUID = new String(packetBuff, packetPtr, MainActivity.uuid.length(), Charset.forName("US-ASCII"));
                                             if (rxUUID.equals(MainActivity.uuid)) {
-                                                state=Status.WAITING;
+                                                state = Status.WAITING;
                                                 break;
                                             }
                                         }
-                                    } else {
+                                    // Otherwise does this look like a send-before packet?
+                                    } else if ((packetLength == sendBeforeBytes.length) && (Arrays.equals(Arrays.copyOfRange(packetBuff, 0, sendBeforeBytes.length),sendBeforeBytes))) {
+                                        badPacketCount = 0;
+                                    //Otherwise count as a bad packet
+                                    } else if (++badPacketCount > RTP_MAX_BAD_PACKETS) {
                                         state = Status.UNAVAILABLE;
                                     }
                                     timeOutCount = 0;
@@ -317,6 +337,7 @@ final class TranslationRX {
                                 Log.d(TAG, "RX Thread ending");
                             }
                             if (localMulticastMode) {
+                                mSock.leaveGroup(multicastIpAddress);
                                 mSock.close();
                             } else {
                                 uSock.close();
