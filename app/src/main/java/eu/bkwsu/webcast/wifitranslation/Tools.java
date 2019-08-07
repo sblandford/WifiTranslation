@@ -110,7 +110,7 @@ final class Tools {
             mMulticastLock = wifi.createMulticastLock("multicastLock");
             mMulticastLock.setReferenceCounted(false);
             mMulticastLock.acquire();
-        } else if (!isMulticastLock()) {
+        } else if (!mMulticastLock.isHeld()) {
             mMulticastLock.acquire();
         }
         multicastLocked = true;
