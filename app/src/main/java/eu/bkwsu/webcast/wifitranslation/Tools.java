@@ -105,10 +105,12 @@ final class Tools {
 
     synchronized static void acquireMulticastLock(){
         Context context = MainActivity.context;
-        if(mMulticastLock == null){
+        if (mMulticastLock == null) {
             WifiManager wifi = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
             mMulticastLock = wifi.createMulticastLock("multicastLock");
             mMulticastLock.setReferenceCounted(false);
+            mMulticastLock.acquire();
+        } else if (!isMulticastLock()) {
             mMulticastLock.acquire();
         }
         multicastLocked = true;
